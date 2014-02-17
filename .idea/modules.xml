@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DataObjects/DataObjects.iml" filepath="$PROJECT_DIR$/DataObjects/DataObjects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LIRR.iml" filepath="$PROJECT_DIR$/LIRR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TimetableProcessor/TimetableProcessor.iml" filepath="$PROJECT_DIR$/TimetableProcessor/TimetableProcessor.iml" />
+    </modules>
+  </component>
+</project>
+
