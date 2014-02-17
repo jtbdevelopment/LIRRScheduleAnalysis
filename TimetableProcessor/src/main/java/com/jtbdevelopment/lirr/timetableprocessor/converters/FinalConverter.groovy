@@ -127,7 +127,7 @@ class FinalConverter {
         matrix.add(endAMPMs)
 
 
-        ArrayList<String> stationRows = times.findAll { !it.contains("PM") && !it.contains("Leave") }.collect {
+        ArrayList<String> stationRows = times.findAll { !it.contains("PM") }.collect {
             it.toUpperCase()
         }
         String lastName = ""
@@ -145,9 +145,15 @@ class FinalConverter {
                 stationRows.get(i - 1).replaceAll(names.get(i - 1), "")
         }
 
+        stationRows.findIndexValues { it.contains("(ARRIVE)") }.reverseEach {
+            Number index ->
+                stationRows.remove(index.intValue())
+                names.remove(index.intValue())
+        }
+
         List<List<String>> tokenizedRows = stationRows.collect() {
             it.tokenize().findAll {
-                !it.equals("A") && !it.equals("B") && !it.equals("C") &&  !it.equals("E") &&  !it.equals("H")&& !it.equals("BE") && !it.equals("BT") && !it.equals("AT") && !it.equals("J") && !it.equals("T") && !it.equals("(NOTE)") && !it.equals("(ARRIVE)")
+                !it.equals("A") && !it.equals("B") && !it.equals("C") && !it.equals("E") && !it.equals("H") && !it.equals("BE") && !it.equals("BT") && !it.equals("AT") && !it.equals("J") && !it.equals("T") && !it.equals("(NOTE)") && !it.equals("(LEAVE)")
             }.collect {
                 if (it.contains(":") || it.startsWith("...")) {
                     return it
