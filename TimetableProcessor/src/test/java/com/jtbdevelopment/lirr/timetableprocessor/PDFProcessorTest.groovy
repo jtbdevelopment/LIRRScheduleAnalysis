@@ -18,33 +18,25 @@ class PDFProcessorTest extends GroovyTestCase {
         return new LocalTime(hour, minute)
     }
 
-    void testParseWestHempstead() {
+    void testWestHempstead() {
         ParsedSchedule schedule = processPDF("WestHempsteadBranch2013121620140223.pdf", "West Hempstead Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:50.000Z"))
-        assert ["PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "ST. ALBANS"] as Set == schedule.eastboundWeekends.keySet()
         println schedule.eastboundWeekends
-        schedule.eastboundWeekends.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.eastboundWeekdays
-        println "[" + schedule.eastboundWeekdays.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.eastboundWeekdays.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.westboundWeekends
-        println "[" + schedule.westboundWeekends.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.westboundWeekends.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.westboundWeekdays
-        println "[" + schedule.westboundWeekdays.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.westboundWeekdays.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        assert false
+        assert ["PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "ST. ALBANS"] as Set == schedule.eastboundWeekends.keySet()
+        assert [LT(7, 28), LT(9, 28), LT(11, 28), LT(13, 28), LT(15, 28), LT(17, 28), LT(19, 28), LT(21, 28), LT(23, 5)] as Set == schedule.eastboundWeekends.get("ST. ALBANS")
+        assert [LT(7, 13), LT(9, 13), LT(11, 13), LT(13, 13), LT(15, 13), LT(17, 13), LT(19, 13), LT(21, 13), LT(22, 51)] as Set == schedule.eastboundWeekends.get("FOREST HILLS")
+
+        assert ["PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "ST. ALBANS", "VALLEY STREAM", "WESTWOOD", "MALVERNE", "LAKEVIEW", "HEMPSTEAD GARDENS", "WEST HEMPSTEAD"] as Set == schedule.eastboundWeekdays.keySet()
+        assert [LT(1, 1), LT(6, 29), LT(9, 12), LT(10, 52), LT(12, 52), LT(14, 51), LT(15, 40), LT(16, 57), LT(17, 44), LT(18, 13), LT(18, 58), LT(19, 37), LT(20, 1), LT(21, 11), LT(22, 0), LT(23, 16)] as Set == schedule.eastboundWeekdays.get("MALVERNE")
+        assert [LT(0, 55), LT(6, 23), LT(9, 6), LT(10, 46), LT(12, 46), LT(14, 45), LT(15, 34), LT(17, 38), LT(21, 5), LT(21, 54), LT(23, 11)] as Set == schedule.eastboundWeekdays.get("VALLEY STREAM")
+
+        assert ["ST. ALBANS", "JAMAICA", "EAST NEW YORK", "NOSTRAND AVENUE", "ATLANTIC TERMINAL", "HUNTERSPOINT AVE.", "KEW GARDENS", "FOREST HILLS", "WOODSIDE", "PENN STATION"] as Set == schedule.westboundWeekends.keySet()
+        assert [LT(7, 44), LT(9, 44), LT(11, 44), LT(13, 44), LT(15, 44), LT(17, 44), LT(19, 44), LT(21, 44), LT(23, 44)] as Set == schedule.westboundWeekends.get("ST. ALBANS")
+        assert [LT(8, 12), LT(10, 12), LT(12, 12), LT(14, 12), LT(16, 12), LT(18, 12), LT(20, 12), LT(22, 12), LT(0, 12)] as Set == schedule.westboundWeekends.get("PENN STATION")
+
+        assert ["WEST HEMPSTEAD", "HEMPSTEAD GARDENS", "LAKEVIEW", "MALVERNE", "WESTWOOD", "VALLEY STREAM", "ST. ALBANS", "JAMAICA", "EAST NEW YORK", "NOSTRAND AVENUE", "ATLANTIC TERMINAL", "HUNTERSPOINT AVE.", "KEW GARDENS", "FOREST HILLS", "WOODSIDE", "PENN STATION"] as Set == schedule.westboundWeekdays.keySet()
+        assert [LT(5, 37), LT(6, 53), LT(7, 16), LT(7, 36), LT(8, 28), LT(10, 12), LT(12, 12), LT(14, 12), LT(16, 4), LT(18, 30), LT(20, 21), LT(22, 37), LT(23, 46)] as Set == schedule.westboundWeekdays.get("WEST HEMPSTEAD")
+        assert [LT(5, 39), LT(6, 55), LT(7, 18), LT(7, 38), LT(8, 30), LT(10, 14), LT(12, 14), LT(14, 14), LT(16, 6), LT(18, 32), LT(20, 23), LT(22, 39), LT(23, 48)] as Set == schedule.westboundWeekdays.get("HEMPSTEAD GARDENS")
+        assert [LT(5, 55), LT(10, 31), LT(12, 31), LT(14, 31), LT(22, 56)] as Set == schedule.westboundWeekdays.get("VALLEY STREAM")
     }
 
     void testLongBeach() {
@@ -72,92 +64,63 @@ class PDFProcessorTest extends GroovyTestCase {
 
     void testHempstead() {
         ParsedSchedule schedule = processPDF("HempsteadBranch2013121620140223.pdf", "Hempstead Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:36.000Z"))
-//        assert ["PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "LOCUST MANOR", "LAURELTON", "ROSEDALE", "VALLEY STREAM", "GIBSON", "HEWLETT", "WOODMERE", "CEDARHURST", "LAWRENCE", "INWOOD", "FAR ROCKAWAY"] as Set == schedule.eastboundWeekends.keySet()
-        println schedule.eastboundWeekends
-        println "[" + schedule.eastboundWeekends.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.eastboundWeekends.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.eastboundWeekdays
-        println "[" + schedule.eastboundWeekdays.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.eastboundWeekdays.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.westboundWeekends
-        println "[" + schedule.westboundWeekends.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.westboundWeekends.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.westboundWeekdays
-        println "[" + schedule.westboundWeekdays.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.westboundWeekdays.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        assert false
+        assert ["PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "HOLLIS", "QUEENS VILLAGE", "BELLEROSE", "FLORAL PARK", "STEWART MANOR", "NASSAU BOULEVARD", "GARDEN CITY", "COUNTRY LIFE PRESS", "HEMPSTEAD"] as Set == schedule.eastboundWeekends.keySet()
+        assert [LT(1, 34), LT(2, 34), LT(5, 0), LT(5, 48), LT(7, 37), LT(8, 37), LT(9, 37), LT(10, 37), LT(11, 37), LT(12, 37), LT(13, 37), LT(14, 37), LT(15, 37), LT(16, 37), LT(17, 37), LT(18, 37), LT(19, 37), LT(20, 37), LT(21, 37), LT(22, 37), LT(23, 44), LT(0, 49)] as Set == schedule.eastboundWeekends.get("HEMPSTEAD")
+        assert [LT(1, 18), LT(2, 18), LT(4, 44), LT(5, 32), LT(7, 21), LT(8, 21), LT(9, 21), LT(10, 21), LT(11, 21), LT(12, 21), LT(13, 21), LT(14, 21), LT(15, 21), LT(16, 21), LT(17, 21), LT(18, 21), LT(19, 21), LT(20, 21), LT(21, 21), LT(22, 21), LT(23, 26), LT(0, 33)] as Set == schedule.eastboundWeekends.get("FLORAL PARK")
+
+        assert ["HEMPSTEAD", "COUNTRY LIFE PRESS", "GARDEN CITY", "NASSAU BOULEVARD", "STEWART MANOR", "FLORAL PARK", "BELLEROSE", "QUEENS VILLAGE", "HOLLIS", "JAMAICA", "EAST NEW YORK", "NOSTRAND AVENUE", "ATLANTIC TERMINAL", "HUNTERSPOINT AVE.", "KEW GARDENS", "FOREST HILLS", "WOODSIDE", "PENN STATION"] as Set == schedule.eastboundWeekdays.keySet()
+        assert [LT(1, 4), LT(2, 0), LT(3, 22), LT(5, 16), LT(5, 48), LT(6, 12), LT(7, 6), LT(7, 21), LT(8, 9), LT(8, 25), LT(8, 58), LT(9, 58), LT(10, 58), LT(11, 58), LT(12, 58), LT(13, 58), LT(14, 58), LT(15, 55), LT(16, 54), LT(17, 28), LT(17, 39), LT(18, 5), LT(18, 15), LT(18, 32), LT(19, 3), LT(19, 27), LT(19, 56), LT(20, 51), LT(22, 5), LT(22, 58), LT(0, 18)] as Set == schedule.eastboundWeekdays.get("JAMAICA")
+        assert [LT(1, 27), LT(2, 22), LT(3, 44), LT(6, 9), LT(7, 27), LT(7, 43), LT(8, 31), LT(9, 21), LT(10, 21), LT(11, 21), LT(12, 21), LT(13, 21), LT(14, 21), LT(15, 21), LT(16, 18), LT(17, 15), LT(17, 49), LT(18, 1), LT(18, 27), LT(18, 37), LT(18, 55), LT(19, 25), LT(19, 49), LT(20, 19), LT(21, 14), LT(22, 28), LT(23, 23), LT(0, 42)] as Set == schedule.eastboundWeekdays.get("GARDEN CITY")
+        assert [LT(1, 18), LT(2, 13), LT(3, 35), LT(5, 26), LT(6, 0), LT(6, 21), LT(7, 18), LT(7, 34), LT(8, 22), LT(8, 34), LT(9, 12), LT(10, 12), LT(11, 12), LT(12, 12), LT(13, 12), LT(14, 12), LT(15, 12), LT(16, 9), LT(17, 6), LT(17, 40), LT(17, 52), LT(18, 18), LT(18, 28), LT(18, 46), LT(19, 16), LT(19, 40), LT(20, 10), LT(21, 5), LT(22, 19), LT(23, 15), LT(0, 33)] as Set == schedule.eastboundWeekdays.get("FLORAL PARK")
+
+        assert ["HEMPSTEAD", "COUNTRY LIFE PRESS", "GARDEN CITY", "NASSAU BOULEVARD", "STEWART MANOR", "FLORAL PARK", "BELLEROSE", "QUEENS VILLAGE", "HOLLIS", "JAMAICA", "EAST NEW YORK", "NOSTRAND AVENUE", "ATLANTIC TERMINAL", "HUNTERSPOINT AVE.", "KEW GARDENS", "FOREST HILLS", "WOODSIDE", "PENN STATION"] as Set == schedule.westboundWeekends.keySet()
+        assert [LT(1, 7), LT(2, 9), LT(2, 45), LT(5, 23), LT(7, 9), LT(8, 9), LT(9, 9), LT(10, 9), LT(11, 9), LT(12, 9), LT(13, 9), LT(14, 9), LT(15, 9), LT(16, 9), LT(17, 9), LT(18, 9), LT(19, 9), LT(20, 9), LT(21, 9), LT(22, 9), LT(23, 14), LT(0, 18)] as Set == schedule.westboundWeekends.get("PENN STATION")
+        assert [LT(0, 14), LT(1, 21), LT(1, 52), LT(4, 33), LT(6, 17), LT(7, 17), LT(8, 17), LT(9, 17), LT(10, 17), LT(11, 17), LT(12, 17), LT(13, 17), LT(14, 17), LT(15, 17), LT(16, 17), LT(17, 17), LT(18, 17), LT(19, 17), LT(20, 17), LT(21, 17), LT(22, 23), LT(23, 28)] as Set == schedule.westboundWeekends.get("COUNTRY LIFE PRESS")
+
+        assert ["HEMPSTEAD", "COUNTRY LIFE PRESS", "GARDEN CITY", "NASSAU BOULEVARD", "STEWART MANOR", "FLORAL PARK", "BELLEROSE", "QUEENS VILLAGE", "HOLLIS", "JAMAICA", "EAST NEW YORK", "NOSTRAND AVENUE", "ATLANTIC TERMINAL", "HUNTERSPOINT AVE.", "KEW GARDENS", "FOREST HILLS", "WOODSIDE", "PENN STATION"] as Set == schedule.westboundWeekdays.keySet()
+        assert [LT(0, 11), LT(1, 19), LT(1, 59), LT(4, 0), LT(5, 1), LT(5, 58), LT(6, 21), LT(6, 38), LT(6, 58), LT(7, 12), LT(7, 36), LT(8, 3), LT(8, 20), LT(8, 45), LT(9, 4), LT(10, 11), LT(11, 11), LT(12, 11), LT(13, 11), LT(14, 11), LT(15, 11), LT(16, 4), LT(16, 53), LT(17, 41), LT(18, 20), LT(19, 9), LT(19, 31), LT(20, 1), LT(21, 1), LT(22, 1), LT(23, 9)] as Set == schedule.westboundWeekdays.get("HEMPSTEAD")
+        assert [LT(0, 34), LT(1, 42), LT(2, 23), LT(4, 23), LT(5, 24), LT(6, 20), LT(6, 43), LT(7, 1), LT(7, 22), LT(7, 44), LT(8, 0), LT(8, 43), LT(9, 8), LT(9, 27), LT(10, 34), LT(11, 34), LT(12, 34), LT(13, 34), LT(14, 34), LT(15, 34), LT(16, 27), LT(17, 16), LT(18, 43), LT(19, 32), LT(19, 56), LT(20, 24), LT(21, 24), LT(22, 24), LT(23, 32)] as Set == schedule.westboundWeekdays.get("HOLLIS")
     }
 
     void testFarRockaway() {
         ParsedSchedule schedule = processPDF("FarRockawayBranch2013121620140223.pdf", "Far Rockaway Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:13.000Z"))
         assert ["PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "LOCUST MANOR", "LAURELTON", "ROSEDALE", "VALLEY STREAM", "GIBSON", "HEWLETT", "WOODMERE", "CEDARHURST", "LAWRENCE", "INWOOD", "FAR ROCKAWAY"] as Set == schedule.eastboundWeekends.keySet()
+        assert [LT(0, 52), LT(1, 54), LT(2, 22), LT(3, 19), LT(3, 32), LT(4, 41), LT(4, 51), LT(6, 55), LT(7, 22), LT(7, 55), LT(8, 22), LT(8, 55), LT(9, 22), LT(9, 55), LT(10, 22), LT(10, 55), LT(11, 22), LT(23, 55), LT(12, 22), LT(12, 55), LT(13, 22), LT(13, 55), LT(14, 22), LT(14, 55), LT(15, 22), LT(15, 55), LT(16, 22), LT(16, 55), LT(17, 22), LT(17, 55), LT(18, 22), LT(18, 55), LT(19, 22), LT(19, 55), LT(20, 22), LT(20, 55), LT(21, 22), LT(21, 55), LT(22, 22), LT(22, 55), LT(23, 22), LT(0, 3), LT(0, 32)] as Set == schedule.eastboundWeekends.get("VALLEY STREAM")
+        assert [LT(1, 1), LT(2, 30), LT(3, 40), LT(5, 0), LT(7, 3), LT(8, 3), LT(9, 3), LT(10, 3), LT(11, 3), LT(12, 3), LT(13, 3), LT(14, 3), LT(15, 3), LT(16, 3), LT(17, 3), LT(18, 3), LT(19, 3), LT(20, 3), LT(21, 3), LT(22, 3), LT(23, 3), LT(0, 11)] as Set == schedule.eastboundWeekends.get("WOODMERE")
 
-        println schedule.eastboundWeekends
-        schedule.eastboundWeekends.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.eastboundWeekdays
-        println "[" + schedule.eastboundWeekdays.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.eastboundWeekdays.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.westboundWeekends
-        println "[" + schedule.westboundWeekends.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.westboundWeekends.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.westboundWeekdays
-        println "[" + schedule.westboundWeekdays.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.westboundWeekdays.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        assert false
+        assert ["PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "LOCUST MANOR", "LAURELTON", "ROSEDALE", "VALLEY STREAM", "GIBSON", "HEWLETT", "WOODMERE", "CEDARHURST", "LAWRENCE", "INWOOD", "FAR ROCKAWAY"] as Set == schedule.eastboundWeekdays.keySet()
+        assert [LT(1, 9), LT(2, 13), LT(4, 10), LT(6, 4), LT(7, 29), LT(8, 32), LT(9, 8), LT(9, 58), LT(10, 58), LT(23, 58), LT(12, 58), LT(13, 58), LT(14, 58), LT(15, 41), LT(15, 58), LT(16, 39), LT(16, 48), LT(17, 22), LT(17, 35), LT(18, 3), LT(18, 19), LT(18, 41), LT(18, 53), LT(19, 20), LT(19, 46), LT(20, 48), LT(21, 39), LT(22, 5), LT(23, 2), LT(0, 2)] as Set == schedule.eastboundWeekdays.get("INWOOD")
+        assert [LT(1, 14), LT(2, 18), LT(4, 15), LT(6, 9), LT(7, 34), LT(8, 37), LT(9, 12), LT(10, 2), LT(11, 2), LT(12, 2), LT(13, 2), LT(14, 2), LT(15, 2), LT(15, 46), LT(16, 2), LT(16, 43), LT(16, 53), LT(17, 26), LT(17, 40), LT(18, 8), LT(18, 24), LT(18, 46), LT(18, 58), LT(19, 25), LT(19, 51), LT(20, 53), LT(21, 43), LT(22, 10), LT(23, 7), LT(0, 7)] as Set == schedule.eastboundWeekdays.get("FAR ROCKAWAY")
+
+        assert ["FAR ROCKAWAY", "INWOOD", "LAWRENCE", "CEDARHURST", "WOODMERE", "HEWLETT", "GIBSON", "VALLEY STREAM", "ROSEDALE", "LAURELTON", "LOCUST MANOR", "JAMAICA", "EAST NEW YORK", "NOSTRAND AVENUE", "ATLANTIC TERMINAL", "HUNTERSPOINT AVE.", "KEW GARDENS", "FOREST HILLS", "WOODSIDE", "PENN STATION"] as Set == schedule.westboundWeekends.keySet()
+        assert [LT(0, 48), LT(1, 44), LT(5, 6), LT(5, 50), LT(6, 57), LT(7, 57), LT(8, 57), LT(9, 57), LT(10, 57), LT(11, 57), LT(12, 57), LT(13, 57), LT(14, 57), LT(15, 57), LT(16, 57), LT(17, 57), LT(18, 57), LT(19, 57), LT(20, 57), LT(21, 57), LT(22, 54), LT(23, 51)] as Set == schedule.westboundWeekends.get("LAWRENCE")
+        assert [LT(0, 56), LT(1, 52), LT(5, 13), LT(5, 57), LT(7, 4), LT(8, 4), LT(9, 4), LT(10, 4), LT(11, 4), LT(12, 4), LT(13, 4), LT(14, 4), LT(15, 4), LT(16, 4), LT(17, 4), LT(18, 4), LT(19, 4), LT(20, 4), LT(21, 4), LT(22, 4), LT(23, 1), LT(23, 58)] as Set == schedule.westboundWeekends.get("HEWLETT")
+
+        assert ["FAR ROCKAWAY", "INWOOD", "LAWRENCE", "CEDARHURST", "WOODMERE", "HEWLETT", "GIBSON", "VALLEY STREAM", "ROSEDALE", "LAURELTON", "LOCUST MANOR", "JAMAICA", "EAST NEW YORK", "NOSTRAND AVENUE", "ATLANTIC TERMINAL", "HUNTERSPOINT AVE.", "KEW GARDENS", "FOREST HILLS", "WOODSIDE", "PENN STATION"] as Set == schedule.westboundWeekdays.keySet()
+        assert [LT(1, 25), LT(2, 27), LT(5, 39), LT(6, 19), LT(6, 40), LT(7, 16), LT(7, 37), LT(8, 12), LT(8, 25), LT(8, 49), LT(9, 16), LT(9, 50), LT(10, 57), LT(11, 57), LT(23, 57), LT(12, 57), LT(13, 57), LT(14, 57), LT(15, 55), LT(16, 41), LT(17, 22), LT(18, 3), LT(18, 32), LT(19, 19), LT(20, 10), LT(20, 39), LT(21, 12), LT(21, 39), LT(22, 18), LT(22, 39), LT(23, 39), LT(0, 50)] as Set == schedule.westboundWeekdays.get("FOREST HILLS")
+        assert [LT(1, 9), LT(2, 11), LT(3, 48), LT(5, 49), LT(6, 1), LT(6, 36), LT(7, 7), LT(7, 21), LT(7, 35), LT(7, 51), LT(8, 9), LT(8, 22), LT(8, 48), LT(9, 24), LT(10, 1), LT(11, 2), LT(12, 2), LT(13, 2), LT(14, 2), LT(15, 2), LT(16, 3), LT(17, 4), LT(17, 55), LT(19, 4), LT(19, 52), LT(20, 51), LT(21, 55), LT(23, 1), LT(0, 5)] as Set == schedule.westboundWeekdays.get("LAURELTON")
     }
 
     void testBabylon() {
         ParsedSchedule schedule = processPDF("BabylonBranch2013121620140223.pdf", "Babylon Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:42:51.000Z"))
-//        assert ["PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "LOCUST MANOR", "LAURELTON", "ROSEDALE", "VALLEY STREAM", "GIBSON", "HEWLETT", "WOODMERE", "CEDARHURST", "LAWRENCE", "INWOOD", "FAR ROCKAWAY"] as Set == schedule.eastboundWeekends.keySet()
-        println schedule.eastboundWeekends
-        println "[" + schedule.eastboundWeekends.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.eastboundWeekends.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.eastboundWeekdays
-        println "[" + schedule.eastboundWeekdays.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.eastboundWeekdays.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.westboundWeekends
-        println "[" + schedule.westboundWeekends.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.westboundWeekends.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.westboundWeekdays
-        println "[" + schedule.westboundWeekdays.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
-        schedule.westboundWeekdays.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        assert false
+        assert ["PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "LYNBROOK", "ROCKVILLE CENTRE", "BALDWIN", "FREEPORT", "MERRICK", "BELLMORE", "WANTAGH", "SEAFORD", "MASSAPEQUA", "MASSAPEQUA PARK", "AMITYVILLE", "COPIAGUE", "LINDENHURST", "BABYLON"] as Set == schedule.eastboundWeekends.keySet()
+        assert [LT(0, 20), LT(0, 57), LT(1, 25), LT(2, 58), LT(6, 43), LT(7, 15), LT(7, 33), LT(8, 15), LT(8, 43), LT(9, 15), LT(9, 43), LT(10, 15), LT(10, 43), LT(11, 15), LT(23, 43), LT(12, 15), LT(12, 43), LT(13, 15), LT(13, 43), LT(14, 15), LT(14, 43), LT(2, 43), LT(15, 15), LT(15, 33), LT(16, 15), LT(16, 33), LT(17, 15), LT(17, 43), LT(18, 15), LT(18, 43), LT(19, 15), LT(19, 43), LT(20, 15), LT(20, 33), LT(21, 15), LT(21, 43), LT(22, 15), LT(22, 33), LT(22, 53), LT(23, 15), LT(23, 46)] as Set == schedule.eastboundWeekends.get("KEW GARDENS")
+        assert [LT(0, 47), LT(1, 26), LT(1, 57), LT(2, 10), LT(2, 29), LT(2, 56), LT(3, 26), LT(3, 43), LT(4, 13), LT(5, 39), LT(7, 12), LT(7, 44), LT(8, 0), LT(8, 43), LT(9, 12), LT(9, 44), LT(10, 12), LT(10, 44), LT(11, 12), LT(23, 44), LT(12, 12), LT(12, 44), LT(13, 12), LT(13, 44), LT(14, 12), LT(14, 44), LT(15, 12), LT(15, 44), LT(16, 0), LT(16, 23), LT(16, 44), LT(17, 0), LT(17, 23), LT(17, 44), LT(18, 12), LT(18, 23), LT(18, 44), LT(18, 51), LT(19, 12), LT(19, 23), LT(19, 44), LT(20, 12), LT(20, 44), LT(21, 0), LT(21, 44), LT(22, 12), LT(22, 44), LT(23, 0), LT(23, 21), LT(11, 44), LT(0, 15)] as Set == schedule.eastboundWeekends.get("FREEPORT")
+
+        assert ["PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "LYNBROOK", "ROCKVILLE CENTRE", "BALDWIN", "FREEPORT", "MERRICK", "BELLMORE", "WANTAGH", "SEAFORD", "MASSAPEQUA", "MASSAPEQUA PARK", "AMITYVILLE", "COPIAGUE", "LINDENHURST", "BABYLON"] as Set == schedule.eastboundWeekdays.keySet()
+        assert [LT(1, 17), LT(1, 56), LT(1, 46), LT(2, 52), LT(4, 20), LT(6, 8), LT(7, 51), LT(8, 8), LT(8, 44), LT(8, 47), LT(9, 20), LT(9, 26), LT(9, 50), LT(10, 21), LT(10, 24), LT(10, 57), LT(11, 21), LT(11, 24), LT(11, 57), LT(12, 21), LT(12, 10), LT(12, 24), LT(12, 57), LT(13, 21), LT(13, 57), LT(14, 21), LT(14, 24), LT(14, 40), LT(14, 57), LT(15, 4), LT(15, 21), LT(15, 33), LT(15, 45), LT(15, 51), LT(15, 40), LT(16, 12), LT(16, 15), LT(16, 24), LT(16, 39), LT(16, 53), LT(17, 5), LT(17, 28), LT(17, 39), LT(17, 52), LT(17, 44), LT(17, 55), LT(18, 10), LT(18, 13), LT(18, 19), LT(18, 36), LT(18, 40), LT(18, 56), LT(19, 20), LT(19, 1), LT(19, 12), LT(19, 22), LT(19, 35), LT(20, 1), LT(20, 20), LT(20, 32), LT(20, 55), LT(21, 23), LT(21, 26), LT(21, 54), LT(22, 25), LT(22, 32), LT(22, 56), LT(23, 25), LT(23, 32), LT(23, 56), LT(0, 25), LT(0, 34), LT(0, 56)] as Set == schedule.eastboundWeekdays.get("BABYLON")
+        assert [LT(1, 1), LT(1, 40), LT(2, 36), LT(4, 4), LT(5, 52), LT(7, 35), LT(8, 28), LT(9, 4), LT(9, 34), LT(10, 4), LT(10, 39), LT(11, 4), LT(11, 39), LT(12, 4), LT(12, 39), LT(13, 4), LT(13, 39), LT(14, 4), LT(14, 24), LT(14, 39), LT(14, 48), LT(15, 4), LT(15, 17), LT(15, 28), LT(15, 34), LT(15, 56), LT(16, 3), LT(16, 23), LT(16, 37), LT(17, 8), LT(17, 12), LT(17, 22), LT(17, 36), LT(17, 38), LT(17, 53), LT(18, 1), LT(18, 20), LT(18, 24), LT(18, 40), LT(19, 4), LT(18, 45), LT(18, 56), LT(19, 19), LT(19, 45), LT(20, 4), LT(20, 16), LT(20, 39), LT(21, 7), LT(21, 38), LT(22, 9), LT(22, 40), LT(23, 9), LT(23, 40), LT(0, 9), LT(0, 40)] as Set == schedule.eastboundWeekdays.get("MASSAPEQUA")
+        assert [LT(0, 8), LT(0, 52), LT(1, 49), LT(6, 48), LT(7, 40), LT(8, 15), LT(8, 41), LT(8, 47), LT(9, 17), LT(9, 47), LT(10, 17), LT(10, 47), LT(23, 17), LT(23, 47), LT(12, 17), LT(12, 47), LT(13, 17), LT(13, 47), LT(14, 17), LT(14, 47), LT(15, 17), LT(15, 34), LT(15, 43), LT(16, 7), LT(16, 27), LT(16, 44), LT(17, 22), LT(17, 34), LT(17, 50), LT(18, 15), LT(18, 38), LT(18, 53), LT(19, 17), LT(19, 34), LT(19, 47), LT(20, 23), LT(20, 42), LT(21, 12), LT(21, 24), LT(22, 23), LT(22, 47), LT(23, 21), LT(11, 21)] as Set == schedule.eastboundWeekdays.get("EAST NEW YORK")
+
+        assert ["BABYLON", "LINDENHURST", "COPIAGUE", "AMITYVILLE", "MASSAPEQUA PARK", "MASSAPEQUA", "SEAFORD", "WANTAGH", "BELLMORE", "MERRICK", "FREEPORT", "BALDWIN", "ROCKVILLE CENTRE", "LYNBROOK", "JAMAICA", "EAST NEW YORK", "NOSTRAND AVENUE", "ATLANTIC TERMINAL", "HUNTERSPOINT AVE.", "KEW GARDENS", "FOREST HILLS", "WOODSIDE", "PENN STATION"] as Set == schedule.westboundWeekends.keySet()
+        assert [LT(1, 6), LT(1, 38), LT(4, 23), LT(4, 51), LT(5, 22), LT(5, 55), LT(6, 3), LT(6, 31), LT(6, 41), LT(7, 3), LT(7, 11), LT(7, 32), LT(7, 41), LT(7, 52), LT(8, 41), LT(9, 11), LT(9, 30), LT(9, 41), LT(10, 12), LT(10, 41), LT(11, 41), LT(12, 12), LT(12, 41), LT(13, 41), LT(14, 12), LT(14, 41), LT(15, 41), LT(16, 41), LT(17, 11), LT(17, 41), LT(18, 12), LT(18, 41), LT(19, 11), LT(19, 41), LT(20, 12), LT(20, 41), LT(21, 11), LT(21, 41), LT(22, 12), LT(22, 41), LT(23, 11), LT(0, 5)] as Set == schedule.westboundWeekends.get("MASSAPEQUA PARK")
+        assert [LT(1, 32), LT(4, 48), LT(7, 6), LT(8, 6), LT(9, 6), LT(10, 6), LT(11, 6), LT(12, 6), LT(13, 6), LT(14, 6), LT(15, 6), LT(16, 6), LT(17, 6), LT(18, 6), LT(19, 6), LT(20, 6), LT(21, 6), LT(22, 6), LT(23, 6)] as Set == schedule.westboundWeekends.get("LYNBROOK")
+        assert [LT(1, 18), LT(1, 48), LT(4, 33), LT(5, 1), LT(5, 32), LT(6, 5), LT(6, 13), LT(6, 41), LT(6, 51), LT(7, 13), LT(7, 21), LT(7, 42), LT(7, 51), LT(8, 1), LT(8, 26), LT(8, 51), LT(9, 21), LT(9, 40), LT(9, 51), LT(10, 22), LT(10, 51), LT(11, 26), LT(11, 51), LT(12, 22), LT(12, 51), LT(13, 26), LT(13, 51), LT(14, 22), LT(14, 51), LT(15, 26), LT(15, 51), LT(16, 26), LT(16, 51), LT(17, 21), LT(17, 51), LT(18, 22), LT(18, 51), LT(19, 21), LT(19, 51), LT(20, 22), LT(20, 51), LT(21, 21), LT(21, 51), LT(22, 22), LT(22, 51), LT(23, 21), LT(0, 16)] as Set == schedule.westboundWeekends.get("BELLMORE")
+
+        assert ["BABYLON", "LINDENHURST", "COPIAGUE", "AMITYVILLE", "MASSAPEQUA PARK", "MASSAPEQUA", "SEAFORD", "WANTAGH", "BELLMORE", "MERRICK", "FREEPORT", "BALDWIN", "ROCKVILLE CENTRE", "LYNBROOK", "JAMAICA", "EAST NEW YORK", "NOSTRAND AVENUE", "ATLANTIC TERMINAL", "HUNTERSPOINT AVE.", "KEW GARDENS", "FOREST HILLS", "WOODSIDE", "PENN STATION"] as Set == schedule.westboundWeekdays.keySet()
+        assert [LT(1, 15), LT(1, 54), LT(3, 55), LT(4, 57), LT(5, 30), LT(5, 35), LT(6, 4), LT(6, 19), LT(6, 31), LT(6, 34), LT(6, 49), LT(7, 4), LT(7, 17), LT(7, 30), LT(7, 48), LT(7, 56), LT(8, 7), LT(8, 21), LT(8, 34), LT(8, 55), LT(9, 24), LT(9, 53), LT(10, 29), LT(10, 54), LT(11, 29), LT(11, 54), LT(12, 29), LT(12, 54), LT(13, 29), LT(13, 54), LT(14, 29), LT(14, 54), LT(15, 24), LT(16, 0), LT(16, 25), LT(16, 57), LT(17, 57), LT(18, 26), LT(18, 38), LT(18, 57), LT(19, 27), LT(19, 57), LT(20, 27), LT(20, 31), LT(20, 59), LT(21, 23), LT(21, 30), LT(21, 58), LT(22, 31), LT(22, 59), LT(23, 31), LT(0, 10)] as Set == schedule.westboundWeekdays.get("SEAFORD")
+        assert [LT(1, 7), LT(1, 46), LT(3, 27), LT(3, 47), LT(4, 49), LT(5, 22), LT(5, 27), LT(5, 51), LT(6, 6), LT(6, 22), LT(6, 25), LT(6, 38), LT(6, 54), LT(7, 2), LT(7, 21), LT(7, 40), LT(7, 48), LT(7, 57), LT(8, 13), LT(8, 27), LT(8, 47), LT(9, 17), LT(9, 46), LT(10, 22), LT(10, 47), LT(11, 22), LT(11, 47), LT(12, 22), LT(12, 47), LT(13, 22), LT(13, 47), LT(14, 22), LT(14, 47), LT(15, 16), LT(15, 52), LT(16, 13), LT(16, 18), LT(16, 43), LT(16, 49), LT(17, 49), LT(18, 17), LT(18, 30), LT(18, 49), LT(19, 19), LT(19, 49), LT(20, 19), LT(20, 23), LT(20, 51), LT(21, 15), LT(21, 22), LT(21, 51), LT(22, 23), LT(22, 51), LT(23, 23), LT(0, 2)] as Set == schedule.westboundWeekdays.get("AMITYVILLE")
+        assert [LT(1, 23), LT(2, 2), LT(4, 2), LT(5, 5), LT(5, 24), LT(5, 43), LT(6, 3), LT(6, 18), LT(6, 34), LT(6, 42), LT(6, 52), LT(7, 2), LT(7, 16), LT(7, 32), LT(7, 43), LT(7, 53), LT(7, 56), LT(8, 16), LT(8, 29), LT(8, 42), LT(9, 3), LT(9, 33), LT(10, 2), LT(10, 38), LT(11, 4), LT(11, 38), LT(12, 4), LT(12, 38), LT(13, 4), LT(13, 38), LT(14, 4), LT(14, 38), LT(15, 4), LT(15, 33), LT(16, 8), LT(16, 33), LT(17, 5), LT(18, 5), LT(18, 35), LT(18, 46), LT(19, 5), LT(19, 35), LT(20, 5), LT(20, 35), LT(20, 39), LT(21, 7), LT(21, 31), LT(21, 38), LT(22, 7), LT(22, 39), LT(23, 7), LT(23, 39), LT(0, 18)] as Set == schedule.westboundWeekdays.get("MERRICK")
     }
 
     void testMontauk() {
@@ -226,32 +189,26 @@ class PDFProcessorTest extends GroovyTestCase {
 
     void testPortJefferson() {
         ParsedSchedule schedule = processPDF("PortJeffersonBranch2013121620140223.pdf", "Port Jefferson Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:14.000Z"))
-//        assert ["PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "LOCUST MANOR", "LAURELTON", "ROSEDALE", "VALLEY STREAM", "GIBSON", "HEWLETT", "WOODMERE", "CEDARHURST", "LAWRENCE", "INWOOD", "FAR ROCKAWAY"] as Set == schedule.eastboundWeekends.keySet()
-        println schedule.eastboundWeekends
-        println schedule.eastboundWeekends.keySet()
-        schedule.eastboundWeekends.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.eastboundWeekdays
-        println schedule.eastboundWeekdays.keySet()
-        schedule.eastboundWeekdays.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.westboundWeekends
-        println schedule.westboundWeekends.keySet()
-        schedule.westboundWeekends.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        println schedule.westboundWeekdays
-        println schedule.westboundWeekdays.keySet()
-        schedule.westboundWeekdays.each {
-            println it.key;
-            println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
-        }
-        assert false
+        assert ["PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "NEW HYDE PARK", "MERILLON AVENUE", "MINEOLA", "CARLE PLACE", "WESTBURY", "HICKSVILLE", "SYOSSET", "COLD SPRING HARBOR", "HUNTINGTON", "GREENLAWN", "NORTHPORT", "KINGS PARK", "SMITHTOWN", "ST. JAMES", "STONY BROOK", "PORT JEFFERSON"] as Set == schedule.eastboundWeekends.keySet()
+        assert [LT(0, 20), LT(0, 57), LT(1, 25), LT(2, 58), LT(4, 24), LT(6, 43), LT(7, 15), LT(7, 33), LT(8, 15), LT(8, 43), LT(9, 15), LT(9, 43), LT(10, 15), LT(22, 15), LT(10, 43), LT(11, 15), LT(23, 15), LT(23, 43), LT(12, 15), LT(12, 43), LT(13, 15), LT(13, 43), LT(14, 15), LT(14, 43), LT(15, 15), LT(15, 33), LT(16, 15), LT(16, 33), LT(17, 15), LT(17, 43), LT(18, 15), LT(18, 43), LT(19, 15), LT(19, 43), LT(20, 15), LT(20, 33), LT(21, 15), LT(21, 43), LT(22, 33), LT(22, 53), LT(23, 46)] as Set == schedule.eastboundWeekends.get("KEW GARDENS")
+        assert [LT(0, 59), LT(1, 29), LT(1, 33), LT(1, 59), LT(2, 5), LT(2, 32), LT(2, 47), LT(3, 2), LT(3, 33), LT(3, 38), LT(3, 56), LT(4, 38), LT(5, 3), LT(5, 28), LT(6, 12), LT(6, 37), LT(6, 55), LT(7, 10), LT(7, 38), LT(7, 55), LT(8, 10), LT(8, 37), LT(8, 55), LT(9, 10), LT(9, 37), LT(9, 55), LT(10, 10), LT(10, 37), LT(10, 55), LT(23, 10), LT(11, 37), LT(11, 55), LT(12, 10), LT(12, 37), LT(12, 55), LT(13, 10), LT(13, 37), LT(13, 55), LT(14, 10), LT(14, 37), LT(14, 55), LT(15, 10), LT(15, 37), LT(15, 55), LT(16, 10), LT(16, 18), LT(16, 37), LT(16, 40), LT(16, 51), LT(16, 55), LT(17, 10), LT(17, 18), LT(17, 37), LT(17, 54), LT(17, 55), LT(18, 10), LT(18, 18), LT(18, 37), LT(18, 53), LT(18, 55), LT(19, 10), LT(19, 18), LT(19, 37), LT(19, 55), LT(20, 10), LT(20, 37), LT(20, 55), LT(21, 10), LT(21, 37), LT(21, 55), LT(22, 10), LT(22, 37), LT(22, 55), LT(23, 38), LT(0, 2), LT(0, 30)] as Set == schedule.eastboundWeekends.get("HICKSVILLE")
+        assert [LT(2, 50), LT(4, 15), LT(7, 3), LT(8, 36), LT(10, 3), LT(23, 36), LT(13, 3), LT(14, 36), LT(16, 3), LT(17, 11), LT(17, 36), LT(19, 3), LT(20, 36), LT(22, 3), LT(0, 54)] as Set == schedule.eastboundWeekends.get("HUNTINGTON")
+        assert [LT(3, 36), LT(5, 3), LT(7, 51), LT(9, 25), LT(10, 51), LT(12, 25), LT(13, 51), LT(15, 25), LT(16, 51), LT(18, 1), LT(18, 25), LT(19, 51), LT(21, 25), LT(22, 51), LT(0, 25), LT(1, 41)] as Set == schedule.eastboundWeekends.get("PORT JEFFERSON")
+
+        assert ["PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "NEW HYDE PARK", "MERILLON AVENUE", "MINEOLA", "CARLE PLACE", "WESTBURY", "HICKSVILLE", "SYOSSET", "COLD SPRING HARBOR", "HUNTINGTON", "GREENLAWN", "NORTHPORT", "KINGS PARK", "SMITHTOWN", "ST. JAMES", "STONY BROOK", "PORT JEFFERSON"] as Set == schedule.eastboundWeekdays.keySet()
+        assert [LT(1, 44), LT(3, 46), LT(5, 36), LT(6, 32), LT(8, 18), LT(9, 8), LT(10, 15), LT(23, 15), LT(12, 15), LT(13, 15), LT(14, 15), LT(14, 44), LT(15, 10), LT(15, 33), LT(16, 6), LT(16, 40), LT(17, 12), LT(17, 35), LT(18, 19), LT(18, 50), LT(19, 13), LT(19, 37), LT(20, 36), LT(21, 3), LT(21, 21), LT(22, 23), LT(23, 2), LT(11, 44), LT(0, 23)] as Set == schedule.eastboundWeekdays.get("CARLE PLACE")
+        assert [LT(1, 36), LT(3, 38), LT(5, 28), LT(6, 25), LT(8, 17), LT(8, 37), LT(9, 0), LT(10, 7), LT(23, 7), LT(12, 7), LT(13, 7), LT(14, 7), LT(15, 2), LT(15, 25), LT(15, 58), LT(16, 32), LT(17, 4), LT(17, 27), LT(18, 8), LT(18, 42), LT(19, 6), LT(19, 29), LT(20, 28), LT(20, 55), LT(21, 13), LT(22, 15), LT(22, 54), LT(11, 36), LT(0, 16)] as Set == schedule.eastboundWeekdays.get("NEW HYDE PARK")
+        assert [LT(3, 12), LT(7, 34), LT(9, 31), LT(10, 48), LT(12, 14), LT(13, 48), LT(15, 15), LT(16, 31), LT(17, 4), LT(17, 43), LT(18, 13), LT(18, 37), LT(19, 7), LT(19, 37), LT(19, 52), LT(20, 57), LT(22, 20), LT(23, 17), LT(0, 12), LT(1, 20)] as Set == schedule.eastboundWeekdays.get("SMITHTOWN")
+
+        assert ["PORT JEFFERSON", "STONY BROOK", "ST. JAMES", "SMITHTOWN", "KINGS PARK", "NORTHPORT", "GREENLAWN", "HUNTINGTON", "COLD SPRING HARBOR", "SYOSSET", "HICKSVILLE", "WESTBURY", "CARLE PLACE", "MINEOLA", "MERILLON AVENUE", "NEW HYDE PARK", "JAMAICA", "EAST NEW YORK", "NOSTRAND AVENUE", "ATLANTIC TERMINAL", "HUNTERSPOINT AVE.", "KEW GARDENS", "FOREST HILLS", "WOODSIDE", "PENN STATION"] as Set == schedule.westboundWeekends.keySet()
+        assert [LT(0, 16), LT(0, 35), LT(2, 4), LT(3, 47), LT(5, 29), LT(5, 42), LT(6, 3), LT(6, 36), LT(7, 3), LT(7, 30), LT(7, 36), LT(8, 3), LT(8, 36), LT(9, 3), LT(9, 18), LT(9, 36), LT(10, 3), LT(10, 36), LT(11, 3), LT(11, 36), LT(12, 3), LT(12, 36), LT(13, 3), LT(13, 36), LT(14, 3), LT(14, 36), LT(15, 3), LT(15, 36), LT(16, 3), LT(16, 36), LT(17, 3), LT(17, 36), LT(18, 3), LT(18, 36), LT(19, 3), LT(19, 36), LT(20, 3), LT(20, 36), LT(21, 3), LT(21, 36), LT(22, 36), LT(23, 3), LT(23, 33)] as Set == schedule.westboundWeekends.get("HUNTINGTON")
+        assert [LT(5, 11), LT(6, 11), LT(7, 37), LT(8, 54), LT(9, 11), LT(10, 37), LT(12, 11), LT(13, 37), LT(15, 11), LT(16, 37), LT(18, 11), LT(19, 37), LT(21, 11), LT(22, 37), LT(0, 11)] as Set == schedule.westboundWeekends.get("KINGS PARK")
+        assert [LT(0, 44), LT(1, 3), LT(1, 27), LT(2, 33), LT(2, 55), LT(4, 14), LT(5, 59), LT(6, 11), LT(6, 31), LT(7, 0), LT(7, 3), LT(7, 31), LT(7, 58), LT(8, 4), LT(8, 31), LT(9, 0), LT(9, 3), LT(9, 31), LT(10, 3), LT(10, 31), LT(10, 51), LT(11, 0), LT(11, 3), LT(11, 31), LT(11, 51), LT(12, 3), LT(12, 31), LT(12, 51), LT(13, 0), LT(13, 3), LT(13, 31), LT(14, 3), LT(14, 31), LT(15, 0), LT(15, 3), LT(15, 31), LT(16, 3), LT(16, 31), LT(17, 0), LT(17, 3), LT(17, 31), LT(18, 0), LT(18, 3), LT(18, 31), LT(19, 0), LT(19, 3), LT(19, 31), LT(20, 3), LT(20, 31), LT(21, 0), LT(21, 3), LT(21, 31), LT(22, 3), LT(23, 0), LT(23, 3), LT(23, 31), LT(23, 59), LT(0, 6)] as Set == schedule.westboundWeekends.get("MINEOLA")
+
+        assert ["PORT JEFFERSON", "STONY BROOK", "ST. JAMES", "SMITHTOWN", "KINGS PARK", "NORTHPORT", "GREENLAWN", "HUNTINGTON", "COLD SPRING HARBOR", "SYOSSET", "HICKSVILLE", "WESTBURY", "CARLE PLACE", "MINEOLA", "MERILLON AVENUE", "NEW HYDE PARK", "JAMAICA", "EAST NEW YORK", "NOSTRAND AVENUE", "ATLANTIC TERMINAL", "HUNTERSPOINT AVE.", "KEW GARDENS", "FOREST HILLS", "WOODSIDE", "PENN STATION"] as Set == schedule.westboundWeekdays.keySet()
+        assert [LT(4, 18), LT(4, 55), LT(5, 44), LT(5, 59), LT(6, 18), LT(6, 45), LT(6, 57), LT(7, 35), LT(8, 34), LT(9, 10), LT(10, 10), LT(11, 36), LT(13, 10), LT(14, 37), LT(16, 6), LT(19, 10), LT(20, 34), LT(21, 41), LT(23, 22)] as Set == schedule.westboundWeekdays.get("PORT JEFFERSON")
+        assert [LT(4, 39), LT(5, 16), LT(6, 5), LT(6, 20), LT(6, 39), LT(7, 6), LT(7, 18), LT(7, 58), LT(8, 56), LT(9, 31), LT(10, 30), LT(11, 56), LT(13, 31), LT(14, 58), LT(16, 31), LT(19, 7), LT(19, 37), LT(20, 55), LT(22, 2), LT(23, 43)] as Set == schedule.westboundWeekdays.get("SMITHTOWN")
+        assert [LT(1, 9), LT(1, 30), LT(1, 58), LT(2, 32), LT(2, 54), LT(4, 40), LT(5, 45), LT(6, 8), LT(6, 24), LT(6, 33), LT(6, 48), LT(7, 6), LT(7, 15), LT(7, 27), LT(7, 37), LT(8, 1), LT(8, 17), LT(8, 30), LT(8, 50), LT(9, 5), LT(9, 25), LT(9, 45), LT(9, 55), LT(10, 37), LT(10, 52), LT(11, 12), LT(11, 38), LT(11, 52), LT(12, 12), LT(12, 38), LT(12, 52), LT(13, 12), LT(13, 38), LT(14, 12), LT(14, 38), LT(15, 12), LT(15, 38), LT(16, 12), LT(16, 23), LT(16, 48), LT(17, 3), LT(17, 27), LT(17, 58), LT(18, 10), LT(19, 12), LT(19, 24), LT(19, 46), LT(19, 59), LT(20, 22), LT(20, 45), LT(20, 59), LT(21, 31), LT(21, 54), LT(22, 25), LT(22, 34), LT(22, 58), LT(23, 22), LT(11, 51), LT(0, 25)] as Set == schedule.westboundWeekdays.get("WOODSIDE")
     }
 
     void testOysterBay() {
@@ -289,25 +246,25 @@ class PDFProcessorTest extends GroovyTestCase {
 
     private void printSchedule(final ParsedSchedule schedule) {
         println schedule.eastboundWeekends
-        println schedule.eastboundWeekends.keySet()
+        println "[" + schedule.eastboundWeekends.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
         schedule.eastboundWeekends.each {
             println it.key;
             println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
         }
         println schedule.eastboundWeekdays
-        println schedule.eastboundWeekdays.keySet()
+        println "[" + schedule.eastboundWeekdays.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
         schedule.eastboundWeekdays.each {
             println it.key;
             println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
         }
         println schedule.westboundWeekends
-        println schedule.westboundWeekends.keySet()
+        println "[" + schedule.westboundWeekends.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
         schedule.westboundWeekends.each {
             println it.key;
             println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"
         }
         println schedule.westboundWeekdays
-        println schedule.westboundWeekdays.keySet()
+        println "[" + schedule.westboundWeekdays.keySet().collect { "\"" + it + "\"" }.join(",") + "] as Set"
         schedule.westboundWeekdays.each {
             println it.key;
             println "[" + it.value.collect { "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" }.join(",") + "] as Set"

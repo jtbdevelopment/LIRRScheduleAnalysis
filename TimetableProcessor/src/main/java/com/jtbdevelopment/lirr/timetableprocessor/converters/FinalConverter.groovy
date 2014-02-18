@@ -153,7 +153,9 @@ class FinalConverter {
 
         List<List<String>> tokenizedRows = stationRows.collect() {
             it.tokenize().findAll {
-                !it.equals("A") && !it.equals("B") && !it.equals("C") && !it.equals("E") && !it.equals("H") && !it.equals("BE") && !it.equals("BT") && !it.equals("AT") && !it.equals("J") && !it.equals("T") && !it.equals("(NOTE)") && !it.equals("(LEAVE)")
+                !it.equals("A") && !it.equals("B") && !it.equals("C") && !it.equals("E") &&
+                        !it.equals("H") && !it.equals("BE") && !it.equals("AE") && !it.equals("BT") && !it.equals("AT") &&
+                        !it.equals("J") && !it.equals("T") && !it.equals("(NOTE)") && !it.equals("(LEAVE)")
             }.collect {
                 if (it.contains(":") || it.startsWith("...")) {
                     return it
