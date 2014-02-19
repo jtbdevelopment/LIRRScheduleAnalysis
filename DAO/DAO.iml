@@ -7,15 +7,10 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="org.apache.tika:tika-parsers:1.4" level="project" />
-    <orderEntry type="library" exported="" name="groovy-2.1.9" level="application" />
-    <orderEntry type="library" exported="" name="joda-time:joda-time:2.3" level="project" />
-    <orderEntry type="module" module-name="DataAnalysis" exported="" />
   </component>
 </module>
 

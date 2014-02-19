@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DataObjects/DataObjects.iml" filepath="$PROJECT_DIR$/DataObjects/DataObjects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DAO/DAO.iml" filepath="$PROJECT_DIR$/DAO/DAO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataAnalysis/DataAnalysis.iml" filepath="$PROJECT_DIR$/DataAnalysis/DataAnalysis.iml" />
       <module fileurl="file://$PROJECT_DIR$/LIRR.iml" filepath="$PROJECT_DIR$/LIRR.iml" />
       <module fileurl="file://$PROJECT_DIR$/TimetableProcessor/TimetableProcessor.iml" filepath="$PROJECT_DIR$/TimetableProcessor/TimetableProcessor.iml" />
     </modules>

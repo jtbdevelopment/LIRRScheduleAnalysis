@@ -6,7 +6,6 @@ package com.jtbdevelopment.lirr.dataobjects
  */
 class Station {
     String name
-    String alternates =[]
     Zone zone
     boolean ignoreForAnalysis = false  // Primarily for penn, etc
 
@@ -25,9 +24,6 @@ class Station {
 
             new Station(name: "Jamaica", zone: Zone.Zone3, ignoreForAnalysis: true),
 
-            // TODO - review ignore for this one
-            // TODO - review name for this one
-            new Station(name: "Willets Point", zone: Zone.Zone1, ignoreForAnalysis: false),
             new Station(name: "Flushing Main Street", zone: Zone.Zone3),
             new Station(name: "Murray Hill", zone: Zone.Zone3),
             new Station(name: "Broadway", zone: Zone.Zone3),
@@ -144,8 +140,10 @@ class Station {
             new Station(name: "Ronkonkoma", zone: Zone.Zone10),
     ]
 
-    static final Map<String, Station> stationNameMap = [:].putAll(STATIONS.collect({ new MapEntry(it.name.toUpperCase(), it) }));
-    static final Map<Zone, List<Station>> zoneStationMap = [:].putAll(
+    static final Map<String, Station> STATION_NAME_MAP = [:].putAll(STATIONS.collect({
+        new MapEntry(it.name.toUpperCase(), it)
+    }));
+    static final Map<Zone, List<Station>> ZONE_STATION_MAP = [:].putAll(
             Zone.values().collect({
                 zone ->
                     new MapEntry(

@@ -38,7 +38,7 @@ class FinalConverter {
         return parsedSchedule;
     }
 
-    Map<String, Set<LocalTime>> parseTimes(final List<String> times) {
+    Map<String, List<LocalTime>> parseTimes(final List<String> times) {
         if (times.size() < 3) {
             throw new RuntimeException("Unexpected size")
         }
@@ -46,7 +46,7 @@ class FinalConverter {
         return convertToTimes(stringMatrix)
     }
 
-    private static Map<String, Set<LocalTime>> convertToTimes(final List<List<String>> matrix) {
+    private static Map<String, List<LocalTime>> convertToTimes(final List<List<String>> matrix) {
         List<List<LocalTime>> matrixOfTimes = matrix.findAll { !it.get(0).contains("AM/PM") }.collect {
             List<String> row ->
                 row.subList(1, row.size()).collect {
@@ -83,11 +83,11 @@ class FinalConverter {
                 }
         }
 
-        Map<String, Set<LocalTime>> result = [:]
+        Map<String, List<LocalTime>> result = [:]
         (3..matrix.size()).each {
             int row ->
                 String station = matrix.get(row - 1).get(0)
-                result.put(station, matrixOfTimes.get(row - 3).findAll { it != null } as Set)
+                result.put(station, matrixOfTimes.get(row - 3))
         }
         result
     }

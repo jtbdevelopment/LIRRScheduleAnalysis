@@ -22,6 +22,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="DAO" />
+        <module name="DataAnalysis" />
         <module name="DataObjects" />
         <module name="TimetableProcessor" />
       </profile>
