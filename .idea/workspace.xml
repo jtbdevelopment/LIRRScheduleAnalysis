@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bad0dd3b-a411-4c76-a718-03553e311c60" name="Default" comment="capture train # as well">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DataAnalysis/target/classes/com/jtbdevelopment/lirr/dataobjects/Station$__clinit__closure1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DataAnalysis/target/classes/com/jtbdevelopment/lirr/dataobjects/Station$__clinit__closure2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DataAnalysis/target/classes/com/jtbdevelopment/lirr/dataobjects/Station$__clinit__closure2_closure3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DataAnalysis/target/classes/com/jtbdevelopment/lirr/dataobjects/StationSchedule.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DataAnalysis/target/classes/com/jtbdevelopment/lirr/dataobjects/Zone.class" afterPath="" />
+    <list default="true" id="bad0dd3b-a411-4c76-a718-03553e311c60" name="Default" comment="clean up weird git issue">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DataObjects/target/classes/com/jtbdevelopment/lirr/dataobjects/Station$__clinit__closure1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DataObjects/target/classes/com/jtbdevelopment/lirr/dataobjects/Station$__clinit__closure2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DataObjects/target/classes/com/jtbdevelopment/lirr/dataobjects/Station$__clinit__closure2_closure3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DataObjects/target/classes/com/jtbdevelopment/lirr/dataobjects/StationSchedule.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DataObjects/target/classes/com/jtbdevelopment/lirr/dataobjects/Zone.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LIRR.iws" />
@@ -122,17 +122,6 @@
         <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/FinalConverter.groovy">
           <provider selected="true" editor-type-id="text-editor">
             <state line="51" column="0" selection-start="2061" selection-end="2061" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2985">
-              <folding>
-                <element signature="e#63#113#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StationSchedule.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/StationSchedule.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="45" selection-end="45" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="330">
               <folding />
             </state>
           </provider>
@@ -150,7 +139,7 @@
       <file leaf-file-name="ClassWriter.class" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/lib/asm-debug-all-4.1.jar!/org/objectweb/asm/ClassWriter.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="11" selection-start="3123" selection-end="3123" vertical-scroll-proportion="-7.28" vertical-offset="1108" max-vertical-offset="2655">
+            <state line="87" column="11" selection-start="3123" selection-end="3123" vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="2670">
               <folding />
             </state>
           </provider>
@@ -159,7 +148,7 @@
       <file leaf-file-name="ClassVisitor.class" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/lib/asm-debug-all-4.1.jar!/org/objectweb/asm/ClassVisitor.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="11" selection-start="274" selection-end="274" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="540">
+            <state line="10" column="11" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="555">
               <folding />
             </state>
           </provider>
@@ -179,7 +168,7 @@
       <file leaf-file-name="PDFProcessor.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessor.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
               <folding />
             </state>
           </provider>
@@ -189,9 +178,7 @@
         <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
             <state line="10" column="6" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="795">
-              <folding>
-                <element signature="e#52#112#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -199,19 +186,26 @@
       <file leaf-file-name="RoughParsedSchedule.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/data/RoughParsedSchedule.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="17" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+            <state line="10" column="17" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="360">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PDFProcessorTest.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PDFProcessorTest.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessorTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="269" column="114" selection-start="69270" selection-end="69270" vertical-scroll-proportion="1.2472527" vertical-offset="3354" max-vertical-offset="4200">
-              <folding>
-                <element signature="e#52#121#0" expanded="true" />
-              </folding>
+            <state line="269" column="114" selection-start="69270" selection-end="69270" vertical-scroll-proportion="0.0" vertical-offset="3354" max-vertical-offset="4200">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="22995">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -254,6 +248,7 @@
         <option value="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/RoughConverter.groovy" />
         <option value="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/FinalConverter.groovy" />
         <option value="$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessorTest.groovy" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -345,7 +340,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -427,8 +421,161 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jtbdevelopment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lirr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dataobjects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jtbdevelopment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lirr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -810,7 +957,8 @@
       <workItem from="1392488959004" duration="424000" />
       <workItem from="1392489385183" duration="1202000" />
       <workItem from="1392490620355" duration="65304000" />
-      <workItem from="1392685828550" duration="17832000" />
+      <workItem from="1392685828550" duration="18123000" />
+      <workItem from="1392783893007" duration="16000" />
     </task>
     <task id="LOCAL-00001" summary="updating tests">
       <created>1392676346636</created>
@@ -832,18 +980,22 @@
       <created>1392783146986</created>
       <updated>1392783146986</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="clean up weird git issue">
+      <created>1392783366251</created>
+      <updated>1392783366251</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84762000" />
+    <option name="totallyTimeSpent" value="85069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="22" width="1614" height="1028" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967034" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32894737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -855,7 +1007,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951653" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -864,6 +1015,7 @@
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26717559" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -881,7 +1033,8 @@
     <MESSAGE value="updating tests" />
     <MESSAGE value="reparsing to include empty times in order to analze" />
     <MESSAGE value="capture train # as well" />
-    <option name="LAST_COMMIT_MESSAGE" value="capture train # as well" />
+    <MESSAGE value="clean up weird git issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean up weird git issue" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -897,11 +1050,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.ideaLibSources/tika-core-1.4-sources.jar!/org/apache/tika/parser/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="36" selection-start="2587" selection-end="2587" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="780" />
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ideaLibSources/tika-core-1.4-sources.jar!/org/apache/tika/parser/ParseContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="13" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1905" />
@@ -924,9 +1072,7 @@
     </entry>
     <entry file="jar://$USER_HOME$/.ideaLibSources/groovy-2.1.9-sources.jar!/org/codehaus/groovy/runtime/StringGroovyMethods.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3585" column="51" selection-start="131417" selection-end="131417" vertical-scroll-proportion="0.0" vertical-offset="52933" max-vertical-offset="57300">
-          <folding />
-        </state>
+        <state line="3585" column="51" selection-start="131417" selection-end="131417" vertical-scroll-proportion="0.0" vertical-offset="52933" max-vertical-offset="57300" />
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/src.zip!/java/util/StringTokenizer.java">
@@ -936,9 +1082,7 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2270" column="0" selection-start="90135" selection-end="90135" vertical-scroll-proportion="0.0" vertical-offset="33373" max-vertical-offset="46140">
-          <folding />
-        </state>
+        <state line="2270" column="0" selection-start="90135" selection-end="90135" vertical-scroll-proportion="0.0" vertical-offset="33373" max-vertical-offset="46140" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.ideaLibSources/joda-time-2.3-sources.jar!/org/joda/time/LocalDate.java">
@@ -958,16 +1102,12 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="436" column="6" selection-start="19348" selection-end="19348" vertical-scroll-proportion="0.026833631" vertical-offset="6180" max-vertical-offset="8745">
-          <folding />
-        </state>
+        <state line="436" column="6" selection-start="19348" selection-end="19348" vertical-scroll-proportion="0.026833631" vertical-offset="6180" max-vertical-offset="8745" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.ideaLibSources/joda-time-2.3-sources.jar!/org/joda/time/LocalTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="722" column="25" selection-start="27854" selection-end="27854" vertical-scroll-proportion="0.0" vertical-offset="9825" max-vertical-offset="23820">
-          <folding />
-        </state>
+        <state line="722" column="25" selection-start="27854" selection-end="27854" vertical-scroll-proportion="0.0" vertical-offset="9825" max-vertical-offset="23820" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.ideaLibSources/joda-time-2.3-sources.jar!/org/joda/time/base/AbstractPartial.java">
@@ -987,35 +1127,12 @@
     </entry>
     <entry file="jar://$USER_HOME$/.ideaLibSources/groovy-2.1.9-sources.jar!/org/codehaus/groovy/runtime/DefaultGroovyMethods.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11720" column="25" selection-start="436201" selection-end="436201" vertical-scroll-proportion="0.0" vertical-offset="174613" max-vertical-offset="211845">
-          <folding />
-        </state>
+        <state line="11720" column="25" selection-start="436201" selection-end="436201" vertical-scroll-proportion="0.0" vertical-offset="174613" max-vertical-offset="211845" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.ideaLibSources/tika-parsers-1.4-sources.jar!/org/apache/tika/parser/pdf/PDFParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="0" selection-start="3686" selection-end="3686" vertical-scroll-proportion="0.0" vertical-offset="309" max-vertical-offset="4395">
-          <folding>
-            <element signature="e#0#14576#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#12793#12794#0" expanded="false" />
-            <element signature="e#12828#12829#0" expanded="false" />
-            <element signature="e#12908#12909#0" expanded="false" />
-            <element signature="e#12946#12947#0" expanded="false" />
-            <element signature="e#13093#13094#0" expanded="false" />
-            <element signature="e#13134#13135#0" expanded="false" />
-            <element signature="e#13254#13255#0" expanded="false" />
-            <element signature="e#13298#13299#0" expanded="false" />
-            <element signature="e#13790#13791#0" expanded="false" />
-            <element signature="e#13842#13843#0" expanded="false" />
-            <element signature="e#13956#13957#0" expanded="false" />
-            <element signature="e#14011#14012#0" expanded="false" />
-            <element signature="e#14422#14423#0" expanded="false" />
-            <element signature="e#14456#14457#0" expanded="false" />
-            <element signature="e#14534#14535#0" expanded="false" />
-            <element signature="e#14571#14572#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="87" column="0" selection-start="3686" selection-end="3686" vertical-scroll-proportion="0.0" vertical-offset="309" max-vertical-offset="4395" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/asm-debug-all-4.1.jar!/org/objectweb/asm/Frame.class">
@@ -1035,58 +1152,42 @@
     </entry>
     <entry file="jar://$USER_HOME$/.ideaLibSources/joda-time-2.3-sources.jar!/org/joda/time/DateTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="0" selection-start="4904" selection-end="4904" vertical-scroll-proportion="0.0" vertical-offset="1584" max-vertical-offset="34515">
-          <folding />
-        </state>
+        <state line="143" column="0" selection-start="4904" selection-end="4904" vertical-scroll-proportion="0.0" vertical-offset="1584" max-vertical-offset="34515" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.ideaLibSources/joda-time-2.3-sources.jar!/org/joda/time/format/DateTimeFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="855" column="0" selection-start="33739" selection-end="33739" vertical-scroll-proportion="0.0" vertical-offset="11949" max-vertical-offset="13680">
-          <folding />
-        </state>
+        <state line="855" column="0" selection-start="33739" selection-end="33739" vertical-scroll-proportion="0.0" vertical-offset="11949" max-vertical-offset="13680" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/asm-debug-all-4.1.jar!/org/objectweb/asm/ByteVector.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="218" selection-end="218" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="540">
-          <folding />
-        </state>
+        <state line="10" column="11" selection-start="218" selection-end="218" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="540" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/asm-debug-all-4.1.jar!/org/objectweb/asm/Item.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="4" selection-start="375" selection-end="375" vertical-scroll-proportion="-7.44" vertical-offset="54" max-vertical-offset="645">
-          <folding />
-        </state>
+        <state line="17" column="4" selection-start="375" selection-end="375" vertical-scroll-proportion="-7.44" vertical-offset="54" max-vertical-offset="645" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/groovy-2.1.9/lib/groovy-test-2.1.9.jar!/groovy/util/GroovyTestCase.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="13" selection-start="1766" selection-end="1766" vertical-scroll-proportion="-5.76" vertical-offset="456" max-vertical-offset="990">
-          <folding />
-        </state>
+        <state line="41" column="13" selection-start="1766" selection-end="1766" vertical-scroll-proportion="-5.76" vertical-offset="456" max-vertical-offset="990" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/groovy-2.1.9/lib/junit-4.11.jar!/org/junit/runner/JUnitCore.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="35" selection-start="1403" selection-end="1403" vertical-scroll-proportion="-13.56" vertical-offset="111" max-vertical-offset="645">
-          <folding />
-        </state>
+        <state line="31" column="35" selection-start="1403" selection-end="1403" vertical-scroll-proportion="-13.56" vertical-offset="111" max-vertical-offset="645" />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/groovy-2.1.9/lib/junit-4.11.jar!/org/junit/internal/runners/JUnit38ClassRunner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="16" selection-start="534" selection-end="534" vertical-scroll-proportion="-6.92" vertical-offset="7" max-vertical-offset="825">
-          <folding />
-        </state>
+        <state line="13" column="16" selection-start="534" selection-end="534" vertical-scroll-proportion="-6.92" vertical-offset="7" max-vertical-offset="825" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DAO/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="559">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="559" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Station.groovy">
@@ -1105,26 +1206,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakAnalysis.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <folding>
-            <element signature="e#42#102#0" expanded="true" />
-            <marker date="1392780735000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
+        <state line="21" column="0" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DataAnalysis/DataAnalysis.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="360">
-          <folding />
-        </state>
+        <state line="4" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="360" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TimetableProcessor/TimetableProcessor.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="405">
-          <folding />
-        </state>
+        <state line="2" column="0" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="405" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -1144,9 +1236,10 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="336.5" y="26.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="337.0" y="26.0" />
           <SelectedNodes />
           <Categories />
+          <SCOPE>All</SCOPE>
           <VISIBILITY>All</VISIBILITY>
         </state>
       </provider>
@@ -1161,18 +1254,17 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="288.5" y="37.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="289.0" y="38.0" />
           <SelectedNodes />
           <Categories />
+          <SCOPE>All</SCOPE>
           <VISIBILITY>All</VISIBILITY>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TimetableProcessor/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="16" selection-start="455" selection-end="455" vertical-scroll-proportion="0.28350514" vertical-offset="0" max-vertical-offset="582">
-          <folding />
-        </state>
+        <state line="11" column="16" selection-start="455" selection-end="455" vertical-scroll-proportion="0.28350514" vertical-offset="0" max-vertical-offset="582" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DataAnalysis/pom.xml">
@@ -1206,9 +1298,7 @@
     <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="6" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
-          <folding>
-            <element signature="e#52#112#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1230,14 +1320,14 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/asm-debug-all-4.1.jar!/org/objectweb/asm/ClassWriter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="11" selection-start="3123" selection-end="3123" vertical-scroll-proportion="-7.28" vertical-offset="1108" max-vertical-offset="2655">
+        <state line="87" column="11" selection-start="3123" selection-end="3123" vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="2670">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/asm-debug-all-4.1.jar!/org/objectweb/asm/ClassVisitor.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="274" selection-end="274" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="540">
+        <state line="10" column="11" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="555">
           <folding />
         </state>
       </provider>
@@ -1259,18 +1349,21 @@
     <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/FinalConverter.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="0" selection-start="2061" selection-end="2061" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2985">
-          <folding>
-            <element signature="e#63#113#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessorTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="269" column="114" selection-start="69270" selection-end="69270" vertical-scroll-proportion="1.2472527" vertical-offset="3354" max-vertical-offset="4200">
-          <folding>
-            <element signature="e#52#121#0" expanded="true" />
-          </folding>
+        <state line="269" column="114" selection-start="69270" selection-end="69270" vertical-scroll-proportion="0.0" vertical-offset="3354" max-vertical-offset="4200">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="20595">
+          <folding />
         </state>
       </provider>
     </entry>
