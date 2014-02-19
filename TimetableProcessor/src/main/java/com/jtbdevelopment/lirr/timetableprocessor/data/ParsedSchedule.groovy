@@ -2,7 +2,6 @@ package com.jtbdevelopment.lirr.timetableprocessor.data
 
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
-import org.joda.time.LocalTime
 
 /**
  * Date: 2/15/14
@@ -14,10 +13,10 @@ class ParsedSchedule {
     LocalDate from
     LocalDate to
 
-    Map<String, List<LocalTime>> eastboundWeekdays = [:];
-    Map<String, List<LocalTime>> eastboundWeekends = [:];
-    Map<String, List<LocalTime>> westboundWeekdays = [:];
-    Map<String, List<LocalTime>> westboundWeekends = [:];
+    Map<String, List> eastboundWeekdays = [:];
+    Map<String, List> eastboundWeekends = [:];
+    Map<String, List> westboundWeekdays = [:];
+    Map<String, List> westboundWeekends = [:];
 
     boolean equals(final o) {
         if (this.is(o)) return true

@@ -16,6 +16,8 @@ import java.util.regex.Pattern
  */
 class FinalConverter {
 
+    private static
+    final Set<String> EXCLUDE_CELLS = ["A", "B", "C", "E", "H", "BE", "AE", "BT", "AT", "J", "T", "(NOTE)", "(LEAVE)"] as Set
     public static final String FORMAT_STRING = "MMMM dd, yyyy"
 
     public static final Pattern STATION_NAMES =
@@ -47,7 +49,10 @@ class FinalConverter {
     }
 
     private static Map<String, List<LocalTime>> convertToTimes(final List<List<String>> matrix) {
-        List<List<LocalTime>> matrixOfTimes = matrix.findAll { !it.get(0).contains("AM/PM") }.collect {
+        List<List<LocalTime>> matrixOfTimes = matrix.findAll {
+            String first = it.get(0)
+            !first.contains("AM/PM") && !first.equals("#")
+        }.collect {
             List<String> row ->
                 row.subList(1, row.size()).collect {
                     String time ->
@@ -57,8 +62,9 @@ class FinalConverter {
                         null
                 }
         }
-        List<String> startAMPMs = matrix.get(0).subList(1, matrix.get(0).size())
-        List<String> endAMPMs = matrix.get(1).subList(1, matrix.get(1).size())
+        List<String> trainIDs = matrix.get(0).subList(1, matrix.get(0).size())
+        List<String> startAMPMs = matrix.get(1).subList(1, matrix.get(1).size())
+        List<String> endAMPMs = matrix.get(2).subList(1, matrix.get(2).size())
         (1..matrixOfTimes.get(0).size()).each {
             int columnP1 ->
                 int column = columnP1 - 1
@@ -83,12 +89,13 @@ class FinalConverter {
                 }
         }
 
-        Map<String, List<LocalTime>> result = [:]
-        (3..matrix.size()).each {
+        Map<String, List> result = [:]
+        (4..matrix.size()).each {
             int row ->
                 String station = matrix.get(row - 1).get(0)
-                result.put(station, matrixOfTimes.get(row - 3))
+                result.put(station, matrixOfTimes.get(row - 4))
         }
+        result.put("#", trainIDs)
         result
     }
 
@@ -119,15 +126,18 @@ class FinalConverter {
     private static List<List<String>> breakIntoStringMatrix(final List<String> times) {
         List<List<String>> matrix = []
 
-        List<String> startAMPMs = times.get(0).tokenize().findAll { it == "AM" || it == "PM" }
+        List<String> trainIDs = times.get(0).replace("Train #", "").tokenize()
+        List<String> startAMPMs = times.get(1).tokenize().findAll { it == "AM" || it == "PM" }
         List<String> endAMPMs = times.get(times.size() - 1).tokenize().findAll { it == "AM" || it == "PM" }
         startAMPMs.add(0, "Start AM/PM")
         endAMPMs.add(0, "End AM/PM")
+        trainIDs.add(0, "#")
+        matrix.add(trainIDs)
         matrix.add(startAMPMs)
         matrix.add(endAMPMs)
 
 
-        ArrayList<String> stationRows = times.findAll { !it.contains("PM") }.collect {
+        ArrayList<String> stationRows = times.findAll { !it.contains("PM") && !it.contains("Train #") }.collect {
             it.toUpperCase()
         }
         String lastName = ""
@@ -153,9 +163,7 @@ class FinalConverter {
 
         List<List<String>> tokenizedRows = stationRows.collect() {
             it.tokenize().findAll {
-                !it.equals("A") && !it.equals("B") && !it.equals("C") && !it.equals("E") &&
-                        !it.equals("H") && !it.equals("BE") && !it.equals("AE") && !it.equals("BT") && !it.equals("AT") &&
-                        !it.equals("J") && !it.equals("T") && !it.equals("(NOTE)") && !it.equals("(LEAVE)")
+                !EXCLUDE_CELLS.contains(it)
             }.collect {
                 if (it.contains(":") || it.startsWith("...")) {
                     return it
