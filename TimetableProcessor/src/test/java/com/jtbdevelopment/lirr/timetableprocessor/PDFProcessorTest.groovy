@@ -267,7 +267,7 @@ class PDFProcessorTest extends GroovyTestCase {
         schedule.each {
             println it.key;
             println "[" + it.value.collect {
-                (it && it in LocalTime) ? "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" : it
+                (it && it in LocalTime) ? "LT(" + it.hourOfDay + "," + it.minuteOfHour + ")" : it ? "\"" + it + "\"" : null
             }.join(",") + "]"
         }
     }

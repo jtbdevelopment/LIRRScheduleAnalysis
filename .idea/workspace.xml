@@ -7,10 +7,7 @@
       <change type="MOVED" beforePath="$PROJECT_DIR$/DataObjects/target/classes/com/jtbdevelopment/lirr/dataobjects/Station$__clinit__closure2_closure3.class" afterPath="$PROJECT_DIR$/DataAnalysis/target/classes/com/jtbdevelopment/lirr/dataobjects/Station$__clinit__closure2_closure3.class" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/DataObjects/target/classes/com/jtbdevelopment/lirr/dataobjects/StationSchedule.class" afterPath="$PROJECT_DIR$/DataAnalysis/target/classes/com/jtbdevelopment/lirr/dataobjects/StationSchedule.class" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/DataObjects/target/classes/com/jtbdevelopment/lirr/dataobjects/Zone.class" afterPath="$PROJECT_DIR$/DataAnalysis/target/classes/com/jtbdevelopment/lirr/dataobjects/Zone.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/FinalConverter.groovy" afterPath="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/FinalConverter.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessorTest.groovy" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessorTest.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/data/ParsedSchedule.groovy" afterPath="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/data/ParsedSchedule.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/RoughConverter.groovy" afterPath="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/RoughConverter.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LIRR.iws" />
@@ -125,7 +122,7 @@
       <file leaf-file-name="FinalConverter.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/FinalConverter.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="2057" selection-end="2057" vertical-scroll-proportion="0.0" vertical-offset="564" max-vertical-offset="2970">
+            <state line="51" column="0" selection-start="2061" selection-end="2061" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2985">
               <folding>
                 <element signature="e#63#113#0" expanded="true" />
               </folding>
@@ -145,7 +142,7 @@
       <file leaf-file-name="RoughConverter.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/RoughConverter.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="0" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="1665">
+            <state line="32" column="0" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="1665">
               <folding />
             </state>
           </provider>
@@ -172,8 +169,10 @@
       <file leaf-file-name="ParsedSchedule.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/data/ParsedSchedule.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="20" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-              <folding />
+            <state line="15" column="20" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="735">
+              <folding>
+                <marker date="1392783040000" expanded="false" signature="87:117" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -210,7 +209,7 @@
       <file leaf-file-name="PDFProcessorTest.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessorTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="21" selection-start="453" selection-end="453" vertical-scroll-proportion="0.027472528" vertical-offset="210" max-vertical-offset="4200">
+            <state line="269" column="114" selection-start="69270" selection-end="69270" vertical-scroll-proportion="0.6978022" vertical-offset="3654" max-vertical-offset="4200">
               <folding>
                 <element signature="e#52#121#0" expanded="true" />
               </folding>
@@ -1188,7 +1187,7 @@
       <workItem from="1392488959004" duration="424000" />
       <workItem from="1392489385183" duration="1202000" />
       <workItem from="1392490620355" duration="65304000" />
-      <workItem from="1392685828550" duration="17511000" />
+      <workItem from="1392685828550" duration="17609000" />
     </task>
     <task id="LOCAL-00001" summary="updating tests">
       <created>1392676346636</created>
@@ -1202,11 +1201,15 @@
       <created>1392780749954</created>
       <updated>1392780749954</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="capture train # as well">
+      <created>1392783054070</created>
+      <updated>1392783054070</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84441000" />
+    <option name="totallyTimeSpent" value="84539000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="22" width="1614" height="1028" extended-state="6" />
@@ -1250,7 +1253,8 @@
     </option>
     <MESSAGE value="updating tests" />
     <MESSAGE value="reparsing to include empty times in order to analze" />
-    <option name="LAST_COMMIT_MESSAGE" value="reparsing to include empty times in order to analze" />
+    <MESSAGE value="capture train # as well" />
+    <option name="LAST_COMMIT_MESSAGE" value="capture train # as well" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1590,8 +1594,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/data/ParsedSchedule.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="20" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-          <folding />
+        <state line="15" column="20" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="735">
+          <folding>
+            <marker date="1392783040000" expanded="false" signature="87:117" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1625,7 +1631,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/FinalConverter.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="2057" selection-end="2057" vertical-scroll-proportion="0.0" vertical-offset="564" max-vertical-offset="2970">
+        <state line="51" column="0" selection-start="2061" selection-end="2061" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2985">
           <folding>
             <element signature="e#63#113#0" expanded="true" />
           </folding>
@@ -1634,7 +1640,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessorTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="21" selection-start="453" selection-end="453" vertical-scroll-proportion="0.027472528" vertical-offset="210" max-vertical-offset="4200">
+        <state line="269" column="114" selection-start="69270" selection-end="69270" vertical-scroll-proportion="0.6978022" vertical-offset="3654" max-vertical-offset="4200">
           <folding>
             <element signature="e#52#121#0" expanded="true" />
           </folding>
