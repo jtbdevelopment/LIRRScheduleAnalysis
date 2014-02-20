@@ -43,5 +43,6 @@ class ScheduleCreatorTest extends GroovyTestCase {
 
         ScheduleCreator scheduleCreator = new ScheduleCreator()
         ScheduleForPeriod scheduleForPeriod = scheduleCreator.createFrom(schedules as Set)
+        println scheduleForPeriod
     }
 }

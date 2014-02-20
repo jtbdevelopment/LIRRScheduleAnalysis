@@ -2,7 +2,6 @@ package com.jtbdevelopment.lirr.analysis
 
 import com.jtbdevelopment.lirr.dataobjects.ScheduleForPeriod
 import com.jtbdevelopment.lirr.dataobjects.Station
-import com.jtbdevelopment.lirr.dataobjects.StationSchedule
 import com.jtbdevelopment.lirr.dataobjects.Zone
 
 /**
@@ -14,13 +13,5 @@ class PeakAnalysis {
 
         List<Station> stations = Station.ZONE_STATION_MAP.get(zone)
 
-        stations.each {
-            Station station ->
-                StationSchedule schedule = scheduleForPeriod.schedules.get(station)
-
-                schedule.eastboundWeekdays.findAll {
-
-                }
-        }
     }
 }

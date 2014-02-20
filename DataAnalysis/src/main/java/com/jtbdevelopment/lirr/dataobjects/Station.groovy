@@ -152,4 +152,13 @@ class Station {
                     )
             })
     )
+
+    @Override
+    public String toString() {
+        return "Station{" +
+                "name='" + name + '\'' +
+                ", zone=" + zone +
+                ", ignoreForAnalysis=" + ignoreForAnalysis +
+                '}';
+    }
 }

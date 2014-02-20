@@ -10,6 +10,16 @@ import org.joda.time.LocalDate
 class ScheduleForPeriod {
     LocalDate start
     LocalDate end
-    Map<String, DateTime> inputs = [:]
-    Map<Station, StationSchedule> schedules = [:]
+    Map<String, DateTime> inputFeeds = [:]
+    Set<TrainSchedule> schedules = []
+
+    @Override
+    public String toString() {
+        return "ScheduleForPeriod{" +
+                "start=" + start +
+                ", end=" + end +
+                ", inputFeeds=" + inputFeeds +
+                ", schedules=" + schedules +
+                '}';
+    }
 }
