@@ -12,12 +12,6 @@ import org.joda.time.LocalTime
  * Time: 6:43 AM
  */
 class ScheduleCreator {
-    private final static LocalTime westPeakStarts = new LocalTime(6, 0)
-    private final static LocalTime westPeakEnds = new LocalTime(10, 0)
-
-    private final static LocalTime eastPeakStarts = new LocalTime(16, 0)
-    private final static LocalTime eastPeakEnds = new LocalTime(20, 0)
-
     ScheduleForPeriod createFrom(final Set<ParsedSchedule> schedules) {
         assert schedules.size() > 0
 
@@ -35,21 +29,16 @@ class ScheduleCreator {
             ParsedSchedule parsed ->
                 scheduleForPeriod.inputFeeds.put(parsed.title, parsed.modified)
 
-                Closure<Boolean> neverPeak = { TrainSchedule s -> Boolean.FALSE }
-                Closure<Boolean> isWestPeak = { TrainSchedule s ->
+                Closure<Boolean> neverPeak = { TrainSchedule s, Direction direction -> Boolean.FALSE }
+                Closure<Boolean> isPeak = { TrainSchedule s, Direction direction ->
                     LocalTime peakTime = getPeakTimeDeterminant(s)
                     assert peakTime: s.toString()
-                    peakTime.compareTo(westPeakStarts) >= 0 && peakTime.compareTo(westPeakEnds) < 0
-                }
-                Closure<Boolean> isEastPeak = { TrainSchedule s ->
-                    LocalTime peakTime = getPeakTimeDeterminant(s)
-                    assert peakTime: s.toString()
-                    peakTime.compareTo(eastPeakStarts) >= 0 && peakTime.compareTo(eastPeakEnds) < 0
+                    peakTime.compareTo(direction.startPeak) >= 0 && peakTime.compareTo(direction.endPeak) <= 0
                 }
                 scheduleForPeriod.schedules.addAll(processParsedSubSchedule(parsed.eastboundWeekends, Direction.East, false, neverPeak))
                 scheduleForPeriod.schedules.addAll(processParsedSubSchedule(parsed.westboundWeekends, Direction.West, false, neverPeak))
-                scheduleForPeriod.schedules.addAll(processParsedSubSchedule(parsed.eastboundWeekdays, Direction.East, true, isEastPeak))
-                scheduleForPeriod.schedules.addAll(processParsedSubSchedule(parsed.westboundWeekdays, Direction.West, true, isWestPeak))
+                scheduleForPeriod.schedules.addAll(processParsedSubSchedule(parsed.eastboundWeekdays, Direction.East, true, isPeak))
+                scheduleForPeriod.schedules.addAll(processParsedSubSchedule(parsed.westboundWeekdays, Direction.West, true, isPeak))
         }
 
         return scheduleForPeriod
@@ -57,12 +46,12 @@ class ScheduleCreator {
 
     public LocalTime getPeakTimeDeterminant(TrainSchedule s) {
         LocalTime time
-        time = s.stops.get(Station.STATION_NAME_MAP.get("PENN STATION"))
+        time = s.stops[Station.PENN_STATION]
         if (!time) {
-            time = s.stops.get(Station.STATION_NAME_MAP.get("ATLANTIC TERMINAL"))
+            time = s.stops[Station.ATLANTIC_AVENUE]
         }
         if (!time) {
-            time = s.stops.get(Station.STATION_NAME_MAP.get("HUNTERSPOINT AVE."))
+            time = s.stops[Station.HUNTERSPOINT_AVENUE]
         }
         if (!time) {
             if (s.direction == Direction.East) {
@@ -85,13 +74,20 @@ class ScheduleCreator {
                 schedule.findAll { it.key != "#" }.each {
                     String stationName, List<LocalTime> times ->
                         if (times[column]) {
-                            Station station = stationMap.get(stationName)
+                            Station station = stationMap[stationName]
                             assert station
-                            trains[column].stops.put(station, times[column])
+                            trains[column].stops[station] = times[column]
                         }
                 }
         }
-        trains.each { it.peak = determineIfPeak(it) }
-        trains
+        trains.each { it.peak = determineIfPeak(it, direction) }
+        trains.findAll {
+            Station.TRAINS_TO_IGNORE.contains(it.trainNumber)
+        }.each {
+            println "Skipping Train #${it.trainNumber}"
+        }
+        trains.findAll {
+            !Station.TRAINS_TO_IGNORE.contains(it.trainNumber)
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.jtbdevelopment.lirr.timetableprocessor.converters
 
+import com.jtbdevelopment.lirr.dataobjects.Station
 import com.jtbdevelopment.lirr.timetableprocessor.data.RoughParsedSchedule
 
 /**
@@ -36,7 +37,7 @@ class RoughConverter {
             List<String> schedule ->
                 assert schedule.size() > 2
                 String upperCase = schedule.get(2).toUpperCase()
-                isEast.add((boolean) (upperCase =~ /PENN STATION/))
+                isEast.add((boolean) (upperCase =~ Station.PENN_STATION_NAME))
         }
         List<Integer> eastIndices = isEast.findIndexValues { it }.collect { it.intValue() }
         List<Integer> westIndices = isEast.findIndexValues { !it }.collect { it.intValue() }

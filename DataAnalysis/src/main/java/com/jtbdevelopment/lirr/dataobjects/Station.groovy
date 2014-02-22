@@ -5,11 +5,15 @@ package com.jtbdevelopment.lirr.dataobjects
  * Time: 1:37 PM
  */
 class Station {
+    public static final String PENN_STATION_NAME = "PENN STATION"
+    public static final String ATLANTIC_AVENUE_NAME = "ATLANTIC TERMINAL"
+    public static final String HUNTERSPOINT_AVE_NAME = "HUNTERSPOINT AVE."
     String name
     Zone zone
     boolean ignoreForAnalysis = false  // Primarily for penn, etc
 
     static final List<Station> STATIONS = [
+            //  Names must be as they appear on the schedule
             new Station(name: "Penn Station", zone: Zone.Zone1, ignoreForAnalysis: true),
             new Station(name: "Atlantic Terminal", zone: Zone.Zone1, ignoreForAnalysis: true),
             new Station(name: "Long Island City", zone: Zone.Zone1, ignoreForAnalysis: true),
@@ -140,18 +144,33 @@ class Station {
             new Station(name: "Ronkonkoma", zone: Zone.Zone10),
     ]
 
-    static final Map<String, Station> STATION_NAME_MAP = [:].putAll(STATIONS.collect({
-        new MapEntry(it.name.toUpperCase(), it)
-    }));
-    static final Map<Zone, List<Station>> ZONE_STATION_MAP = [:].putAll(
-            Zone.values().collect({
-                zone ->
-                    new MapEntry(
-                            zone,
-                            STATIONS.findAll({ station -> zone.equals(station.zone) })
-                    )
-            })
-    )
+    static final Map<String, Station> STATION_NAME_MAP = STATIONS.collectEntries({
+        [(it.name.toUpperCase()), it]
+    });
+
+    static final Station PENN_STATION = STATION_NAME_MAP[PENN_STATION_NAME]
+    static final Station ATLANTIC_AVENUE = STATION_NAME_MAP[ATLANTIC_AVENUE_NAME]
+    static final Station HUNTERSPOINT_AVENUE = STATION_NAME_MAP[HUNTERSPOINT_AVE_NAME]
+
+    //  Holiday/Special Trains
+    static final Set<String> TRAINS_TO_IGNORE = [
+            //  Babylon
+            "6092", "8792", "6094", "6096", "6098", "112", "116", "122", "124", "128", "136", "160", "1064", "3129", "4159", "3199", "2793", "197",
+            //  Far Rockaway
+            "6890", "6892", "6894", "6896", "6898", "6891", "6893", "6895", "6897", "2898", "2858", "3853", "3899",
+            //  Hempstead
+            "3753",
+            //  Long Beach
+            "6094", "6890", "6096", "6098", "6892", "6894", "6896", "6898", "6891", "6893", "6895", "6897", "124", "3853", "3899",
+            //  Montauk
+            "8792", "2710", "2793",
+            //  Port Jeff
+            "8102", "8104", "7690", "7698", "6690", "8106", "8085", "2100", "2102", "1708", "1250", "1710", "1252",
+            //  Port Wash
+            "6436", "6438", "6440", "354", "3361", "499",
+            //  Ronkonkoma
+            "8102", "8104", "8106", "8085", "200", "2100", "2102", "2095", "2097",
+    ] as Set;
 
     @Override
     public String toString() {
