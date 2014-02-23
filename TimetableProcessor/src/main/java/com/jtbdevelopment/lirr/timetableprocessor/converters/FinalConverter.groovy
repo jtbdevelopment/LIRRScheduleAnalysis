@@ -50,7 +50,7 @@ class FinalConverter {
 
     private static Map<String, List<LocalTime>> convertToTimes(final List<List<String>> matrix) {
         List<List<LocalTime>> matrixOfTimes = matrix.findAll {
-            String first = it.get(0)
+            String first = it[0]
             !first.contains("AM/PM") && !first.equals("#")
         }.collect {
             List<String> row ->
@@ -62,20 +62,20 @@ class FinalConverter {
                         null
                 }
         }
-        List<String> trainIDs = matrix.get(0).subList(1, matrix.get(0).size())
-        List<String> startAMPMs = matrix.get(1).subList(1, matrix.get(1).size())
-        List<String> endAMPMs = matrix.get(2).subList(1, matrix.get(2).size())
+        List<String> trainIDs = matrix[0].subList(1, matrix[0].size())
+        List<String> startAMPMs = matrix[1].subList(1, matrix[1].size())
+        List<String> endAMPMs = matrix[2].subList(1, matrix[2].size())
 
-        (1..matrixOfTimes.get(0).size()).each {
+        (1..matrixOfTimes[0].size()).each {
             int columnP1 ->
                 int column = columnP1 - 1
-                String startAMPM = startAMPMs.get(column)
-                String endAMPM = endAMPMs.get(column)
+                String startAMPM = startAMPMs[column]
+                String endAMPM = endAMPMs[column]
                 if (startAMPM == "PM") {
                     (1..matrixOfTimes.size()).each {
                         int row ->
-                            List<LocalTime> timeRow = matrixOfTimes.get(row - 1)
-                            LocalTime time = timeRow.get(column)
+                            List<LocalTime> timeRow = matrixOfTimes[row - 1]
+                            LocalTime time = timeRow[column]
                             if (time != null) {
                                 timeRow.set(column, time.plusHours(12))
                             }
@@ -101,18 +101,18 @@ class FinalConverter {
         Map<String, List> result = [:]
         (4..matrix.size()).each {
             int row ->
-                String station = matrix.get(row - 1).get(0)
-                result.put(station, matrixOfTimes.get(row - 4))
+                String station = matrix[row - 1][0]
+                result[(station)] = matrixOfTimes[row - 4]
         }
-        result.put("#", trainIDs)
+        result["#"] = trainIDs
         result
     }
 
     private static List<List<String>> breakIntoStringMatrix(final List<String> times) {
 
-        List<String> trainIDs = times.get(0).replace("Train #", "").tokenize()
-        List<String> startAMPMs = times.get(1).tokenize().findAll { it == "AM" || it == "PM" }
-        List<String> endAMPMs = times.get(times.size() - 1).tokenize().findAll { it == "AM" || it == "PM" }
+        List<String> trainIDs = times[0].replace("Train #", "").tokenize()
+        List<String> startAMPMs = times[1].tokenize().findAll { it == "AM" || it == "PM" }
+        List<String> endAMPMs = times[-1].tokenize().findAll { it == "AM" || it == "PM" }
         startAMPMs.add(0, "Start AM/PM")
         endAMPMs.add(0, "End AM/PM")
         trainIDs.add(0, "#")
@@ -132,7 +132,7 @@ class FinalConverter {
 
         stationRows = (1..names.size()).collect {
             int i ->
-                stationRows.get(i - 1).replaceAll(names.get(i - 1), "")
+                stationRows[i - 1].replaceAll(names[i - 1], "")
         }
 
         stationRows.findIndexValues { it.contains("(ARRIVE)") }.reverseEach {
@@ -169,8 +169,8 @@ class FinalConverter {
         String replaced = roughParsedSchedule.subject.replace("Effective ", "")
         List<String> tokens = replaced.tokenize()
         assert tokens.size() == 7
-        parsedSchedule.from = LocalDate.parse(tokens.get(0) + " " + tokens.get(1) + " " + tokens.get(2), DateTimeFormat.forPattern(FORMAT_STRING));
-        parsedSchedule.to = LocalDate.parse(tokens.get(4) + " " + tokens.get(5) + " " + tokens.get(6), DateTimeFormat.forPattern(FORMAT_STRING));
+        parsedSchedule.from = LocalDate.parse(tokens[0] + " " + tokens[1] + " " + tokens[2], DateTimeFormat.forPattern(FORMAT_STRING));
+        parsedSchedule.to = LocalDate.parse(tokens[4] + " " + tokens[5] + " " + tokens[6], DateTimeFormat.forPattern(FORMAT_STRING));
     }
 
 }

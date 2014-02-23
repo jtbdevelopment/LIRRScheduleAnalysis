@@ -45,23 +45,23 @@ class RoughConverter {
         assert westIndices.size() == 2
 
         Closure<Boolean> isTimeColumn = { String part -> part =~ /:/ || part =~ /\.\./ }
-        int eastSize1 = rawSchedules.get(eastIndices.get(0)).get(2).tokenize().findAll(isTimeColumn).size()
-        int eastSize2 = rawSchedules.get(eastIndices.get(1)).get(2).tokenize().findAll(isTimeColumn).size()
+        int eastSize1 = rawSchedules[eastIndices.first()][2].tokenize().findAll(isTimeColumn).size()
+        int eastSize2 = rawSchedules[eastIndices.last()][2].tokenize().findAll(isTimeColumn).size()
         if (eastSize1 > eastSize2) {
-            roughParsedSchedule.eastboundWeekdays = rawSchedules.get(eastIndices.get(0))
-            roughParsedSchedule.eastboundWeekends = rawSchedules.get(eastIndices.get(1))
+            roughParsedSchedule.eastboundWeekdays = rawSchedules[eastIndices.first()]
+            roughParsedSchedule.eastboundWeekends = rawSchedules[eastIndices.last()]
         } else {
-            roughParsedSchedule.eastboundWeekdays = rawSchedules.get(eastIndices.get(1))
-            roughParsedSchedule.eastboundWeekends = rawSchedules.get(eastIndices.get(0))
+            roughParsedSchedule.eastboundWeekdays = rawSchedules[eastIndices.last()]
+            roughParsedSchedule.eastboundWeekends = rawSchedules[eastIndices.first()]
         }
-        int westSize1 = rawSchedules.get(westIndices.get(0)).get(2).tokenize().findAll(isTimeColumn).size()
-        int westSize2 = rawSchedules.get(westIndices.get(1)).get(2).tokenize().findAll(isTimeColumn).size()
+        int westSize1 = rawSchedules[westIndices.first()][2].tokenize().findAll(isTimeColumn).size()
+        int westSize2 = rawSchedules[westIndices.last()][2].tokenize().findAll(isTimeColumn).size()
         if (westSize1 > westSize2) {
-            roughParsedSchedule.westboundWeekdays = rawSchedules.get(westIndices.get(0))
-            roughParsedSchedule.westboundWeekends = rawSchedules.get(westIndices.get(1))
+            roughParsedSchedule.westboundWeekdays = rawSchedules[westIndices.first()]
+            roughParsedSchedule.westboundWeekends = rawSchedules[westIndices.last()]
         } else {
-            roughParsedSchedule.westboundWeekdays = rawSchedules.get(westIndices.get(1))
-            roughParsedSchedule.westboundWeekends = rawSchedules.get(westIndices.get(0))
+            roughParsedSchedule.westboundWeekdays = rawSchedules[westIndices.last()]
+            roughParsedSchedule.westboundWeekends = rawSchedules[westIndices.first()]
         }
     }
 
