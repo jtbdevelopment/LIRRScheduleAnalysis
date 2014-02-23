@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bad0dd3b-a411-4c76-a718-03553e311c60" name="Default" comment="but of groovyfying">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakAnalysis.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy" />
+    <list default="true" id="bad0dd3b-a411-4c76-a718-03553e311c60" name="Default" comment="fixed some bugs and more parallel">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/TrainRide.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Direction.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Direction.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreator.groovy" afterPath="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreator.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/ScheduleForPeriod.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/ScheduleForPeriod.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/TrainSchedule.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/TrainSchedule.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Station.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Station.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LIRR.iws" />
@@ -94,7 +92,37 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy" line="52" class="com.jtbdevelopment.lirr.analysis.PeakAnalysis" package="com.jtbdevelopment.lirr.analysis">
+      <breakpoint url="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy" line="40" class="com.jtbdevelopment.lirr.analysis.PeakTrainAnalyzer" package="com.jtbdevelopment.lirr.analysis">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy" line="152" class="com.jtbdevelopment.lirr.analysis.PeakTrainAnalyzer" package="com.jtbdevelopment.lirr.analysis">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy" line="159" class="com.jtbdevelopment.lirr.analysis.PeakTrainAnalyzer" package="com.jtbdevelopment.lirr.analysis">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -122,7 +150,7 @@
       <file leaf-file-name="ScheduleCreatorTest.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="14" selection-start="2416" selection-end="2416" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1155">
+            <state line="54" column="90" selection-start="2267" selection-end="2267" vertical-scroll-proportion="0.0" vertical-offset="596" max-vertical-offset="1155">
               <folding>
                 <element signature="e#52#109#0" expanded="true" />
               </folding>
@@ -130,10 +158,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Direction.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Direction.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="56" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PeakTrainAnalyzer.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="44" selection-start="4046" selection-end="4046" vertical-scroll-proportion="0.21978022" vertical-offset="1140" max-vertical-offset="2955">
+            <state line="21" column="80" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.082417585" vertical-offset="270" max-vertical-offset="2790">
               <folding>
                 <element signature="e#42#86#0" expanded="true" />
               </folding>
@@ -141,19 +178,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultGroovyMethods.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.ideaLibSources/groovy-2.1.9-sources.jar!/org/codehaus/groovy/runtime/DefaultGroovyMethods.java">
+      <file leaf-file-name="TrainRide.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/TrainRide.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6289" column="24" selection-start="249241" selection-end="249241" vertical-scroll-proportion="0.0" vertical-offset="93222" max-vertical-offset="211845">
+            <state line="27" column="0" selection-start="664" selection-end="664" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JUnit38ClassRunner.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/groovy-2.1.9/lib/junit-4.11.jar!/org/junit/internal/runners/JUnit38ClassRunner.class">
+      <file leaf-file-name="ForkJoinTask.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/groovy-2.1.9/lib/jsr166y-1.7.0.jar!/jsr166y/ForkJoinTask.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="16" selection-start="534" selection-end="534" vertical-scroll-proportion="-6.72" vertical-offset="12" max-vertical-offset="825">
+            <state line="88" column="16" selection-start="3612" selection-end="3612" vertical-scroll-proportion="-6.72" vertical-offset="1137" max-vertical-offset="2535">
               <folding />
             </state>
           </provider>
@@ -162,16 +199,7 @@
       <file leaf-file-name="Station.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Station.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="28" selection-start="8738" selection-end="8738" vertical-scroll-proportion="0.0" vertical-offset="2047" max-vertical-offset="2835">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Direction.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Direction.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="25" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+            <state line="151" column="79" selection-start="8401" selection-end="8401" vertical-scroll-proportion="0.0" vertical-offset="2047" max-vertical-offset="2895">
               <folding />
             </state>
           </provider>
@@ -180,7 +208,7 @@
       <file leaf-file-name="TrainSchedule.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/TrainSchedule.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="13" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
+            <state line="8" column="6" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
               <folding />
             </state>
           </provider>
@@ -189,19 +217,8 @@
       <file leaf-file-name="ScheduleForPeriod.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/ScheduleForPeriod.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="44" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+            <state line="21" column="44" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="450">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScheduleCreator.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreator.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="12" selection-start="4490" selection-end="4490" vertical-scroll-proportion="0.0" vertical-offset="896" max-vertical-offset="1755">
-              <folding>
-                <element signature="e#52#104#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -209,8 +226,21 @@
       <file leaf-file-name="GParsPool.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.ideaLibSources/gpars-1.0.0-sources.jar!/groovyx/gpars/GParsPool.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="169" column="0" selection-start="8543" selection-end="8543" vertical-scroll-proportion="0.0" vertical-offset="2218" max-vertical-offset="5040">
+            <state line="221" column="39" selection-start="11059" selection-end="11059" vertical-scroll-proportion="-6.6538463" vertical-offset="3007" max-vertical-offset="5040">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadLocalPools.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.ideaLibSources/gpars-1.0.0-sources.jar!/groovyx/gpars/ThreadLocalPools.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="30" selection-start="1346" selection-end="1346" vertical-scroll-proportion="0.0" vertical-offset="236" max-vertical-offset="795">
+              <folding>
+                <element signature="e#0#1671#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#1195#1235#1" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -248,17 +278,18 @@
         <option value="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/data/ParsedSchedule.groovy" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/TrainStop.groovy" />
-        <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Station.groovy" />
         <option value="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessor.groovy" />
         <option value="$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessorTest.groovy" />
         <option value="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/FinalConverter.groovy" />
         <option value="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/RoughConverter.groovy" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/ScheduleForPeriod.groovy" />
-        <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Direction.groovy" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/TrainSchedule.groovy" />
         <option value="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreator.groovy" />
-        <option value="$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakAnalysis.groovy" />
+        <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Station.groovy" />
+        <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Direction.groovy" />
+        <option value="$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy" />
+        <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/TrainRide.groovy" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy" />
       </list>
     </option>
@@ -502,6 +533,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="runners" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="groovy-2.1.9" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsr166y-1.7.0.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="groovy-2.1.9" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsr166y-1.7.0.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsr166y" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1554,13 +1625,17 @@
     <property name="SearchEverywhereHistory" value="" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="groovy.util.GroovyTestCase" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.jtbdevelopment.lirr.timetableprocessor" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="groovy.util.GroovyTestCase" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.jtbdevelopment.lirr.analysis" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.ScheduleCreatorTest">
@@ -1945,7 +2020,7 @@
       <workItem from="1392685828550" duration="18123000" />
       <workItem from="1392783893007" duration="1025000" />
       <workItem from="1392860828573" duration="29000" />
-      <workItem from="1392860869288" duration="53624000" />
+      <workItem from="1392860869288" duration="58195000" />
     </task>
     <task id="LOCAL-00001" summary="updating tests">
       <created>1392676346636</created>
@@ -1995,11 +2070,15 @@
       <created>1393120086707</created>
       <updated>1393120086707</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixed some bugs and more parallel">
+      <created>1393130730087</created>
+      <updated>1393130730087</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139731000" />
+    <option name="totallyTimeSpent" value="144302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="22" width="1614" height="1028" extended-state="0" />
@@ -2050,7 +2129,8 @@
     <MESSAGE value="lot of work on analysis and cleaning up" />
     <MESSAGE value="found some parsing issues" />
     <MESSAGE value="but of groovyfying" />
-    <option name="LAST_COMMIT_MESSAGE" value="but of groovyfying" />
+    <MESSAGE value="fixed some bugs and more parallel" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some bugs and more parallel" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -2066,21 +2146,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.ideaLibSources/tika-core-1.4-sources.jar!/org/apache/tika/parser/AbstractParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="1216" selection-end="1216" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ideaLibSources/tika-core-1.4-sources.jar!/org/apache/tika/sax/ContentHandlerDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2865" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ideaLibSources/tika-parsers-1.4-sources.jar!/org/apache/tika/parser/pdf/PDFParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="0" selection-start="3686" selection-end="3686" vertical-scroll-proportion="0.0" vertical-offset="309" max-vertical-offset="4395" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/asm-debug-all-4.1.jar!/org/objectweb/asm/Frame.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="12" selection-start="159" selection-end="159" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="1125" />
@@ -2218,10 +2283,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="20595">
           <folding>
-            <marker date="1393130550000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1393130550000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1393130550000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1393130550000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1393135361000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1393135361000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1393135361000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1393135361000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -2388,20 +2453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.ideaLibSources/gpars-1.0.0-sources.jar!/groovyx/gpars/GParsPool.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="0" selection-start="8543" selection-end="8543" vertical-scroll-proportion="0.0" vertical-offset="2218" max-vertical-offset="5040">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Station.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="28" selection-start="8738" selection-end="8738" vertical-scroll-proportion="0.0" vertical-offset="2047" max-vertical-offset="2835">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/groovy-2.1.9/lib/junit-4.11.jar!/org/junit/internal/runners/JUnit38ClassRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="16" selection-start="534" selection-end="534" vertical-scroll-proportion="-6.72" vertical-offset="12" max-vertical-offset="825">
@@ -2409,23 +2460,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Direction.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="25" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/TrainSchedule.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreator.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="12" selection-start="4490" selection-end="4490" vertical-scroll-proportion="0.0" vertical-offset="896" max-vertical-offset="1755">
+        <state line="101" column="12" selection-start="4503" selection-end="4503" vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="1770">
           <folding>
             <element signature="e#52#104#0" expanded="true" />
           </folding>
@@ -2439,15 +2476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="14" selection-start="2416" selection-end="2416" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1155">
-          <folding>
-            <element signature="e#52#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/ScheduleForPeriod.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="44" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
@@ -2455,9 +2483,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/gpars-1.0.0-sources.jar!/groovyx/gpars/ThreadLocalPools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="30" selection-start="1346" selection-end="1346" vertical-scroll-proportion="0.0" vertical-offset="236" max-vertical-offset="795">
+          <folding>
+            <element signature="e#0#1671#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1195#1235#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/TrainSchedule.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="6" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/groovy-2.1.9/lib/jsr166y-1.7.0.jar!/jsr166y/ForkJoinTask.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="16" selection-start="3612" selection-end="3612" vertical-scroll-proportion="-6.72" vertical-offset="1137" max-vertical-offset="2535">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/gpars-1.0.0-sources.jar!/groovyx/gpars/GParsPool.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="221" column="39" selection-start="11059" selection-end="11059" vertical-scroll-proportion="-6.6538463" vertical-offset="3007" max-vertical-offset="5040">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Direction.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="56" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/Station.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="79" selection-start="8401" selection-end="8401" vertical-scroll-proportion="0.0" vertical-offset="2047" max-vertical-offset="2895">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="90" selection-start="2267" selection-end="2267" vertical-scroll-proportion="0.0" vertical-offset="596" max-vertical-offset="1155">
+          <folding>
+            <element signature="e#52#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/TrainRide.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="664" selection-end="664" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="44" selection-start="4046" selection-end="4046" vertical-scroll-proportion="0.21978022" vertical-offset="1140" max-vertical-offset="2955">
+        <state line="21" column="80" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.082417585" vertical-offset="270" max-vertical-offset="2790">
           <folding>
             <element signature="e#42#86#0" expanded="true" />
           </folding>

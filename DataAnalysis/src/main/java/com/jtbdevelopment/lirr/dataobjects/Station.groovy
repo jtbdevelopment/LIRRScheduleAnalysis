@@ -147,6 +147,10 @@ class Station {
     static final Map<String, Station> STATION_NAME_MAP = STATIONS.collectEntries({
         [(it.name.toUpperCase()), it]
     });
+    static final Map<Zone, Set<Station>> ZONE_STATION_MAP = Zone.values().collectEntries {
+        Zone zone ->
+            [(zone): STATIONS.findAll { Station station -> station.zone == zone }]
+    }
 
     static final Station PENN_STATION = STATION_NAME_MAP[PENN_STATION_NAME]
     static final Station ATLANTIC_AVENUE = STATION_NAME_MAP[ATLANTIC_AVENUE_NAME]
