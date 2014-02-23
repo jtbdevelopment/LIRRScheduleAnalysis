@@ -16,7 +16,7 @@ import org.joda.time.Minutes
 class PeakTrainAnalyzer implements Analyzer {
 
     @Override
-    public Map<Direction, Map<Station, Map<String, Object>>> analyze(
+    public Map<Direction, Map<String, Map<Station, Map<String, Object>>>> analyze(
             final ScheduleForPeriod scheduleForPeriod) {
         Direction.values().collectEntries {
             Direction direction ->
@@ -24,7 +24,7 @@ class PeakTrainAnalyzer implements Analyzer {
         }
     }
 
-    private Map<Station, Map<String, Object>> analyzeforDirection(
+    private Map<String, Map<Station, Map<String, Object>>> analyzeforDirection(
             final ScheduleForPeriod scheduleForPeriod, Direction direction) {
         GParsPool.withPool {
             List<Set<TrainSchedule>> schedulesSplitByPeakFlag = getSchedulesForDirection(scheduleForPeriod, direction).splitParallel {
@@ -44,21 +44,21 @@ class PeakTrainAnalyzer implements Analyzer {
                     startAndEndTimes.sort()
             }
 
-            Map<Station, Map<String, Object>> stationStatistics = computeOverallStatistics([:], peakTimesByStation, prePeakTimesByStation)
+            Map<String, Map<Station, Map<String, Object>>> stationStatistics = computeOverallStatistics([:], peakTimesByStation, prePeakTimesByStation)
             computeHourByHourBreakdowns(stationStatistics, peakTimesByStation, direction)
 
             return stationStatistics
         }
     }
 
-    private Map<Station, Map<String, Object>> computeOverallStatistics(Map<Station, Map<String, Object>> stationStatistics,
+    private Map<Station, Map<String, Object>> computeOverallStatistics(Map<String, Map<Station, Map<String, Object>>> stationStatistics,
                                                                        final Map<Station, List<TrainRide>> peakTimesByStation,
                                                                        final Map<Station, List<TrainRide>> prePeakTimesByStation) {
         stationStatistics += peakTimesByStation.collectEntries {
             Station station, List<TrainRide> times ->
                 [
-                        (station): [
-                                (OVERALL): [
+                        (OVERALL): [
+                                (station): [
                                         (FIRST_PEAK): times.first().getOn,
                                         (LAST_PEAK): times.last().getOn,
                                         (LAST_PRE_PEAK): prePeakTimesByStation.get(station).last().getOn,
@@ -73,9 +73,10 @@ class PeakTrainAnalyzer implements Analyzer {
     }
 
     private void computeHourByHourBreakdowns(
-            final Map<Station, Map<String, Object>> stationStatistics, final stationTimes, final Direction direction) {
-        Map<Station, LocalTime> lastPrePeak = stationStatistics.collectEntries {
-            [(it.key): it.value[OVERALL][LAST_PRE_PEAK]]
+            final Map<String, Map<Station, Map<String, Object>>> stationStatistics,
+            final stationTimes, final Direction direction) {
+        Map<Station, LocalTime> lastPrePeak = stationStatistics[OVERALL].collectEntries {
+            [(it.key): it.value[LAST_PRE_PEAK]]
         }
         direction.peakPlus.each {
             int hour ->
@@ -88,10 +89,10 @@ class PeakTrainAnalyzer implements Analyzer {
                     Station station, List<TrainRide> times ->
                         computeWaitForTrainStats(subTimes, stationStatistics, statGroup)
                         if (times.size() > 0) {
-                            stationStatistics[station][(statGroup)][(FIRST_PEAK)] = times.first().getOn
-                            stationStatistics[station][(statGroup)][(LAST_PEAK)] = times.last().getOn
-                            stationStatistics[station][(statGroup)][(LAST_PRE_PEAK)] = lastPrePeak[station]
-                            stationStatistics[station][(statGroup)][(WAIT_FOR_FIRST_PEAK)] = timeDeltaInMinutes(times.first().getOn, lastPrePeak[(station)])
+                            stationStatistics[(statGroup)][(station)][(FIRST_PEAK)] = times.first().getOn
+                            stationStatistics[(statGroup)][(station)][(LAST_PEAK)] = times.last().getOn
+                            stationStatistics[(statGroup)][(station)][(LAST_PRE_PEAK)] = lastPrePeak[station]
+                            stationStatistics[(statGroup)][(station)][(WAIT_FOR_FIRST_PEAK)] = timeDeltaInMinutes(times.first().getOn, lastPrePeak[(station)])
                             lastPrePeak[station] = times[-1].getOn
                         }
                 }
@@ -100,7 +101,7 @@ class PeakTrainAnalyzer implements Analyzer {
 
     private Map<Station, List<TrainRide>> computeWaitForTrainStats(
             final Map<Station, List<TrainRide>> stationTimes,
-            final Map<Station, Map<String, Object>> stationStatistics,
+            final Map<String, Map<Station, Map<String, Object>>> stationStatistics,
             final String append) {
         stationTimes.each {
             Station station, List<TrainRide> times ->
@@ -113,7 +114,7 @@ class PeakTrainAnalyzer implements Analyzer {
                 } else {
                     deltas = [NO_VALUE]
                 }
-                Map<String, Object> stats = stationStatistics[station].get(append, [:])
+                Map<String, Object> stats = stationStatistics.get(append, [:]).get(station, [:])
                 DescriptiveStatistics deltaTimeStats = new DescriptiveStatistics((double[]) deltas.collect {
                     it.doubleValue()
                 }.toArray())
