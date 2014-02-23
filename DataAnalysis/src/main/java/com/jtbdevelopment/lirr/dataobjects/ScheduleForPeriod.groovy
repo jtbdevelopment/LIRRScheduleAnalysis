@@ -11,7 +11,7 @@ class ScheduleForPeriod {
     LocalDate start
     LocalDate end
     Map<String, DateTime> inputFeeds = [:]
-    Set<TrainSchedule> schedules = []
+    Map<String, TrainSchedule> schedules = [:]
 
     @Override
     public String toString() {

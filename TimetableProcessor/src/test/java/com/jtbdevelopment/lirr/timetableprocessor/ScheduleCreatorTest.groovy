@@ -1,6 +1,6 @@
 package com.jtbdevelopment.lirr.timetableprocessor
 
-import com.jtbdevelopment.lirr.analysis.PeakAnalysis
+import com.jtbdevelopment.lirr.analysis.PeakTrainAnalyzer
 import com.jtbdevelopment.lirr.dataobjects.Direction
 import com.jtbdevelopment.lirr.dataobjects.ScheduleForPeriod
 import com.jtbdevelopment.lirr.dataobjects.Station
@@ -41,18 +41,19 @@ class ScheduleCreatorTest extends GroovyTestCase {
                     "LongBeachBranch2013121620140223.pdf",
                     "MontaukBranch2013121620140223.pdf",
                     "OysterBayBranch2013121620140223.pdf",
+                    "RonkonkomaBranch2013121620140223.pdf",
                     "PortJeffersonBranch2013121620140223.pdf",
                     "PortWashingtonBranch2013121620140223.pdf",
-                    "RonkonkomaBranch2013121620140223.pdf",
-                    "WestHempsteadBranch2013121620140223.pdf"].collectParallel {
+                    "WestHempsteadBranch2013121620140223.pdf"
+            ].collectParallel {
                 pdfProcessor.parse(ScheduleCreatorTest.classLoader.getResourceAsStream(it))
             }
         }
 
         ScheduleCreator scheduleCreator = new ScheduleCreator()
         ScheduleForPeriod scheduleForPeriod = scheduleCreator.createFrom(schedules as Set)
-        printAnalysis(new PeakAnalysis().analyzeForZone(scheduleForPeriod, Zone.Zone7, Direction.West))
-        printAnalysis(new PeakAnalysis().analyzeForZone(scheduleForPeriod, Zone.Zone7, Direction.East))
+        printAnalysis(new PeakTrainAnalyzer().analyzeForZone(scheduleForPeriod, Zone.Zone7, Direction.West))
+        printAnalysis(new PeakTrainAnalyzer().analyzeForZone(scheduleForPeriod, Zone.Zone7, Direction.East))
     }
 
     private void printAnalysis(Map<Station, Map<String, Object>> zoneDirectionAnalysis) {

@@ -14,6 +14,15 @@ class TrainSchedule {
     Direction direction
     Map<Station, LocalTime> stops = [:]
 
+    void merge(final TrainSchedule other) {
+        assert trainNumber == other.trainNumber
+        assert ignore == other.ignore
+        assert peak == other.peak
+        assert weekday == other.weekday
+        assert direction == other.direction
+        stops += other.stops
+    }
+
     boolean equals(final o) {
         if (this.is(o)) return true
         if (!(o instanceof TrainSchedule)) return false

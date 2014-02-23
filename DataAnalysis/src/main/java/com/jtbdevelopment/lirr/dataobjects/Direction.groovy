@@ -7,7 +7,7 @@ import org.joda.time.LocalTime
  * Time: 9:05 PM
  */
 public enum Direction {
-    East(new LocalTime(16, 1), new LocalTime(19, 59)),
+    East(new LocalTime(16, 10), new LocalTime(19, 59)),
     West(new LocalTime(6, 0), new LocalTime(9, 59));
 
     final LocalTime startPeak

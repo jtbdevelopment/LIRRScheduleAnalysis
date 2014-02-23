@@ -26,6 +26,7 @@ class ScheduleCreator {
         ScheduleForPeriod scheduleForPeriod = new ScheduleForPeriod()
         scheduleForPeriod.start = randomParsed.from
         scheduleForPeriod.end = randomParsed.to
+        //  Do not parallelize due to merging
         schedules.each {
             ParsedSchedule parsed ->
                 scheduleForPeriod.inputFeeds.put(parsed.title, parsed.modified)
@@ -36,13 +37,27 @@ class ScheduleCreator {
                     assert peakTime: s.toString()
                     peakTime.compareTo(direction.startPeak) >= 0 && peakTime.compareTo(direction.endPeak) <= 0
                 }
-                scheduleForPeriod.schedules.addAll(processParsedSubSchedule(parsed.eastboundWeekends, Direction.East, false, neverPeak))
-                scheduleForPeriod.schedules.addAll(processParsedSubSchedule(parsed.westboundWeekends, Direction.West, false, neverPeak))
-                scheduleForPeriod.schedules.addAll(processParsedSubSchedule(parsed.eastboundWeekdays, Direction.East, true, isPeak))
-                scheduleForPeriod.schedules.addAll(processParsedSubSchedule(parsed.westboundWeekdays, Direction.West, true, isPeak))
+
+
+                addOrMergeTrainSchedules(scheduleForPeriod, processParsedSubSchedule(parsed.eastboundWeekdays, Direction.East, true, isPeak))
+                addOrMergeTrainSchedules(scheduleForPeriod, processParsedSubSchedule(parsed.westboundWeekdays, Direction.West, true, isPeak))
+                addOrMergeTrainSchedules(scheduleForPeriod, processParsedSubSchedule(parsed.eastboundWeekends, Direction.East, false, neverPeak))
+                addOrMergeTrainSchedules(scheduleForPeriod, processParsedSubSchedule(parsed.westboundWeekends, Direction.West, false, neverPeak))
         }
 
         return scheduleForPeriod
+    }
+
+    private void addOrMergeTrainSchedules(
+            final ScheduleForPeriod scheduleForPeriod, final List<TrainSchedule> trainSchedules) {
+        trainSchedules.each {
+            TrainSchedule schedule ->
+                if (scheduleForPeriod.schedules.containsKey(schedule.trainNumber)) {
+                    scheduleForPeriod.schedules[(schedule.trainNumber)].merge(schedule)
+                } else {
+                    scheduleForPeriod.schedules[(schedule.trainNumber)] = schedule
+                }
+        }
     }
 
     public LocalTime getPeakTimeDeterminant(TrainSchedule s) {
@@ -66,7 +81,8 @@ class ScheduleCreator {
 
     public List<TrainSchedule> processParsedSubSchedule(
             final Map<String, List> schedule,
-            Direction direction, boolean weekday,
+            Direction direction,
+            boolean weekday,
             final Closure<Boolean> determineIfPeak) {
         GParsPool.withPool {
             Map<String, Station> stationMap = schedule.keySet().collectEntries { String station -> [(station): Station.STATION_NAME_MAP.get(station)] }
