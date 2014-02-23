@@ -8,6 +8,7 @@ import org.joda.time.LocalTime
  */
 class TrainSchedule {
     String trainNumber
+    boolean ignore
     boolean peak
     boolean weekday
     Direction direction

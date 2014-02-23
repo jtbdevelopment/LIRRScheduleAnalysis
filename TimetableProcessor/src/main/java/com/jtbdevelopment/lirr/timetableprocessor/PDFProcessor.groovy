@@ -28,7 +28,6 @@ class PDFProcessor {
         roughParsedSchedule.modified = metadata.get("Last-Modified")
         roughParsedSchedule.subject = metadata.get("subject")
 
-
         return parsedConverter.convert(roughParsedSchedule)
     }
 }

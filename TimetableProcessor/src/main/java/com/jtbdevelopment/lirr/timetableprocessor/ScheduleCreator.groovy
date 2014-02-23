@@ -5,6 +5,7 @@ import com.jtbdevelopment.lirr.dataobjects.ScheduleForPeriod
 import com.jtbdevelopment.lirr.dataobjects.Station
 import com.jtbdevelopment.lirr.dataobjects.TrainSchedule
 import com.jtbdevelopment.lirr.timetableprocessor.data.ParsedSchedule
+import groovyx.gpars.GParsPool
 import org.joda.time.LocalTime
 
 /**
@@ -63,31 +64,33 @@ class ScheduleCreator {
         time
     }
 
-    public List<TrainSchedule> processParsedSubSchedule(LinkedHashMap<String, List> schedule, Direction direction, boolean weekday, Closure<Boolean> determineIfPeak) {
-        Map<String, Station> stationMap = schedule.keySet().collectEntries { String station -> [(station): Station.STATION_NAME_MAP.get(station)] }
-        List<TrainSchedule> trains = schedule.get("#").collect { String trainNumber ->
-            new TrainSchedule(trainNumber: trainNumber, direction: direction, peak: false, weekday: weekday)
-        }
-        (1..trains.size()).each {
-            int columnPlus1 ->
-                int column = columnPlus1 - 1
-                schedule.findAll { it.key != "#" }.each {
-                    String stationName, List<LocalTime> times ->
-                        if (times[column]) {
-                            Station station = stationMap[stationName]
-                            assert station
-                            trains[column].stops[station] = times[column]
-                        }
-                }
-        }
-        trains.each { it.peak = determineIfPeak(it, direction) }
-        trains.findAll {
-            Station.TRAINS_TO_IGNORE.contains(it.trainNumber)
-        }.each {
-            println "Skipping Train #${it.trainNumber}"
-        }
-        trains.findAll {
-            !Station.TRAINS_TO_IGNORE.contains(it.trainNumber)
+    public List<TrainSchedule> processParsedSubSchedule(
+            final Map<String, List> schedule,
+            Direction direction, boolean weekday,
+            final Closure<Boolean> determineIfPeak) {
+        GParsPool.withPool {
+            Map<String, Station> stationMap = schedule.keySet().collectEntries { String station -> [(station): Station.STATION_NAME_MAP.get(station)] }
+            List<TrainSchedule> trains = schedule.get("#").collectParallel { String trainNumber ->
+                new TrainSchedule(trainNumber: trainNumber, direction: direction, peak: false, weekday: weekday)
+            }
+            Map<String, List> stopsOnly = schedule.findAll { it.key != "#" }
+            (1..trains.size()).eachParallel {
+                int columnPlus1 ->
+                    int column = columnPlus1 - 1
+                    stopsOnly.each {
+                        String stationName, List<LocalTime> times ->
+                            if (times[column]) {
+                                Station station = stationMap[stationName]
+                                assert station
+                                trains[column].stops[station] = times[column]
+                            }
+                    }
+            }
+            trains.eachParallel {
+                it.peak = determineIfPeak(it, direction);
+                it.ignore = Station.TRAINS_TO_IGNORE.contains(it.trainNumber)
+            }
+            trains
         }
     }
 }

@@ -2,6 +2,7 @@ package com.jtbdevelopment.lirr.analysis
 
 import com.jtbdevelopment.lirr.dataobjects.*
 import groovyx.gpars.GParsPool
+import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics
 import org.joda.time.LocalTime
 
 /**
@@ -11,10 +12,8 @@ import org.joda.time.LocalTime
 class PeakAnalysis {
     public static final String FIRST_PEAK = "First Peak"
     public static final String LAST_PEAK = "Last Peak"
-    public static final String FIRST_POST_PEAK = "First Post Peak"
     public static final String LAST_PRE_PEAK = "Last Pre Peak"
-    public static final String WAIT_FOR_FIRST_PEAK = "Wait for Peak"
-    public static final String WAIT_FOR_AFTER_PEAK = "Wait For After Peak"
+    public static final String WAIT_FOR_FIRST_PEAK = "Wait for First Peak"
     public static final String NUMBER_OF_PEAK_TRAINS = "# of Peak Trains"
     public static final String AVERAGE_WAIT_BETWEEN_PEAKS = "Avg Wait Between Peaks"
     public static final String AVERAGE_RIDE_TIME = "Avg Ride Time"
@@ -59,9 +58,7 @@ class PeakAnalysis {
                                     (FIRST_PEAK): it.value[0].getOn,
                                     (LAST_PEAK): it.value[-1].getOn,
                                     (LAST_PRE_PEAK): LocalTime.MIDNIGHT,
-                                    (FIRST_POST_PEAK): LocalTime.MIDNIGHT.minusMinutes(1),
                                     (WAIT_FOR_FIRST_PEAK): NO_VALUE,
-                                    (WAIT_FOR_AFTER_PEAK): NO_VALUE,
                             ],
                     ]
             ]
@@ -112,15 +109,23 @@ class PeakAnalysis {
                             (int) (times[column - 1].getOn.millisOfDay - times[column - 2].getOn.millisOfDay) / 60000
                     }
                 } else {
-                    deltas = [0]
+                    deltas = [NO_VALUE]
                 }
                 Map<String, Object> stats = stationStatistics[station].get(append, [:])
+                DescriptiveStatistics deltaTimeStats = new DescriptiveStatistics((double[]) deltas.collect {
+                    it.doubleValue()
+                }.toArray())
+                DescriptiveStatistics rideTimeStats = new DescriptiveStatistics((double[]) times.rideTime.collect {
+                    it.doubleValue()
+                }.toArray())
                 stats[(NUMBER_OF_PEAK_TRAINS)] = times.size()
-                stats[(AVERAGE_WAIT_BETWEEN_PEAKS)] = (deltas.sum() / deltas.size()).intValue()
-                stats[(LONGEST_WAIT_BETWEEN_PEAKS)] = deltas.max()
+                stats[(AVERAGE_WAIT_BETWEEN_PEAKS)] = deltaTimeStats.mean.intValue()
+                stats[(LONGEST_WAIT_BETWEEN_PEAKS)] = deltaTimeStats.max.intValue()
+                stats[(MEDIAN_WAIT_BETWEEN_PEAKS)] = deltaTimeStats.getPercentile(50).intValue()
+                stats[(STD_DEV_WAIT_BETWEEN_PEAKS)] = deltaTimeStats.standardDeviation.intValue()
                 int avgRide = NO_VALUE;
                 if (times.size() > 0) {
-                    avgRide = (times.rideTime.sum() / times.size()).intValue()
+                    avgRide = rideTimeStats.max.intValue()
                 }
                 stats[AVERAGE_RIDE_TIME] = avgRide
         }
@@ -141,10 +146,6 @@ class PeakAnalysis {
                                 stopTime.compareTo((LocalTime) stationStats.get(LAST_PRE_PEAK)) > 0) {
                             stationStats.put(LAST_PRE_PEAK, stopTime)
                         }
-                        if (stopTime.compareTo((LocalTime) stationStats.get(LAST_PEAK)) > 0 &&
-                                stopTime.compareTo((LocalTime) stationStats.get(FIRST_POST_PEAK)) < 0) {
-                            stationStats.put(FIRST_POST_PEAK, stopTime)
-                        }
                 }
         }
         GParsPool.withPool {
@@ -152,7 +153,6 @@ class PeakAnalysis {
                 Station station, Map<String, Object> statsOverall ->
                     Map<String, Object> stats = statsOverall[(OVERALL)]
                     stats[(WAIT_FOR_FIRST_PEAK)] = timeDeltaInMinutes((LocalTime) stats.get(LAST_PRE_PEAK), (LocalTime) stats.get(FIRST_PEAK))
-                    stats[(WAIT_FOR_AFTER_PEAK)] = timeDeltaInMinutes((LocalTime) stats.get(LAST_PEAK), (LocalTime) stats.get(FIRST_POST_PEAK))
             }
         }
     }
@@ -160,7 +160,7 @@ class PeakAnalysis {
     private Set<TrainSchedule> getSchedulesForDirection(
             final ScheduleForPeriod scheduleForPeriod, final Direction direction) {
         Set<TrainSchedule> directionSchedules = scheduleForPeriod.schedules.findAll {
-            it.direction == direction
+            it.direction == direction && !it.ignore
         }
         directionSchedules as Set
     }

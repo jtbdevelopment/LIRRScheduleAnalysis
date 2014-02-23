@@ -6,6 +6,7 @@ import com.jtbdevelopment.lirr.dataobjects.ScheduleForPeriod
 import com.jtbdevelopment.lirr.dataobjects.Station
 import com.jtbdevelopment.lirr.dataobjects.Zone
 import com.jtbdevelopment.lirr.timetableprocessor.data.ParsedSchedule
+import groovyx.gpars.GParsPool
 import org.joda.time.LocalDate
 
 /**
@@ -31,18 +32,21 @@ class ScheduleCreatorTest extends GroovyTestCase {
 
     void testCreateFrom() {
         PDFProcessor pdfProcessor = new PDFProcessor()
-        List<ParsedSchedule> schedules = [
-                "BabylonBranch2013121620140223.pdf",
-                "FarRockawayBranch2013121620140223.pdf",
-                "HempsteadBranch2013121620140223.pdf",
-                "LongBeachBranch2013121620140223.pdf",
-                "MontaukBranch2013121620140223.pdf",
-                "OysterBayBranch2013121620140223.pdf",
-                "PortJeffersonBranch2013121620140223.pdf",
-                "PortWashingtonBranch2013121620140223.pdf",
-                "RonkonkomaBranch2013121620140223.pdf",
-                "WestHempsteadBranch2013121620140223.pdf"].collect {
-            pdfProcessor.parse(ScheduleCreatorTest.classLoader.getResourceAsStream(it))
+        List<ParsedSchedule> schedules = []
+        GParsPool.withPool {
+            schedules = [
+                    "BabylonBranch2013121620140223.pdf",
+                    "FarRockawayBranch2013121620140223.pdf",
+                    "HempsteadBranch2013121620140223.pdf",
+                    "LongBeachBranch2013121620140223.pdf",
+                    "MontaukBranch2013121620140223.pdf",
+                    "OysterBayBranch2013121620140223.pdf",
+                    "PortJeffersonBranch2013121620140223.pdf",
+                    "PortWashingtonBranch2013121620140223.pdf",
+                    "RonkonkomaBranch2013121620140223.pdf",
+                    "WestHempsteadBranch2013121620140223.pdf"].collectParallel {
+                pdfProcessor.parse(ScheduleCreatorTest.classLoader.getResourceAsStream(it))
+            }
         }
 
         ScheduleCreator scheduleCreator = new ScheduleCreator()

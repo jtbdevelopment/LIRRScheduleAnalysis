@@ -32,10 +32,10 @@ class FinalConverter {
         parsedSchedule.modified = DateTime.parse(roughParsedSchedule.modified)
 
         parseEffectiveDates(roughParsedSchedule, parsedSchedule)
+        parsedSchedule.eastboundWeekdays = parseTimes(roughParsedSchedule.eastboundWeekdays)
         parsedSchedule.westboundWeekdays = parseTimes(roughParsedSchedule.westboundWeekdays)
         parsedSchedule.westboundWeekends = parseTimes(roughParsedSchedule.westboundWeekends)
         parsedSchedule.eastboundWeekends = parseTimes(roughParsedSchedule.eastboundWeekends)
-        parsedSchedule.eastboundWeekdays = parseTimes(roughParsedSchedule.eastboundWeekdays)
 
         return parsedSchedule;
     }
@@ -65,6 +65,7 @@ class FinalConverter {
         List<String> trainIDs = matrix.get(0).subList(1, matrix.get(0).size())
         List<String> startAMPMs = matrix.get(1).subList(1, matrix.get(1).size())
         List<String> endAMPMs = matrix.get(2).subList(1, matrix.get(2).size())
+
         (1..matrixOfTimes.get(0).size()).each {
             int columnP1 ->
                 int column = columnP1 - 1
@@ -80,15 +81,23 @@ class FinalConverter {
                             }
                     }
                 }
+
                 if (startAMPM != endAMPM) {
-                    if (startAMPM == "AM") {
-                        determineAMPMForCrossoverTrains(matrixOfTimes, column, 12)
-                    } else {
-                        determineAMPMForCrossoverTrains(matrixOfTimes, column, -12)
+                    matrixOfTimes.each {
+                        List<LocalTime> times ->
+                            LocalTime checking = times[column]
+                            if (checking &&
+                                    column > 0) {
+                                int delta = (times.subList(0, column).findAll {
+                                    it
+                                }.last().hourOfDay - checking.hourOfDay)
+                                if (delta > 4 || delta < -8) {
+                                    times[column] = checking.plusHours(12)
+                                }
+                            }
                     }
                 }
         }
-
         Map<String, List> result = [:]
         (4..matrix.size()).each {
             int row ->
@@ -99,32 +108,7 @@ class FinalConverter {
         result
     }
 
-    private static void determineAMPMForCrossoverTrains(
-            final List<List<LocalTime>> matrixOfTimes, int column, int adjustBy) {
-        LocalTime lastTime = null
-        boolean startFlipping = false
-        (1..matrixOfTimes.size()).each {
-            int row ->
-                List<LocalTime> timeRow = matrixOfTimes.get(row - 1)
-                LocalTime currentTime = timeRow.get(column);
-                if (lastTime == null) {
-                    lastTime = currentTime
-                } else {
-                    if (currentTime) {
-                        if (lastTime.compareTo(currentTime) > 0) {
-                            startFlipping = true
-                        }
-                        if (startFlipping) {
-                            currentTime = currentTime.plusHours(adjustBy)
-                            timeRow.set(column, currentTime)
-                        }
-                    }
-                }
-        }
-    }
-
     private static List<List<String>> breakIntoStringMatrix(final List<String> times) {
-        List<List<String>> matrix = []
 
         List<String> trainIDs = times.get(0).replace("Train #", "").tokenize()
         List<String> startAMPMs = times.get(1).tokenize().findAll { it == "AM" || it == "PM" }
@@ -132,10 +116,6 @@ class FinalConverter {
         startAMPMs.add(0, "Start AM/PM")
         endAMPMs.add(0, "End AM/PM")
         trainIDs.add(0, "#")
-        matrix.add(trainIDs)
-        matrix.add(startAMPMs)
-        matrix.add(endAMPMs)
-
 
         ArrayList<String> stationRows = times.findAll { !it.contains("PM") && !it.contains("Train #") }.collect {
             it.toUpperCase()
@@ -171,13 +151,16 @@ class FinalConverter {
                 "TEXT"
             }
         }
-        (1..names.size()).each {
-            int row ->
-                List<String> tokenizedRow = tokenizedRows.get(row - 1)
-                tokenizedRow.add(0, names.get(row - 1))
-                matrix.add(tokenizedRow)
+        List<List<String>> matrix = []
+        matrix.add(trainIDs)
+        matrix.add(startAMPMs)
+        matrix.add(endAMPMs)
+        tokenizedRows.eachWithIndex {
+            List<String> entry, int i ->
+                entry.add(0, names[i])
+                matrix.add(entry)
         }
-        int size = matrix.get(0).size()
+        int size = matrix[0].size()
         matrix.each { assert size == it.size() }
         return matrix
     }
