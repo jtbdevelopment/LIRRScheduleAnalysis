@@ -1,4 +1,4 @@
-package com.jtbdevelopment.lirr.analysis
+package com.jtbdevelopment.lirr.dataobjects.analysis
 
 import org.joda.time.LocalTime
 import org.joda.time.Minutes

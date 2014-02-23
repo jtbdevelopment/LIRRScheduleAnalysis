@@ -1,12 +1,9 @@
-package com.jtbdevelopment.lirr.timetableprocessor.data
-
-import org.joda.time.DateTime
-
+package com.jtbdevelopment.lirr.dataobjects.parsing
 /**
  * Date: 2/15/14
  * Time: 2:50 PM
  */
-class RoughParsedSchedule {
+class ParsedPDFSchedule {
     String title
     String modified
     String subject

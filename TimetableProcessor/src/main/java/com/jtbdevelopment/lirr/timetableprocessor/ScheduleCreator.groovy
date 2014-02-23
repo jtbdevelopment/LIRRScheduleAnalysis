@@ -1,10 +1,10 @@
 package com.jtbdevelopment.lirr.timetableprocessor
 
-import com.jtbdevelopment.lirr.dataobjects.Direction
-import com.jtbdevelopment.lirr.dataobjects.ScheduleForPeriod
-import com.jtbdevelopment.lirr.dataobjects.Station
-import com.jtbdevelopment.lirr.dataobjects.TrainSchedule
-import com.jtbdevelopment.lirr.timetableprocessor.data.ParsedSchedule
+import com.jtbdevelopment.lirr.dataobjects.core.Direction
+import com.jtbdevelopment.lirr.dataobjects.core.Station
+import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
+import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
+import com.jtbdevelopment.lirr.dataobjects.schedule.TrainSchedule
 import groovyx.gpars.GParsPool
 import org.joda.time.LocalTime
 
@@ -13,22 +13,22 @@ import org.joda.time.LocalTime
  * Time: 6:43 AM
  */
 class ScheduleCreator {
-    ScheduleForPeriod createFrom(final Set<ParsedSchedule> schedules) {
+    CompleteSchedule createFrom(final Set<ProcessedPDFSchedule> schedules) {
         assert schedules.size() > 0
 
-        ParsedSchedule randomParsed = schedules.iterator().next()
+        ProcessedPDFSchedule randomParsed = schedules.iterator().next()
         schedules.each {
-            ParsedSchedule parsed ->
+            ProcessedPDFSchedule parsed ->
                 assert randomParsed.from == parsed.from
                 assert randomParsed.to == parsed.to
         }
 
-        ScheduleForPeriod scheduleForPeriod = new ScheduleForPeriod()
+        CompleteSchedule scheduleForPeriod = new CompleteSchedule()
         scheduleForPeriod.start = randomParsed.from
         scheduleForPeriod.end = randomParsed.to
         //  Do not parallelize due to merging
         schedules.each {
-            ParsedSchedule parsed ->
+            ProcessedPDFSchedule parsed ->
                 scheduleForPeriod.inputFeeds.put(parsed.title, parsed.modified)
 
                 Closure<Boolean> neverPeak = { TrainSchedule s, Direction direction -> Boolean.FALSE }
@@ -49,7 +49,7 @@ class ScheduleCreator {
     }
 
     private void addOrMergeTrainSchedules(
-            final ScheduleForPeriod scheduleForPeriod, final List<TrainSchedule> trainSchedules) {
+            final CompleteSchedule scheduleForPeriod, final List<TrainSchedule> trainSchedules) {
         trainSchedules.each {
             TrainSchedule schedule ->
                 if (scheduleForPeriod.schedules.containsKey(schedule.trainNumber)) {

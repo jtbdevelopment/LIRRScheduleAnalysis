@@ -16,7 +16,6 @@
     <orderEntry type="library" exported="" name="groovy-2.1.9" level="application" />
     <orderEntry type="library" exported="" name="joda-time:joda-time:2.3" level="project" />
     <orderEntry type="module" module-name="DataAnalysis" exported="" />
-    <orderEntry type="library" scope="TEST" name="org.apache.commons:commons-math3:3.0" level="project" />
   </component>
 </module>
 

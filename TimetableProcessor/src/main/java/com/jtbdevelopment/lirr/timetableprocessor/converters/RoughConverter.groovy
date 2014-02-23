@@ -1,7 +1,7 @@
 package com.jtbdevelopment.lirr.timetableprocessor.converters
 
-import com.jtbdevelopment.lirr.dataobjects.Station
-import com.jtbdevelopment.lirr.timetableprocessor.data.RoughParsedSchedule
+import com.jtbdevelopment.lirr.dataobjects.core.Station
+import com.jtbdevelopment.lirr.dataobjects.parsing.ParsedPDFSchedule
 
 /**
  * Date: 2/15/14
@@ -20,8 +20,8 @@ class RoughConverter {
             "Jan. ": "Jan."
     ]
 
-    RoughParsedSchedule convert(final String input) {
-        RoughParsedSchedule roughParsedSchedule = new RoughParsedSchedule()
+    ParsedPDFSchedule convert(final String input) {
+        ParsedPDFSchedule roughParsedSchedule = new ParsedPDFSchedule()
 
         assignSchedulesToDetails(roughOutSchedules(input), roughParsedSchedule)
 
@@ -29,7 +29,7 @@ class RoughConverter {
     }
 
     private static void assignSchedulesToDetails(
-            final List<List<String>> rawSchedules, final RoughParsedSchedule roughParsedSchedule) {
+            final List<List<String>> rawSchedules, final ParsedPDFSchedule roughParsedSchedule) {
         assert rawSchedules.size() == 4
         List<Boolean> isEast = []
 

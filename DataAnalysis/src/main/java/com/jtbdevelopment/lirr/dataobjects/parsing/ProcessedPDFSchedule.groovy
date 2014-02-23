@@ -1,4 +1,4 @@
-package com.jtbdevelopment.lirr.timetableprocessor.data
+package com.jtbdevelopment.lirr.dataobjects.parsing
 
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
@@ -7,7 +7,7 @@ import org.joda.time.LocalDate
  * Date: 2/15/14
  * Time: 6:54 PM
  */
-class ParsedSchedule {
+class ProcessedPDFSchedule {
     String title = ""
     DateTime modified
     LocalDate from
@@ -20,9 +20,9 @@ class ParsedSchedule {
 
     boolean equals(final o) {
         if (this.is(o)) return true
-        if (!(o instanceof ParsedSchedule)) return false
+        if (!(o instanceof ProcessedPDFSchedule)) return false
 
-        final ParsedSchedule that = (ParsedSchedule) o
+        final ProcessedPDFSchedule that = (ProcessedPDFSchedule) o
 
         if (from != that.from) return false
         if (modified != that.modified) return false

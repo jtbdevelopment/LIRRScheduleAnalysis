@@ -1,7 +1,7 @@
 package com.jtbdevelopment.lirr.analysis
 
-import com.jtbdevelopment.lirr.dataobjects.Direction
-import com.jtbdevelopment.lirr.dataobjects.ScheduleForPeriod
+import com.jtbdevelopment.lirr.dataobjects.analysis.Analysis
+import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
 
 /**
  * Date: 2/23/14
@@ -22,5 +22,5 @@ public interface Analyzer {
 
     static final String OVERALL = "Overall"
 
-    Map<Direction, Map<String, Object>> analyze(final ScheduleForPeriod scheduleForPeriod)
+    Analysis analyze(final CompleteSchedule scheduleForPeriod)
 }

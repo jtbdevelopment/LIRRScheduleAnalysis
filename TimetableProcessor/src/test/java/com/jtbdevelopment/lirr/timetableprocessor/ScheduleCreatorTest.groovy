@@ -1,10 +1,7 @@
 package com.jtbdevelopment.lirr.timetableprocessor
 
-import com.jtbdevelopment.lirr.analysis.PeakTrainAnalyzer
-import com.jtbdevelopment.lirr.dataobjects.Direction
-import com.jtbdevelopment.lirr.dataobjects.ScheduleForPeriod
-import com.jtbdevelopment.lirr.dataobjects.Station
-import com.jtbdevelopment.lirr.timetableprocessor.data.ParsedSchedule
+import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
+import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
 import groovyx.gpars.GParsPool
 import org.joda.time.LocalDate
 
@@ -16,9 +13,9 @@ class ScheduleCreatorTest extends GroovyTestCase {
     void testExceptionOnMismatch() {
         LocalDate from = LocalDate.now().minusDays(20)
         LocalDate to = LocalDate.now()
-        Set<ParsedSchedule> inputs = (1..5).collect {
+        Set<ProcessedPDFSchedule> inputs = (1..5).collect {
             def i ->
-                def schedule = new ParsedSchedule(from: from, to: to, title: i.toString())
+                def schedule = new ProcessedPDFSchedule(from: from, to: to, title: i.toString())
                 if (i == 5) {
                     schedule.to = LocalDate.now().minusDays(1)
                 }
@@ -31,7 +28,7 @@ class ScheduleCreatorTest extends GroovyTestCase {
 
     void testCreateFrom() {
         PDFProcessor pdfProcessor = new PDFProcessor()
-        List<ParsedSchedule> schedules = []
+        List<ProcessedPDFSchedule> schedules = []
         GParsPool.withPool {
             schedules = [
                     "BabylonBranch2013121620140223.pdf",
@@ -50,20 +47,7 @@ class ScheduleCreatorTest extends GroovyTestCase {
         }
 
         ScheduleCreator scheduleCreator = new ScheduleCreator()
-        ScheduleForPeriod scheduleForPeriod = scheduleCreator.createFrom(schedules as Set)
-        printAnalysis(new PeakTrainAnalyzer().analyze(scheduleForPeriod))
+        CompleteSchedule scheduleForPeriod = scheduleCreator.createFrom(schedules as Set)
     }
-
-    private void printAnalysis(Map<Direction, Map<Station, Map<String, Object>>> zoneDirectionAnalysis) {
-        println "Analysis-----------"
-        zoneDirectionAnalysis.each {
-            println it.key
-            it.value.each {
-                println "   " + it.key + ":" + it.value
-            }
-        }
-        println "Analysis-----------"
-    }
-
 
 }

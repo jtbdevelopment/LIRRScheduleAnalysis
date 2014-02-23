@@ -1,6 +1,6 @@
 package com.jtbdevelopment.lirr.timetableprocessor
 
-import com.jtbdevelopment.lirr.timetableprocessor.data.ParsedSchedule
+import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
 import org.joda.time.LocalTime
@@ -19,7 +19,7 @@ class PDFProcessorTest extends GroovyTestCase {
     }
 
     void testWestHempstead() {
-        ParsedSchedule schedule = processPDF("WestHempsteadBranch2013121620140223.pdf", "West Hempstead Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:50.000Z"))
+        ProcessedPDFSchedule schedule = processPDF("WestHempsteadBranch2013121620140223.pdf", "West Hempstead Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:50.000Z"))
         printSchedule(schedule)
         assert ["#", "PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "ST. ALBANS"] as Set == schedule.eastboundWeekends.keySet()
         assert [LT(7, 28), LT(9, 28), LT(11, 28), LT(13, 28), LT(15, 28), LT(17, 28), LT(19, 28), LT(21, 28), LT(23, 5)] == schedule.eastboundWeekends.get("ST. ALBANS")
@@ -40,7 +40,7 @@ class PDFProcessorTest extends GroovyTestCase {
     }
 
     void testLongBeach() {
-        ParsedSchedule schedule = processPDF("LongBeachBranch2013121620140223.pdf", "Long Beach Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:45.000Z"))
+        ProcessedPDFSchedule schedule = processPDF("LongBeachBranch2013121620140223.pdf", "Long Beach Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:45.000Z"))
         printSchedule(schedule)
         assert ["#", "PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "VALLEY STREAM", "LYNBROOK", "CENTRE AVENUE", "EAST ROCKAWAY", "OCEANSIDE", "ISLAND PARK", "LONG BEACH"] as Set == schedule.eastboundWeekends.keySet()
         assert [LT(0, 57), LT(1, 25), LT(1, 25), null, LT(2, 58), LT(2, 58), LT(2, 58), null, LT(4, 24), null, LT(6, 43), LT(6, 43), LT(7, 33), LT(7, 33), LT(8, 43), LT(8, 43), LT(9, 43), LT(9, 43), LT(10, 43), LT(10, 43), LT(11, 43), LT(11, 43), LT(12, 43), LT(12, 43), LT(13, 43), LT(13, 43), LT(14, 43), LT(14, 43), LT(15, 33), LT(15, 33), LT(16, 33), null, LT(16, 33), null, LT(17, 43), LT(17, 43), null, LT(18, 43), LT(18, 43), null, LT(19, 43), LT(19, 43), LT(20, 33), LT(20, 33), LT(21, 43), LT(21, 43), LT(22, 33), LT(22, 53), LT(23, 15), LT(23, 46)] == schedule.eastboundWeekends.get("KEW GARDENS")
@@ -64,7 +64,7 @@ class PDFProcessorTest extends GroovyTestCase {
     }
 
     void testHempstead() {
-        ParsedSchedule schedule = processPDF("HempsteadBranch2013121620140223.pdf", "Hempstead Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:36.000Z"))
+        ProcessedPDFSchedule schedule = processPDF("HempsteadBranch2013121620140223.pdf", "Hempstead Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:36.000Z"))
         printSchedule(schedule)
         assert ["#", "PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "HOLLIS", "QUEENS VILLAGE", "BELLEROSE", "FLORAL PARK", "STEWART MANOR", "NASSAU BOULEVARD", "GARDEN CITY", "COUNTRY LIFE PRESS", "HEMPSTEAD"] as Set == schedule.eastboundWeekends.keySet()
         assert [LT(1, 18), LT(2, 18), LT(4, 44), LT(5, 32), LT(7, 21), LT(8, 21), LT(9, 21), LT(10, 21), LT(11, 21), LT(12, 21), LT(13, 21), LT(14, 21), LT(15, 21), LT(16, 21), LT(17, 21), LT(18, 21), LT(19, 21), LT(20, 21), LT(21, 21), LT(22, 21), LT(23, 26), LT(0, 33)] == schedule.eastboundWeekends.get("FLORAL PARK")
@@ -86,7 +86,7 @@ class PDFProcessorTest extends GroovyTestCase {
     }
 
     void testFarRockaway() {
-        ParsedSchedule schedule = processPDF("FarRockawayBranch2013121620140223.pdf", "Far Rockaway Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:13.000Z"))
+        ProcessedPDFSchedule schedule = processPDF("FarRockawayBranch2013121620140223.pdf", "Far Rockaway Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:13.000Z"))
         printSchedule(schedule)
         assert ["#", "PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "LOCUST MANOR", "LAURELTON", "ROSEDALE", "VALLEY STREAM", "GIBSON", "HEWLETT", "WOODMERE", "CEDARHURST", "LAWRENCE", "INWOOD", "FAR ROCKAWAY"] as Set == schedule.eastboundWeekends.keySet()
         assert [LT(0, 52), LT(1, 54), LT(2, 22), LT(3, 19), LT(3, 32), LT(4, 41), LT(4, 51), LT(6, 55), LT(7, 22), LT(7, 55), LT(8, 22), LT(8, 55), LT(9, 22), LT(9, 55), LT(10, 22), LT(10, 55), LT(11, 22), LT(11, 55), LT(12, 22), LT(12, 55), LT(13, 22), LT(13, 55), LT(14, 22), LT(14, 55), LT(15, 22), LT(15, 55), LT(16, 22), LT(16, 55), null, LT(17, 22), null, LT(17, 55), LT(18, 22), null, LT(18, 55), LT(19, 22), null, LT(19, 55), LT(20, 22), LT(20, 55), LT(21, 22), LT(21, 55), LT(22, 22), LT(22, 55), LT(23, 22), LT(0, 3), LT(0, 32)] == schedule.eastboundWeekends.get("VALLEY STREAM")
@@ -109,7 +109,7 @@ class PDFProcessorTest extends GroovyTestCase {
     }
 
     void testBabylon() {
-        ParsedSchedule schedule = processPDF("BabylonBranch2013121620140223.pdf", "Babylon Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:42:51.000Z"))
+        ProcessedPDFSchedule schedule = processPDF("BabylonBranch2013121620140223.pdf", "Babylon Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:42:51.000Z"))
         printSchedule(schedule)
         assert ["#", "PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "LYNBROOK", "ROCKVILLE CENTRE", "BALDWIN", "FREEPORT", "MERRICK", "BELLMORE", "WANTAGH", "SEAFORD", "MASSAPEQUA", "MASSAPEQUA PARK", "AMITYVILLE", "COPIAGUE", "LINDENHURST", "BABYLON"] as Set == schedule.eastboundWeekends.keySet()
         assert [LT(0, 20), LT(0, 57), LT(0, 57), null, LT(1, 25), LT(1, 25), null, LT(2, 58), LT(2, 58), null, null, LT(6, 43), LT(7, 15), LT(7, 33), LT(7, 33), LT(8, 15), LT(8, 43), LT(9, 15), LT(9, 15), LT(9, 43), LT(9, 43), LT(10, 15), LT(10, 43), LT(11, 15), LT(11, 43), LT(11, 43), LT(12, 15), LT(12, 43), LT(13, 15), LT(13, 43), LT(14, 15), LT(14, 43), LT(14, 43), LT(15, 15), LT(15, 33), LT(15, 33), LT(16, 15), LT(16, 33), LT(16, 33), LT(17, 15), LT(17, 15), LT(17, 43), LT(17, 43), LT(18, 15), LT(18, 15), LT(18, 43), LT(18, 43), LT(19, 15), LT(19, 15), LT(19, 43), LT(20, 15), LT(20, 33), LT(21, 15), LT(21, 15), LT(21, 43), LT(22, 15), LT(22, 33), LT(22, 53), LT(23, 15), LT(23, 15), LT(23, 46)] == schedule.eastboundWeekends.get("KEW GARDENS")
@@ -132,7 +132,7 @@ class PDFProcessorTest extends GroovyTestCase {
     }
 
     void testMontauk() {
-        ParsedSchedule schedule = processPDF("MontaukBranch2013121620140223.pdf", "Montauk Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:54.000Z"))
+        ProcessedPDFSchedule schedule = processPDF("MontaukBranch2013121620140223.pdf", "Montauk Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:54.000Z"))
         printSchedule(schedule)
         assert ["#", "PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "MINEOLA", "HICKSVILLE", "BABYLON", "BAY SHORE", "ISLIP", "GREAT RIVER", "OAKDALE", "SAYVILLE", "PATCHOGUE", "BELLPORT", "MASTIC-SHIRLEY", "SPEONK", "WESTHAMPTON", "HAMPTON BAYS", "SOUTHAMPTON", "BRIDGEHAMPTON", "EAST HAMPTON", "AMAGANSETT", "MONTAUK"] as Set == schedule.eastboundWeekends.keySet()
         assert [LT(0, 41), LT(1, 18), LT(6, 45), LT(7, 45), LT(8, 45), LT(9, 45), LT(10, 45), LT(11, 45), LT(12, 45), LT(14, 22), LT(14, 45), LT(15, 45), LT(16, 45), LT(18, 45), LT(19, 45), LT(20, 45), LT(21, 45), LT(22, 50)] == schedule.eastboundWeekends.get("ATLANTIC TERMINAL")
@@ -158,7 +158,7 @@ class PDFProcessorTest extends GroovyTestCase {
     }
 
     void testPortWashington() {
-        ParsedSchedule schedule = processPDF("PortWashingtonBranch2013121620140223.pdf", "Port Washington Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:24.000Z"))
+        ProcessedPDFSchedule schedule = processPDF("PortWashingtonBranch2013121620140223.pdf", "Port Washington Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:24.000Z"))
         printSchedule(schedule)
         assert ["#", "PENN STATION", "WOODSIDE", "FLUSHING MAIN STREET", "MURRAY HILL", "BROADWAY", "AUBURNDALE", "BAYSIDE", "DOUGLASTON", "LITTLE NECK", "GREAT NECK", "MANHASSET", "PLANDOME", "PORT WASHINGTON"] as Set == schedule.eastboundWeekends.keySet()
         assert [LT(0, 58), LT(1, 16), LT(1, 57), LT(3, 0), LT(3, 45), LT(5, 0), LT(6, 0), LT(7, 0), LT(8, 0), LT(8, 30), LT(9, 0), LT(9, 30), LT(10, 0), LT(10, 30), LT(11, 0), LT(11, 30), LT(12, 0), LT(12, 30), LT(13, 0), LT(13, 30), LT(14, 0), LT(14, 30), LT(15, 0), LT(15, 30), LT(16, 0), LT(16, 30), LT(17, 0), LT(17, 30), null, LT(18, 0), LT(18, 30), null, LT(19, 0), LT(19, 30), null, LT(20, 0), LT(20, 30), LT(21, 0), LT(21, 30), LT(22, 0), LT(22, 30), LT(23, 0), LT(23, 30), LT(0, 2)] == schedule.eastboundWeekends.get("PLANDOME")
@@ -177,7 +177,7 @@ class PDFProcessorTest extends GroovyTestCase {
     }
 
     void testRonkonkoma() {
-        ParsedSchedule schedule = processPDF("RonkonkomaBranch2013121620140223.pdf", "Ronkonkoma Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:39.000Z"))
+        ProcessedPDFSchedule schedule = processPDF("RonkonkomaBranch2013121620140223.pdf", "Ronkonkoma Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:39.000Z"))
         printSchedule(schedule)
         assert ["#", "PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "MINEOLA", "HICKSVILLE", "BETHPAGE", "FARMINGDALE", "PINELAWN", "WYANDANCH", "DEER PARK", "BRENTWOOD", "CENTRAL ISLIP", "RONKONKOMA"] as Set == schedule.eastboundWeekends.keySet()
         assert [LT(0, 50), null, LT(1, 48), LT(2, 38), LT(3, 28), LT(4, 29), LT(5, 19), LT(6, 27), LT(7, 28), LT(8, 27), LT(9, 27), LT(10, 27), LT(11, 27), LT(12, 27), LT(13, 27), LT(14, 27), LT(15, 27), LT(16, 9), null, LT(16, 27), LT(17, 9), LT(17, 27), LT(18, 9), LT(18, 27), LT(19, 9), LT(19, 27), LT(20, 27), LT(21, 27), LT(22, 27), LT(23, 54)] == schedule.eastboundWeekends.get("MINEOLA")
@@ -200,7 +200,7 @@ class PDFProcessorTest extends GroovyTestCase {
     }
 
     void testPortJefferson() {
-        ParsedSchedule schedule = processPDF("PortJeffersonBranch2013121620140223.pdf", "Port Jefferson Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:14.000Z"))
+        ProcessedPDFSchedule schedule = processPDF("PortJeffersonBranch2013121620140223.pdf", "Port Jefferson Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:14.000Z"))
         printSchedule(schedule)
         assert ["#", "PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "NEW HYDE PARK", "MERILLON AVENUE", "MINEOLA", "CARLE PLACE", "WESTBURY", "HICKSVILLE", "SYOSSET", "COLD SPRING HARBOR", "HUNTINGTON", "GREENLAWN", "NORTHPORT", "KINGS PARK", "SMITHTOWN", "ST. JAMES", "STONY BROOK", "PORT JEFFERSON"] as Set == schedule.eastboundWeekends.keySet()
         assert [LT(0, 20), LT(0, 57), LT(0, 57), LT(1, 25), LT(1, 25), LT(1, 25), null, null, null, LT(2, 58), LT(2, 58), null, LT(4, 24), LT(4, 24), null, null, null, null, LT(6, 43), LT(7, 15), LT(7, 33), LT(7, 33), LT(8, 15), LT(8, 15), LT(8, 43), LT(8, 43), LT(9, 15), LT(9, 15), LT(9, 43), LT(10, 15), LT(10, 15), LT(10, 43), LT(10, 43), LT(11, 15), LT(11, 15), LT(11, 43), LT(12, 15), LT(12, 15), LT(12, 43), LT(12, 43), LT(13, 15), LT(13, 15), LT(13, 43), LT(14, 15), LT(14, 15), LT(14, 43), LT(14, 43), LT(15, 15), LT(15, 33), LT(15, 33), LT(15, 33), LT(15, 33), LT(15, 33), LT(16, 15), LT(16, 33), LT(16, 33), LT(16, 33), LT(16, 33), LT(17, 15), LT(17, 15), LT(17, 15), LT(17, 43), LT(17, 43), LT(17, 43), LT(18, 15), LT(18, 15), LT(18, 15), LT(18, 43), LT(18, 43), LT(18, 43), LT(19, 15), LT(19, 15), LT(19, 43), LT(19, 43), LT(20, 15), LT(20, 33), LT(20, 33), LT(21, 15), LT(21, 15), LT(21, 43), LT(21, 43), LT(22, 15), LT(22, 33), LT(22, 53), LT(23, 15), LT(23, 15), LT(23, 46)] == schedule.eastboundWeekends.get("KEW GARDENS")
@@ -227,7 +227,7 @@ class PDFProcessorTest extends GroovyTestCase {
     }
 
     void testOysterBay() {
-        ParsedSchedule schedule = processPDF("OysterBayBranch2013121620140223.pdf", "Oyster Bay Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:03.000Z"))
+        ProcessedPDFSchedule schedule = processPDF("OysterBayBranch2013121620140223.pdf", "Oyster Bay Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:03.000Z"))
         printSchedule(schedule)
         assert ["#", "PENN STATION", "WOODSIDE", "FOREST HILLS", "KEW GARDENS", "HUNTERSPOINT AVE.", "ATLANTIC TERMINAL", "NOSTRAND AVENUE", "EAST NEW YORK", "JAMAICA", "MINEOLA", "EAST WILLISTON", "ALBERTSON", "ROSLYN", "GREENVALE", "GLEN HEAD", "SEA CLIFF", "GLEN STREET", "GLEN COVE", "LOCUST VALLEY", "OYSTER BAY"] as Set == schedule.eastboundWeekends.keySet()
         assert [LT(9, 46), LT(11, 46), LT(13, 46), LT(15, 46), LT(17, 46), LT(18, 46), LT(19, 46), LT(20, 46), LT(22, 46), LT(0, 43)] == schedule.eastboundWeekends.get("OYSTER BAY")
@@ -246,12 +246,12 @@ class PDFProcessorTest extends GroovyTestCase {
         assert [LT(5, 37), LT(6, 15), LT(6, 54), null, LT(7, 38), LT(8, 6), LT(8, 41), LT(9, 55), LT(10, 55), LT(12, 55), LT(13, 55), LT(14, 55), LT(16, 45), LT(18, 18), LT(18, 59), LT(20, 46), LT(21, 48), LT(23, 42)] == schedule.westboundWeekdays.get("GREENVALE")
     }
 
-    private ParsedSchedule processPDF(
+    private ProcessedPDFSchedule processPDF(
             final String file,
             final String expectedTitle,
             final LocalDate expectedFrom, final LocalDate expectedTo, final DateTime expectedModified) {
         InputStream is = new BufferedInputStream(PDFProcessorTest.classLoader.getResourceAsStream(file))
-        ParsedSchedule parsedSchedule = new PDFProcessor().parse(is)
+        ProcessedPDFSchedule parsedSchedule = new PDFProcessor().parse(is)
         is.close()
         assert expectedTitle == parsedSchedule.title
         assert expectedFrom == parsedSchedule.from
@@ -260,7 +260,7 @@ class PDFProcessorTest extends GroovyTestCase {
         parsedSchedule
     }
 
-    private void printSchedule(final ParsedSchedule schedule) {
+    private void printSchedule(final ProcessedPDFSchedule schedule) {
 
         printScheduleSubset(schedule.eastboundWeekends)
         printScheduleSubset(schedule.eastboundWeekdays)

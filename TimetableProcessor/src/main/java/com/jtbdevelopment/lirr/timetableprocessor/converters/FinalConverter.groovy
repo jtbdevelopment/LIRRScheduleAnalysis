@@ -1,8 +1,8 @@
 package com.jtbdevelopment.lirr.timetableprocessor.converters
 
-import com.jtbdevelopment.lirr.dataobjects.Station
-import com.jtbdevelopment.lirr.timetableprocessor.data.ParsedSchedule
-import com.jtbdevelopment.lirr.timetableprocessor.data.RoughParsedSchedule
+import com.jtbdevelopment.lirr.dataobjects.core.Station
+import com.jtbdevelopment.lirr.dataobjects.parsing.ParsedPDFSchedule
+import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
 import org.joda.time.LocalTime
@@ -26,8 +26,8 @@ class FinalConverter {
                         it.name.toUpperCase()
                     }.join('|') + ")")
 
-    ParsedSchedule convert(final RoughParsedSchedule roughParsedSchedule) {
-        ParsedSchedule parsedSchedule = new ParsedSchedule()
+    ProcessedPDFSchedule convert(final ParsedPDFSchedule roughParsedSchedule) {
+        ProcessedPDFSchedule parsedSchedule = new ProcessedPDFSchedule()
         parsedSchedule.title = roughParsedSchedule.title
         parsedSchedule.modified = DateTime.parse(roughParsedSchedule.modified)
 
@@ -165,7 +165,7 @@ class FinalConverter {
         return matrix
     }
 
-    private void parseEffectiveDates(RoughParsedSchedule roughParsedSchedule, ParsedSchedule parsedSchedule) {
+    private void parseEffectiveDates(ParsedPDFSchedule roughParsedSchedule, ProcessedPDFSchedule parsedSchedule) {
         String replaced = roughParsedSchedule.subject.replace("Effective ", "")
         List<String> tokens = replaced.tokenize()
         assert tokens.size() == 7
