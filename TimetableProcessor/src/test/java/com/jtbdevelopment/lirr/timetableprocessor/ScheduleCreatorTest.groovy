@@ -4,7 +4,6 @@ import com.jtbdevelopment.lirr.analysis.PeakTrainAnalyzer
 import com.jtbdevelopment.lirr.dataobjects.Direction
 import com.jtbdevelopment.lirr.dataobjects.ScheduleForPeriod
 import com.jtbdevelopment.lirr.dataobjects.Station
-import com.jtbdevelopment.lirr.dataobjects.Zone
 import com.jtbdevelopment.lirr.timetableprocessor.data.ParsedSchedule
 import groovyx.gpars.GParsPool
 import org.joda.time.LocalDate
@@ -52,11 +51,10 @@ class ScheduleCreatorTest extends GroovyTestCase {
 
         ScheduleCreator scheduleCreator = new ScheduleCreator()
         ScheduleForPeriod scheduleForPeriod = scheduleCreator.createFrom(schedules as Set)
-        printAnalysis(new PeakTrainAnalyzer().analyzeForZone(scheduleForPeriod, Zone.Zone7, Direction.West))
-        printAnalysis(new PeakTrainAnalyzer().analyzeForZone(scheduleForPeriod, Zone.Zone7, Direction.East))
+        printAnalysis(new PeakTrainAnalyzer().analyze(scheduleForPeriod))
     }
 
-    private void printAnalysis(Map<Station, Map<String, Object>> zoneDirectionAnalysis) {
+    private void printAnalysis(Map<Direction, Map<Station, Map<String, Object>>> zoneDirectionAnalysis) {
         println "Analysis-----------"
         zoneDirectionAnalysis.each {
             println it.key

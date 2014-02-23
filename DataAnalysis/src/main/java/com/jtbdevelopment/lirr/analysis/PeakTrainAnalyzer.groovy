@@ -1,48 +1,37 @@
 package com.jtbdevelopment.lirr.analysis
 
-import com.jtbdevelopment.lirr.dataobjects.*
+import com.jtbdevelopment.lirr.dataobjects.Direction
+import com.jtbdevelopment.lirr.dataobjects.ScheduleForPeriod
+import com.jtbdevelopment.lirr.dataobjects.Station
+import com.jtbdevelopment.lirr.dataobjects.TrainSchedule
 import groovyx.gpars.GParsPool
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics
 import org.joda.time.LocalTime
+import org.joda.time.Minutes
 
 /**
  * Date: 2/18/14
  * Time: 8:08 PM
  */
-class PeakTrainAnalyzer {
-    public static final String FIRST_PEAK = "First Peak"
-    public static final String LAST_PEAK = "Last Peak"
-    public static final String LAST_PRE_PEAK = "Last Pre Peak"
-    public static final String WAIT_FOR_FIRST_PEAK = "Wait for First Peak"
-    public static final String NUMBER_OF_PEAK_TRAINS = "# of Peak Trains"
-    public static final String AVERAGE_WAIT_BETWEEN_PEAKS = "Avg Wait Between Peaks"
-    public static final String AVERAGE_RIDE_TIME = "Avg Ride Time"
-    public static final String STD_DEV_WAIT_BETWEEN_PEAKS = "Std Dev Wait Between Peaks"
-    public static final String MEDIAN_WAIT_BETWEEN_PEAKS = "Median Wait Between Peaks"
-    public static final String LONGEST_WAIT_BETWEEN_PEAKS = "Longest Wait Between Peaks"
-    public static final int NO_VALUE = 9999
+class PeakTrainAnalyzer implements Analyzer {
 
-    public static final String OVERALL = "Overall"
-
-    public Map<Direction, Map<Zone, Map<Station, Map<String, Object>>>> analyze(
+    @Override
+    public Map<Direction, Map<Station, Map<String, Object>>> analyze(
             final ScheduleForPeriod scheduleForPeriod) {
         Direction.values().collectEntries {
             Direction direction ->
-                Zone.values().collectEntries {
-                    Zone zone ->
-                        [(direction): [(zone): analyzeForZone(scheduleForPeriod, zone, direction)]]
-                }
+                [(direction): analyzeforDirection(scheduleForPeriod, direction)]
         }
     }
 
-    public Map<Station, Map<String, Object>> analyzeForZone(
-            final ScheduleForPeriod scheduleForPeriod, final Zone zone, Direction direction) {
+    private Map<Station, Map<String, Object>> analyzeforDirection(
+            final ScheduleForPeriod scheduleForPeriod, Direction direction) {
         GParsPool.withPool {
             List<Set<TrainSchedule>> schedulesSplitByPeakFlag = getSchedulesForDirection(scheduleForPeriod, direction).splitParallel {
                 it.peak
             }
-            Map<Station, List<TrainRide>> peakTimesByStation = getSchedulesByStation(schedulesSplitByPeakFlag[0], zone, Station.PENN_STATION)
-            Map<Station, List<TrainRide>> prePeakTimesByStation = getSchedulesByStation(schedulesSplitByPeakFlag[1], zone, Station.PENN_STATION)
+            Map<Station, List<TrainRide>> peakTimesByStation = getSchedulesByStation(schedulesSplitByPeakFlag[0], Station.PENN_STATION)
+            Map<Station, List<TrainRide>> prePeakTimesByStation = getSchedulesByStation(schedulesSplitByPeakFlag[1], Station.PENN_STATION)
             prePeakTimesByStation.eachParallel {
                 Station station, List<TrainRide> startAndEndTimes ->
                     startAndEndTimes.removeAll {
@@ -154,19 +143,17 @@ class PeakTrainAnalyzer {
 
     private Map<Station, List<TrainRide>> getSchedulesByStation(
             final Collection<TrainSchedule> schedules,
-            final Zone zone,
             final Station startOrEndStation) {
-        Set<Station> zoneStations = Station.ZONE_STATION_MAP[zone]
-        Map<Station, List<TrainRide>> stationTimes = zoneStations.collectEntries {
-            Station zoneStation ->
-                [(zoneStation): []]
+        Map<Station, List<TrainRide>> stationTimes = Station.STATIONS.collectEntries {
+            Station station ->
+                [(station): []]
         }
         schedules.findAllParallel { it.stops.containsKey(startOrEndStation) }.each {
             TrainSchedule schedule ->
                 LocalTime mandatoryTime = schedule.stops[startOrEndStation]
                 schedule.stops.findAll {
                     Station station, LocalTime time ->
-                        zoneStations.contains(station)
+                        !station.ignoreForAnalysis
                 }.each {
                     Station station, LocalTime time ->
                         stationTimes[station].add(new TrainRide(time, mandatoryTime))
@@ -178,7 +165,7 @@ class PeakTrainAnalyzer {
 
     private static int timeDeltaInMinutes(final LocalTime start, final LocalTime end) {
         if (start && end) {
-            return ((end.millisOfDay - start.millisOfDay) / 60000).intValue()
+            return Minutes.minutesBetween(start, end).minutes
         }
         NO_VALUE
     }

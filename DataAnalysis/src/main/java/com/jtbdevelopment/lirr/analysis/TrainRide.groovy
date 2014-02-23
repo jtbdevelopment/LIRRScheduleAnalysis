@@ -1,6 +1,7 @@
 package com.jtbdevelopment.lirr.analysis
 
 import org.joda.time.LocalTime
+import org.joda.time.Minutes
 
 /**
  * Date: 2/23/14
@@ -19,7 +20,7 @@ class TrainRide implements Comparable<TrainRide> {
             this.getOn = time2
             this.getOff = time1
         }
-        this.rideTime = timeDeltaInMinutes(getOn, getOff)
+        this.rideTime = Minutes.minutesBetween(getOn, getOff).minutes
     }
 
     @Override
