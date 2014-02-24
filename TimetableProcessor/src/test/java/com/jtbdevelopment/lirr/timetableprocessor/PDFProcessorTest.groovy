@@ -4,12 +4,22 @@ import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
 import org.joda.time.LocalTime
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.test.context.ContextConfiguration
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
 
 /**
  * Date: 2/15/14
  * Time: 2:23 PM
  */
+@ContextConfiguration("/spring-context-timetables.xml")
+@RunWith(SpringJUnit4ClassRunner.class)
 class PDFProcessorTest extends GroovyTestCase {
+
+    @Autowired
+    PDFProcessor pdfProcessor
 
     public static final LocalDate FEB232014 = new LocalDate(2014, 2, 23)
     public static final LocalDate DEC162013 = new LocalDate(2013, 12, 16)
@@ -18,6 +28,7 @@ class PDFProcessorTest extends GroovyTestCase {
         return new LocalTime(hour, minute)
     }
 
+    @Test
     void testWestHempstead() {
         ProcessedPDFSchedule schedule = processPDF("WestHempsteadBranch2013121620140223.pdf", "West Hempstead Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:50.000Z"))
         printSchedule(schedule)
@@ -39,6 +50,7 @@ class PDFProcessorTest extends GroovyTestCase {
         assert [LT(5, 55), null, null, null, null, null, null, null, LT(10, 31), null, null, LT(12, 31), null, null, LT(14, 31), null, null, null, null, null, null, null, null, LT(22, 56), null, null] == schedule.westboundWeekdays.get("VALLEY STREAM")
     }
 
+    @Test
     void testLongBeach() {
         ProcessedPDFSchedule schedule = processPDF("LongBeachBranch2013121620140223.pdf", "Long Beach Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:45.000Z"))
         printSchedule(schedule)
@@ -63,6 +75,7 @@ class PDFProcessorTest extends GroovyTestCase {
         assert [null, null, null, null, null, null, LT(6, 37), LT(6, 37), LT(6, 37), LT(7, 26), LT(7, 26), LT(7, 26), LT(7, 41), LT(7, 49), null, null, LT(8, 36), LT(8, 55), null, LT(9, 11), LT(9, 28), LT(9, 28), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null] == schedule.westboundWeekdays.get("HUNTERSPOINT AVE.")
     }
 
+    @Test
     void testHempstead() {
         ProcessedPDFSchedule schedule = processPDF("HempsteadBranch2013121620140223.pdf", "Hempstead Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:36.000Z"))
         printSchedule(schedule)
@@ -85,6 +98,7 @@ class PDFProcessorTest extends GroovyTestCase {
         assert ["701", "703", "705", "707", "709", "711", "799", "713", "715", "717", "1501", "721", "723", "725", "727", "729", "731", "733", "751", "753", "755", "757", "759", "761", "763", "765", "767", "3753", "771", "773", "775", "777"] == schedule.westboundWeekdays.get("#")
     }
 
+    @Test
     void testFarRockaway() {
         ProcessedPDFSchedule schedule = processPDF("FarRockawayBranch2013121620140223.pdf", "Far Rockaway Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:13.000Z"))
         printSchedule(schedule)
@@ -108,6 +122,7 @@ class PDFProcessorTest extends GroovyTestCase {
         assert [null, LT(1, 9), LT(2, 11), LT(3, 48), null, LT(5, 49), LT(6, 1), null, LT(6, 36), null, null, LT(7, 7), LT(7, 21), null, LT(7, 35), null, LT(7, 51), LT(8, 9), null, LT(8, 22), null, null, LT(8, 48), null, null, LT(9, 24), null, LT(10, 1), null, LT(11, 2), null, LT(12, 2), null, LT(13, 2), null, LT(14, 2), null, LT(15, 2), null, LT(16, 3), null, LT(17, 4), null, LT(17, 55), null, null, null, LT(19, 4), null, null, LT(19, 52), null, null, LT(20, 51), null, LT(21, 55), null, LT(23, 1), null, LT(0, 5)] == schedule.westboundWeekdays.get("LAURELTON")
     }
 
+    @Test
     void testBabylon() {
         ProcessedPDFSchedule schedule = processPDF("BabylonBranch2013121620140223.pdf", "Babylon Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:42:51.000Z"))
         printSchedule(schedule)
@@ -131,6 +146,7 @@ class PDFProcessorTest extends GroovyTestCase {
         assert [LT(1, 23), null, LT(2, 2), null, LT(4, 2), LT(5, 5), LT(5, 24), null, LT(5, 43), LT(6, 3), null, LT(6, 18), null, null, LT(6, 34), null, LT(6, 42), LT(6, 52), null, null, LT(7, 2), null, null, LT(7, 16), null, null, LT(7, 32), null, null, LT(7, 43), LT(7, 53), LT(7, 56), null, null, null, LT(8, 16), null, LT(8, 29), null, LT(8, 42), null, LT(9, 3), LT(9, 33), LT(10, 2), null, LT(10, 38), LT(11, 4), null, LT(11, 38), LT(12, 4), null, LT(12, 38), LT(13, 4), LT(13, 38), null, LT(14, 4), null, LT(14, 38), LT(15, 4), null, LT(15, 33), LT(16, 8), null, LT(16, 33), null, LT(17, 5), null, LT(18, 5), null, LT(18, 35), LT(18, 46), LT(19, 5), null, LT(19, 35), LT(20, 5), LT(20, 35), LT(20, 39), LT(21, 7), null, LT(21, 31), LT(21, 38), LT(22, 7), null, LT(22, 39), LT(23, 7), null, LT(23, 39), LT(0, 18)] == schedule.westboundWeekdays.get("MERRICK")
     }
 
+    @Test
     void testMontauk() {
         ProcessedPDFSchedule schedule = processPDF("MontaukBranch2013121620140223.pdf", "Montauk Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:43:54.000Z"))
         printSchedule(schedule)
@@ -157,6 +173,7 @@ class PDFProcessorTest extends GroovyTestCase {
         assert [null, LT(6, 38), LT(7, 14), LT(7, 41), LT(8, 5), LT(8, 47), LT(8, 23), LT(9, 14), LT(9, 48), LT(10, 55), LT(11, 55), LT(12, 55), LT(14, 55), LT(14, 55), LT(15, 53), LT(17, 20), LT(18, 1), LT(18, 46), LT(20, 8), LT(21, 10), LT(22, 16), null, null, LT(0, 48), LT(2, 25)] == schedule.westboundWeekdays.get("KEW GARDENS")
     }
 
+    @Test
     void testPortWashington() {
         ProcessedPDFSchedule schedule = processPDF("PortWashingtonBranch2013121620140223.pdf", "Port Washington Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:24.000Z"))
         printSchedule(schedule)
@@ -176,6 +193,7 @@ class PDFProcessorTest extends GroovyTestCase {
         assert [LT(0, 51), LT(2, 22), LT(3, 35), LT(5, 21), LT(5, 48), LT(6, 30), LT(6, 40), null, LT(7, 9), LT(7, 22), null, null, LT(7, 55), null, LT(8, 7), null, null, LT(8, 32), LT(8, 41), null, LT(9, 1), null, LT(9, 35), LT(9, 52), LT(10, 22), LT(10, 52), LT(11, 22), LT(11, 52), LT(12, 22), LT(12, 52), LT(13, 22), LT(13, 52), LT(14, 22), LT(14, 52), LT(15, 22), LT(15, 52), LT(16, 19), LT(16, 49), LT(17, 12), null, LT(17, 47), LT(18, 26), null, LT(18, 47), LT(19, 9), LT(19, 21), LT(19, 51), LT(20, 21), LT(20, 51), LT(20, 57), LT(21, 21), LT(21, 51), LT(22, 21), LT(22, 51), LT(23, 51)] == schedule.westboundWeekdays.get("LITTLE NECK")
     }
 
+    @Test
     void testRonkonkoma() {
         ProcessedPDFSchedule schedule = processPDF("RonkonkomaBranch2013121620140223.pdf", "Ronkonkoma Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:39.000Z"))
         printSchedule(schedule)
@@ -199,6 +217,7 @@ class PDFProcessorTest extends GroovyTestCase {
         assert [LT(1, 20), LT(2, 23), LT(4, 43), LT(5, 35), null, LT(6, 11), LT(6, 19), null, LT(6, 50), LT(7, 6), null, null, LT(7, 33), null, null, null, LT(8, 7), LT(8, 19), LT(8, 33), LT(9, 7), LT(9, 49), LT(10, 10), LT(10, 49), LT(11, 10), LT(11, 49), LT(12, 10), LT(12, 49), LT(13, 49), LT(14, 49), LT(15, 49), LT(16, 48), LT(17, 24), LT(18, 35), LT(19, 11), LT(19, 50), LT(20, 19), LT(20, 38), LT(21, 20), LT(21, 51), LT(22, 49), LT(23, 47)] == schedule.westboundWeekdays.get("HICKSVILLE")
     }
 
+    @Test
     void testPortJefferson() {
         ProcessedPDFSchedule schedule = processPDF("PortJeffersonBranch2013121620140223.pdf", "Port Jefferson Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:14.000Z"))
         printSchedule(schedule)
@@ -226,6 +245,7 @@ class PDFProcessorTest extends GroovyTestCase {
         assert [LT(1, 9), LT(1, 30), LT(1, 58), LT(2, 32), LT(2, 54), LT(4, 40), LT(5, 45), LT(6, 8), LT(6, 8), LT(6, 24), LT(6, 33), LT(6, 33), LT(6, 48), LT(7, 6), LT(7, 6), LT(7, 6), LT(7, 6), LT(7, 15), null, LT(7, 27), LT(7, 37), LT(7, 37), null, LT(8, 1), LT(8, 1), LT(8, 1), null, LT(8, 1), null, LT(8, 17), LT(8, 17), null, null, LT(8, 30), null, LT(8, 30), LT(8, 50), LT(8, 50), LT(8, 50), LT(9, 5), LT(9, 5), LT(9, 5), LT(9, 25), LT(9, 25), LT(9, 45), LT(9, 55), LT(10, 37), LT(10, 37), LT(10, 37), LT(10, 52), LT(11, 12), LT(11, 38), LT(11, 38), LT(11, 52), LT(12, 12), LT(12, 38), LT(12, 52), LT(13, 12), LT(13, 38), LT(13, 38), LT(14, 12), LT(14, 38), LT(14, 38), LT(15, 12), LT(15, 38), LT(15, 38), LT(16, 12), LT(16, 23), LT(16, 48), LT(17, 3), LT(17, 27), LT(17, 27), LT(17, 58), LT(17, 58), LT(17, 58), LT(18, 10), LT(19, 12), LT(19, 12), LT(19, 24), LT(19, 46), LT(19, 46), LT(19, 46), LT(19, 59), LT(20, 22), LT(20, 22), LT(20, 45), LT(20, 59), LT(20, 59), LT(21, 31), LT(21, 31), LT(21, 31), LT(21, 31), LT(21, 54), LT(22, 25), LT(22, 25), LT(22, 25), LT(22, 34), LT(22, 58), LT(23, 22), LT(23, 51), LT(0, 25), LT(0, 25), LT(1, 9)] == schedule.westboundWeekdays.get("WOODSIDE")
     }
 
+    @Test
     void testOysterBay() {
         ProcessedPDFSchedule schedule = processPDF("OysterBayBranch2013121620140223.pdf", "Oyster Bay Branch Timetable", DEC162013, FEB232014, DateTime.parse("2013-12-05T16:44:03.000Z"))
         printSchedule(schedule)
@@ -251,7 +271,7 @@ class PDFProcessorTest extends GroovyTestCase {
             final String expectedTitle,
             final LocalDate expectedFrom, final LocalDate expectedTo, final DateTime expectedModified) {
         InputStream is = new BufferedInputStream(PDFProcessorTest.classLoader.getResourceAsStream(file))
-        ProcessedPDFSchedule parsedSchedule = new PDFProcessor().parse(is)
+        ProcessedPDFSchedule parsedSchedule = pdfProcessor.parse(is)
         is.close()
         assert expectedTitle == parsedSchedule.title
         assert expectedFrom == parsedSchedule.from

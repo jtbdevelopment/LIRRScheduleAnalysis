@@ -8,14 +8,19 @@ import org.apache.tika.metadata.Metadata
 import org.apache.tika.parser.ParseContext
 import org.apache.tika.parser.pdf.PDFParser
 import org.apache.tika.sax.BodyContentHandler
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
 
 /**
  * Date: 2/15/14
  * Time: 2:17 PM
  */
+@Component
 class PDFProcessor {
-    private RoughConverter roughConverter = new RoughConverter()
-    private FinalConverter parsedConverter = new FinalConverter()
+    @Autowired
+    private RoughConverter roughConverter
+    @Autowired
+    private FinalConverter parsedConverter
 
     ProcessedPDFSchedule parse(final InputStream input) {
         PDFParser parser = new PDFParser()

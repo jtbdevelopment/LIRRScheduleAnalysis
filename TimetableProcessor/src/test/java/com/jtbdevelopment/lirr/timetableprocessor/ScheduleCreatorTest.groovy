@@ -1,15 +1,33 @@
 package com.jtbdevelopment.lirr.timetableprocessor
 
+import com.jtbdevelopment.lirr.dao.CompleteScheduleRepository
 import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
 import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
 import groovyx.gpars.GParsPool
 import org.joda.time.LocalDate
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.test.context.ContextConfiguration
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
 
 /**
  * Date: 2/18/14
  * Time: 6:55 AM
  */
+@ContextConfiguration("/spring-context-timetables.xml")
+@RunWith(SpringJUnit4ClassRunner.class)
 class ScheduleCreatorTest extends GroovyTestCase {
+    @Autowired
+    PDFProcessor pdfProcessor
+
+    @Autowired
+    ScheduleCreator scheduleCreator
+
+    @Autowired
+    CompleteScheduleRepository completeScheduleRepository
+
+    @Test
     void testExceptionOnMismatch() {
         LocalDate from = LocalDate.now().minusDays(20)
         LocalDate to = LocalDate.now()
@@ -26,8 +44,8 @@ class ScheduleCreatorTest extends GroovyTestCase {
         }
     }
 
+    @Test
     void testCreateFrom() {
-        PDFProcessor pdfProcessor = new PDFProcessor()
         List<ProcessedPDFSchedule> schedules = []
         GParsPool.withPool {
             schedules = [
@@ -46,8 +64,9 @@ class ScheduleCreatorTest extends GroovyTestCase {
             }
         }
 
-        ScheduleCreator scheduleCreator = new ScheduleCreator()
         CompleteSchedule scheduleForPeriod = scheduleCreator.createFrom(schedules as Set)
+        scheduleForPeriod = completeScheduleRepository.save(scheduleForPeriod)
+        println scheduleForPeriod
     }
 
 }

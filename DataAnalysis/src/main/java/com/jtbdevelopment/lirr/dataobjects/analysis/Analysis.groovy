@@ -17,6 +17,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 @Document
 @CompoundIndexes(
         @CompoundIndex(
+                name = "start_end_type",
                 def = "{'start' : 1, 'end' : 1, 'analysisType': 1}",
                 unique = true
         )

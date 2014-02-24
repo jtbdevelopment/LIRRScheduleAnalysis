@@ -14,6 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 @Document
 @CompoundIndexes(
         @CompoundIndex(
+                name = "start_end_type",
                 def = "{'start' : 1, 'end' : 1}",
                 unique = true
         )
@@ -26,14 +27,4 @@ class CompleteSchedule {
     DateTime processed = DateTime.now()
     Map<String, DateTime> inputFeeds = [:]
     Map<String, TrainSchedule> schedules = [:]
-
-    @Override
-    public String toString() {
-        return "CompleteSchedule{" +
-                "start=" + start +
-                ", end=" + end +
-                ", inputFeeds=" + inputFeeds +
-                ", schedules=" + schedules +
-                '}';
-    }
 }

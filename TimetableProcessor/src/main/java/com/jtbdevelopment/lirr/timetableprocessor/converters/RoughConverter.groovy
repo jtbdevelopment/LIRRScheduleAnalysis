@@ -2,11 +2,13 @@ package com.jtbdevelopment.lirr.timetableprocessor.converters
 
 import com.jtbdevelopment.lirr.dataobjects.core.Station
 import com.jtbdevelopment.lirr.dataobjects.parsing.ParsedPDFSchedule
+import org.springframework.stereotype.Component
 
 /**
  * Date: 2/15/14
  * Time: 6:42 PM
  */
+@Component
 class RoughConverter {
     private final static Map<String, String> FIX_IT_PHRASES = [
             "Nostrand Avenue.": "Nostrand Avenue",

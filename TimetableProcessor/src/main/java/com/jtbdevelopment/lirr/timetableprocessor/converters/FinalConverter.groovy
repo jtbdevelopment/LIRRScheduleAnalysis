@@ -7,6 +7,7 @@ import org.joda.time.DateTime
 import org.joda.time.LocalDate
 import org.joda.time.LocalTime
 import org.joda.time.format.DateTimeFormat
+import org.springframework.stereotype.Component
 
 import java.util.regex.Pattern
 
@@ -14,6 +15,7 @@ import java.util.regex.Pattern
  * Date: 2/15/14
  * Time: 6:56 PM
  */
+@Component
 class FinalConverter {
 
     private static

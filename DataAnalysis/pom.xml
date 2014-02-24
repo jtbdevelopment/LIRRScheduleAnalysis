@@ -11,5 +11,12 @@
 
     <artifactId>DataObjects</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.1.9</version>
+        </dependency>
 
+    </dependencies>
 </project>

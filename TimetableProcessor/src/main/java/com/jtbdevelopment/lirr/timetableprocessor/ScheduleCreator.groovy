@@ -7,11 +7,13 @@ import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
 import com.jtbdevelopment.lirr.dataobjects.schedule.TrainSchedule
 import groovyx.gpars.GParsPool
 import org.joda.time.LocalTime
+import org.springframework.stereotype.Component
 
 /**
  * Date: 2/18/14
  * Time: 6:43 AM
  */
+@Component
 class ScheduleCreator {
     CompleteSchedule createFrom(final Set<ProcessedPDFSchedule> schedules) {
         assert schedules.size() > 0
@@ -23,13 +25,13 @@ class ScheduleCreator {
                 assert randomParsed.to == parsed.to
         }
 
-        CompleteSchedule scheduleForPeriod = new CompleteSchedule()
-        scheduleForPeriod.start = randomParsed.from
-        scheduleForPeriod.end = randomParsed.to
+        CompleteSchedule completeSchedule = new CompleteSchedule()
+        completeSchedule.start = randomParsed.from
+        completeSchedule.end = randomParsed.to
         //  Do not parallelize due to merging
         schedules.each {
             ProcessedPDFSchedule parsed ->
-                scheduleForPeriod.inputFeeds.put(parsed.title, parsed.modified)
+                completeSchedule.inputFeeds.put(parsed.title, parsed.modified)
 
                 Closure<Boolean> neverPeak = { TrainSchedule s, Direction direction -> Boolean.FALSE }
                 Closure<Boolean> isPeak = { TrainSchedule s, Direction direction ->
@@ -38,14 +40,13 @@ class ScheduleCreator {
                     peakTime.compareTo(direction.startPeak) >= 0 && peakTime.compareTo(direction.endPeak) <= 0
                 }
 
-
-                addOrMergeTrainSchedules(scheduleForPeriod, processParsedSubSchedule(parsed.eastboundWeekdays, Direction.East, true, isPeak))
-                addOrMergeTrainSchedules(scheduleForPeriod, processParsedSubSchedule(parsed.westboundWeekdays, Direction.West, true, isPeak))
-                addOrMergeTrainSchedules(scheduleForPeriod, processParsedSubSchedule(parsed.eastboundWeekends, Direction.East, false, neverPeak))
-                addOrMergeTrainSchedules(scheduleForPeriod, processParsedSubSchedule(parsed.westboundWeekends, Direction.West, false, neverPeak))
+                addOrMergeTrainSchedules(completeSchedule, processParsedSubSchedule(parsed.eastboundWeekdays, Direction.East, true, isPeak))
+                addOrMergeTrainSchedules(completeSchedule, processParsedSubSchedule(parsed.westboundWeekdays, Direction.West, true, isPeak))
+                addOrMergeTrainSchedules(completeSchedule, processParsedSubSchedule(parsed.eastboundWeekends, Direction.East, false, neverPeak))
+                addOrMergeTrainSchedules(completeSchedule, processParsedSubSchedule(parsed.westboundWeekends, Direction.West, false, neverPeak))
         }
 
-        return scheduleForPeriod
+        return completeSchedule
     }
 
     private void addOrMergeTrainSchedules(

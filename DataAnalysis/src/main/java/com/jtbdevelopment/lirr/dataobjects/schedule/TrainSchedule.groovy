@@ -39,15 +39,4 @@ class TrainSchedule {
     int hashCode() {
         return trainNumber.hashCode()
     }
-
-    @Override
-    public String toString() {
-        return "TrainSchedule{" +
-                "trainNumber='" + trainNumber + '\'' +
-                ", peak=" + peak +
-                ", weekday=" + weekday +
-                ", direction=" + direction +
-                ", stops=" + stops +
-                '}';
-    }
 }
