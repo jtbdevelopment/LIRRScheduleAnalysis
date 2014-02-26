@@ -27,12 +27,12 @@ class PeakTrainAnalyzer implements Analyzer {
         Analysis analysis = new Analysis(start: scheduleForPeriod.start, end: scheduleForPeriod.end, analysisType: PEAK_TRAIN_ANALYSYS)
         analysis.details = Direction.values().collectEntries {
             Direction direction ->
-                [(direction): analyzeforDirection(scheduleForPeriod, direction)]
+                [(direction): analyzeForDirection(scheduleForPeriod, direction)]
         }
         analysis
     }
 
-    private Map<Station, Map<String, Map<String, Object>>> analyzeforDirection(
+    private Map<Station, Map<String, Map<String, Object>>> analyzeForDirection(
             final CompleteSchedule scheduleForPeriod, Direction direction) {
         GParsPool.withPool {
             List<Set<TrainSchedule>> schedulesSplitByPeakFlag = getSchedulesForDirection(scheduleForPeriod, direction).splitParallel {

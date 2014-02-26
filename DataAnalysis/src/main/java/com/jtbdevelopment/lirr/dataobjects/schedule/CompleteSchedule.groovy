@@ -21,7 +21,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 )
 class CompleteSchedule {
     @Id
-    private String id
+    String id
     LocalDate start
     LocalDate end
     DateTime processed = DateTime.now()

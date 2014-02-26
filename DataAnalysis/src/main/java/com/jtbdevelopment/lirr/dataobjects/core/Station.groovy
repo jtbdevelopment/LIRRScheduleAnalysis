@@ -143,9 +143,9 @@ class Station {
             new Station(name: "Ronkonkoma", zone: Zone.Zone10),
     ]
 
-    static final Map<String, Station> STATION_NAME_MAP = STATIONS.collectEntries({
+    static final Map<String, Station> STATION_NAME_MAP = STATIONS.collectEntries {
         [(it.name.toUpperCase()), it]
-    });
+    };
     static final Map<Zone, Set<Station>> ZONE_STATION_MAP = Zone.values().collectEntries {
         Zone zone ->
             [(zone): STATIONS.findAll { Station station -> station.zone == zone }]

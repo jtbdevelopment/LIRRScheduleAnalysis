@@ -1,6 +1,5 @@
 package com.jtbdevelopment.lirr.timetableprocessor
 
-import com.jtbdevelopment.lirr.dao.CompleteScheduleRepository
 import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
 import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
 import groovyx.gpars.GParsPool
@@ -23,9 +22,6 @@ class ScheduleCreatorTest extends GroovyTestCase {
 
     @Autowired
     ScheduleCreator scheduleCreator
-
-    @Autowired
-    CompleteScheduleRepository completeScheduleRepository
 
     @Test
     void testExceptionOnMismatch() {
@@ -65,8 +61,6 @@ class ScheduleCreatorTest extends GroovyTestCase {
         }
 
         CompleteSchedule scheduleForPeriod = scheduleCreator.createFrom(schedules as Set)
-        scheduleForPeriod = completeScheduleRepository.save(scheduleForPeriod)
-        println scheduleForPeriod
     }
 
 }

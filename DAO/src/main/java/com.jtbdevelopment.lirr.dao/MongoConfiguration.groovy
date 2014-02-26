@@ -1,8 +1,13 @@
 package com.jtbdevelopment.lirr.dao
 
+import com.jtbdevelopment.lirr.dao.converters.AnalysisReader
+import com.jtbdevelopment.lirr.dao.converters.AnalysisWriter
+import com.jtbdevelopment.lirr.dao.converters.TrainScheduleReader
+import com.jtbdevelopment.lirr.dao.converters.TrainScheduleWriter
 import com.mongodb.Mongo
 import org.springframework.context.annotation.Configuration
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration
+import org.springframework.data.mongodb.core.convert.CustomConversions
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories
 
 /**
@@ -20,6 +25,14 @@ class MongoConfiguration extends AbstractMongoConfiguration {
     @Override
     protected String getMappingBasePackage() {
         return "com.jtbdevelopment"
+    }
+
+    @Override
+    CustomConversions customConversions() {
+        return new CustomConversions([
+                new TrainScheduleReader(), new TrainScheduleWriter(),
+                new AnalysisReader(), new AnalysisWriter(),
+        ])
     }
 
     @Override

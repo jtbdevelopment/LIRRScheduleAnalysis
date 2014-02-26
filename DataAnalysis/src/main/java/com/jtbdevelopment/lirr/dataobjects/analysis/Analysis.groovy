@@ -24,7 +24,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 )
 class Analysis {
     @Id
-    private String id
+    String id
     LocalDate start
     LocalDate end
     @Indexed
