@@ -61,6 +61,9 @@ class ScheduleCreatorTest extends GroovyTestCase {
         }
 
         CompleteSchedule scheduleForPeriod = scheduleCreator.createFrom(schedules as Set)
+        Thread.sleep(100000)
+        throw new RuntimeException("")
+
     }
 
 }
