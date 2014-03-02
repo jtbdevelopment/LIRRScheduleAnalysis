@@ -1,15 +1,10 @@
 <component name="libraryTable">
   <library name="Maven: LIRR:DataAnalysis:1.0-SNAPSHOT">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/LIRR/DataAnalysis/1.0-SNAPSHOT/DataAnalysis-1.0-SNAPSHOT.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/DataAnalysis/DataAnalysis-1.0-SNAPSHOT-javadoc.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/LIRR/DataAnalysis/1.0-SNAPSHOT/DataAnalysis-1.0-SNAPSHOT-javadoc.jar!/" />
     </JAVADOC>
-    <SOURCES>
-      <root url="jar://$PROJECT_DIR$/DataAnalysis/DataAnalysis-1.0-SNAPSHOT-sources.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/LIRR/DataAnalysis/1.0-SNAPSHOT/DataAnalysis-1.0-SNAPSHOT-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

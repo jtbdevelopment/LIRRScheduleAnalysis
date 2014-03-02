@@ -9,11 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.jtbdevelopment.LIRR</groupId>
     <artifactId>DAO</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.jtbdevelopment</groupId>
+            <groupId>com.jtbdevelopment.LIRR</groupId>
             <artifactId>DataAnalysis</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
