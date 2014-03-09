@@ -13,4 +13,6 @@ import org.springframework.stereotype.Repository
 interface AnalysisRepository extends CrudRepository<Analysis, String> {
     List<Analysis> findByStartAndEndAndAnalysisType(
             final LocalDate start, final LocalDate end, final String analysisType)
+
+    List<Analysis> findByAnalysisTypeOrderByStartDesc(final String analysisType)
 }

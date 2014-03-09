@@ -6,6 +6,7 @@ import com.jtbdevelopment.lirr.dataobjects.core.Station
 import com.mongodb.BasicDBList
 import com.mongodb.BasicDBObject
 import com.mongodb.DBObject
+import org.bson.types.ObjectId
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
 import org.joda.time.format.DateTimeFormat
@@ -25,6 +26,9 @@ class AnalysisReader implements Converter<DBObject, Analysis> {
         source.keySet().each {
             String fieldName ->
                 switch (fieldName) {
+                    case "_id":
+                        analysis.id = ((ObjectId) source.get(fieldName)).toString()
+                        break
                     case "start":
                     case "end":
                         analysis[fieldName] = new LocalDate((Date) source.get(fieldName))
@@ -32,9 +36,6 @@ class AnalysisReader implements Converter<DBObject, Analysis> {
                     case "computed":
                         analysis[fieldName] = new DateTime((Date) source.get(fieldName))
                         break;
-                    case "_id":
-                        analysis.id = source.get(fieldName)
-                        break
                     case "details":
                         BasicDBObject dbDirectionMap = source.get(fieldName)
                         analysis[fieldName] = dbDirectionMap.keySet().collectEntries() {

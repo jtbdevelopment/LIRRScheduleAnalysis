@@ -22,6 +22,8 @@ class AnalysisWriter implements Converter<Analysis, DBObject> {
         dbObject.putAll(source.class.declaredFields.findAll { !it.synthetic }.collectEntries() {
             Field field ->
                 switch (field.name) {
+                    case "id":
+                        return ["_id", source[field.name]]
                     case "start":
                     case "end":
                     case "computed":

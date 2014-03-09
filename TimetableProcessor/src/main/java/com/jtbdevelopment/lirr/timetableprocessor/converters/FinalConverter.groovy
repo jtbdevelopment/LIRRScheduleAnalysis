@@ -168,11 +168,21 @@ class FinalConverter {
     }
 
     private void parseEffectiveDates(ParsedPDFSchedule roughParsedSchedule, ProcessedPDFSchedule parsedSchedule) {
-        String replaced = roughParsedSchedule.subject.replace("Effective ", "")
+        String replaced = roughParsedSchedule.subject.replace("Effective ", "").replace("-", " ")
         List<String> tokens = replaced.tokenize()
-        assert tokens.size() == 7
-        parsedSchedule.from = LocalDate.parse(tokens[0] + " " + tokens[1] + " " + tokens[2], DateTimeFormat.forPattern(FORMAT_STRING));
-        parsedSchedule.to = LocalDate.parse(tokens[4] + " " + tokens[5] + " " + tokens[6], DateTimeFormat.forPattern(FORMAT_STRING));
+        switch (tokens.size()) {
+            case 5:
+                parsedSchedule.from = LocalDate.parse(tokens[0] + " " + tokens[1] + ", " + tokens[4], DateTimeFormat.forPattern(FORMAT_STRING));
+                parsedSchedule.to = LocalDate.parse(tokens[2] + " " + tokens[3] + " " + tokens[4], DateTimeFormat.forPattern(FORMAT_STRING));
+                break;
+            case 7:
+                parsedSchedule.from = LocalDate.parse(tokens[0] + " " + tokens[1] + " " + tokens[2], DateTimeFormat.forPattern(FORMAT_STRING));
+                parsedSchedule.to = LocalDate.parse(tokens[4] + " " + tokens[5] + " " + tokens[6], DateTimeFormat.forPattern(FORMAT_STRING));
+                break;
+
+            default:
+                throw new RuntimeException("Don't know how to parse subject " + roughParsedSchedule.subject + " for dates");
+        }
     }
 
 }

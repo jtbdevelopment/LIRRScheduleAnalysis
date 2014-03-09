@@ -15,16 +15,68 @@ import org.springframework.stereotype.Component
 /**
  * Date: 2/18/14
  * Time: 8:08 PM
+ *
+ * TODO - off alternate pivot station like Atlantic Ave
  */
 @Component
 class PeakTrainAnalyzer implements Analyzer {
+    static final String FIRST_PEAK = "First Peak"
+    static final String LAST_PEAK = "Last Peak"
+    static final String LAST_PRE_PEAK = "Last Pre Peak"
+    static final String WAIT_FOR_FIRST_PEAK = "Wait for First Peak"
+    static final String NUMBER_OF_PEAK_TRAINS = "# of Peak Trains"
+    static final String AVERAGE_WAIT_BETWEEN_PEAKS = "Avg Wait Between Peaks"
+    static final String AVERAGE_RIDE_TIME = "Avg Ride Time"
+    static final String STD_DEV_WAIT_BETWEEN_PEAKS = "Std Dev Wait Between Peaks"
+    static final String MEDIAN_WAIT_BETWEEN_PEAKS = "Median Wait Between Peaks"
+    static final String LONGEST_WAIT_BETWEEN_PEAKS = "Longest Wait Between Peaks"
+    static final int NO_VALUE = 9999
 
-    public static final String PEAK_TRAIN_ANALYSYS = "Peak Train Analysis"
+    static final String OVERALL = "Overall"
+
+    public static final String PEAK_TRAIN_ANALYSIS = "Peak Train Analysis"
+
+    public static final Map<Direction, List<String>> GROUPS_PER_DIRECTION;
+
+    public static final List<String> DETAILS_PER_GROUP = [
+            NUMBER_OF_PEAK_TRAINS,
+            FIRST_PEAK,
+            LAST_PEAK,
+            AVERAGE_RIDE_TIME,
+            AVERAGE_WAIT_BETWEEN_PEAKS,
+            LONGEST_WAIT_BETWEEN_PEAKS,
+            STD_DEV_WAIT_BETWEEN_PEAKS,
+            MEDIAN_WAIT_BETWEEN_PEAKS,
+            LAST_PRE_PEAK,
+            WAIT_FOR_FIRST_PEAK,
+    ]
+
+    /*
+    private static Closure<String> GROUP_FOR_HOUR = {
+        int hour ->
+            "(Departure Hour " + hour + ")"
+    }
+    */
+
+    static {
+        GROUPS_PER_DIRECTION = [
+                (Direction.East): [OVERALL],
+                (Direction.West): [OVERALL]
+        ]
+        GROUPS_PER_DIRECTION.each {
+            Direction direction, List<String> groups ->
+                groups.addAll(direction.peakPlus.collect {
+                    int hour ->
+                        //GROUP_FOR_HOUR(hour)
+                        "(Departure Hour " + hour + ")"
+                })
+        }
+    }
 
     @Override
     public Analysis analyze(
             final CompleteSchedule scheduleForPeriod) {
-        Analysis analysis = new Analysis(start: scheduleForPeriod.start, end: scheduleForPeriod.end, analysisType: PEAK_TRAIN_ANALYSYS)
+        Analysis analysis = new Analysis(start: scheduleForPeriod.start, end: scheduleForPeriod.end, analysisType: PEAK_TRAIN_ANALYSIS)
         analysis.details = Direction.values().collectEntries {
             Direction direction ->
                 [(direction): analyzeForDirection(scheduleForPeriod, direction)]
@@ -88,6 +140,7 @@ class PeakTrainAnalyzer implements Analyzer {
         direction.peakPlus.each {
             int hour ->
                 String statGroup = "(Departure Hour " + hour + ")"
+//                String statGroup = GROUP_FOR_HOUR(hour)
                 Map<Station, List<TrainRide>> subTimes = stationTimes.collectEntries {
                     Station station, List<TrainRide> times ->
                         [(station): times.findAll { it.getOn.hourOfDay == hour }]

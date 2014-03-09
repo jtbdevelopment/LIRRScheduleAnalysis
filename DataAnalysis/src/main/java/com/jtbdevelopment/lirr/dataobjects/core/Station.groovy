@@ -2,6 +2,9 @@ package com.jtbdevelopment.lirr.dataobjects.core
 /**
  * Date: 2/15/14
  * Time: 1:37 PM
+ *
+ * TODO - miles from penn
+ * TODO - gps coordinates
  */
 class Station {
     public static final String PENN_STATION_NAME = "PENN STATION"
@@ -173,6 +176,8 @@ class Station {
             "6436", "6438", "6440", "354", "3361", "499",
             //  Ronkonkoma
             "8102", "8104", "8106", "8085", "200", "2100", "2102", "2095", "2097",
+            //  W. Hempstead
+
     ] as Set;
 
     @Override

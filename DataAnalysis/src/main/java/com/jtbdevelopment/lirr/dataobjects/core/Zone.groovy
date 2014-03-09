@@ -18,9 +18,5 @@ public enum Zone {
         this.numeric = numeric;
     }
 
-    public int getNumeric() {
-        return numeric;
-    }
-
-    private final int numeric;
+    final int numeric;
 }

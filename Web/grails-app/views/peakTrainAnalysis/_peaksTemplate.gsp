@@ -1,0 +1,44 @@
+<%@ page import="org.joda.time.LocalTime" %>
+<table class="table table-striped table-bordered table-condensed table-hover" id="${direction}">
+    <thead>
+    <tr>
+        <th rowspan="2">Station</th>
+        <th rowspan="2">Zone</th>
+        <g:set var="detailsPerGroupSize" value="${detailsPerGroup.size()}"/>
+        <g:set var="groupsForDirection" value="${groupsPerDirection[direction]}"/>
+        <g:each in="${groupsForDirection}" status="i" var="groupForDirection">
+            <th colspan="${detailsPerGroupSize}" class="text-center ${i}">${groupForDirection}</th>
+        </g:each>
+    </tr>
+    <tr>
+        <g:each in="${groupsForDirection}" status="i" var="groupForDirection">
+            <g:each in="${detailsPerGroup}" status="j" var="groupDetail">
+                <th class="group-${i} group">${groupDetail}</th>
+            </g:each>
+        </g:each>
+    </tr>
+    </thead>
+    <tbody>
+    <g:set var="analysisForDirection" value="${analysisInstance.details[direction]}"/>
+    <g:each in="${analysisForDirection}" status="k" var="stationAnalysis">
+        <tr>
+            <td class="text-left">${stationAnalysis.key.name}</td>
+            <td class="text-center">${stationAnalysis.key.zone.numeric}</td>
+            <g:each in="${groupsForDirection}" status="l" var="groupForDirection">
+                <g:set var="stationGroupDetails"
+                       value="${stationAnalysis.value[groupForDirection]}"/>
+                <g:each in="${detailsPerGroup}" status="m" var="detail">
+                    <g:if test="${stationGroupDetails[detail] in LocalTime}">
+                        <td class="text-center">${stationGroupDetails[detail].toString("HH:mm")}</td>
+                    </g:if>
+                    <g:else>
+                        <td class="text-center">${stationGroupDetails[detail]}</td>
+                    </g:else>
+                </g:each>
+            </g:each>
+        </tr>
+    </g:each>
+    </tbody>
+    <tfoot>
+    </tfoot>
+</table>
