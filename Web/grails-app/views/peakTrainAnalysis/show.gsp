@@ -2,11 +2,10 @@
 <body>
 <div class="panel-group" id="accordion">
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-pills">
         <li class="active"><a href="#amPeak" data-toggle="tab">AM Peak</a></li>
         <li><a href="#pmPeak" data-toggle="tab">PM Peak</a></li>
     </ul>
-    <!-- Tab panes -->
     <div class="tab-content">
         <div class="tab-pane active" id="amPeak">
             <g:render template="peaksTemplate"

@@ -1,11 +1,20 @@
 <%@ page import="org.joda.time.LocalTime" %>
+<g:set var="groupsForDirection" value="${groupsPerDirection[direction]}"/>
+<ul class="pagination">
+    <!--li><a href="#">&laquo;</a></li-->
+    <g:each in="${groupsForDirection}" status="i" var="groupForDirection">
+        <li><a href="#" onclick="showGroup('${direction}', 'group-' +${i});
+        return false">${groupForDirection}</a></li>
+    </g:each>
+<!--li><a href="#">&raquo;</a></li-->
+</ul>
+<!-- Tab panes -->
 <table class="table table-striped table-bordered table-condensed table-hover" id="${direction}">
     <thead>
     <tr>
         <th rowspan="2">Station</th>
         <th rowspan="2">Zone</th>
         <g:set var="detailsPerGroupSize" value="${detailsPerGroup.size()}"/>
-        <g:set var="groupsForDirection" value="${groupsPerDirection[direction]}"/>
         <g:each in="${groupsForDirection}" status="i" var="groupForDirection">
             <th colspan="${detailsPerGroupSize}" class="text-center ${i}">${groupForDirection}</th>
         </g:each>
