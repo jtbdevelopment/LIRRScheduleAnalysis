@@ -8,6 +8,8 @@
     </g:each>
 <!--li><a href="#">&raquo;</a></li-->
 </ul>
+
+<div id="${direction}Chart" style="height:400px;width:100%;"></div>
 <!-- Tab panes -->
 <table class="table table-striped table-bordered table-condensed table-hover" id="${direction}">
     <thead>
@@ -22,7 +24,7 @@
     <tr>
         <g:each in="${groupsForDirection}" status="i" var="groupForDirection">
             <g:each in="${detailsPerGroup}" status="j" var="groupDetail">
-                <th class="group-${i} group">${groupDetail}</th>
+                <th class="group-${i} group dataLabel">${groupDetail}</th>
             </g:each>
         </g:each>
     </tr>
@@ -30,19 +32,21 @@
     <tbody>
     <g:set var="analysisForDirection" value="${analysisInstance.details[direction]}"/>
     <g:each in="${analysisForDirection}" status="k" var="stationAnalysis">
-        <tr>
-            <td class="text-left">${stationAnalysis.key.name}</td>
-            <td class="text-center">${stationAnalysis.key.zone.numeric}</td>
+        <tr class="dataRow">
+            <td class="text-left station">${stationAnalysis.key.name}</td>
+            <td class="text-center zone">${stationAnalysis.key.zone.numeric}</td>
             <g:each in="${groupsForDirection}" status="l" var="groupForDirection">
                 <g:set var="stationGroupDetails"
                        value="${stationAnalysis.value[groupForDirection]}"/>
                 <g:each in="${detailsPerGroup}" status="m" var="detail">
-                    <g:if test="${stationGroupDetails[detail] in LocalTime}">
-                        <td class="text-center">${stationGroupDetails[detail].toString("HH:mm")}</td>
-                    </g:if>
-                    <g:else>
-                        <td class="text-center">${stationGroupDetails[detail]}</td>
-                    </g:else>
+                    <td class="text-center">
+                        <g:if test="${stationGroupDetails[detail] in LocalTime}">
+                            ${stationGroupDetails[detail].toString("HH:mm")}
+                        </g:if>
+                        <g:else>
+                            ${stationGroupDetails[detail]}
+                        </g:else>
+                    </td>
                 </g:each>
             </g:each>
         </tr>

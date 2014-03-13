@@ -23,5 +23,6 @@ modules = {
 //        resource url: '/js/datatables/dataTables.fixedHeader.min.js'
 //        resource url: '/js/datatables/dataTables.bootstrap.js'
         resource url: '/js/bootstrap/docs.min.js'
+        resource url: '/js/highcharts/highcharts.js'
     }
 }
