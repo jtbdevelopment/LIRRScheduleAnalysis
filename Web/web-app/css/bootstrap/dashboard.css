@@ -23,7 +23,7 @@
 @media (min-width: 768px) {
     .sidebar {
         position: fixed;
-        top: 81px;
+        top: 66px;
         bottom: 0;
         left: 0;
         z-index: 1000;
@@ -76,12 +76,17 @@
     background-color: rgb(255, 255, 255);
 }
 
+.header .page-header h1 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
 .main .sub-header {
     position: relative;
 }
 
 .main > .top-input {
-    margin-top: 81px;
+    margin-top: 66px;
     position: relative;
 }
 

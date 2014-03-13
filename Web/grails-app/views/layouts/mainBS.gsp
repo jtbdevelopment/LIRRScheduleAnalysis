@@ -27,7 +27,7 @@
         <div class="col-sm-2 col-md-1 sidebar">
             <ul class="nav nav-sidebar">
                 <li><a href="#">Overview</a></li>
-                <li class="active"><a href="#">Peak Ride</a></li>
+                <li class="active"><a href="#">Peak Ride (Penn)</a></li>
             </ul>
         </div>
 

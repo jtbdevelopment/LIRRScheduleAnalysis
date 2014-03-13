@@ -1,20 +1,16 @@
 package com.jtbdevelopment.lirr.analysis
 
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.test.context.ContextConfiguration
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
 
 /**
  * Date: 3/8/14
  * Time: 9:58 PM
  */
-@ContextConfiguration("/spring-context-timetables.xml")
-@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration("/spring-context-timetables.xml")
+//@RunWith(SpringJUnit4ClassRunner.class)
 class PeakTrainAnalyzerTest extends GroovyTestCase {
-    @Autowired
-    PeakTrainAnalyzer peakTrainAnalyzer
+    // @Autowired
+    //PeakTrainAnalyzer peakTrainAnalyzer
 
     @Test
     void testAnalyze() {

@@ -29,12 +29,24 @@
             });
             var usedHeaders = [
                 '# of Peak Trains',
+                'Avg Ride Time',
                 'Avg Wait Between Peaks',
                 'Longest Wait Between Peaks',
                 'Std Dev Wait Between Peaks',
                 'Median Wait Between Peaks'
             ];
             var dataMatrix = [];
+            var dataByHeader = [];
+            for (var i = 0; i < usedHeaders.length; ++i) {
+                var axis = i == 0 ? 0 : 1;
+                var type = i < 1 ? 'column' : 'spline';
+                dataByHeader[i] = {
+                    data: [],
+                    name: usedHeaders[i],
+                    yAxis: axis,
+                    type: type
+                }
+            }
             var matrixCount = -1;
             var headers = table.columns().header().to$();
             var visible = table.columns().visible();
@@ -44,15 +56,17 @@
                 var station = row[0];
                 var dataValues = [];
                 var valueCounter = -1;
-                for (var i = 2; i < row.length; ++i) {
+                for (var i = 0; i < row.length; ++i) {
                     var name = headers[i].innerHTML;
-                    if (visible[i] && jQuery.inArray(name, usedHeaders) > -1) {
+                    var headerPosition = jQuery.inArray(name, usedHeaders);
+                    if (visible[i] && headerPosition > -1) {
                         ++valueCounter;
                         var number = parseInt(row[i]);
                         if (number == 9999) {
                             number = null;
                         }
                         dataValues[valueCounter] = number;
+                        dataByHeader[headerPosition].data[matrixCount] = number;
                     }
                 }
                 dataMatrix[matrixCount] = {
@@ -66,28 +80,28 @@
                     type: 'column'
                 },
                 title: {
-                    text: 'Peak Analysis'
+                    text: '',
+                    enabled: false
                 },
                 xAxis: [
                     {
-                        categories: usedHeaders
+                        categories: stations
                     }
                 ],
                 yAxis: [
                     {
                         title: {
+                            text: '# Of Peak Trains'
+                        }
+                    },
+                    {
+                        title: {
                             text: 'Minutes'
                         },
                         opposite: true
-                    },
-                    {
-                        gridLineWidth: 0,
-                        title: {
-                            text: '# Of Peak Trains'
-                        }
                     }
                 ],
-                series: dataMatrix
+                series: dataByHeader
             });
         }
 

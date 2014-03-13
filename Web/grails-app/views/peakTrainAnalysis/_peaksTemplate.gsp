@@ -9,12 +9,13 @@
 <!--li><a href="#">&raquo;</a></li-->
 </ul>
 
-<div id="${direction}Chart" style="height:400px;width:100%;"></div>
+<div id="${direction}Chart" style="height:500px;width:100%;"></div>
 <!-- Tab panes -->
 <table class="table table-striped table-bordered table-condensed table-hover" id="${direction}">
     <thead>
     <tr>
         <th rowspan="2">Station</th>
+        <th rowspan="2">Miles To Penn</th>
         <th rowspan="2">Zone</th>
         <g:set var="detailsPerGroupSize" value="${detailsPerGroup.size()}"/>
         <g:each in="${groupsForDirection}" status="i" var="groupForDirection">
@@ -34,6 +35,7 @@
     <g:each in="${analysisForDirection}" status="k" var="stationAnalysis">
         <tr class="dataRow">
             <td class="text-left station">${stationAnalysis.key.name}</td>
+            <td class="text-center zone">${stationAnalysis.key.milesToPenn}</td>
             <td class="text-center zone">${stationAnalysis.key.zone.numeric}</td>
             <g:each in="${groupsForDirection}" status="l" var="groupForDirection">
                 <g:set var="stationGroupDetails"

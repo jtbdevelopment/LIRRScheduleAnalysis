@@ -95,6 +95,7 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.0.1.RELEASE/spring-core-4.0.1.RELEASE-sources.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-simple/1.7.6/slf4j-simple-1.7.6-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ideaLibSources/tomcat-embed-core-7.0.42-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/joda-time/joda-time/2.3/joda-time-2.3-sources.jar!/" />
         </SOURCES>
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
