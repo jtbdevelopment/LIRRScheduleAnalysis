@@ -28,11 +28,10 @@
                 stations[cell] = $(this).html();
             });
             var usedHeaders = [
-                '# Of Peak Trains',
-//                'Avg Ride Time',
+                '# of Peak Trains',
                 'Avg Wait Between Peaks',
                 'Longest Wait Between Peaks',
-                'Std Dev Between Peaks',
+                'Std Dev Wait Between Peaks',
                 'Median Wait Between Peaks'
             ];
             var dataMatrix = [];
@@ -47,13 +46,7 @@
                 var valueCounter = -1;
                 for (var i = 2; i < row.length; ++i) {
                     var name = headers[i].innerHTML;
-                    if (visible[i] &&
-                            name != "First Peak" &&
-                            name != "Last Peak" &&
-                            name != "Last Pre Peak" &&
-                            name != "Wait for First Peak" &&
-                            name != "Avg Ride Time"
-                            ) {
+                    if (visible[i] && jQuery.inArray(name, usedHeaders) > -1) {
                         ++valueCounter;
                         var number = parseInt(row[i]);
                         if (number == 9999) {
@@ -92,9 +85,7 @@
                         title: {
                             text: '# Of Peak Trains'
                         }
-                    },
-
-
+                    }
                 ],
                 series: dataMatrix
             });
