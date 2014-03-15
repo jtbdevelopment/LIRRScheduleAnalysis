@@ -5,17 +5,27 @@ package com.jtbdevelopment.lirr.dataobjects.core
  * Time: 9:56 PM
  */
 public enum Line {
-    FarRockaway,
-    OysterBay,
+    FarRockaway("Far Rockaway"),
+    OysterBay("Oyster Bay"),
     Hempstead,
     LongBeach,
-    WestHempstead,
-    PortJefferson,
+    WestHempstead("West Hempstead"),
+    PortJefferson("Port Jefferson"),
     Montauk,
-    PortWashington,
+    PortWashington("Port Washington"),
     Ronkonkoma,
     Babylon,
-    CityBrooklyn,
-    CityPenn,
-    CityLIC
+    CityBrooklyn("City - Brooklyn"),
+    CityPenn("City - Penn"),
+    CityLIC("City - LIC")
+
+    String name;
+
+    Line() {
+        name = this.toString()
+    }
+
+    Line(final String name) {
+        this.name = name;
+    }
 }

@@ -1,5 +1,6 @@
 package com.jtbdevelopment.lirr.timetableprocessor
 
+import com.jtbdevelopment.lirr.analysis.PeakTrainAnalyzer
 import com.jtbdevelopment.lirr.dao.CompleteScheduleRepository
 import com.jtbdevelopment.lirr.dao.DataServiceUtils
 import com.jtbdevelopment.lirr.dataobjects.core.Direction
@@ -114,4 +115,16 @@ class ScheduleCreatorTest extends GroovyTestCase {
         dataServiceUtils.saveOrUpdateSchedule(scheduleForPeriod)
         assert scheduleForPeriod.id
     }
+
+    @Autowired
+    PeakTrainAnalyzer analyzer
+
+    @Test
+    void testAnalysis() {
+        completeScheduleRepository.findAll().each {
+            CompleteSchedule schedule ->
+                dataServiceUtils.saveOrUpdateAnalysis(analyzer.analyze(schedule))
+        }
+    }
+
 }

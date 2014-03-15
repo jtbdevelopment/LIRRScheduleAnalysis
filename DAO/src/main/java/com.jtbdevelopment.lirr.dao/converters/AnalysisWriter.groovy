@@ -1,7 +1,6 @@
 package com.jtbdevelopment.lirr.dao.converters
 
 import com.jtbdevelopment.lirr.dataobjects.analysis.Analysis
-import com.jtbdevelopment.lirr.dataobjects.core.Direction
 import com.jtbdevelopment.lirr.dataobjects.core.Station
 import com.mongodb.BasicDBList
 import com.mongodb.BasicDBObject
@@ -29,10 +28,10 @@ class AnalysisWriter implements Converter<Analysis, DBObject> {
                     case "computed":
                         return [(field.name): source[field.name].toDate()]
                     case "details":
-                        Map<Direction, Map<Station, Map<String, Map<String, Object>>>> details = source[field.name]
+                        Map<String, Map<Station, Map<String, Map<String, Object>>>> details = source[field.name]
                         return [
                                 (field.name): details.collectEntries {
-                                    Direction direction, Map<Station, Map<String, Map<String, Object>>> stations ->
+                                    String direction, Map<Station, Map<String, Map<String, Object>>> stations ->
                                         BasicDBList stationList = new BasicDBList();
                                         BasicDBList stationDetailList = new BasicDBList()
                                         stations.each {
@@ -49,7 +48,7 @@ class AnalysisWriter implements Converter<Analysis, DBObject> {
                                                 )
                                         }
                                         [
-                                                (direction.toString()): [
+                                                (direction): [
                                                         "STATIONS": stationList,
                                                         "DETAILS": stationDetailList
                                                 ]

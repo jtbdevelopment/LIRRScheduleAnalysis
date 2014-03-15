@@ -3,30 +3,46 @@
 <head>
     <meta name="layout" content="mainBS"/>
     <g:javascript>
-        var west;
-        var east;
+        var westTable;
+        var eastTable;
+        var overallTable;
+        var miles;
+        var zones;
+        var westChart;
+        var eastChart;
+        var overallChart;
+
         function showGroup(direction, group) {
             var table;
             var chart;
             if (direction == "West") {
-                table = west
-                chart = $("#WestChart");
+                table = westTable;
+                chart = westChart;
+            } else if (direction == "East") {
+                table = eastTable;
+                chart = eastChart;
             } else {
-                table = east
-                chart = $("#EastChart");
+                table = overallTable;
+                chart = overallChart;
             }
+
             table.columns('.group').visible(false);
             table.columns('.' + group).visible(true);
             table.draw();
             chartTable(table, chart)
         }
 
+        function refilterTablesAndCharts() {
+            overallTable.draw();
+            eastTable.draw();
+            westTable.draw();
+            chartTable(overallTable, overallChart);
+            chartTable(eastTable, eastChart);
+            chartTable(westTable, westChart);
+        }
+
         function chartTable(table, chart) {
             chart.children().remove();
-            var stations = [];
-            table.column(0).nodes().to$().each(function (cell) {
-                stations[cell] = $(this).html();
-            });
             var usedHeaders = [
                 '# of Peak Trains',
                 'Avg Ride Time',
@@ -35,10 +51,9 @@
                 'Std Dev Wait Between Peaks',
                 'Median Wait Between Peaks'
             ];
-            var dataMatrix = [];
             var dataByHeader = [];
             for (var i = 0; i < usedHeaders.length; ++i) {
-                var axis = i == 0 ? 0 : 1;
+                var axis = i < 2 ? i : 2;
                 var type = i < 1 ? 'column' : 'spline';
                 dataByHeader[i] = {
                     data: [],
@@ -49,19 +64,20 @@
             }
             var matrixCount = -1;
             var headers = table.columns().header().to$();
-            var visible = table.columns().visible();
-            var rows = table.rows().data();
-            rows.each(function (row) {
+            var rows = table.$('tr', {'filter': 'applied'});
+            var stations = [];
+            rows.each(function (rowCounter) {
+                var row = rows[rowCounter].cells;
                 ++matrixCount;
-                var station = row[0];
                 var dataValues = [];
                 var valueCounter = -1;
+                stations[matrixCount] = row[0].innerHTML;
                 for (var i = 0; i < row.length; ++i) {
                     var name = headers[i].innerHTML;
                     var headerPosition = jQuery.inArray(name, usedHeaders);
-                    if (visible[i] && headerPosition > -1) {
+                    if (headerPosition > -1) {
                         ++valueCounter;
-                        var number = parseInt(row[i]);
+                        var number = parseInt(row[i].innerHTML);
                         if (number == 9999) {
                             number = null;
                         }
@@ -69,14 +85,10 @@
                         dataByHeader[headerPosition].data[matrixCount] = number;
                     }
                 }
-                dataMatrix[matrixCount] = {
-                    name: station,
-                    data: dataValues
-                }
             });
             chart.highcharts({
                 chart: {
-                    zoomType: 'xy',
+                    zoomType: 'x',
                     type: 'column'
                 },
                 title: {
@@ -96,7 +108,13 @@
                     },
                     {
                         title: {
-                            text: 'Minutes'
+                            text: 'Minutes (Rides)'
+                        },
+                        opposite: false
+                    },
+                    {
+                        title: {
+                            text: 'Minutes (Waits)'
                         },
                         opposite: true
                     }
@@ -107,45 +125,67 @@
 
         function showMe() {
             var id = $("#analysis").val();
-            var zone = $("#zone").val();
             $("#reportContent").children().remove();
             $("#showMe").button('loading');
             $.post(
                     "show",
-                    {"id": id, "zone": zone},
+                    {"id": id},
                     function (data) {
                         $("#reportContent").append(data);
-                        west = $("#West").DataTable({
+                        var dataTableOptions = {
                             sDom: 'rt',
                             paging: false,
                             bAutoWidth: false,
                             width: "100%",
                             order: [
-                                [0, "asc"]
+                                [1, "asc"]
                             ]
-                        });
-                        east = $("#East").DataTable({
-                            sDom: 'rt',
-                            paging: false,
-                            bAutoWidth: false,
-                            width: "100%",
-                            order: [
-                                [0, "asc"]
-                            ]
-                        });
+                        };
+                        westChart = $("#WestChart");
+                        eastChart = $("#EastChart");
+                        overallChart = $("#OverallChart");
+                        overallTable = $("#Overall").DataTable(dataTableOptions);
+                        westTable = $("#West").DataTable(dataTableOptions);
+                        eastTable = $("#East").DataTable(dataTableOptions);
+                        showGroup('Overall', 'group-0');
                         showGroup('West', 'group-0');
                         showGroup('East', 'group-0');
                         $("#showMe").button('reset');
-//                        chartTable(west, $("#WestChart"));
-//                        chartTable(east, $("#EastChart"));
+                        miles = $("#miles").slider().on('slideStop', refilterTablesAndCharts).data('slider');
+                        zones = $("#zones").slider().on('slideStop', refilterTablesAndCharts).data('slider');
+                        $.fn.dataTableExt.afnFiltering.length = 0;
+                        $.fn.dataTableExt.afnFiltering.push(
+                                function (oSettings, aData, iDataIndex) {
+                                    var data = miles.getValue();
+                                    var minMiles = data[0];
+                                    var maxMiles = data[1];
+                                    data = zones.getValue();
+                                    var minZone = data[0];
+                                    var maxZone = data[1];
+                                    if (minMiles <= aData[1]
+                                            && aData[1] <= maxMiles
+                                            && minZone <= aData[3]
+                                            && aData[3] <= maxZone
+                                            ) {
+                                        return true;
+                                    }
+                                    return false;
+                                }
+                        );
+                        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                            var tab = $('.nav-pills .active').text();
+                            if (tab == "Overall") {
+                                chartTable(overallTable, overallChart);
+                            } else if (tab == "AM Peak") {
+                                chartTable(westTable, westChart);
+                            } else if (tab == "PM Peak") {
+                                chartTable(eastTable, eastChart);
+                            }
+                        })
                     });
 
         }
 
-        $(document).ready(function () {
-                    $("#zone").append('<option value=ALL>All</option>');
-                }
-        )
     </g:javascript>
 </head>
 
@@ -155,9 +195,6 @@
         <label for="analysis">When:</label>
         <g:select class="form-control" name="analysis" from="${stringInstanceMap.entrySet()}" optionKey="key"
                   optionValue="value"/>
-        <label for="zone">Zone:</label>
-        <g:select class="form-control text-right" name="zone" from="${Zone.values()}" value="numeric"
-                  optionKey="numeric" optionValue="numeric"/>
         <button id="showMe" data-loading-text="Loading.." class="btn btn-default">Show Me</button>
     </div>
 </form>

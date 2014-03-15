@@ -1,7 +1,6 @@
 package com.jtbdevelopment.lirr.dao.converters
 
 import com.jtbdevelopment.lirr.dataobjects.analysis.Analysis
-import com.jtbdevelopment.lirr.dataobjects.core.Direction
 import com.jtbdevelopment.lirr.dataobjects.core.Station
 import com.mongodb.BasicDBList
 import com.mongodb.BasicDBObject
@@ -40,7 +39,6 @@ class AnalysisReader implements Converter<DBObject, Analysis> {
                         BasicDBObject dbDirectionMap = source.get(fieldName)
                         analysis[fieldName] = dbDirectionMap.keySet().collectEntries() {
                             String directionString ->
-                                Direction direction = Enum.valueOf(Direction.class, directionString)
                                 BasicDBObject dbDirectionLists = dbDirectionMap.get(directionString)
                                 List<Station> stations = dbDirectionLists.get("STATIONS").collect {
                                     String stationName ->
@@ -67,7 +65,7 @@ class AnalysisReader implements Converter<DBObject, Analysis> {
                                                 ]
                                         }
                                 }
-                                [(direction): stationDetails]
+                                [(directionString): stationDetails]
                         }
                         break;
                     default:

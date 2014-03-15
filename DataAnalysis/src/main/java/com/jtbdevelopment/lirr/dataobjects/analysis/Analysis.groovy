@@ -1,6 +1,5 @@
 package com.jtbdevelopment.lirr.dataobjects.analysis
 
-import com.jtbdevelopment.lirr.dataobjects.core.Direction
 import com.jtbdevelopment.lirr.dataobjects.core.Station
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
@@ -30,5 +29,5 @@ class Analysis {
     @Indexed
     String analysisType
     DateTime computed = DateTime.now()
-    Map<Direction, Map<Station, Map<String, Map<String, Object>>>> details
+    Map<String, Map<Station, Map<String, Map<String, Object>>>> details
 }

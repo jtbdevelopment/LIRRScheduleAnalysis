@@ -3,6 +3,7 @@ package com.jtbdevelopment.lirr.analysis
 import com.jtbdevelopment.lirr.dataobjects.analysis.Analysis
 import com.jtbdevelopment.lirr.dataobjects.analysis.TrainRide
 import com.jtbdevelopment.lirr.dataobjects.core.Direction
+import com.jtbdevelopment.lirr.dataobjects.core.Line
 import com.jtbdevelopment.lirr.dataobjects.core.Station
 import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
 import com.jtbdevelopment.lirr.dataobjects.schedule.TrainSchedule
@@ -30,13 +31,13 @@ class PeakTrainAnalyzer implements Analyzer {
     static final String STD_DEV_WAIT_BETWEEN_PEAKS = "Std Dev Wait Between Peaks"
     static final String MEDIAN_WAIT_BETWEEN_PEAKS = "Median Wait Between Peaks"
     static final String LONGEST_WAIT_BETWEEN_PEAKS = "Longest Wait Between Peaks"
-    static final int NO_VALUE = 9999
+    static final String NO_VALUE = "N/A"
 
     static final String OVERALL = "Overall"
 
-    public static final String PEAK_TRAIN_ANALYSIS = "Peak Train Analysis"
+    public static final String PEAK_TRAIN_ANALYSIS_PENN = "Peak Train Analysis (Penn)"
 
-    public static final Map<Direction, List<String>> GROUPS_PER_DIRECTION;
+    public static final Map<String, List<String>> GROUPS_PER_DIRECTION;
 
     public static final List<String> DETAILS_PER_GROUP = [
             NUMBER_OF_PEAK_TRAINS,
@@ -60,28 +61,82 @@ class PeakTrainAnalyzer implements Analyzer {
 
     static {
         GROUPS_PER_DIRECTION = [
-                (Direction.East): [OVERALL],
-                (Direction.West): [OVERALL]
+                (Direction.East.toString()): [OVERALL],
+                (Direction.West.toString()): [OVERALL],
         ]
         GROUPS_PER_DIRECTION.each {
-            Direction direction, List<String> groups ->
+            String directionString, List<String> groups ->
+                Direction direction = Enum.valueOf(Direction.class, directionString);
                 groups.addAll(direction.peakPlus.collect {
                     int hour ->
                         //GROUP_FOR_HOUR(hour)
-                        "(Departure Hour " + hour + ")"
+                        "Departing " + hour + " - " + (hour + 1)
                 })
         }
+        GROUPS_PER_DIRECTION[OVERALL] = [OVERALL]
     }
 
     @Override
     public Analysis analyze(
             final CompleteSchedule scheduleForPeriod) {
-        Analysis analysis = new Analysis(start: scheduleForPeriod.start, end: scheduleForPeriod.end, analysisType: PEAK_TRAIN_ANALYSIS)
+        Analysis analysis = new Analysis(start: scheduleForPeriod.start, end: scheduleForPeriod.end, analysisType: PEAK_TRAIN_ANALYSIS_PENN)
         analysis.details = Direction.values().collectEntries {
             Direction direction ->
-                [(direction): analyzeForDirection(scheduleForPeriod, direction)]
+                [(direction.toString()): analyzeForDirection(scheduleForPeriod, direction)]
         }
+        analyzeOverall(analysis)
+
         analysis
+    }
+
+    private void analyzeOverall(final Analysis analysis) {
+
+        Map<Station, Map<String, Map<String, Object>>> east = analysis.details[Direction.East.toString()]
+        Map<Station, Map<String, Map<String, Object>>> west = analysis.details[Direction.West.toString()]
+
+        Set<Station> stations = [] as Set;
+        stations.addAll(east.keySet());
+        stations.addAll(west.keySet());
+
+        analysis.details.put((OVERALL),
+                stations.collectEntries {
+                    Station station ->
+                        Map<String, Object> stationOverallEast = east[station][OVERALL]
+                        Map<String, Object> stationOverallWest = west[station][OVERALL]
+                        Closure averageValues = {
+                            String param ->
+                                if (stationOverallEast.containsKey(param)
+                                        && stationOverallEast[param] != NO_VALUE
+                                        && stationOverallWest.containsKey(param)
+                                        && stationOverallWest[param] != NO_VALUE
+                                ) {
+                                    Math.round((stationOverallEast[param] + stationOverallWest[param]) / 2)
+                                } else if (stationOverallEast.containsKey(param)) {
+                                    return stationOverallEast[param]
+                                } else if (stationOverallWest.containsKey(param)) {
+                                    return stationOverallWest[param]
+                                } else {
+                                    return NO_VALUE
+                                }
+                        }
+                        [
+                                (station):
+                                        [
+                                                (OVERALL): [
+                                                        (FIRST_PEAK): NO_VALUE,
+                                                        (LAST_PEAK): NO_VALUE,
+                                                        (LAST_PRE_PEAK): NO_VALUE,
+                                                        (WAIT_FOR_FIRST_PEAK): NO_VALUE,
+                                                        (NUMBER_OF_PEAK_TRAINS): stationOverallEast[NUMBER_OF_PEAK_TRAINS] + stationOverallWest[NUMBER_OF_PEAK_TRAINS],
+                                                        (AVERAGE_RIDE_TIME): averageValues(AVERAGE_RIDE_TIME),
+                                                        (AVERAGE_WAIT_BETWEEN_PEAKS): averageValues(AVERAGE_WAIT_BETWEEN_PEAKS),
+                                                        (LONGEST_WAIT_BETWEEN_PEAKS): averageValues(LONGEST_WAIT_BETWEEN_PEAKS),
+                                                        (STD_DEV_WAIT_BETWEEN_PEAKS): averageValues(STD_DEV_WAIT_BETWEEN_PEAKS),
+                                                        (MEDIAN_WAIT_BETWEEN_PEAKS): averageValues(MEDIAN_WAIT_BETWEEN_PEAKS)
+                                                ]
+                                        ]
+                        ]
+                })
     }
 
     private Map<Station, Map<String, Map<String, Object>>> analyzeForDirection(
@@ -139,7 +194,7 @@ class PeakTrainAnalyzer implements Analyzer {
         }
         direction.peakPlus.each {
             int hour ->
-                String statGroup = "(Departure Hour " + hour + ")"
+                String statGroup = "Departing " + hour + " - " + (hour + 1)
 //                String statGroup = GROUP_FOR_HOUR(hour)
                 Map<Station, List<TrainRide>> subTimes = stationTimes.collectEntries {
                     Station station, List<TrainRide> times ->
@@ -180,7 +235,7 @@ class PeakTrainAnalyzer implements Analyzer {
             final Map<Station, List<TrainRide>> stationTimes) {
         (Map<Station, Map<String, Object>>) stationTimes.collectEntries {
             Station station, List<TrainRide> times ->
-                List<Integer> deltas
+                List deltas
                 if (times.size() >= 2) {
                     deltas = (2..times.size()).collect {
                         int column ->
@@ -189,13 +244,16 @@ class PeakTrainAnalyzer implements Analyzer {
                 } else {
                     deltas = [NO_VALUE]
                 }
-                DescriptiveStatistics deltaTimeStats = new DescriptiveStatistics((double[]) deltas.collect {
-                    it.doubleValue()
+                DescriptiveStatistics deltaTimeStats = new DescriptiveStatistics((double[]) deltas.findAll {
+                    !(it in String)
+                }.collect {
+                    double delta ->
+                        delta.doubleValue()
                 }.toArray())
                 DescriptiveStatistics rideTimeStats = new DescriptiveStatistics((double[]) times.rideTime.collect {
                     it.doubleValue()
                 }.toArray())
-                int avgRide = NO_VALUE;
+                def avgRide = NO_VALUE;
                 if (times.size() > 0) {
                     avgRide = rideTimeStats.max.intValue()
                 }
@@ -232,7 +290,10 @@ class PeakTrainAnalyzer implements Analyzer {
                 LocalTime mandatoryTime = schedule.stops[startOrEndStation]
                 schedule.stops.findAll {
                     Station station, LocalTime time ->
-                        !station.ignoreForAnalysis
+                        (!station.ignoreForAnalysis) &&
+                                !(startOrEndStation == Station.PENN_STATION &&
+                                        (station.line == Line.CityBrooklyn || station.line == Line.CityLIC))
+
                 }.each {
                     Station station, LocalTime time ->
                         stationTimes[station].add(new TrainRide(time, mandatoryTime))
@@ -242,7 +303,7 @@ class PeakTrainAnalyzer implements Analyzer {
         stationTimes.findAll { (!it.key.ignoreForAnalysis) && (!it.value.empty) }
     }
 
-    private static int timeDeltaInMinutes(final LocalTime start, final LocalTime end) {
+    private static def timeDeltaInMinutes(final LocalTime start, final LocalTime end) {
         if (start && end) {
             return Minutes.minutesBetween(start, end).minutes
         }

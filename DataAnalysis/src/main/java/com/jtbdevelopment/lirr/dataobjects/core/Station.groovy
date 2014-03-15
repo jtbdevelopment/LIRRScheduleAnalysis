@@ -15,23 +15,20 @@ class Station {
     Line line
     float milesToPenn
     boolean ignoreForAnalysis = false  // Primarily for penn, etc
-    boolean penn = true
-    boolean brooklyn = true
-    boolean lic = true
 
     static final List<Station> STATIONS = [
             //  Names must be as they appear on the schedule
-            new Station(name: "Penn Station", zone: Zone.Zone1, ignoreForAnalysis: true, brooklyn: false, lic: false, line: Line.CityPenn, milesToPenn: 0),
-            new Station(name: "Atlantic Terminal", zone: Zone.Zone1, ignoreForAnalysis: true, brooklyn: true, penn: false, line: Line.CityBrooklyn),
-            new Station(name: "Long Island City", zone: Zone.Zone1, ignoreForAnalysis: true, lic: true, penn: false, line: Line.CityLIC),
-            new Station(name: "Hunterspoint Ave.", zone: Zone.Zone1, ignoreForAnalysis: true, lic: true, penn: false, line: Line.CityLIC),
+            new Station(name: "Penn Station", zone: Zone.Zone1, ignoreForAnalysis: true, line: Line.CityPenn, milesToPenn: 0),
+            new Station(name: "Atlantic Terminal", zone: Zone.Zone1, ignoreForAnalysis: true, line: Line.CityBrooklyn),
+            new Station(name: "Long Island City", zone: Zone.Zone1, ignoreForAnalysis: true, line: Line.CityLIC),
+            new Station(name: "Hunterspoint Ave.", zone: Zone.Zone1, ignoreForAnalysis: true, line: Line.CityLIC),
 
-            new Station(name: "Nostrand Avenue", zone: Zone.Zone1, brooklyn: true, penn: false, line: Line.CityBrooklyn),
-            new Station(name: "East New York", zone: Zone.Zone1, brooklyn: true, penn: false, line: Line.CityBrooklyn),
+            new Station(name: "Nostrand Avenue", zone: Zone.Zone1, ignoreForAnalysis: true, line: Line.CityBrooklyn),
+            new Station(name: "East New York", zone: Zone.Zone1, ignoreForAnalysis: true, line: Line.CityBrooklyn),
 
-            new Station(name: "Woodside", zone: Zone.Zone1, brooklyn: false, lic: false, milesToPenn: 4.9, line: Line.CityPenn),
-            new Station(name: "Forest Hills", zone: Zone.Zone1, brooklyn: false, lic: false, milesToPenn: 8.5, line: Line.CityPenn),
-            new Station(name: "Kew Gardens", zone: Zone.Zone1, brooklyn: false, lic: false, milesToPenn: 8.8, line: Line.CityPenn),
+            new Station(name: "Woodside", zone: Zone.Zone1, ignoreForAnalysis: true, milesToPenn: 4.9, line: Line.CityPenn),
+            new Station(name: "Forest Hills", zone: Zone.Zone1, ignoreForAnalysis: true, milesToPenn: 8.5, line: Line.CityPenn),
+            new Station(name: "Kew Gardens", zone: Zone.Zone1, ignoreForAnalysis: true, milesToPenn: 8.8, line: Line.CityPenn),
 
             new Station(name: "Jamaica", zone: Zone.Zone3, ignoreForAnalysis: true, milesToPenn: 10.8, line: Line.CityPenn),
 
