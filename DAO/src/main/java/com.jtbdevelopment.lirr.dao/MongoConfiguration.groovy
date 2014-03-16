@@ -6,6 +6,7 @@ import com.jtbdevelopment.lirr.dao.converters.TrainScheduleReader
 import com.jtbdevelopment.lirr.dao.converters.TrainScheduleWriter
 import com.mongodb.Mongo
 import com.mongodb.WriteConcern
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Configuration
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration
 import org.springframework.data.mongodb.core.convert.CustomConversions
@@ -18,6 +19,13 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @Configuration
 @EnableMongoRepositories("com.jtbdevelopment")
 class MongoConfiguration extends AbstractMongoConfiguration {
+    @Value('${mongo.testValue}')
+    String test;
+    @Value('${mongo.dbName:lirr}')
+    String dbName;
+    @Value('${mongo.host:localhost}')
+    String dbHost;
+
     @Override
     protected String getDatabaseName() {
         return "lirr"

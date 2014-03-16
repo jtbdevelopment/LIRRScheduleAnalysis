@@ -10,7 +10,7 @@
 </g:if>
 
 <!-- Div for chart -->
-<div id="${direction}Chart" style="height:500px;width:100%;"></div>
+<div id="${direction}Chart" style="height:550px;width:100%;"></div>
 
 <!-- Tab panes -->
 <table class="table table-striped table-bordered table-condensed table-hover" id="${direction}">

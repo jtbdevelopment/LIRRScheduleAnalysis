@@ -119,6 +119,7 @@ class ScheduleCreatorTest extends GroovyTestCase {
     @Autowired
     PeakTrainAnalyzer analyzer
 
+    /*
     @Test
     void testAnalysis() {
         completeScheduleRepository.findAll().each {
@@ -126,5 +127,6 @@ class ScheduleCreatorTest extends GroovyTestCase {
                 dataServiceUtils.saveOrUpdateAnalysis(analyzer.analyze(schedule))
         }
     }
+    */
 
 }

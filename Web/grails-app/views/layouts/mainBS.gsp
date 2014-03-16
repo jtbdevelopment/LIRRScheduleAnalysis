@@ -13,27 +13,23 @@
 <body>
 
 <div class="container-fluid">
-    <div class="row header">
-        <div class="page-header">
+    <div class="row">
+        <div class="col-sm-9 col-md-10">
             <h1>Compare My Ride <small>LIRR</small></h1>
+        </div>
+
+        <div class="col-sm-3 col-md-2">
+            <ul class="nav nav-pills" style="margin-top: 20px">
+                <li><a href="#">Overview</a></li>
+                <li class="active"><a href="#">Peak Ride (Penn)</a></li>
+            </ul>
         </div>
     </div>
 </div>
 
 <div class="container-fluid">
-
-    <div class="row">
-
-        <div class="col-sm-2 col-md-1 sidebar">
-            <ul class="nav nav-sidebar">
-                <li><a href="#">Overview</a></li>
-                <li class="active"><a href="#">Peak Ride (Penn)</a></li>
-            </ul>
-        </div>
-
-        <div class="col-sm-10 col-sm-offset-2 col-md-11 col-md-offset-1 main">
-            <g:layoutBody/>
-        </div>
+    <div class="col-sm-12 col-md-12 main">
+        <g:layoutBody/>
     </div>
 </div>
 

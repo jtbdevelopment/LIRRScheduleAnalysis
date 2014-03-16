@@ -1,63 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bad0dd3b-a411-4c76-a718-03553e311c60" name="Default" comment="more station info, mileage, etc">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/css/images/sort_asc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/css/images/sort_asc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/css/images/sort_both.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/css/images/sort_desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/css/images/sort_desc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/annotations.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/annotations.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/css/bootstrap-slider/bootstrap-slider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/css/bootstrap-slider/bootstrap-slider.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/bootstrap-slider/bootstrap-slider.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/canvas-tools.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/canvas-tools.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/themes/dark-blue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/themes/dark-green.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/data.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/drilldown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/drilldown.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/exporting.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/exporting.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/funnel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/funnel.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/themes/gray.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/themes/grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/heatmap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/heatmap.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/highcharts-all.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/highcharts-more.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/highcharts-more.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/highcharts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/highcharts.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/map.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/map.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/adapters/mootools-adapter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/adapters/mootools-adapter.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/no-data-to-display.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/modules/no-data-to-display.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/adapters/prototype-adapter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/adapters/prototype-adapter.src.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/themes/skies.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/adapters/standalone-framework.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web/web-app/js/highcharts/adapters/standalone-framework.src.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/test/unit/com/jtbdevelopment/lirr/web/ScheduleFacadeControllerSpec.groovy" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/analysis/Analysis.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/analysis/Analysis.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/converters/AnalysisReader.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/converters/AnalysisReader.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/converters/AnalysisWriter.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/converters/AnalysisWriter.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/conf/ApplicationResources.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/conf/ApplicationResources.groovy" />
+    <list default="true" id="bad0dd3b-a411-4c76-a718-03553e311c60" name="Default" comment="more graphing work">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/conf/Config.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/conf/Config.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Line.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Line.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/MongoConfiguration.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/MongoConfiguration.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Station.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Station.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/Web.iml" afterPath="$PROJECT_DIR$/Web/Web.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/_peaksTemplate.gsp" afterPath="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/_peaksTemplate.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/web-app/css/bootstrap/dashboard.css" afterPath="$PROJECT_DIR$/Web/web-app/css/bootstrap/dashboard.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp" afterPath="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/views/layouts/mainBS.gsp" afterPath="$PROJECT_DIR$/Web/grails-app/views/layouts/mainBS.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/show.gsp" afterPath="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/show.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -72,7 +24,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
@@ -116,7 +68,7 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp" line="129" class="gsp.default.peakTrainAnalysis/index_gsp" package="gsp.default">
+      <breakpoint url="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp" line="144" class="gsp.default.peakTrainAnalysis/index_gsp" package="gsp.default">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -206,6 +158,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/MongoConfiguration.groovy" line="30" class="com.jtbdevelopment.lirr.dao.MongoConfiguration" package="com.jtbdevelopment.lirr.dao">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -216,87 +183,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Sorting icons.psd" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/web-app/images/Sorting icons.psd">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forward_enabled.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/web-app/images/forward_enabled.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/web-app/css/bootstrap/dashboard.css">
+      <file leaf-file-name="MongoConfiguration.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/MongoConfiguration.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="20" selection-start="1808" selection-end="1808" vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="1920">
+            <state line="30" column="0" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0" vertical-offset="143" max-vertical-offset="735">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/show.gsp">
+      <file leaf-file-name="application.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="60" selection-start="1347" selection-end="1347" vertical-scroll-proportion="-3.7021277" vertical-offset="216" max-vertical-offset="735">
+            <state line="3" column="9" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp">
+      <file leaf-file-name="Config.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/grails-app/conf/Config.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="200" column="0" selection-start="7822" selection-end="7822" vertical-scroll-proportion="-14.085107" vertical-offset="2338" max-vertical-offset="3150">
-              <folding>
-                <marker date="1394916759000" expanded="true" signature="371:934" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="456:541" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="572:657" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="663:754" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="979:1227" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="1271:4136" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="1342:1604" placeholder="[...]" />
-                <marker date="1394916759000" expanded="true" signature="1698:2001" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="1832:1987" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="2230:3091" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="2500:3077" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="2676:3059" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="2827:2897" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="3123:4124" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="3148:3237" placeholder="{&quot;zoomType&quot;: 'x'...}" />
-                <marker date="1394916759000" expanded="true" signature="3262:3346" placeholder="{&quot;text&quot;: ''...}" />
-                <marker date="1394916759000" expanded="true" signature="3371:3479" placeholder="[...]" />
-                <marker date="1394916759000" expanded="true" signature="3393:3461" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="3504:4072" placeholder="[...]" />
-                <marker date="1394916759000" expanded="true" signature="3526:3661" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="3559:3639" placeholder="{&quot;text&quot;: '# Of Peak Trains'...}" />
-                <marker date="1394916759000" expanded="true" signature="3683:3858" placeholder="{&quot;opposite&quot;: false...}" />
-                <marker date="1394916759000" expanded="true" signature="3716:3795" placeholder="{&quot;text&quot;: 'Minutes (Rides)'...}" />
-                <marker date="1394916759000" expanded="true" signature="3880:4054" placeholder="{&quot;opposite&quot;: true...}" />
-                <marker date="1394916759000" expanded="true" signature="3913:3992" placeholder="{&quot;text&quot;: 'Minutes (Waits)'...}" />
-                <marker date="1394916759000" expanded="true" signature="4164:7377" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="4422:7364" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="4529:4839" placeholder="{&quot;sDom&quot;: 'rt'...}" />
-                <marker date="1394916759000" expanded="true" signature="4739:4813" placeholder="[...]" />
-                <marker date="1394916759000" expanded="true" signature="5879:6730" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="6554:6646" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="6840:7341" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="6962:7065" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="7093:7190" placeholder="{...}" />
-                <marker date="1394916759000" expanded="true" signature="7218:7315" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="error.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/error.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="390">
+            <state line="99" column="0" selection-start="3916" selection-end="3916" vertical-scroll-proportion="0.0" vertical-offset="1470" max-vertical-offset="2100">
               <folding />
             </state>
           </provider>
@@ -305,32 +213,103 @@
       <file leaf-file-name="bootstrap-slider.min.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web/web-app/css/bootstrap-slider/bootstrap-slider.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2460">
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forward_enabled_hover.png" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Web/web-app/images/forward_enabled_hover.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="_peaksTemplate.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/_peaksTemplate.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="184" selection-end="184" vertical-scroll-proportion="-1.2765957" vertical-offset="0" max-vertical-offset="1035">
+            <state line="32" column="16" selection-start="1356" selection-end="1356" vertical-scroll-proportion="-8.297873" vertical-offset="90" max-vertical-offset="1035">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GroovyIfTag.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/grails-2.3.2/dist/grails-web-2.3.2-sources.jar!/org/codehaus/groovy/grails/web/taglib/GroovyIfTag.java">
+      <file leaf-file-name="index.gsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="13" selection-start="682" selection-end="682" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+            <state line="11" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="0.34957626" vertical-offset="0" max-vertical-offset="3450">
+              <folding>
+                <marker date="1394938743000" expanded="true" signature="352:847" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="425:498" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="529:602" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="608:687" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="888:1108" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="1148:3693" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="1211:1445" placeholder="[...]" />
+                <marker date="1394938743000" expanded="true" signature="1531:1798" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="1653:1788" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="2007:2792" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="2253:2782" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="2417:2768" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="2556:2618" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="2820:3685" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="2841:2918" placeholder="{&quot;zoomType&quot;: 'x'...}" />
+                <marker date="1394938743000" expanded="true" signature="2939:3011" placeholder="{&quot;text&quot;: ''...}" />
+                <marker date="1394938743000" expanded="true" signature="3032:3124" placeholder="[...]" />
+                <marker date="1394938743000" expanded="true" signature="3050:3110" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="3145:3641" placeholder="[...]" />
+                <marker date="1394938743000" expanded="true" signature="3163:3282" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="3192:3264" placeholder="{&quot;text&quot;: '# Of Peak Trains'...}" />
+                <marker date="1394938743000" expanded="true" signature="3300:3455" placeholder="{&quot;opposite&quot;: false...}" />
+                <marker date="1394938743000" expanded="true" signature="3329:3400" placeholder="{&quot;text&quot;: 'Minutes (Rides)'...}" />
+                <marker date="1394938743000" expanded="true" signature="3473:3627" placeholder="{&quot;opposite&quot;: true...}" />
+                <marker date="1394938743000" expanded="true" signature="3502:3573" placeholder="{&quot;text&quot;: 'Minutes (Waits)'...}" />
+                <marker date="1394938743000" expanded="true" signature="3729:3870" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="3812:3862" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="3906:4047" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="3989:4039" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="4071:7222" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="4301:7213" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="4400:4678" placeholder="{&quot;sDom&quot;: 'rt'...}" />
+                <marker date="1394938743000" expanded="true" signature="4590:4656" placeholder="[...]" />
+                <marker date="1394938743000" expanded="true" signature="5636:6253" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="6093:6177" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="6341:6461" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="6528:6648" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="6729:7194" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="6843:6938" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="6966:7055" placeholder="{...}" />
+                <marker date="1394938743000" expanded="true" signature="7083:7172" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainBS.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/layouts/mainBS.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="0" selection-start="929" selection-end="929" vertical-scroll-proportion="-14.375" vertical-offset="150" max-vertical-offset="645">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/web-app/css/bootstrap/dashboard.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="125" column="22" selection-start="1857" selection-end="1857" vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="1980">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/show.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="28" selection-start="2319" selection-end="2319" vertical-scroll-proportion="-4.4680853" vertical-offset="675" max-vertical-offset="1305">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Line.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Line.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="35" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
@@ -359,7 +338,6 @@
         <option value="$PROJECT_DIR$/DataAnalysis/pom.xml" />
         <option value="$PROJECT_DIR$/DAO/pom.xml" />
         <option value="$PROJECT_DIR$/Web/grails-app/conf/spring/resources.groovy" />
-        <option value="$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/MongoConfiguration.groovy" />
         <option value="$PROJECT_DIR$/Web/grails-app/domain/web/CompleteScheduleFacade.groovy" />
         <option value="$PROJECT_DIR$/Web/grails-app/conf/DataSource.groovy" />
         <option value="$PROJECT_DIR$/Web/grails-app/domain/com/jtbdevelopment/lirr/web/CompleteScheduleFacade.groovy" />
@@ -378,7 +356,6 @@
         <option value="$PROJECT_DIR$/Web/grails-app/views/scheduleFacade/testBS.gsp" />
         <option value="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AnalysisController.groovy" />
         <option value="$PROJECT_DIR$/Web/grails-app/views/analysis/index.gsp" />
-        <option value="$PROJECT_DIR$/Web/grails-app/conf/Config.groovy" />
         <option value="$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/AnalysisRepository.groovy" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/Analyzer.groovy" />
         <option value="$PROJECT_DIR$/Web/web-app/html/test.html" />
@@ -390,19 +367,21 @@
         <option value="$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/converters/FinalConverter.groovy" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Zone.groovy" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/test/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzerTest.groovy" />
-        <option value="$PROJECT_DIR$/Web/grails-app/views/layouts/mainBS.gsp" />
-        <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Line.groovy" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Direction.groovy" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/analysis/Analysis.groovy" />
         <option value="$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/converters/AnalysisReader.groovy" />
         <option value="$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/converters/AnalysisWriter.groovy" />
-        <option value="$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Station.groovy" />
         <option value="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy" />
         <option value="$PROJECT_DIR$/Web/grails-app/conf/ApplicationResources.groovy" />
-        <option value="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/show.gsp" />
+        <option value="$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy" />
+        <option value="$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/MongoConfiguration.groovy" />
+        <option value="$PROJECT_DIR$/Web/grails-app/conf/Config.groovy" />
+        <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Line.groovy" />
+        <option value="$PROJECT_DIR$/Web/grails-app/views/layouts/mainBS.gsp" />
         <option value="$PROJECT_DIR$/Web/web-app/css/bootstrap/dashboard.css" />
+        <option value="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/show.gsp" />
         <option value="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/_peaksTemplate.gsp" />
         <option value="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp" />
       </list>
@@ -1211,6 +1190,96 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-mongodb-1.3.3.RELEASE.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springframework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongodb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Grails User Library (Web)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-mongodb-1.3.3.RELEASE.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springframework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongodb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Grails User Library (Web)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-mongodb-1.3.3.RELEASE.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Grails User Library (Web)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="spring-data-commons-1.6.3.RELEASE.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1311,7 +1380,153 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="spring-beans-3.1.4.RELEASE.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Grails User Library (Web)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-beans-3.1.4.RELEASE.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springframework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Grails User Library (Web)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-beans-3.1.4.RELEASE.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springframework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="factory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Grails User Library (Web)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-beans-3.1.4.RELEASE.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springframework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="factory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="annotation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Grails User Library (Web)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="mongo-java-driver-2.10.1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Grails User Library (Web)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongo-java-driver-2.10.1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongodb" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1829,6 +2044,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="TimetableProcessor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1852,6 +2089,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1939,126 +2180,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DataAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIRR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIRR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIRR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIRR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jtbdevelopment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lirr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIRR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIRR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jtbdevelopment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lirr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIRR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIRR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="DAO" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -2078,6 +2199,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2198,7 +2323,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DAO/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../e-eye-o" />
     <property name="SearchEverywhereHistory" value="" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
@@ -2251,7 +2376,7 @@
       <recent name="com.jtbdevelopment.lirr.analysis" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ScheduleCreatorTest.testAnalysis">
+  <component name="RunManager" selected="Grails.Grails:Web">
     <configuration default="false" name="PDFProcessorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -2692,7 +2817,7 @@
       <workItem from="1393421629150" duration="1480000" />
       <workItem from="1393475693525" duration="6917000" />
       <workItem from="1393565348418" duration="110083000" />
-      <workItem from="1394767167196" duration="11407000" />
+      <workItem from="1394767167196" duration="22400000" />
     </task>
     <task id="LOCAL-00001" summary="updating tests">
       <created>1392676346636</created>
@@ -2794,15 +2919,19 @@
       <created>1394681059507</created>
       <updated>1394681059507</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="more graphing work">
+      <created>1394922732766</created>
+      <updated>1394922732766</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="316253000" />
+    <option name="totallyTimeSpent" value="327246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="76" y="22" width="1604" height="1028" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2813,27 +2942,27 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26632524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26632524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951653" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37362638" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37362638" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290653" sideWeight="0.49912128" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290653" sideWeight="0.49912128" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951653" sideWeight="0.50087875" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33290654" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2867,7 +2996,8 @@
     <MESSAGE value="show sub topics" />
     <MESSAGE value="some work on graphs" />
     <MESSAGE value="more station info, mileage, etc" />
-    <option name="LAST_COMMIT_MESSAGE" value="more station info, mileage, etc" />
+    <MESSAGE value="more graphing work" />
+    <option name="LAST_COMMIT_MESSAGE" value="more graphing work" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -2883,80 +3013,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreator.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="36" selection-start="4783" selection-end="4783" vertical-scroll-proportion="0.0" vertical-offset="1121" max-vertical-offset="1680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/web-app/js/jquery/jquery-1.11.0.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="154710">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/web-app/js/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="582" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/resources/spring-context-timetables.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="523">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Zone.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="18" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysis/src/test/java/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzerTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="2" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="420" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/web-app/js/highcharts/highcharts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4500">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/web-app/js/highcharts/highcharts-more.src.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="32" selection-start="3360" selection-end="3360" vertical-scroll-proportion="0.0" vertical-offset="1620" max-vertical-offset="37590">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/web-app/js/highcharts/highcharts.src.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1350" column="35" selection-start="34448" selection-end="34448" vertical-scroll-proportion="0.0" vertical-offset="20130" max-vertical-offset="260430">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Direction.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="58" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/analysis/Analysis.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="14" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
@@ -2967,13 +3023,6 @@
     <entry file="file://$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/converters/AnalysisReader.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="0" selection-start="1698" selection-end="1698" vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1110">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/layouts/mainBS.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="41" selection-start="405" selection-end="405" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="705">
           <folding />
         </state>
       </provider>
@@ -3051,13 +3100,6 @@
         <state line="654" column="23" selection-start="26308" selection-end="26308" vertical-scroll-proportion="0.026833631" vertical-offset="9450" max-vertical-offset="22635" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="73" selection-start="3979" selection-end="3979" vertical-scroll-proportion="0.0" vertical-offset="1181" max-vertical-offset="2040">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web/test/unit/com/jtbdevelopment/lirr/web/PeakTrainAnalysisControllerSpec.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="26" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="390">
@@ -3068,20 +3110,6 @@
     <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Station.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="87" selection-start="1923" selection-end="1923" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="2985">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Line.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="33" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/conf/Config.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2085">
           <folding />
         </state>
       </provider>
@@ -3107,13 +3135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/conf/ApplicationResources.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="820" selection-end="820" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web/web-app/css/mobile.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
@@ -3131,9 +3152,7 @@
     <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="774" selection-end="774" vertical-scroll-proportion="-12.130435" vertical-offset="6" max-vertical-offset="525">
-          <folding>
-            <element signature="e#37#94#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3162,83 +3181,13 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web/web-app/images/Sorting icons.psd">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/web-app/images/forward_enabled.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/show.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="60" selection-start="1347" selection-end="1347" vertical-scroll-proportion="-3.7021277" vertical-offset="216" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/grails-2.3.2/dist/grails-web-2.3.2-sources.jar!/org/codehaus/groovy/grails/web/taglib/GroovyIfTag.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="13" selection-start="682" selection-end="682" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/web-app/css/bootstrap/dashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="20" selection-start="1808" selection-end="1808" vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="1920">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/_peaksTemplate.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="184" selection-end="184" vertical-scroll-proportion="-1.2765957" vertical-offset="0" max-vertical-offset="1035">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="0" selection-start="7822" selection-end="7822" vertical-scroll-proportion="-14.085107" vertical-offset="2338" max-vertical-offset="3150">
           <folding>
-            <marker date="1394916759000" expanded="true" signature="371:934" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="456:541" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="572:657" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="663:754" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="979:1227" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="1271:4136" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="1342:1604" placeholder="[...]" />
-            <marker date="1394916759000" expanded="true" signature="1698:2001" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="1832:1987" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="2230:3091" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="2500:3077" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="2676:3059" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="2827:2897" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="3123:4124" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="3148:3237" placeholder="{&quot;zoomType&quot;: 'x'...}" />
-            <marker date="1394916759000" expanded="true" signature="3262:3346" placeholder="{&quot;text&quot;: ''...}" />
-            <marker date="1394916759000" expanded="true" signature="3371:3479" placeholder="[...]" />
-            <marker date="1394916759000" expanded="true" signature="3393:3461" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="3504:4072" placeholder="[...]" />
-            <marker date="1394916759000" expanded="true" signature="3526:3661" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="3559:3639" placeholder="{&quot;text&quot;: '# Of Peak Trains'...}" />
-            <marker date="1394916759000" expanded="true" signature="3683:3858" placeholder="{&quot;opposite&quot;: false...}" />
-            <marker date="1394916759000" expanded="true" signature="3716:3795" placeholder="{&quot;text&quot;: 'Minutes (Rides)'...}" />
-            <marker date="1394916759000" expanded="true" signature="3880:4054" placeholder="{&quot;opposite&quot;: true...}" />
-            <marker date="1394916759000" expanded="true" signature="3913:3992" placeholder="{&quot;text&quot;: 'Minutes (Waits)'...}" />
-            <marker date="1394916759000" expanded="true" signature="4164:7377" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="4422:7364" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="4529:4839" placeholder="{&quot;sDom&quot;: 'rt'...}" />
-            <marker date="1394916759000" expanded="true" signature="4739:4813" placeholder="[...]" />
-            <marker date="1394916759000" expanded="true" signature="5879:6730" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="6554:6646" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="6840:7341" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="6962:7065" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="7093:7190" placeholder="{...}" />
-            <marker date="1394916759000" expanded="true" signature="7218:7315" placeholder="{...}" />
+            <element signature="e#0#1089#0" expanded="false" />
+            <element signature="e#1054#1055#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3250,6 +3199,112 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Web/web-app/images/forward_enabled_hover.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/web-app/images/forward_enabled.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/web-app/images/Sorting icons.psd">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.1.4.RELEASE/spring-beans-3.1.4.RELEASE.jar!/org/springframework/beans/factory/annotation/Value.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="18" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.1.4.RELEASE/spring-beans-3.1.4.RELEASE-sources.jar!/org/springframework/beans/factory/annotation/Value.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="18" selection-start="2256" selection-end="2256" vertical-scroll-proportion="0.5952381" vertical-offset="0" max-vertical-offset="882">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAO/DAO.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/DataServiceUtils.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/test/java/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="0" selection-start="5371" selection-end="5371" vertical-scroll-proportion="0.0" vertical-offset="984" max-vertical-offset="1830">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/conf/BootStrap.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="519">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/conf/BuildConfig.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/conf/ApplicationResources.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="820" selection-end="820" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/1.3.3.RELEASE/spring-data-mongodb-1.3.3.RELEASE-sources.jar!/org/springframework/data/mongodb/config/AbstractMongoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="22" selection-start="2300" selection-end="2300" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/2.10.1/mongo-java-driver-2.10.1.jar!/com/mongodb/Mongo.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="11" selection-start="1351" selection-end="1351" vertical-scroll-proportion="-7.44" vertical-offset="354" max-vertical-offset="2340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAO/src/main/java/com.jtbdevelopment.lirr.dao/MongoConfiguration.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0" vertical-offset="143" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="9" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="0" selection-start="3916" selection-end="3916" vertical-scroll-proportion="0.0" vertical-offset="1470" max-vertical-offset="2100">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Web/web-app/css/bootstrap-slider/bootstrap-slider.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="846">
@@ -3257,9 +3312,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web/web-app/images/forward_enabled_hover.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/core/Line.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="35" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/layouts/mainBS.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="929" selection-end="929" vertical-scroll-proportion="-14.375" vertical-offset="150" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/web-app/css/bootstrap/dashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="22" selection-start="1857" selection-end="1857" vertical-scroll-proportion="0.0" vertical-offset="1386" max-vertical-offset="1980">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/show.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="28" selection-start="2319" selection-end="2319" vertical-scroll-proportion="-4.4680853" vertical-offset="675" max-vertical-offset="1305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/_peaksTemplate.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="16" selection-start="1356" selection-end="1356" vertical-scroll-proportion="-8.297873" vertical-offset="90" max-vertical-offset="1035">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="0.34957626" vertical-offset="0" max-vertical-offset="3450">
+          <folding>
+            <marker date="1394938743000" expanded="true" signature="352:847" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="425:498" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="529:602" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="608:687" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="888:1108" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="1148:3693" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="1211:1445" placeholder="[...]" />
+            <marker date="1394938743000" expanded="true" signature="1531:1798" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="1653:1788" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="2007:2792" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="2253:2782" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="2417:2768" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="2556:2618" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="2820:3685" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="2841:2918" placeholder="{&quot;zoomType&quot;: 'x'...}" />
+            <marker date="1394938743000" expanded="true" signature="2939:3011" placeholder="{&quot;text&quot;: ''...}" />
+            <marker date="1394938743000" expanded="true" signature="3032:3124" placeholder="[...]" />
+            <marker date="1394938743000" expanded="true" signature="3050:3110" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="3145:3641" placeholder="[...]" />
+            <marker date="1394938743000" expanded="true" signature="3163:3282" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="3192:3264" placeholder="{&quot;text&quot;: '# Of Peak Trains'...}" />
+            <marker date="1394938743000" expanded="true" signature="3300:3455" placeholder="{&quot;opposite&quot;: false...}" />
+            <marker date="1394938743000" expanded="true" signature="3329:3400" placeholder="{&quot;text&quot;: 'Minutes (Rides)'...}" />
+            <marker date="1394938743000" expanded="true" signature="3473:3627" placeholder="{&quot;opposite&quot;: true...}" />
+            <marker date="1394938743000" expanded="true" signature="3502:3573" placeholder="{&quot;text&quot;: 'Minutes (Waits)'...}" />
+            <marker date="1394938743000" expanded="true" signature="3729:3870" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="3812:3862" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="3906:4047" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="3989:4039" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="4071:7222" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="4301:7213" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="4400:4678" placeholder="{&quot;sDom&quot;: 'rt'...}" />
+            <marker date="1394938743000" expanded="true" signature="4590:4656" placeholder="[...]" />
+            <marker date="1394938743000" expanded="true" signature="5636:6253" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="6093:6177" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="6341:6461" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="6528:6648" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="6729:7194" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="6843:6938" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="6966:7055" placeholder="{...}" />
+            <marker date="1394938743000" expanded="true" signature="7083:7172" placeholder="{...}" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
@@ -3343,11 +3477,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>TimetableProcessor</last-edited>
+          <last-edited>DAO</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

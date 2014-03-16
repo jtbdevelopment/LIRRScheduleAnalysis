@@ -58,13 +58,13 @@
  */
 
 .main {
-    padding: 20px;
+    padding: 10px;
 }
 
 @media (min-width: 768px) {
     .main {
-        padding-right: 40px;
-        padding-left: 40px;
+        padding-right: 20px;
+        padding-left: 20px;
     }
 }
 
@@ -86,7 +86,6 @@
 }
 
 .main > .top-input {
-    margin-top: 66px;
     position: relative;
 }
 
@@ -120,4 +119,9 @@
     width: 440px;
     margin-left: 12px;
     margin-right: 12px;
+}
+
+.container-fluid {
+    padding-left: 5px;
+    padding-right: 5px;
 }
