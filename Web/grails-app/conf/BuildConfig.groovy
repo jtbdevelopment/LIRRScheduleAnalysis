@@ -59,6 +59,7 @@ grails.project.dependency.resolution = {
         compile "com.jtbdevelopment.LIRR:DataAnalysis:1.0-SNAPSHOT"
         compile "org.springframework.data:spring-data-mongodb:1.3.3.RELEASE"
         compile "org.jadira.usertype:usertype.jodatime:1.9"
+        runtime "org.springframework:spring-beans:4.0.1.RELEASE"
     }
 
     plugins {

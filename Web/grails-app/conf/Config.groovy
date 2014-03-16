@@ -86,9 +86,14 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+        mongo.host = "ec2-107-22-77-191.compute-1.amazonaws.com"
+        mongo.userName = "lirr-rw"
+        mongo.userPassword = "40bserv1ng"
     }
     production {
-        //  TODO - add mongo system properties
+        mongo.host = System.properties["PARAM1"]
+        mongo.userName = System.properties["PARAM2"]
+        mongo.userPassword = System.properties["PARAM3"]
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
