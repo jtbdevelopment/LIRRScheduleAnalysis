@@ -8,5 +8,6 @@
            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
     <context:component-scan base-package="com.jtbdevelopment"/>
+    <context:property-placeholder ignore-resource-not-found="true"/>
 
 </beans>

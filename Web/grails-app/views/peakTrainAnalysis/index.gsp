@@ -98,7 +98,10 @@
             },
             xAxis: [
                 {
-                    categories: stations
+                    categories: stations,
+                    labels: {
+                        enabled: stations.length < 26
+                    }
                 }
             ],
             yAxis: [
