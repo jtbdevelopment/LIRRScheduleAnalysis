@@ -8,6 +8,10 @@ class PeakTrainAnalysisController {
 
     AnalysisRepository analysisRepository
 
+    def setup() {
+        redirect(action: "index");
+    }
+
     def index() {
         List<Analysis> analysisList = analysisRepository.findByAnalysisTypeOrderByStartDesc(PeakTrainAnalyzer.PEAK_TRAIN_ANALYSIS_PENN) as List
         Map<String, String> options = analysisList.collectEntries() {

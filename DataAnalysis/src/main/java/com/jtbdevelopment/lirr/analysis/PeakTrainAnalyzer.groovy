@@ -28,12 +28,10 @@ class PeakTrainAnalyzer implements Analyzer {
     static final String NUMBER_OF_PEAK_TRAINS = "# of Peak Trains"
     static final String AVERAGE_WAIT_BETWEEN_PEAKS = "Avg Wait Between Peaks"
     static final String AVERAGE_RIDE_TIME = "Avg Ride Time"
+    static final String MPH = "MPH"
     static final String STD_DEV_WAIT_BETWEEN_PEAKS = "Std Dev Wait Between Peaks"
     static final String MEDIAN_WAIT_BETWEEN_PEAKS = "Median Wait Between Peaks"
     static final String LONGEST_WAIT_BETWEEN_PEAKS = "Longest Wait Between Peaks"
-    static final String NO_VALUE = "N/A"
-
-    static final String OVERALL = "Overall"
 
     public static final String PEAK_TRAIN_ANALYSIS_PENN = "Peak Train Analysis (Penn)"
 
@@ -44,6 +42,7 @@ class PeakTrainAnalyzer implements Analyzer {
             FIRST_PEAK,
             LAST_PEAK,
             AVERAGE_RIDE_TIME,
+            MPH,
             AVERAGE_WAIT_BETWEEN_PEAKS,
             LONGEST_WAIT_BETWEEN_PEAKS,
             STD_DEV_WAIT_BETWEEN_PEAKS,
@@ -61,8 +60,8 @@ class PeakTrainAnalyzer implements Analyzer {
 
     static {
         GROUPS_PER_DIRECTION = [
-                (Direction.East.toString()): [OVERALL],
-                (Direction.West.toString()): [OVERALL],
+                (Direction.East.toString()): [Analysis.OVERALL],
+                (Direction.West.toString()): [Analysis.OVERALL],
         ]
         GROUPS_PER_DIRECTION.each {
             String directionString, List<String> groups ->
@@ -73,7 +72,7 @@ class PeakTrainAnalyzer implements Analyzer {
                         "Departing " + hour + " - " + (hour + 1)
                 })
         }
-        GROUPS_PER_DIRECTION[OVERALL] = [OVERALL]
+        GROUPS_PER_DIRECTION[Analysis.OVERALL] = [Analysis.OVERALL]
     }
 
     @Override
@@ -129,6 +128,7 @@ class PeakTrainAnalyzer implements Analyzer {
                                                         (WAIT_FOR_FIRST_PEAK): NO_VALUE,
                                                         (NUMBER_OF_PEAK_TRAINS): stationOverallEast[NUMBER_OF_PEAK_TRAINS] + stationOverallWest[NUMBER_OF_PEAK_TRAINS],
                                                         (AVERAGE_RIDE_TIME): averageValues(AVERAGE_RIDE_TIME),
+                                                        (MPH): averageValues(MPH),
                                                         (AVERAGE_WAIT_BETWEEN_PEAKS): averageValues(AVERAGE_WAIT_BETWEEN_PEAKS),
                                                         (LONGEST_WAIT_BETWEEN_PEAKS): averageValues(LONGEST_WAIT_BETWEEN_PEAKS),
                                                         (STD_DEV_WAIT_BETWEEN_PEAKS): averageValues(STD_DEV_WAIT_BETWEEN_PEAKS),
@@ -254,8 +254,10 @@ class PeakTrainAnalyzer implements Analyzer {
                     it.doubleValue()
                 }.toArray())
                 def avgRide = NO_VALUE;
+                def mph = NO_VALUE
                 if (times.size() > 0) {
-                    avgRide = rideTimeStats.max.intValue()
+                    avgRide = rideTimeStats.mean.intValue()
+                    mph = (station.milesToPenn / avgRide) * 60
                 }
                 [
                         (station): [
@@ -265,6 +267,7 @@ class PeakTrainAnalyzer implements Analyzer {
                                 (MEDIAN_WAIT_BETWEEN_PEAKS): deltaTimeStats.getPercentile(50).intValue(),
                                 (STD_DEV_WAIT_BETWEEN_PEAKS): deltaTimeStats.standardDeviation.intValue(),
                                 (AVERAGE_RIDE_TIME): avgRide,
+                                (MPH): mph
                         ]
                 ]
         }
@@ -307,7 +310,7 @@ class PeakTrainAnalyzer implements Analyzer {
         if (start && end) {
             return Minutes.minutesBetween(start, end).minutes
         }
-        NO_VALUE
+        Analysis.NO_VALUE
     }
 
 }

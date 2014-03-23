@@ -47,6 +47,7 @@
         var usedHeaders = [
             '# of Peak Trains',
             'Avg Ride Time',
+            'MPH',
             'Avg Wait Between Peaks',
             'Longest Wait Between Peaks',
             'Std Dev Wait Between Peaks',

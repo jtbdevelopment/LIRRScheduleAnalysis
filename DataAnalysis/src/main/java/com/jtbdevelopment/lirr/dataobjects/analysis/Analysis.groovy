@@ -22,6 +22,10 @@ import org.springframework.data.mongodb.core.mapping.Document
         )
 )
 class Analysis {
+    static final String NO_VALUE = "N/A"
+
+    static final String OVERALL = "Overall"
+
     @Id
     String id
     LocalDate start

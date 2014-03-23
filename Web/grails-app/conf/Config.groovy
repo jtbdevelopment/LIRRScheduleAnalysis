@@ -16,19 +16,19 @@ grails.project.groupId = "com.jtbdevelopment.lirr.web" // change this to alter t
 // The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)
 grails.mime.disable.accept.header.userAgents = ['Gecko', 'WebKit', 'Presto', 'Trident']
 grails.mime.types = [
-        all: '*/*',
-        atom: 'application/atom+xml',
-        css: 'text/css',
-        csv: 'text/csv',
-        form: 'application/x-www-form-urlencoded',
-        html: ['text/html', 'application/xhtml+xml'],
-        js: 'text/javascript',
-        json: ['application/json', 'text/json'],
+        all          : '*/*',
+        atom         : 'application/atom+xml',
+        css          : 'text/css',
+        csv          : 'text/csv',
+        form         : 'application/x-www-form-urlencoded',
+        html         : ['text/html', 'application/xhtml+xml'],
+        js           : 'text/javascript',
+        json         : ['application/json', 'text/json'],
         multipartForm: 'multipart/form-data',
-        rss: 'application/rss+xml',
-        text: 'text/plain',
-        hal: ['application/hal+json', 'application/hal+xml'],
-        xml: ['text/xml', 'application/xml']
+        rss          : 'application/rss+xml',
+        text         : 'text/plain',
+        hal          : ['application/hal+json', 'application/hal+xml'],
+        xml          : ['text/xml', 'application/xml']
 ]
 
 // URL Mapping Cache Max Size, defaults to 5000
@@ -86,9 +86,6 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         grails.logging.jul.usebridge = true
-        mongo.host = "ec2-107-22-77-191.compute-1.amazonaws.com"
-        mongo.userName = "lirr-rw"
-        mongo.userPassword = "40bserv1ng"
     }
     production {
         mongo.host = System.properties["PARAM1"]

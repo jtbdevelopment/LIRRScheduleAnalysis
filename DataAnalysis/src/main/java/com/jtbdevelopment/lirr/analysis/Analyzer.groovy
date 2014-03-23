@@ -8,6 +8,5 @@ import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
  * Time: 9:07 AM
  */
 public interface Analyzer {
-
     Analysis analyze(final CompleteSchedule scheduleForPeriod)
 }

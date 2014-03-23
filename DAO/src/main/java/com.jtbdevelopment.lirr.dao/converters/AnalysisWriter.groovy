@@ -5,6 +5,7 @@ import com.jtbdevelopment.lirr.dataobjects.core.Station
 import com.mongodb.BasicDBList
 import com.mongodb.BasicDBObject
 import com.mongodb.DBObject
+import org.bson.types.ObjectId
 import org.joda.time.LocalTime
 import org.springframework.core.convert.converter.Converter
 
@@ -22,7 +23,12 @@ class AnalysisWriter implements Converter<Analysis, DBObject> {
             Field field ->
                 switch (field.name) {
                     case "id":
-                        return ["_id", source[field.name]]
+
+                        String id = (String) source[field.name]
+                        if (id)
+                            return ["_id", new ObjectId(id)]
+                        else
+                            return ["_id", new ObjectId()]
                     case "start":
                     case "end":
                     case "computed":
@@ -50,7 +56,7 @@ class AnalysisWriter implements Converter<Analysis, DBObject> {
                                         [
                                                 (direction): [
                                                         "STATIONS": stationList,
-                                                        "DETAILS": stationDetailList
+                                                        "DETAILS" : stationDetailList
                                                 ]
                                         ]
                                 }
