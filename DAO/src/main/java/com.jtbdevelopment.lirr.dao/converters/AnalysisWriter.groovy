@@ -10,6 +10,7 @@ import org.joda.time.LocalTime
 import org.springframework.core.convert.converter.Converter
 
 import java.lang.reflect.Field
+import java.lang.reflect.Modifier
 
 /**
  * Date: 2/23/14
@@ -19,11 +20,12 @@ class AnalysisWriter implements Converter<Analysis, DBObject> {
     @Override
     DBObject convert(final Analysis source) {
         BasicDBObject dbObject = new BasicDBObject()
-        dbObject.putAll(source.class.declaredFields.findAll { !it.synthetic }.collectEntries() {
+        dbObject.putAll(source.class.declaredFields.findAll {
+            !it.synthetic && !Modifier.isStatic(it.modifiers)
+        }.collectEntries() {
             Field field ->
                 switch (field.name) {
                     case "id":
-
                         String id = (String) source[field.name]
                         if (id)
                             return ["_id", new ObjectId(id)]

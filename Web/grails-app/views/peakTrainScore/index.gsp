@@ -68,6 +68,7 @@
     function chartTable(table, chart) {
         chart.children().remove();
         var usedHeaders = [
+//            'Score',
             '# of Peak Trains',
             'Avg Ride Time',
             'MPH',
@@ -78,8 +79,8 @@
         ];
         var dataByHeader = [];
         for (var i = 0; i < usedHeaders.length; ++i) {
-            var axis = i < 2 ? i : 2;
-            var type = i < 1 ? 'column' : 'line';
+            var axis = 0;
+            var type = 'area'
             dataByHeader[i] = {
                 data: [],
                 name: usedHeaders[i],
@@ -114,7 +115,13 @@
         chart.highcharts({
             chart: {
                 zoomType: 'x',
-                type: 'column'
+                type: 'area'
+            },
+            plotOptions: {
+                area: {
+                    stacking: 'normal',
+                    trackByArea: true
+                }
             },
             title: {
                 text: '',
@@ -131,20 +138,8 @@
             yAxis: [
                 {
                     title: {
-                        text: '# Of Peak Trains'
+                        text: 'Total Score'
                     }
-                },
-                {
-                    title: {
-                        text: 'Minutes (Rides)'
-                    },
-                    opposite: false
-                },
-                {
-                    title: {
-                        text: 'Minutes (Waits)'
-                    },
-                    opposite: true
                 }
             ],
             series: dataByHeader
@@ -183,11 +178,11 @@
                             [1, "asc"]
                         ]
                     };
+                    computeTickedLines();
+                    computeTickedZones();
                     westChart = $("#WestChart");
                     eastChart = $("#EastChart");
                     overallChart = $("#OverallChart");
-                    computeTickedLines();
-                    computeTickedZones();
                     overallTable = $("#Overall").DataTable(dataTableOptions);
                     westTable = $("#West").DataTable(dataTableOptions);
                     eastTable = $("#East").DataTable(dataTableOptions);
@@ -220,7 +215,7 @@
 
     $(document).ready(function () {
         $("nav nav-pills li").removeClass("active");
-        $("#peakTrainAnalysis").addClass("active");
+        $("#peakTrainScore").addClass("active");
     })
 </g:javascript>
 </head>
@@ -228,8 +223,8 @@
 <body>
 <g:render template="/shared/analysisDropDown"/>
 
-<div id="report" class="container-fluid">
-</div>
+<div id="report" class="container-fluid"/>
 
+</div>
 </body>
 </html>

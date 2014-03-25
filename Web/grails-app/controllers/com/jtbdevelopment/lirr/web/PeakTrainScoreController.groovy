@@ -5,26 +5,27 @@ import com.jtbdevelopment.lirr.analysis.PeakTrainScoreAnalyzer
 import com.jtbdevelopment.lirr.dao.AnalysisRepository
 import com.jtbdevelopment.lirr.dataobjects.analysis.Analysis
 
-class PeakTrainAnalysisController extends AbstractFilteringAnalysisController {
+class PeakTrainScoreController extends AbstractFilteringAnalysisController {
 
     AnalysisRepository analysisRepository
 
-    def setup() {
-        redirect(action: "index");
-    }
+    PeakTrainScoreAnalyzer peakTrainScoreAnalyzer
 
     def index() {
         standardIndex(PeakTrainAnalyzer.PEAK_TRAIN_ANALYSIS_PENN)
     }
 
+
     def filterAnalysis() {
         Analysis filtered = performFilter()
 
-        respond filtered,
+        Analysis scored = peakTrainScoreAnalyzer.analyze(filtered)
+        respond scored,
                 model: [
                         groupsPerDirection: PeakTrainScoreAnalyzer.GROUPS_PER_DIRECTION,
                         detailsPerGroup   : PeakTrainScoreAnalyzer.DETAILS_PER_GROUP,
                 ]
 
     }
+
 }

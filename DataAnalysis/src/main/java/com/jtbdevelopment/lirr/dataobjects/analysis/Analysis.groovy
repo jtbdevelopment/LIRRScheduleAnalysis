@@ -1,6 +1,7 @@
 package com.jtbdevelopment.lirr.dataobjects.analysis
 
 import com.jtbdevelopment.lirr.dataobjects.core.Station
+import groovy.transform.AutoClone
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
 import org.springframework.data.annotation.Id
@@ -21,10 +22,11 @@ import org.springframework.data.mongodb.core.mapping.Document
                 unique = true
         )
 )
+@AutoClone
 class Analysis {
-    static final String NO_VALUE = "N/A"
+    public static final String NO_VALUE = "N/A"
 
-    static final String OVERALL = "Overall"
+    public static final String OVERALL = "Overall"
 
     @Id
     String id

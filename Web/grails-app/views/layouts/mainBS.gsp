@@ -14,14 +14,15 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-9 col-md-10">
+        <div class="col-sm-8 col-md-8">
             <h1>Compare My Ride <small>LIRR</small></h1>
         </div>
 
-        <div class="col-sm-3 col-md-2">
+        <div class="col-sm-4 col-md-4">
             <ul class="nav nav-pills" style="margin-top: 20px">
                 <li><a href="#">Overview</a></li>
-                <li class="active"><a href="#">Peak Ride (Penn)</a></li>
+                <li id="peakTrainAnalysis"><a href="../peakTrainAnalysis/index">Penn Peak Analsys</a></li>
+                <li id="peakTrainScore"><a href="../peakTrainScore/index">Penn Peak Score</a></li>
             </ul>
         </div>
     </div>

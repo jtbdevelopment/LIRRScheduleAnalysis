@@ -1,12 +1,12 @@
 <%@ page import="org.joda.time.LocalTime" %>
 <g:set var="groupsForDirection" value="${groupsPerDirection[direction]}"/>
-<g:if test="${'Overall' != direction}">
+<g:if test="${groupsForDirection.size() > 1}">
     <ul class="pagination">
-    <g:each in="${groupsForDirection}" status="i" var="groupForDirection">
-        <li><a href="#" onclick="showGroup('${direction}', 'group-' +${i});
-        return false">${groupForDirection}</a></li>
-    </g:each>
-</ul>
+        <g:each in="${groupsForDirection}" status="i" var="groupForDirection">
+            <li><a href="#" onclick="showGroup('${direction}', 'group-' +${i});
+            return false">${groupForDirection}</a></li>
+        </g:each>
+    </ul>
 </g:if>
 
 <!-- Div for chart -->

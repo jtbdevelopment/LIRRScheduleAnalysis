@@ -24,7 +24,6 @@ class PeakTrainScoreAnalyzer implements AnalysisAnalyzer {
             PeakTrainAnalyzer.LONGEST_WAIT_BETWEEN_PEAKS,
             PeakTrainAnalyzer.STD_DEV_WAIT_BETWEEN_PEAKS,
             PeakTrainAnalyzer.MEDIAN_WAIT_BETWEEN_PEAKS,
-//            PeakTrainAnalyzer.WAIT_FOR_FIRST_PEAK,
     ]
 
     public static final Map<String, List<String>> GROUPS_PER_DIRECTION;
@@ -86,7 +85,11 @@ class PeakTrainScoreAnalyzer implements AnalysisAnalyzer {
                                 (Analysis.OVERALL): stationDetails.collectEntries {
                                     String detail, Object value ->
                                         List<Double> stats = statsPerGroup[detail];
-                                        [(detail): value < stats[0] ? 4 : value < stats[1] ? 3 : value < stats[3] ? 2 : 1]
+                                        if (detail == PeakTrainAnalyzer.MPH || detail == PeakTrainAnalyzer.NUMBER_OF_PEAK_TRAINS) {
+                                            [(detail): value < stats[0] ? 1 : value < stats[1] ? 2 : value < stats[3] ? 3 : 4]
+                                        } else {
+                                            [(detail): value < stats[0] ? 4 : value < stats[1] ? 3 : value < stats[3] ? 2 : 1]
+                                        }
                                 }
                         ]
                 ]
