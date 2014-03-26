@@ -21,5 +21,6 @@ modules = {
         resource url: '/css/bootstrap-slider/bootstrap-slider.css'
         resource url: '/js/bootstrap-slider/bootstrap-slider.min.js'
         resource url: '/css/bootstrap/dashboard.css'
+        resource url: '/js/analysis.js'
     }
 }
