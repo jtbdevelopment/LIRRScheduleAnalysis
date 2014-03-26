@@ -8,10 +8,6 @@ class PeakTrainAnalysisController extends AbstractFilteringAnalysisController {
 
     AnalysisRepository analysisRepository
 
-    def setup() {
-        redirect(action: "index");
-    }
-
     def index() {
         standardIndex(PeakTrainAnalyzer.PEAK_TRAIN_ANALYSIS_PENN)
     }

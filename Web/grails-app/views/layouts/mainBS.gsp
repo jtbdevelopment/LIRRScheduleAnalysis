@@ -20,7 +20,7 @@
 
         <div class="col-sm-4 col-md-4">
             <ul class="nav nav-pills" style="margin-top: 20px">
-                <li><a href="#">Overview</a></li>
+                <li id="overview"><a href="../overview/index">Overview</a></li>
                 <li id="peakTrainAnalysis"><a href="../peakTrainAnalysis/index">Penn Peak Analsys</a></li>
                 <li id="peakTrainScore"><a href="../peakTrainScore/index">Penn Peak Score</a></li>
             </ul>
