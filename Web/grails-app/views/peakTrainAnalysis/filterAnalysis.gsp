@@ -1,1 +1,1 @@
-<g:render template="/shared/chartTemplate"/>
+<g:render template="/shared/reportTemplate"/>

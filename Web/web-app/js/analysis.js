@@ -63,6 +63,23 @@ function filterTablesAndCharts() {
             overallTable = $("#Overall").DataTable(dataTableOptions);
             westTable = $("#West").DataTable(dataTableOptions);
             eastTable = $("#East").DataTable(dataTableOptions);
+            var distances = overallTable.columns(1).data()[0];
+            var min = 118;
+            var max = 0;
+            for (var i = 0; i < distances.length; ++i) {
+                var x = parseFloat(distances[i]);
+                if (x > max) {
+                    max = Math.floor(x);
+                    if (max != x) {
+                        max = max + 1;
+                    }
+
+                }
+                if (x < min) {
+                    min = Math.floor(x);
+                }
+            }
+            miles.setValue([min, max]);
             showGroup('Overall', 'group-0');
             showGroup('West', 'group-0');
             showGroup('East', 'group-0');
