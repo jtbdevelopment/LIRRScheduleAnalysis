@@ -5,5 +5,7 @@ class OverviewController {
         redirect(action: "index");
     }
 
-    def index() {}
+    def index() {
+        render view: 'index'
+    }
 }
