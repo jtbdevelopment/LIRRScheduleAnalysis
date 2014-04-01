@@ -302,7 +302,7 @@ class PeakTrainAnalyzer implements Analyzer {
                         stationTimes[station].add(new TrainRide(time, mandatoryTime))
                 }
         }
-        stationTimes.values().eachParallel { it.sort() }
+        stationTimes.values().eachParallel { it.sort(); it.unique(); }
         stationTimes.findAll { (!it.key.ignoreForAnalysis) && (!it.value.empty) }
     }
 

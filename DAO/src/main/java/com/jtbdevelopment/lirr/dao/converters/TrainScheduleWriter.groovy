@@ -31,7 +31,7 @@ class TrainScheduleWriter implements Converter<TrainSchedule, DBObject> {
                         return [
                                 (field.name): [
                                         "STATIONS": stations,
-                                        "TIMES": times
+                                        "TIMES"   : times
                                 ]
                         ]
                     default:

@@ -25,6 +25,31 @@ class TrainRide implements Comparable<TrainRide> {
 
     @Override
     int compareTo(final TrainRide o) {
-        return this.getOn.compareTo(o.getOn)
+        int getOnCompare = this.getOn.compareTo(o.getOn)
+        if (getOnCompare != 0) {
+            return getOnCompare
+        }
+        return this.getOff.compareTo(o.getOff);
+    }
+
+    boolean equals(final o) {
+        if (this.is(o)) return true
+        if (getClass() != o.class) return false
+
+        final TrainRide trainRide = (TrainRide) o
+
+        if (rideTime != trainRide.rideTime) return false
+        if (getOff != trainRide.getOff) return false
+        if (getOn != trainRide.getOn) return false
+
+        return true
+    }
+
+    int hashCode() {
+        int result
+        result = getOn.hashCode()
+        result = 31 * result + getOff.hashCode()
+        result = 31 * result + rideTime
+        return result
     }
 }
