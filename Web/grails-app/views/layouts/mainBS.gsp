@@ -20,9 +20,12 @@
 
         <div class="col-sm-4 col-md-4">
             <ul class="nav nav-pills" style="margin-top: 20px">
-                <li id="overview"><a href="../overview/index">Overview</a></li>
-                <li id="peakTrainAnalysis"><a href="../peakTrainAnalysis/index">Penn Peak Analsys</a></li>
-                <li id="peakTrainScore"><a href="../peakTrainScore/index">Penn Peak Score</a></li>
+                <li id="overview"><a href="${createLink(controller: 'Overview', action: 'index')}">Overview</a></li>
+                <li id="peakTrainAnalysis"><a
+                        href="${createLink(controller: 'PeakTrainAnalysis', action: 'index')}">Penn Peak Analsys</a>
+                </li>
+                <li id="peakTrainScore"><a
+                        href="${createLink(controller: 'PeakTrainScore', action: 'index')}">Penn Peak Score</a></li>
             </ul>
         </div>
     </div>
