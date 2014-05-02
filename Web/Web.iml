@@ -34,6 +34,12 @@
       <sourceFolder url="file://$MODULE_DIR$/grails-app/i18n" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/controllers" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/domain" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/test-classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/gspcompile" />
@@ -82,6 +88,9 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-jasper/7.0.42/tomcat-embed-jasper-7.0.42.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-catalina-ant/7.0.42/tomcat-catalina-ant-7.0.42.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.0.1.RELEASE/spring-beans-4.0.1.RELEASE.jar!/" />
+          <root url="file://$MODULE_DIR$/lib" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/jtbdevelopment/LIRR/DAO/1.0-SNAPSHOT/DAO-1.0-SNAPSHOT.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/jtbdevelopment/LIRR/DataAnalysis/1.0-SNAPSHOT/DataAnalysis-1.0-SNAPSHOT.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
@@ -93,6 +102,7 @@
           <root url="jar://$MAVEN_REPOSITORY$/joda-time/joda-time/2.3/joda-time-2.3-sources.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.0.1.RELEASE/spring-beans-4.0.1.RELEASE-sources.jar!/" />
         </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="Web-grailsPlugins" exported="" />

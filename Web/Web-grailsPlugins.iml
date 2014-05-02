@@ -98,6 +98,8 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-jasper/7.0.42/tomcat-embed-jasper-7.0.42.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-catalina-ant/7.0.42/tomcat-catalina-ant-7.0.42.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.0.1.RELEASE/spring-beans-4.0.1.RELEASE.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/jtbdevelopment/LIRR/DAO/1.0-SNAPSHOT/DAO-1.0-SNAPSHOT.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/jtbdevelopment/LIRR/DataAnalysis/1.0-SNAPSHOT/DataAnalysis-1.0-SNAPSHOT.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
