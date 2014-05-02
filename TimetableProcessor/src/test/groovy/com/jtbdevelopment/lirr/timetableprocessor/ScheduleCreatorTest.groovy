@@ -84,16 +84,16 @@ class ScheduleCreatorTest extends GroovyTestCase {
         assert new LocalDate(2014, 2, 24) == scheduleForPeriod.start
         assert before.compareTo(scheduleForPeriod.processed) < 0
         assert [
-                "Babylon Branch Timetable": DateTime.parse("2014-02-03T18:47:18.000Z"),
-                "Far Rockaway Branch Timetable": DateTime.parse("2014-02-03T18:47:51.000Z"),
-                "Hempstead Branch Timetable": DateTime.parse("2014-02-03T18:48:12.000Z"),
-                "Long Beach Branch Timetable": DateTime.parse("2014-02-03T18:48:25.000Z"),
-                "Montauk Branch Timetable": DateTime.parse("2014-02-03T18:48:46.000Z"),
-                "Oyster Bay Branch Timetable": DateTime.parse("2014-02-03T18:49:02.000Z"),
-                "Ronkonkoma Branch Timetable": DateTime.parse("2014-02-03T18:49:55.000Z"),
-                "Port Jefferson Branch Timetable": DateTime.parse("2014-02-03T18:49:21.000Z"),
+                "Babylon Branch Timetable"        : DateTime.parse("2014-02-03T18:47:18.000Z"),
+                "Far Rockaway Branch Timetable"   : DateTime.parse("2014-02-03T18:47:51.000Z"),
+                "Hempstead Branch Timetable"      : DateTime.parse("2014-02-03T18:48:12.000Z"),
+                "Long Beach Branch Timetable"     : DateTime.parse("2014-02-03T18:48:25.000Z"),
+                "Montauk Branch Timetable"        : DateTime.parse("2014-02-03T18:48:46.000Z"),
+                "Oyster Bay Branch Timetable"     : DateTime.parse("2014-02-03T18:49:02.000Z"),
+                "Ronkonkoma Branch Timetable"     : DateTime.parse("2014-02-03T18:49:55.000Z"),
+                "Port Jefferson Branch Timetable" : DateTime.parse("2014-02-03T18:49:21.000Z"),
                 "Port Washington Branch Timetable": DateTime.parse("2014-02-03T18:49:45.000Z"),
-                "West Hempstead Branch Timetable": DateTime.parse("2014-02-06T19:34:57.000Z")] == scheduleForPeriod.inputFeeds
+                "West Hempstead Branch Timetable" : DateTime.parse("2014-02-06T19:34:57.000Z")] == scheduleForPeriod.inputFeeds
         //  Select schedules
         TrainSchedule train124 = scheduleForPeriod.schedules.get("124")
         assert train124.ignore
@@ -104,13 +104,13 @@ class ScheduleCreatorTest extends GroovyTestCase {
         assert train1054.weekday
         assert "1054" == train1054.trainNumber
         assert [
-                (Station.PENN_STATION): new LocalTime(16, 37),
+                (Station.PENN_STATION)                        : new LocalTime(16, 37),
                 (Station.STATION_NAME_MAP["ROCKVILLE CENTRE"]): new LocalTime(17, 12),
-                (Station.STATION_NAME_MAP["BALDWIN"]): new LocalTime(17, 15),
-                (Station.STATION_NAME_MAP["FREEPORT"]): new LocalTime(17, 18),
-                (Station.STATION_NAME_MAP["MERRICK"]): new LocalTime(17, 21),
-                (Station.STATION_NAME_MAP["BELLMORE"]): new LocalTime(17, 24),
-                (Station.STATION_NAME_MAP["WANTAGH"]): new LocalTime(17, 27),
+                (Station.STATION_NAME_MAP["BALDWIN"])         : new LocalTime(17, 15),
+                (Station.STATION_NAME_MAP["FREEPORT"])        : new LocalTime(17, 18),
+                (Station.STATION_NAME_MAP["MERRICK"])         : new LocalTime(17, 21),
+                (Station.STATION_NAME_MAP["BELLMORE"])        : new LocalTime(17, 24),
+                (Station.STATION_NAME_MAP["WANTAGH"])         : new LocalTime(17, 27),
         ] == train1054.stops
 
         assert !scheduleForPeriod.id

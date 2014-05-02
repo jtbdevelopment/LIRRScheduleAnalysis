@@ -12,14 +12,14 @@ import org.springframework.stereotype.Component
 class RoughConverter {
     private final static Map<String, String> FIX_IT_PHRASES = [
             "Nostrand Avenue.": "Nostrand Avenue",
-            "Train runs": "Trainruns",
-            "Dec. ": "Dec.",
-            "NOT run": "NOTrun",
-            "Sat. & Sun.": "Sat.&Sun.",
-            "thru Jan ": "thruJan",
-            "Will also": "Willalso",
-            "Jan ": "Jan",
-            "Jan. ": "Jan."
+            "Train runs"      : "Trainruns",
+            "Dec. "           : "Dec.",
+            "NOT run"         : "NOTrun",
+            "Sat. & Sun."     : "Sat.&Sun.",
+            "thru Jan "       : "thruJan",
+            "Will also"       : "Willalso",
+            "Jan "            : "Jan",
+            "Jan. "           : "Jan."
     ]
 
     ParsedPDFSchedule convert(final String input) {
