@@ -27,6 +27,7 @@
         <module name="DataObjects" />
         <module name="TimetableProcessor" />
         <module name="UI" />
+        <module name="Web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
