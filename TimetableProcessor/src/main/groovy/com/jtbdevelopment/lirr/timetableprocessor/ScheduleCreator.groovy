@@ -1,10 +1,10 @@
-package com.jtbdevelopment.lirr.timetableprocessor
+package com.jtbdevelopment.LIRR.timetableprocessor
 
-import com.jtbdevelopment.lirr.dataobjects.core.Direction
-import com.jtbdevelopment.lirr.dataobjects.core.Station
-import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
-import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
-import com.jtbdevelopment.lirr.dataobjects.schedule.TrainSchedule
+import com.jtbdevelopment.LIRR.dataobjects.core.Direction
+import com.jtbdevelopment.LIRR.dataobjects.core.Station
+import com.jtbdevelopment.LIRR.dataobjects.parsing.ProcessedPDFSchedule
+import com.jtbdevelopment.LIRR.dataobjects.schedule.CompleteSchedule
+import com.jtbdevelopment.LIRR.dataobjects.schedule.TrainSchedule
 import groovyx.gpars.GParsPool
 import org.joda.time.LocalTime
 import org.springframework.stereotype.Component

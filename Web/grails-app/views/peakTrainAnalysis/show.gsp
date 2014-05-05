@@ -1,4 +1,4 @@
-<%@ page import="com.jtbdevelopment.lirr.dataobjects.core.Zone; com.jtbdevelopment.lirr.dataobjects.core.Line; com.jtbdevelopment.lirr.dataobjects.core.Direction" %>
+<%@ page import="com.jtbdevelopment.LIRR.dataobjects.core.Zone; com.jtbdevelopment.LIRR.dataobjects.core.Line; com.jtbdevelopment.LIRR.dataobjects.core.Direction" %>
 <div class="panel-group container-fluid">
     <g:render template="/shared/filtersTemplate"/>
     <g:render template="/shared/reportTemplate"/>

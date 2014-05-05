@@ -1,4 +1,4 @@
-package com.jtbdevelopment.lirr.dataobjects.core
+package com.jtbdevelopment.LIRR.dataobjects.core
 
 import org.joda.time.LocalTime
 

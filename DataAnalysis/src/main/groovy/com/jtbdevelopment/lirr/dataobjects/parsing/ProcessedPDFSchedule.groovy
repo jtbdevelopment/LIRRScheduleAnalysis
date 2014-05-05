@@ -1,4 +1,4 @@
-package com.jtbdevelopment.lirr.dataobjects.parsing
+package com.jtbdevelopment.LIRR.dataobjects.parsing
 
 import org.joda.time.DateTime
 import org.joda.time.LocalDate

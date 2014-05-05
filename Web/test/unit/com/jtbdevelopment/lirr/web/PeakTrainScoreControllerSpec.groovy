@@ -1,4 +1,4 @@
-package com.jtbdevelopment.lirr.web
+package com.jtbdevelopment.LIRR.web
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification

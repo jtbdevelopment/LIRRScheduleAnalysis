@@ -1,4 +1,4 @@
-<%@ page import="com.jtbdevelopment.lirr.dataobjects.core.Line; com.jtbdevelopment.lirr.dataobjects.core.Zone" %>
+<%@ page import="com.jtbdevelopment.LIRR.dataobjects.core.Line; com.jtbdevelopment.LIRR.dataobjects.core.Zone" %>
 <div id="report-filters">
     <!-- Filters  -->
     <div class="row">

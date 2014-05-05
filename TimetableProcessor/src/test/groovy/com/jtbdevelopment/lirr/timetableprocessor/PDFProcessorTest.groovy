@@ -1,6 +1,6 @@
-package com.jtbdevelopment.lirr.timetableprocessor
+package com.jtbdevelopment.LIRR.timetableprocessor
 
-import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
+import com.jtbdevelopment.LIRR.dataobjects.parsing.ProcessedPDFSchedule
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
 import org.joda.time.LocalTime

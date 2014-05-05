@@ -1,8 +1,8 @@
-package com.jtbdevelopment.lirr.timetableprocessor.converters
+package com.jtbdevelopment.LIRR.timetableprocessor.converters
 
-import com.jtbdevelopment.lirr.dataobjects.core.Station
-import com.jtbdevelopment.lirr.dataobjects.parsing.ParsedPDFSchedule
-import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
+import com.jtbdevelopment.LIRR.dataobjects.core.Station
+import com.jtbdevelopment.LIRR.dataobjects.parsing.ParsedPDFSchedule
+import com.jtbdevelopment.LIRR.dataobjects.parsing.ProcessedPDFSchedule
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
 import org.joda.time.LocalTime

@@ -1,8 +1,8 @@
-package com.jtbdevelopment.lirr.web
+package com.jtbdevelopment.LIRR.web
 
-import com.jtbdevelopment.lirr.analysis.PeakTrainAnalyzer
-import com.jtbdevelopment.lirr.dao.AnalysisRepository
-import com.jtbdevelopment.lirr.dataobjects.analysis.Analysis
+import com.jtbdevelopment.LIRR.analysis.PeakTrainAnalyzer
+import com.jtbdevelopment.LIRR.dao.AnalysisRepository
+import com.jtbdevelopment.LIRR.dataobjects.analysis.Analysis
 
 class PeakTrainAnalysisController extends AbstractFilteringAnalysisController {
 

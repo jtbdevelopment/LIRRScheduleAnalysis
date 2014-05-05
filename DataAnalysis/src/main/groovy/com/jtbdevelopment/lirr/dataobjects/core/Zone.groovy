@@ -1,4 +1,4 @@
-package com.jtbdevelopment.lirr.dataobjects.core
+package com.jtbdevelopment.LIRR.dataobjects.core
 
 /**
  * Date: 2/15/14

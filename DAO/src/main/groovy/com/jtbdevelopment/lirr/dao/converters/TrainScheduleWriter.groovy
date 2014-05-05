@@ -1,6 +1,6 @@
-package com.jtbdevelopment.lirr.dao.converters
+package com.jtbdevelopment.LIRR.dao.converters
 
-import com.jtbdevelopment.lirr.dataobjects.schedule.TrainSchedule
+import com.jtbdevelopment.LIRR.dataobjects.schedule.TrainSchedule
 import com.mongodb.BasicDBList
 import com.mongodb.BasicDBObject
 import com.mongodb.DBObject

@@ -1,6 +1,6 @@
-package com.jtbdevelopment.lirr.analysis
+package com.jtbdevelopment.LIRR.analysis
 
-import com.jtbdevelopment.lirr.dataobjects.analysis.Analysis
+import com.jtbdevelopment.LIRR.dataobjects.analysis.Analysis
 
 /**
  * Date: 3/19/14

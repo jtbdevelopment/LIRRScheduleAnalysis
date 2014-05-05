@@ -1,4 +1,4 @@
-package com.jtbdevelopment.lirr.web
+package com.jtbdevelopment.LIRR.web
 
 class OverviewController {
     def setup() {

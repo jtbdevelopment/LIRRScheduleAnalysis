@@ -1,4 +1,4 @@
-package com.jtbdevelopment.lirr.dataobjects.parsing
+package com.jtbdevelopment.LIRR.dataobjects.parsing
 /**
  * Date: 2/15/14
  * Time: 2:50 PM

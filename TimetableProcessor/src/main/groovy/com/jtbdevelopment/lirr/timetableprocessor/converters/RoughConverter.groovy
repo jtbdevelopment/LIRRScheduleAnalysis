@@ -1,7 +1,7 @@
-package com.jtbdevelopment.lirr.timetableprocessor.converters
+package com.jtbdevelopment.LIRR.timetableprocessor.converters
 
-import com.jtbdevelopment.lirr.dataobjects.core.Station
-import com.jtbdevelopment.lirr.dataobjects.parsing.ParsedPDFSchedule
+import com.jtbdevelopment.LIRR.dataobjects.core.Station
+import com.jtbdevelopment.LIRR.dataobjects.parsing.ParsedPDFSchedule
 import org.springframework.stereotype.Component
 
 /**

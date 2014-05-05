@@ -1,7 +1,7 @@
-package com.jtbdevelopment.lirr.web
+package com.jtbdevelopment.LIRR.web
 
-import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
-import com.jtbdevelopment.lirr.dataobjects.schedule.TrainSchedule
+import com.jtbdevelopment.LIRR.dataobjects.schedule.CompleteSchedule
+import com.jtbdevelopment.LIRR.dataobjects.schedule.TrainSchedule
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
 

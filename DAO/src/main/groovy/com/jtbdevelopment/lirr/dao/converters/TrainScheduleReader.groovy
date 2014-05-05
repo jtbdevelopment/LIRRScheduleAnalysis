@@ -1,8 +1,8 @@
-package com.jtbdevelopment.lirr.dao.converters
+package com.jtbdevelopment.LIRR.dao.converters
 
-import com.jtbdevelopment.lirr.dataobjects.core.Direction
-import com.jtbdevelopment.lirr.dataobjects.core.Station
-import com.jtbdevelopment.lirr.dataobjects.schedule.TrainSchedule
+import com.jtbdevelopment.LIRR.dataobjects.core.Direction
+import com.jtbdevelopment.LIRR.dataobjects.core.Station
+import com.jtbdevelopment.LIRR.dataobjects.schedule.TrainSchedule
 import com.mongodb.BasicDBList
 import com.mongodb.DBObject
 import org.joda.time.LocalTime

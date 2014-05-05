@@ -1,9 +1,9 @@
-package com.jtbdevelopment.lirr.dao
+package com.jtbdevelopment.LIRR.dao
 
-import com.jtbdevelopment.lirr.dao.converters.AnalysisReader
-import com.jtbdevelopment.lirr.dao.converters.AnalysisWriter
-import com.jtbdevelopment.lirr.dao.converters.TrainScheduleReader
-import com.jtbdevelopment.lirr.dao.converters.TrainScheduleWriter
+import com.jtbdevelopment.LIRR.dao.converters.AnalysisReader
+import com.jtbdevelopment.LIRR.dao.converters.AnalysisWriter
+import com.jtbdevelopment.LIRR.dao.converters.TrainScheduleReader
+import com.jtbdevelopment.LIRR.dao.converters.TrainScheduleWriter
 import com.mongodb.Mongo
 import com.mongodb.WriteConcern
 import org.springframework.beans.factory.annotation.Value

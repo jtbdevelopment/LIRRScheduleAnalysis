@@ -83,7 +83,6 @@
           <root url="jar://$MAVEN_REPOSITORY$/joda-time/joda-time/2.3/joda-time-2.3.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.0.1.RELEASE/spring-core-4.0.1.RELEASE.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-simple/1.7.6/slf4j-simple-1.7.6.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/jadira/usertype/usertype.spi/1.9/usertype.spi-1.9.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/jadira/usertype/usertype.jodatime/1.9/usertype.jodatime-1.9.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.0.1.RELEASE/spring-beans-4.0.1.RELEASE.jar!/" />

@@ -1,7 +1,7 @@
-package com.jtbdevelopment.lirr.dataobjects.schedule
+package com.jtbdevelopment.LIRR.dataobjects.schedule
 
-import com.jtbdevelopment.lirr.dataobjects.core.Direction
-import com.jtbdevelopment.lirr.dataobjects.core.Station
+import com.jtbdevelopment.LIRR.dataobjects.core.Direction
+import com.jtbdevelopment.LIRR.dataobjects.core.Station
 import org.joda.time.LocalTime
 
 /**

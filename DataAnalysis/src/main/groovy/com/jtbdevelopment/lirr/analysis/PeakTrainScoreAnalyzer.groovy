@@ -1,8 +1,8 @@
-package com.jtbdevelopment.lirr.analysis
+package com.jtbdevelopment.LIRR.analysis
 
-import com.jtbdevelopment.lirr.dataobjects.analysis.Analysis
-import com.jtbdevelopment.lirr.dataobjects.core.Direction
-import com.jtbdevelopment.lirr.dataobjects.core.Station
+import com.jtbdevelopment.LIRR.dataobjects.analysis.Analysis
+import com.jtbdevelopment.LIRR.dataobjects.core.Direction
+import com.jtbdevelopment.LIRR.dataobjects.core.Station
 import groovyx.gpars.GParsPool
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics
 import org.springframework.stereotype.Component

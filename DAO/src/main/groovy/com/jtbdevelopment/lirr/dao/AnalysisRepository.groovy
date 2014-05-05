@@ -1,6 +1,6 @@
-package com.jtbdevelopment.lirr.dao
+package com.jtbdevelopment.LIRR.dao
 
-import com.jtbdevelopment.lirr.dataobjects.analysis.Analysis
+import com.jtbdevelopment.LIRR.dataobjects.analysis.Analysis
 import org.joda.time.LocalDate
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
