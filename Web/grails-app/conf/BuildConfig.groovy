@@ -38,23 +38,43 @@ grails.project.dependency.resolution = {
     legacyResolve false
     // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
 
-    pom(true)
     repositories {
+        inherits true // Whether to inherit repository definitions from plugins
+
+        grailsHome()
         mavenLocal()
+        grailsPlugins()
+        grailsCentral()
+        mavenCentral()
+
+        // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
+        //mavenRepo "http://repository.codehaus.org"
+        //mavenRepo "http://download.java.net/maven/2/"
+        //mavenRepo "http://repository.jboss.com/maven2/"
+    }
+
+    dependencies {
+        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
+        // runtime 'mysql:mysql-connector-java:5.1.24'
+        compile "com.jtbdevelopment.LIRR:DataAnalysis:1.0-SNAPSHOT"
+        compile "com.jtbdevelopment.LIRR:DAO:1.0-SNAPSHOT"
+        compile "org.springframework.data:spring-data-mongodb:1.3.3.RELEASE"
+        compile "org.jadira.usertype:usertype.jodatime:1.9"
+        runtime "org.springframework:spring-beans:4.0.1.RELEASE"
     }
 
     plugins {
-        // plugins for the build system only
-        build ":tomcat:7.0.42"
+        build ":tomcat:7.0.52.1"
 
         // plugins for the compile step
-        compile ":scaffolding:2.0.1"
+        compile ":scaffolding:2.0.2"
         compile ':cache:1.1.1'
 
         // plugins needed at runtime but not for compilation
-        runtime ":hibernate:3.6.10.3" // or ":hibernate4:4.1.11.2"
+        runtime ":hibernate:3.6.10.9" // or ":hibernate4:4.3.4"
         runtime ":database-migration:1.3.8"
-        runtime ":resources:1.2.1"
+        runtime ":resources:1.2.7"
+
         compile ":joda-time:1.4"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
