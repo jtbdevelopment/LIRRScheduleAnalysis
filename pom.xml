@@ -12,7 +12,7 @@
         <module>DataAnalysis</module>
         <module>TimetableProcessor</module>
         <module>DAO</module>
-        <!--module>Web</module-->
+        <module>Web</module>
     </modules>
 
     <build>

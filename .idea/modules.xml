@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/LIRR.iml" filepath="$PROJECT_DIR$/LIRR.iml" />
       <module fileurl="file://$PROJECT_DIR$/TimetableProcessor/TimetableProcessor.iml" filepath="$PROJECT_DIR$/TimetableProcessor/TimetableProcessor.iml" />
       <module fileurl="file://$PROJECT_DIR$/Web/Web.iml" filepath="$PROJECT_DIR$/Web/Web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Web/Web-grailsPlugins.iml" filepath="$PROJECT_DIR$/Web/Web-grailsPlugins.iml" />
     </modules>
   </component>
 </project>
