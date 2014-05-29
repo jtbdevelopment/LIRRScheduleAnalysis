@@ -1,9 +1,9 @@
-package com.jtbdevelopment.LIRR.timetableprocessor
+package com.jtbdevelopment.lirr.timetableprocessor
 
-import com.jtbdevelopment.LIRR.dataobjects.parsing.ParsedPDFSchedule
-import com.jtbdevelopment.LIRR.dataobjects.parsing.ProcessedPDFSchedule
-import com.jtbdevelopment.LIRR.timetableprocessor.converters.FinalConverter
-import com.jtbdevelopment.LIRR.timetableprocessor.converters.RoughConverter
+import com.jtbdevelopment.lirr.dataobjects.parsing.ParsedPDFSchedule
+import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
+import com.jtbdevelopment.lirr.timetableprocessor.converters.FinalConverter
+import com.jtbdevelopment.lirr.timetableprocessor.converters.RoughConverter
 import org.apache.tika.metadata.Metadata
 import org.apache.tika.parser.ParseContext
 import org.apache.tika.parser.pdf.PDFParser
@@ -22,17 +22,20 @@ class PDFProcessor {
     @Autowired
     private FinalConverter parsedConverter
 
-    ProcessedPDFSchedule parse(final InputStream input) {
+    ProcessedPDFSchedule parse(final InputStream input, final String defaulTitle) {
         PDFParser parser = new PDFParser()
         BodyContentHandler bodyContentHandler = new BodyContentHandler();
         Metadata metadata = new Metadata()
         parser.parse(input, bodyContentHandler, metadata, new ParseContext())
 
         ParsedPDFSchedule roughParsedSchedule = roughConverter.convert(bodyContentHandler.toString())
-        roughParsedSchedule.title = metadata.get("dc:title")
         roughParsedSchedule.modified = metadata.get("Last-Modified")
-        roughParsedSchedule.subject = metadata.get("subject")
+        ProcessedPDFSchedule processedPDFSchedule = parsedConverter.convert(roughParsedSchedule)
+        processedPDFSchedule.title =
+                metadata.get("dc:title") ?
+                        metadata.get("dc:title") :
+                        (defaulTitle.replace(".pdf", "") + " " + roughParsedSchedule.subject)
 
-        return parsedConverter.convert(roughParsedSchedule)
+        processedPDFSchedule
     }
 }

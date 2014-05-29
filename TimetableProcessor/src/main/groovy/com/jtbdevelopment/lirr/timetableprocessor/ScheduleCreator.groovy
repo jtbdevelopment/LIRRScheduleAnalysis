@@ -1,10 +1,10 @@
-package com.jtbdevelopment.LIRR.timetableprocessor
+package com.jtbdevelopment.lirr.timetableprocessor
 
-import com.jtbdevelopment.LIRR.dataobjects.core.Direction
-import com.jtbdevelopment.LIRR.dataobjects.core.Station
-import com.jtbdevelopment.LIRR.dataobjects.parsing.ProcessedPDFSchedule
-import com.jtbdevelopment.LIRR.dataobjects.schedule.CompleteSchedule
-import com.jtbdevelopment.LIRR.dataobjects.schedule.TrainSchedule
+import com.jtbdevelopment.lirr.dataobjects.core.Direction
+import com.jtbdevelopment.lirr.dataobjects.core.Station
+import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
+import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
+import com.jtbdevelopment.lirr.dataobjects.schedule.TrainSchedule
 import groovyx.gpars.GParsPool
 import org.joda.time.LocalTime
 import org.springframework.stereotype.Component
@@ -33,17 +33,24 @@ class ScheduleCreator {
             ProcessedPDFSchedule parsed ->
                 completeSchedule.inputFeeds.put(parsed.title, parsed.modified)
 
-                Closure<Boolean> neverPeak = { TrainSchedule s, Direction direction -> Boolean.FALSE }
                 Closure<Boolean> isPeak = { TrainSchedule s, Direction direction ->
                     LocalTime peakTime = getPeakTimeDeterminant(s)
                     assert peakTime: s.toString()
                     peakTime.compareTo(direction.startPeak) >= 0 && peakTime.compareTo(direction.endPeak) <= 0
                 }
 
-                addOrMergeTrainSchedules(completeSchedule, processParsedSubSchedule(parsed.eastboundWeekdays, Direction.East, true, isPeak))
-                addOrMergeTrainSchedules(completeSchedule, processParsedSubSchedule(parsed.westboundWeekdays, Direction.West, true, isPeak))
-                addOrMergeTrainSchedules(completeSchedule, processParsedSubSchedule(parsed.eastboundWeekends, Direction.East, false, neverPeak))
-                addOrMergeTrainSchedules(completeSchedule, processParsedSubSchedule(parsed.westboundWeekends, Direction.West, false, neverPeak))
+
+                List<TrainSchedule> east1 = processParsedSubSchedule(parsed.eastbound1, Direction.East)
+                List<TrainSchedule> east2 = processParsedSubSchedule(parsed.eastbound2, Direction.East)
+                markPeakTrains(east1, east2, isPeak)
+                addOrMergeTrainSchedules(completeSchedule, east1)
+                addOrMergeTrainSchedules(completeSchedule, east2)
+
+                List<TrainSchedule> west1 = processParsedSubSchedule(parsed.westbound1, Direction.West)
+                List<TrainSchedule> west2 = processParsedSubSchedule(parsed.westbound2, Direction.West)
+                markPeakTrains(west1, west2, isPeak)
+                addOrMergeTrainSchedules(completeSchedule, west1)
+                addOrMergeTrainSchedules(completeSchedule, west2)
         }
 
         return completeSchedule
@@ -61,7 +68,7 @@ class ScheduleCreator {
         }
     }
 
-    public LocalTime getPeakTimeDeterminant(TrainSchedule s) {
+    private LocalTime getPeakTimeDeterminant(TrainSchedule s) {
         LocalTime time
         time = s.stops[Station.PENN_STATION]
         if (!time) {
@@ -80,15 +87,13 @@ class ScheduleCreator {
         time
     }
 
-    public List<TrainSchedule> processParsedSubSchedule(
+    private List<TrainSchedule> processParsedSubSchedule(
             final Map<String, List> schedule,
-            Direction direction,
-            boolean weekday,
-            final Closure<Boolean> determineIfPeak) {
+            Direction direction) {
         GParsPool.withPool {
             Map<String, Station> stationMap = schedule.keySet().collectEntries { String station -> [(station): Station.STATION_NAME_MAP.get(station)] }
             List<TrainSchedule> trains = schedule.get("#").collectParallel { String trainNumber ->
-                new TrainSchedule(trainNumber: trainNumber, direction: direction, peak: false, weekday: weekday)
+                new TrainSchedule(trainNumber: trainNumber, direction: direction, peak: false, weekday: false)
             }
             Map<String, List> stopsOnly = schedule.findAll { it.key != "#" }
             (1..trains.size()).eachParallel {
@@ -104,10 +109,32 @@ class ScheduleCreator {
                     }
             }
             trains.eachParallel {
-                it.peak = determineIfPeak(it, direction);
                 it.ignore = Station.TRAINS_TO_IGNORE.contains(it.trainNumber)
             }
             trains
+        }
+    }
+
+    private markPeakTrains(
+            List<TrainSchedule> trains1,
+            List<TrainSchedule> trains2,
+            final Closure<Boolean> determineIfPeak) {
+
+        GParsPool.withPool {
+            trains1.findAll { !it.ignore }.size()
+            if (trains1.findAll { !it.ignore }.size() > trains2.findAll { !it.ignore }.size()) {
+                trains1.each { it.weekday = true }
+                trains1.eachParallel {
+                    it.peak = determineIfPeak(it, it.direction)
+                }
+                trains2.each { it.weekday = false }
+            } else {
+                trains2.each { it.weekday = true }
+                trains2.eachParallel {
+                    it.peak = determineIfPeak(it, it.direction)
+                }
+                trains1.each { it.weekday = false }
+            }
         }
     }
 }

@@ -1,12 +1,12 @@
-package com.jtbdevelopment.LIRR.analysis
+package com.jtbdevelopment.lirr.analysis
 
-import com.jtbdevelopment.LIRR.dataobjects.analysis.Analysis
-import com.jtbdevelopment.LIRR.dataobjects.analysis.TrainRide
-import com.jtbdevelopment.LIRR.dataobjects.core.Direction
-import com.jtbdevelopment.LIRR.dataobjects.core.Line
-import com.jtbdevelopment.LIRR.dataobjects.core.Station
-import com.jtbdevelopment.LIRR.dataobjects.schedule.CompleteSchedule
-import com.jtbdevelopment.LIRR.dataobjects.schedule.TrainSchedule
+import com.jtbdevelopment.lirr.dataobjects.analysis.Analysis
+import com.jtbdevelopment.lirr.dataobjects.analysis.TrainRide
+import com.jtbdevelopment.lirr.dataobjects.core.Direction
+import com.jtbdevelopment.lirr.dataobjects.core.Line
+import com.jtbdevelopment.lirr.dataobjects.core.Station
+import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
+import com.jtbdevelopment.lirr.dataobjects.schedule.TrainSchedule
 import groovyx.gpars.GParsPool
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics
 import org.joda.time.LocalTime

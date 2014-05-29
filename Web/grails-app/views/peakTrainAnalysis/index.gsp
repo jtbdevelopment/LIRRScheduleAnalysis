@@ -1,4 +1,4 @@
-<%@ page import="com.jtbdevelopment.LIRR.dataobjects.core.Zone" %>
+<%@ page import="com.jtbdevelopment.lirr.dataobjects.core.Zone" %>
 <html>
 <head>
     <meta name="layout" content="mainBS"/>

@@ -1,7 +1,7 @@
-package com.jtbdevelopment.LIRR.analysis
+package com.jtbdevelopment.lirr.analysis
 
-import com.jtbdevelopment.LIRR.dataobjects.analysis.Analysis
-import com.jtbdevelopment.LIRR.dataobjects.schedule.CompleteSchedule
+import com.jtbdevelopment.lirr.dataobjects.analysis.Analysis
+import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
 
 /**
  * Date: 2/23/14

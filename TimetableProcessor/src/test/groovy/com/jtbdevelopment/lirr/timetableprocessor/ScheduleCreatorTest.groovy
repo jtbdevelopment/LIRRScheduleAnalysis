@@ -1,15 +1,15 @@
-package com.jtbdevelopment.LIRR.timetableprocessor
+package com.jtbdevelopment.lirr.timetableprocessor
 
-import com.jtbdevelopment.LIRR.analysis.PeakTrainAnalyzer
-import com.jtbdevelopment.LIRR.analysis.PeakTrainScoreAnalyzer
-import com.jtbdevelopment.LIRR.dao.AnalysisRepository
-import com.jtbdevelopment.LIRR.dao.CompleteScheduleRepository
-import com.jtbdevelopment.LIRR.dao.DataServiceUtils
-import com.jtbdevelopment.LIRR.dataobjects.core.Direction
-import com.jtbdevelopment.LIRR.dataobjects.core.Station
-import com.jtbdevelopment.LIRR.dataobjects.parsing.ProcessedPDFSchedule
-import com.jtbdevelopment.LIRR.dataobjects.schedule.CompleteSchedule
-import com.jtbdevelopment.LIRR.dataobjects.schedule.TrainSchedule
+import com.jtbdevelopment.lirr.analysis.PeakTrainAnalyzer
+import com.jtbdevelopment.lirr.analysis.PeakTrainScoreAnalyzer
+import com.jtbdevelopment.lirr.dao.AnalysisRepository
+import com.jtbdevelopment.lirr.dao.CompleteScheduleRepository
+import com.jtbdevelopment.lirr.dao.DataServiceUtils
+import com.jtbdevelopment.lirr.dataobjects.core.Direction
+import com.jtbdevelopment.lirr.dataobjects.core.Station
+import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
+import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
+import com.jtbdevelopment.lirr.dataobjects.schedule.TrainSchedule
 import groovyx.gpars.GParsPool
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
@@ -72,7 +72,7 @@ class ScheduleCreatorTest extends GroovyTestCase {
                     "PortWashingtonBranch2014022420140518.pdf",
                     "WestHempsteadBranch2014022420140518.pdf"
             ].collectParallel {
-                pdfProcessor.parse(ScheduleCreatorTest.classLoader.getResourceAsStream(it))
+                pdfProcessor.parse(ScheduleCreatorTest.classLoader.getResourceAsStream(it), it)
             }
         }
 

@@ -51,8 +51,8 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.24'
-        compile "com.jtbdevelopment.LIRR:DataAnalysis:1.0-SNAPSHOT"
-        compile "com.jtbdevelopment.LIRR:DAO:1.0-SNAPSHOT"
+        compile "com.jtbdevelopment.lirr:DataAnalysis:1.0-SNAPSHOT"
+        compile "com.jtbdevelopment.lirr:DAO:1.0-SNAPSHOT"
         compile "org.springframework.data:spring-data-mongodb:1.3.3.RELEASE"
         compile "org.jadira.usertype:usertype.jodatime:1.9"
         runtime "org.springframework:spring-beans:4.0.1.RELEASE"

@@ -1,4 +1,4 @@
-<%@ page import="com.jtbdevelopment.LIRR.dataobjects.core.Direction" %>
+<%@ page import="com.jtbdevelopment.lirr.dataobjects.core.Direction" %>
 <div class="tab-content" id="report-content">
     <div class="tab-pane active" id="overall">
         <g:render template="/shared/subReportTemplate"

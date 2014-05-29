@@ -1,9 +1,9 @@
-package com.jtbdevelopment.LIRR.web
+package com.jtbdevelopment.lirr.web
 
-import com.jtbdevelopment.LIRR.dataobjects.analysis.Analysis
-import com.jtbdevelopment.LIRR.dataobjects.core.Line
-import com.jtbdevelopment.LIRR.dataobjects.core.Station
-import com.jtbdevelopment.LIRR.dataobjects.core.Zone
+import com.jtbdevelopment.lirr.dataobjects.analysis.Analysis
+import com.jtbdevelopment.lirr.dataobjects.core.Line
+import com.jtbdevelopment.lirr.dataobjects.core.Station
+import com.jtbdevelopment.lirr.dataobjects.core.Zone
 
 abstract class AbstractFilteringAnalysisController {
 

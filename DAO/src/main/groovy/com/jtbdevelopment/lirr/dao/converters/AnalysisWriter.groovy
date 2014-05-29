@@ -1,7 +1,7 @@
-package com.jtbdevelopment.LIRR.dao.converters
+package com.jtbdevelopment.lirr.dao.converters
 
-import com.jtbdevelopment.LIRR.dataobjects.analysis.Analysis
-import com.jtbdevelopment.LIRR.dataobjects.core.Station
+import com.jtbdevelopment.lirr.dataobjects.analysis.Analysis
+import com.jtbdevelopment.lirr.dataobjects.core.Station
 import com.mongodb.BasicDBList
 import com.mongodb.BasicDBObject
 import com.mongodb.DBObject

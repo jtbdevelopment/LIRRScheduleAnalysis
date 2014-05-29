@@ -1,7 +1,7 @@
-package com.jtbdevelopment.LIRR.timetableprocessor.converters
+package com.jtbdevelopment.lirr.timetableprocessor.converters
 
-import com.jtbdevelopment.LIRR.dataobjects.core.Station
-import com.jtbdevelopment.LIRR.dataobjects.parsing.ParsedPDFSchedule
+import com.jtbdevelopment.lirr.dataobjects.core.Station
+import com.jtbdevelopment.lirr.dataobjects.parsing.ParsedPDFSchedule
 import org.springframework.stereotype.Component
 
 /**
@@ -10,28 +10,59 @@ import org.springframework.stereotype.Component
  */
 @Component
 class RoughConverter {
+    //  TODO - this needs to go in DB, would also be good if it was more dynamic
+    //  such as able to determine a column was station names by mostly matching entries
+    //  and not just exact match and determining text phrases
     private final static Map<String, String> FIX_IT_PHRASES = [
-            "Nostrand Avenue.": "Nostrand Avenue",
-            "Train runs"      : "Trainruns",
-            "Dec. "           : "Dec.",
-            "NOT run"         : "NOTrun",
-            "Sat. & Sun."     : "Sat.&Sun.",
-            "thru Jan "       : "thruJan",
-            "Will also"       : "Willalso",
-            "Jan "            : "Jan",
-            "Jan. "           : "Jan."
+            "Nostrand Avenue."      : "Nostrand Avenue",
+            "ATLANTIC TERMINA"      : "ATLANTIC TERMINAL",
+            "ATLANTIC TERMINALL"    : "ATLANTIC TERMINAL",  // Correct for above
+            "HUNTERSPOINT"          : "HUNTERSPOINT AVE.",
+            "HUNTERSPOINT AVE. AVE.": "HUNTERSPOINT AVE.",  // Correct for above
+            "Train runs"            : "Trainruns",
+            "Dec. "                 : "Dec.",
+            "NOT run"               : "NOTrun",
+            "Sat. & Sun."           : "Sat.&Sun.",
+            "thru Jan "             : "thruJan",
+            "Will also"             : "Willalso",
+            "Jan "                  : "Jan",
+            "Jan. "                 : "Jan.",
+            "Sun. &"                : "Sun.&",
+            "WILL NOT"              : "WILLNOT",
+            "run July 4"            : "runJuly4",
+            "or Aug. 31."           : "orAug.31.",
+            "May 26 -"              : "May26-",
+            "Sept. 1."              : "Sept.1.",
+            "Oct. 12."              : "Oct.12.",
+            "Oct. 10."              : "Oct.10.",
+            "May 22 -"              : "May22-",
+            "Aug. 28."              : "Aug.28.",
+            "\\(except will"        : "(exceptwill",
+            "July 3.\\)"            : "July 3.)",
+            "run July 2."           : "runJuly2.",
+            "July 4"                : "July4",
+            "May 23 -"              : "May23-",
+            "Aug. 29."              : "Aug.29.",
+            "July 3."               : "July3.",
     ]
 
     ParsedPDFSchedule convert(final String input) {
         ParsedPDFSchedule roughParsedSchedule = new ParsedPDFSchedule()
+
+        roughParsedSchedule.subject = findEffectiveDate(input);
 
         assignSchedulesToDetails(roughOutSchedules(input), roughParsedSchedule)
 
         return roughParsedSchedule
     }
 
+    private static String findEffectiveDate(final String input) {
+        input.tokenize("\n").find { String line -> line.startsWith("Effective") }
+    }
+
     private static void assignSchedulesToDetails(
-            final List<List<String>> rawSchedules, final ParsedPDFSchedule roughParsedSchedule) {
+            final List<List<String>> rawSchedules,
+            final ParsedPDFSchedule roughParsedSchedule) {
         assert rawSchedules.size() == 4
         List<Boolean> isEast = []
 
@@ -46,25 +77,10 @@ class RoughConverter {
         assert eastIndices.size() == 2
         assert westIndices.size() == 2
 
-        Closure<Boolean> isTimeColumn = { String part -> part =~ /:/ || part =~ /\.\./ }
-        int eastSize1 = rawSchedules[eastIndices.first()][2].tokenize().findAll(isTimeColumn).size()
-        int eastSize2 = rawSchedules[eastIndices.last()][2].tokenize().findAll(isTimeColumn).size()
-        if (eastSize1 > eastSize2) {
-            roughParsedSchedule.eastboundWeekdays = rawSchedules[eastIndices.first()]
-            roughParsedSchedule.eastboundWeekends = rawSchedules[eastIndices.last()]
-        } else {
-            roughParsedSchedule.eastboundWeekdays = rawSchedules[eastIndices.last()]
-            roughParsedSchedule.eastboundWeekends = rawSchedules[eastIndices.first()]
-        }
-        int westSize1 = rawSchedules[westIndices.first()][2].tokenize().findAll(isTimeColumn).size()
-        int westSize2 = rawSchedules[westIndices.last()][2].tokenize().findAll(isTimeColumn).size()
-        if (westSize1 > westSize2) {
-            roughParsedSchedule.westboundWeekdays = rawSchedules[westIndices.first()]
-            roughParsedSchedule.westboundWeekends = rawSchedules[westIndices.last()]
-        } else {
-            roughParsedSchedule.westboundWeekdays = rawSchedules[westIndices.last()]
-            roughParsedSchedule.westboundWeekends = rawSchedules[westIndices.first()]
-        }
+        roughParsedSchedule.eastbound1 = rawSchedules[eastIndices.first()]
+        roughParsedSchedule.eastbound2 = rawSchedules[eastIndices.last()]
+        roughParsedSchedule.westbound1 = rawSchedules[westIndices.first()]
+        roughParsedSchedule.westbound2 = rawSchedules[westIndices.last()]
     }
 
     private static List<List<String>> roughOutSchedules(final String input) {

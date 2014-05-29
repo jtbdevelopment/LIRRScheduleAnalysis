@@ -1,4 +1,4 @@
-package com.jtbdevelopment.LIRR.dataobjects.parsing
+package com.jtbdevelopment.lirr.dataobjects.parsing
 
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
@@ -13,10 +13,10 @@ class ProcessedPDFSchedule {
     LocalDate from
     LocalDate to
 
-    Map<String, List> eastboundWeekdays = [:];
-    Map<String, List> eastboundWeekends = [:];
-    Map<String, List> westboundWeekdays = [:];
-    Map<String, List> westboundWeekends = [:];
+    Map<String, List> eastbound1 = [:];
+    Map<String, List> eastbound2 = [:];
+    Map<String, List> westbound1 = [:];
+    Map<String, List> westbound2 = [:];
 
     boolean equals(final o) {
         if (this.is(o)) return true

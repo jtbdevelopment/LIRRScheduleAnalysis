@@ -11,7 +11,7 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
-grails.project.groupId = "com.jtbdevelopment.LIRR" // change this to alter the default package name and Maven publishing destination
+grails.project.groupId = "com.jtbdevelopment.lirr" // change this to alter the default package name and Maven publishing destination
 
 grails.app.context = "/"
 

@@ -1,8 +1,8 @@
-package com.jtbdevelopment.LIRR.timetableprocessor.converters
+package com.jtbdevelopment.lirr.timetableprocessor.converters
 
-import com.jtbdevelopment.LIRR.dataobjects.core.Station
-import com.jtbdevelopment.LIRR.dataobjects.parsing.ParsedPDFSchedule
-import com.jtbdevelopment.LIRR.dataobjects.parsing.ProcessedPDFSchedule
+import com.jtbdevelopment.lirr.dataobjects.core.Station
+import com.jtbdevelopment.lirr.dataobjects.parsing.ParsedPDFSchedule
+import com.jtbdevelopment.lirr.dataobjects.parsing.ProcessedPDFSchedule
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
 import org.joda.time.LocalTime
@@ -34,10 +34,10 @@ class FinalConverter {
         parsedSchedule.modified = DateTime.parse(roughParsedSchedule.modified)
 
         parseEffectiveDates(roughParsedSchedule, parsedSchedule)
-        parsedSchedule.eastboundWeekdays = parseTimes(roughParsedSchedule.eastboundWeekdays)
-        parsedSchedule.westboundWeekdays = parseTimes(roughParsedSchedule.westboundWeekdays)
-        parsedSchedule.westboundWeekends = parseTimes(roughParsedSchedule.westboundWeekends)
-        parsedSchedule.eastboundWeekends = parseTimes(roughParsedSchedule.eastboundWeekends)
+        parsedSchedule.eastbound1 = parseTimes(roughParsedSchedule.eastbound1)
+        parsedSchedule.westbound1 = parseTimes(roughParsedSchedule.westbound1)
+        parsedSchedule.westbound2 = parseTimes(roughParsedSchedule.westbound2)
+        parsedSchedule.eastbound2 = parseTimes(roughParsedSchedule.eastbound2)
 
         return parsedSchedule;
     }
@@ -153,6 +153,7 @@ class FinalConverter {
                 "TEXT"
             }
         }
+
         List<List<String>> matrix = []
         matrix.add(trainIDs)
         matrix.add(startAMPMs)
@@ -174,6 +175,10 @@ class FinalConverter {
             case 5:
                 parsedSchedule.from = LocalDate.parse(tokens[0] + " " + tokens[1] + ", " + tokens[4], DateTimeFormat.forPattern(FORMAT_STRING));
                 parsedSchedule.to = LocalDate.parse(tokens[2] + " " + tokens[3] + " " + tokens[4], DateTimeFormat.forPattern(FORMAT_STRING));
+                break;
+            case 6:
+                parsedSchedule.from = LocalDate.parse(tokens[0] + " " + tokens[1] + " " + tokens[2], DateTimeFormat.forPattern(FORMAT_STRING));
+                parsedSchedule.to = LocalDate.parse(tokens[3] + " " + tokens[4] + " " + tokens[5], DateTimeFormat.forPattern(FORMAT_STRING));
                 break;
             case 7:
                 parsedSchedule.from = LocalDate.parse(tokens[0] + " " + tokens[1] + " " + tokens[2], DateTimeFormat.forPattern(FORMAT_STRING));

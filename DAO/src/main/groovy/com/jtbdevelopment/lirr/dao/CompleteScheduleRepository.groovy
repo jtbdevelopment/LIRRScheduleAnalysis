@@ -1,6 +1,6 @@
-package com.jtbdevelopment.LIRR.dao
+package com.jtbdevelopment.lirr.dao
 
-import com.jtbdevelopment.LIRR.dataobjects.schedule.CompleteSchedule
+import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
 import org.joda.time.LocalDate
 import org.springframework.data.repository.PagingAndSortingRepository
 import org.springframework.stereotype.Repository

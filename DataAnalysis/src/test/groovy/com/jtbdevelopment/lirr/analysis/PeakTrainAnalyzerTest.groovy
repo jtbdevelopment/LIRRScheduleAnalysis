@@ -1,4 +1,4 @@
-package com.jtbdevelopment.LIRR.analysis
+package com.jtbdevelopment.lirr.analysis
 
 import org.junit.Test
 

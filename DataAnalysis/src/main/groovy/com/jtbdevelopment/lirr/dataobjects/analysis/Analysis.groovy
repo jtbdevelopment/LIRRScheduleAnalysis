@@ -1,6 +1,6 @@
-package com.jtbdevelopment.LIRR.dataobjects.analysis
+package com.jtbdevelopment.lirr.dataobjects.analysis
 
-import com.jtbdevelopment.LIRR.dataobjects.core.Station
+import com.jtbdevelopment.lirr.dataobjects.core.Station
 import groovy.transform.AutoClone
 import org.joda.time.DateTime
 import org.joda.time.LocalDate

@@ -1,4 +1,4 @@
-package com.jtbdevelopment.LIRR.dataobjects.schedule
+package com.jtbdevelopment.lirr.dataobjects.schedule
 
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
