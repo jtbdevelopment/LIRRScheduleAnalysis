@@ -1,67 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bad0dd3b-a411-4c76-a718-03553e311c60" name="Default" comment="context fixes and spring load fixes">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/resources/BabylonBranch2014051920140901.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/resources/FarRockawayBranch2014051920140901.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/resources/HempsteadBranch2014051920140901.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/resources/LongBeachBranch2014051920140901.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/resources/MontaukBranch2014051920140901.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/resources/OysterBayBranch2014051920140901.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/resources/PortJeffersonBranch2014051920140901.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/resources/PortWashingtonBranch2014051920140901.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/resources/RonkonkomaBranch2014051920140901.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/resources/WestHempsteadBranch2014051920140901.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/test/unit/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisControllerSpec.groovy" afterPath="$PROJECT_DIR$/Web/test/unit/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisControllerSpec.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/analysis/Analysis.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/analysis/Analysis.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/analysis/AnalysisAnalyzer.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/analysis/AnalysisAnalyzer.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/converters/AnalysisReader.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/converters/AnalysisReader.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/AnalysisRepository.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/AnalysisRepository.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/converters/AnalysisWriter.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/converters/AnalysisWriter.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/analysis/Analyzer.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/analysis/Analyzer.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/conf/BuildConfig.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/conf/BuildConfig.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/schedule/CompleteSchedule.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/schedule/CompleteSchedule.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/CompleteScheduleRepository.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/CompleteScheduleRepository.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/conf/Config.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/conf/Config.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/DataServiceUtils.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/DataServiceUtils.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/core/Direction.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/core/Direction.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TimetableProcessor/src/main/groovy/com/jtbdevelopment/lirr/timetableprocessor/converters/FinalConverter.groovy" afterPath="$PROJECT_DIR$/TimetableProcessor/src/main/groovy/com/jtbdevelopment/lirr/timetableprocessor/converters/FinalConverter.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/core/Line.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/core/Line.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/MongoConfiguration.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/MongoConfiguration.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/OverviewController.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/OverviewController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/test/unit/com/jtbdevelopment/lirr/web/OverviewControllerSpec.groovy" afterPath="$PROJECT_DIR$/Web/test/unit/com/jtbdevelopment/lirr/web/OverviewControllerSpec.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TimetableProcessor/src/main/groovy/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessor.groovy" afterPath="$PROJECT_DIR$/TimetableProcessor/src/main/groovy/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessor.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TimetableProcessor/src/test/groovy/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessorTest.groovy" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/groovy/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessorTest.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/parsing/ParsedPDFSchedule.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/parsing/ParsedPDFSchedule.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/test/unit/com/jtbdevelopment/lirr/web/PeakTrainAnalysisControllerSpec.groovy" afterPath="$PROJECT_DIR$/Web/test/unit/com/jtbdevelopment/lirr/web/PeakTrainAnalysisControllerSpec.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/test/groovy/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzerTest.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/test/groovy/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzerTest.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/analysis/PeakTrainScoreAnalyzer.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/analysis/PeakTrainScoreAnalyzer.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainScoreController.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainScoreController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/test/unit/com/jtbdevelopment/lirr/web/PeakTrainScoreControllerSpec.groovy" afterPath="$PROJECT_DIR$/Web/test/unit/com/jtbdevelopment/lirr/web/PeakTrainScoreControllerSpec.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/parsing/ProcessedPDFSchedule.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/parsing/ProcessedPDFSchedule.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TimetableProcessor/src/main/groovy/com/jtbdevelopment/lirr/timetableprocessor/converters/RoughConverter.groovy" afterPath="$PROJECT_DIR$/TimetableProcessor/src/main/groovy/com/jtbdevelopment/lirr/timetableprocessor/converters/RoughConverter.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TimetableProcessor/src/main/groovy/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreator.groovy" afterPath="$PROJECT_DIR$/TimetableProcessor/src/main/groovy/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreator.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TimetableProcessor/src/test/groovy/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy" afterPath="$PROJECT_DIR$/TimetableProcessor/src/test/groovy/com/jtbdevelopment/lirr/timetableprocessor/ScheduleCreatorTest.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/domain/com/jtbdevelopment/lirr/web/ScheduleFacade.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/domain/com/jtbdevelopment/lirr/web/ScheduleFacade.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/core/Station.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/core/Station.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/analysis/TrainRide.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/analysis/TrainRide.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/schedule/TrainSchedule.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/schedule/TrainSchedule.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/converters/TrainScheduleReader.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/converters/TrainScheduleReader.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/converters/TrainScheduleWriter.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/converters/TrainScheduleWriter.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/Web-grailsPlugins.iml" afterPath="$PROJECT_DIR$/Web/Web-grailsPlugins.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/Web.iml" afterPath="$PROJECT_DIR$/Web/Web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/core/Zone.groovy" afterPath="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/core/Zone.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp" afterPath="$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/views/shared/_reportTemplate.gsp" afterPath="$PROJECT_DIR$/Web/grails-app/views/shared/_reportTemplate.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/views/overview/index.gsp" afterPath="$PROJECT_DIR$/Web/grails-app/views/overview/index.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp" afterPath="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/index.gsp" afterPath="$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/index.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/show.gsp" afterPath="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/show.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/show.gsp" afterPath="$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/show.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="bad0dd3b-a411-4c76-a718-03553e311c60" name="Default" comment="lots of fixes for summer parsing&#10;1)  missing metadata&#10;2)  move weekday/weekend logic to final processing&#10;&#10;put LIRR back to lirr">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LIRR.iws" />
@@ -177,7 +117,7 @@
       <file leaf-file-name="CompleteSchedule.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/schedule/CompleteSchedule.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+            <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="465">
               <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
               <folding />
             </state>
@@ -187,7 +127,7 @@
       <file leaf-file-name="PDFProcessor.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/groovy/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessor.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="570">
+            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="570">
               <caret line="21" column="29" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
               <folding />
             </state>
@@ -197,7 +137,7 @@
       <file leaf-file-name="FinalConverter.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/main/groovy/com/jtbdevelopment/lirr/timetableprocessor/converters/FinalConverter.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="2850">
+            <state vertical-scroll-proportion="0.0" vertical-offset="855" max-vertical-offset="2850">
               <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
               <folding />
             </state>
@@ -227,7 +167,7 @@
       <file leaf-file-name="TrainSchedule.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/schedule/TrainSchedule.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="65" max-vertical-offset="690">
+            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="690">
               <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
@@ -237,7 +177,7 @@
       <file leaf-file-name="ParsedPDFSchedule.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/parsing/ParsedPDFSchedule.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+            <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="315">
               <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
               <folding />
             </state>
@@ -247,7 +187,7 @@
       <file leaf-file-name="PDFProcessorTest.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TimetableProcessor/src/test/groovy/com/jtbdevelopment/lirr/timetableprocessor/PDFProcessorTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4470">
+            <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="4470">
               <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
               <folding />
             </state>
@@ -2349,7 +2289,7 @@
       <workItem from="1401188183048" duration="1071000" />
       <workItem from="1401219252207" duration="60000" />
       <workItem from="1401219331333" duration="5496000" />
-      <workItem from="1401316316578" duration="3071000" />
+      <workItem from="1401316316578" duration="3177000" />
     </task>
     <task id="LOCAL-00001" summary="updating tests">
       <created>1392676346636</created>
@@ -2523,11 +2463,15 @@
       <created>1399825715358</created>
       <updated>1399825715358</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="lots of fixes for summer parsing&#10;1)  missing metadata&#10;2)  move weekday/weekend logic to final processing&#10;&#10;put LIRR back to lirr">
+      <created>1401360836874</created>
+      <updated>1401360836874</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="429253000" />
+    <option name="totallyTimeSpent" value="429359000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="22" width="1615" height="1028" extended-state="6" />
@@ -2613,7 +2557,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="starting to break up into interfaces and getting ready for mongo" />
     <MESSAGE value="reorg results tabulation" />
     <MESSAGE value="starting dao and re-orging" />
     <MESSAGE value="starting grails ui with some experiments" />
@@ -2638,7 +2581,8 @@
     <MESSAGE value="rolled back maven grails and upgraded to 2.3.7 grails" />
     <MESSAGE value="renames and cleanups" />
     <MESSAGE value="context fixes and spring load fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="context fixes and spring load fixes" />
+    <MESSAGE value="lots of fixes for summer parsing&#10;1)  missing metadata&#10;2)  move weekday/weekend logic to final processing&#10;&#10;put LIRR back to lirr" />
+    <option name="LAST_COMMIT_MESSAGE" value="lots of fixes for summer parsing&#10;1)  missing metadata&#10;2)  move weekday/weekend logic to final processing&#10;&#10;put LIRR back to lirr" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
