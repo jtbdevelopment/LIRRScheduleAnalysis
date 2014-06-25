@@ -5,17 +5,45 @@ import com.jtbdevelopment.lirr.dataobjects.core.Line
 import com.jtbdevelopment.lirr.dataobjects.core.Station
 import com.jtbdevelopment.lirr.dataobjects.core.Zone
 
+import javax.servlet.http.Cookie
+
 abstract class AbstractFilteringAnalysisController {
+
+
+    public static final String LINE_COOKIE = "com.jtbdevelopment.lirr.Web.lines"
+    public static final String ZONE_COOKIE = "com.jtbdevelopment.lirr.Web.zones"
+    public static final String MIN_COOKIE = "com.jtbdevelopment.lirr.Web.min"
+    public static final String MAX_COOKIE = "com.jtbdevelopment.lirr.Web.max"
 
     abstract def filterAnalysis()
 
+    private Cookie createCookie(final String key, final String value) {
+        Cookie cookie = new Cookie(key, value);
+        cookie.setMaxAge(Integer.MAX_VALUE);
+        cookie.setPath("/")
+        cookie
+    }
+
+    protected String getCookie(final String key) {
+        request.cookies.find { cookie -> cookie.name == key }?.value
+    }
+
     protected Analysis performFilter() {
-        def lines = params['lines[]'] as Set ?: Line.values().collect { it.name } as Set;
+        String[] lineCookie = getCookie(LINE_COOKIE)?.replaceAll("\\[", "")?.replaceAll("]", "")?.replace(", ", ",")?.split(",")
+        String[] zoneCookie = getCookie(ZONE_COOKIE)?.replaceAll("\\[", "")?.replaceAll("]", "")?.replace(", ", ",")?.split(",")
+        def lines = params['lines[]'] as Set ?: Line.values().collect {
+            it.name
+        } as Set;
         def zones = params['zones[]'] ?
                 params['zones[]'].collect { String zone -> Integer.parseInt(zone) } as Set :
                 Zone.values().collect { it.numeric } as Set
         def minDistance = Integer.parseInt(((String) params['minDistance']) ?: '0')
         def maxDistance = Integer.parseInt(((String) params['maxDistance']) ?: '117')
+        request.cookies.each { println it.name + "/" + it.value + "/" + it.value.class.getName() }
+        response.addCookie(createCookie(LINE_COOKIE, lines.toString()))
+        response.addCookie(createCookie(ZONE_COOKIE, zones.toString()))
+        response.addCookie(createCookie(MIN_COOKIE, minDistance.toString()))
+        response.addCookie(createCookie(MAX_COOKIE, maxDistance.toString()))
 
         Analysis analysis = session["analysis"]
         Set<String> linesAsSet = lines as Set

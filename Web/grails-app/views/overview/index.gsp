@@ -15,5 +15,7 @@
 <p>Analysis Shows the Details - Number of Trains, Average/Std Dev/Median Time Between Trains, etc</p>
 
 <p>Score Breaks the Analysis into Quartiles - 4 points for each top quartile rank for a station, 1 point for bottom quartile</p>
+
+<p><b>This is a prototype and not performance or usability tuned.</b></p>
 </body>
 </html>

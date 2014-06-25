@@ -34,9 +34,9 @@ function showGroup(direction, group) {
 
 function filterTablesAndCharts() {
     $("#report-content").children().remove();
-    var data = miles.getValue();
-    var minMiles = data[0];
-    var maxMiles = data[1];
+    var milesData = miles.getValue();
+    var minMiles = milesData[0];
+    var maxMiles = milesData[1];
     $.post(
         "filterAnalysis",
         {

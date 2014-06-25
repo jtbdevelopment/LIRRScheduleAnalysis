@@ -15,7 +15,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-8 col-md-8">
-            <h1>Compare My Ride <small>LIRR</small></h1>
+            <h1>Compare My Ride <small>LIRR (Prototype)</small></h1>
         </div>
 
         <div class="col-sm-4 col-md-4">

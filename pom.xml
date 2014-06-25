@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <packaging>pom</packaging>
-    <groupId>com.jtbdevelopment</groupId>
-    <artifactId>LIRR</artifactId>
+    <groupId>com.jtbdevelopment.lirr</groupId>
+    <artifactId>lirr</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>DataAnalysis</module>
-        <module>TimetableProcessor</module>
         <module>DAO</module>
+        <module>TimetableProcessor</module>
         <module>Web</module>
     </modules>
 
