@@ -32,58 +32,33 @@ function showGroup(direction, group) {
     chartTable(table, chart)
 }
 
-function filterTablesAndCharts() {
-    $("#report-content").children().remove();
+function clientFilterTable(oSettings, aData, iDataIndex) {
     var milesData = miles.getValue();
     var minMiles = milesData[0];
     var maxMiles = milesData[1];
-    $.post(
-        "filterAnalysis",
-        {
-            "lines[]": lines,
-            "zones[]": zones,
-            "minDistance": minMiles,
-            "maxDistance": maxMiles
-        },
-        function (data) {
-            $("#report-content").append(data);
-            var dataTableOptions = {
-                sDom: 'rt',
-                paging: false,
-                bAutoWidth: false,
-                width: "100%",
-                order: [
-                    [1, "asc"]
-                ]
-            };
 
-            westChart = $("#WestChart");
-            eastChart = $("#EastChart");
-            overallChart = $("#OverallChart");
-            overallTable = $("#Overall").DataTable(dataTableOptions);
-            westTable = $("#West").DataTable(dataTableOptions);
-            eastTable = $("#East").DataTable(dataTableOptions);
-            var distances = overallTable.columns(1).data()[0];
-            var min = 118;
-            var max = 0;
-            for (var i = 0; i < distances.length; ++i) {
-                var x = parseFloat(distances[i]);
-                if (x > max) {
-                    max = Math.floor(x);
-                    if (max != x) {
-                        max = max + 1;
-                    }
+    if (aData[1] < minMiles) {
+        return false;
+    }
+    if (aData[1] > maxMiles) {
+        return false;
+    }
+    if ($.inArray(aData[2], lines) == -1) {
+        return false;
+    }
+    if ($.inArray(aData[3], zones) == -1) {
+        return false;
+    }
+    return true;
+}
 
-                }
-                if (x < min) {
-                    min = Math.floor(x);
-                }
-            }
-            miles.setValue([min, max]);
-            showGroup('Overall', 'group-0');
-            showGroup('West', 'group-0');
-            showGroup('East', 'group-0');
-        });
+function filterTablesAndCharts() {
+    overallTable.draw();
+    chartTable(overallTable, overallChart);
+    eastTable.draw();
+    chartTable(eastTable, eastChart);
+    westTable.draw();
+    chartTable(westTable, westChart);
 }
 
 function computeTickedZones() {
@@ -155,17 +130,18 @@ function showAnalysis() {
             };
             computeTickedLines();
             computeTickedZones();
+            miles = $("#miles").slider().on('slideStop', filterTablesAndCharts).data('slider');
             westChart = $("#WestChart");
             eastChart = $("#EastChart");
             overallChart = $("#OverallChart");
             overallTable = $("#Overall").DataTable(dataTableOptions);
+            $.fn.dataTableExt.afnFiltering.push(clientFilterTable);
             westTable = $("#West").DataTable(dataTableOptions);
             eastTable = $("#East").DataTable(dataTableOptions);
             showGroup('Overall', 'group-0');
             showGroup('West', 'group-0');
             showGroup('East', 'group-0');
             $("#showMe").button('reset');
-            miles = $("#miles").slider().on('slideStop', filterTablesAndCharts).data('slider');
             $("input[id='zones[]']").change(function () {
                 computeTickedZones();
                 filterTablesAndCharts();
