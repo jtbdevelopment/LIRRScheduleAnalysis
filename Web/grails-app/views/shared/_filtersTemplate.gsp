@@ -7,6 +7,8 @@
         </div>
 
         <div class="col-md-11 col-sm-10">
+            <button onclick="javascript:allLines()" id=alllines" name="allines"
+                    class="btn btn-default btn-xs">All</button>
             <g:each in="${Line.values()}" status="i" var="line">
                 <g:if test="${!(line.name =~ 'City')}">
                     <label class="checkbox-inline">
@@ -14,6 +16,8 @@
                     </label>
                 </g:if>
             </g:each>
+            <button onclick="javascript:noLines()" id=nolines" name="nolines"
+                    class="btn btn-default btn-xs">None</button>
         </div>
     </div>
 
@@ -23,6 +27,8 @@
         </div>
 
         <div class="col-md-4 col-sm-3">
+            <button onclick="javascript:allZones()" id=allzones" name="allzones"
+                    class="btn btn-default btn-xs">All</button>
             <g:each in="${Zone.values()}" status="i" var="zone">
                 <g:if test="${zone.numeric >= 3}">
                     <label class="checkbox-inline">
@@ -30,6 +36,8 @@
                     </label>
                 </g:if>
             </g:each>
+            <button onclick="javascript:noZones()" id=nozones" name="nozones"
+                    class="btn btn-default btn-xs">None</button>
         </div>
 
         <div class="col-md-1 col-sm-2">

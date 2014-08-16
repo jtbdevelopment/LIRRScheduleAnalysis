@@ -110,6 +110,38 @@ function markTabActive(name) {
     $(name).addClass("active");
 }
 
+function allOrNoZones(value) {
+    $.each($("input[id='zones[]']"), function () {
+        $(this).prop('checked', value);
+    });
+    computeTickedZones();
+    filterTablesAndCharts();
+}
+
+function allOrNoLines(value) {
+    $.each($("input[id='lines[]']"), function () {
+        $(this).prop('checked', value);
+    });
+    computeTickedLines();
+    filterTablesAndCharts();
+}
+
+function allZones() {
+    allOrNoZones(true);
+}
+
+function allLines() {
+    allOrNoLines(true);
+}
+
+function noZones() {
+    allOrNoZones(false);
+}
+
+function noLines() {
+    allOrNoLines(false);
+}
+
 function showAnalysis() {
     var id = $("#analysis").val();
     $("#report").children().remove();
