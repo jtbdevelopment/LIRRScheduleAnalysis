@@ -167,9 +167,9 @@ function showAnalysis() {
             eastChart = $("#EastChart");
             overallChart = $("#OverallChart");
             overallTable = $("#Overall").DataTable(dataTableOptions);
-            $.fn.dataTableExt.afnFiltering.push(clientFilterTable);
             westTable = $("#West").DataTable(dataTableOptions);
             eastTable = $("#East").DataTable(dataTableOptions);
+            $.fn.dataTableExt.afnFiltering.push(clientFilterTable);
             showGroup('Overall', 'group-0');
             showGroup('West', 'group-0');
             showGroup('East', 'group-0');
