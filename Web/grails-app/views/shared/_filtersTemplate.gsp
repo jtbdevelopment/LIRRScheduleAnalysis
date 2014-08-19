@@ -23,7 +23,7 @@
 
     <div class="row">
         <div class="col-md-1 col-sm-2">
-            <label>Zones</label>
+            <label>Zones:</label>
         </div>
 
         <div class="col-md-4 col-sm-3">
