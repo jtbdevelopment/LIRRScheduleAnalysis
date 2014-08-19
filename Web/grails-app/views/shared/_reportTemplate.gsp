@@ -20,13 +20,16 @@
                     <g:else>
                         <g:set var="groupName" value="${groupForDirection}"/>
                     </g:else>
-                    <li><a href="#" onclick="showGroup(${groupCounter})">${groupName}</a></li>
+                    <li class="subtab subtab-${groupCounter}"><a href="#"
+                                                                 onclick="showGroup(${groupCounter})">${groupName}</a>
+                    </li>
                 </g:each>
             </g:if>
             <g:else>
                 <g:set var="groupCounter" value="${groupCounter + 1}"/>
                 <g:set var="groupName" value="${direction.value}"/>
-                <li><a href="#" onclick="showGroup(${groupCounter})">${groupName}</a></li>
+                <li class="subtab subtab-${groupCounter}"><a href="#"
+                                                             onclick="showGroup(${groupCounter})">${groupName}</a></li>
             </g:else>
         </g:each>
     </ul>

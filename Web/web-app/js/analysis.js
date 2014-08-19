@@ -12,6 +12,7 @@ function showGroup(group) {
     overallTable.columns('.group').visible(false);
     overallTable.columns('.group-' + group).visible(true);
     overallTable.draw();
+    markSubTabActive(group);
     chartTable();
 }
 
@@ -82,6 +83,11 @@ function computeTickedLines() {
     $.each($("input[id='lines[]']:checked"), function () {
         lines.push($(this).val());
     });
+}
+
+function markSubTabActive(name) {
+    $(".subtab").removeClass("active");
+    $(".subtab-" + name).addClass("active");
 }
 
 function markTabActive(name) {
