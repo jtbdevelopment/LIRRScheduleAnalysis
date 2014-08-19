@@ -140,7 +140,7 @@ class Station {
 
             new Station(name: "Bethpage", zone: Zone.Zone7, milesToPenn: 29.7, line: Line.Ronkonkoma),
             new Station(name: "Farmingdale", zone: Zone.Zone7, milesToPenn: 32, line: Line.Ronkonkoma),
-            new Station(name: "Pinelawn", zone: Zone.Zone9, milesToPenn: 34.2, line: Line.Ronkonkoma),
+            new Station(name: "Pinelawn", ignoreForAnalysis: true, zone: Zone.Zone9, milesToPenn: 34.2, line: Line.Ronkonkoma),
             new Station(name: "Wyandanch", zone: Zone.Zone9, milesToPenn: 36.5, line: Line.Ronkonkoma),
             new Station(name: "Deer Park", zone: Zone.Zone9, milesToPenn: 40.2, line: Line.Ronkonkoma),
             new Station(name: "Brentwood", zone: Zone.Zone10, milesToPenn: 42.9, line: Line.Ronkonkoma),

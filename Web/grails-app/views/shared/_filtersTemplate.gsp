@@ -36,7 +36,7 @@
                     </label>
                 </g:if>
             </g:each>
-            <button onclick="javascript:noZones()" id=nozones" name="nozones"
+            <button onclick="noZones()" id=nozones" name="nozones"
                     class="btn btn-default btn-xs">None</button>
         </div>
 
@@ -50,11 +50,4 @@
                     data-slider-value="[0,117]"/>117
         </div>
     </div>
-
-    <!-- Nav tabs -->
-    <ul class="nav nav-pills">
-        <li class="active"><a href="#overall" data-toggle="tab">Overall</a></li>
-        <li><a href="#amPeak" data-toggle="tab">AM Peak</a></li>
-        <li><a href="#pmPeak" data-toggle="tab">PM Peak</a></li>
-    </ul>
 </div>

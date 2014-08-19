@@ -4,32 +4,15 @@
 var zones = [];
 var lines = [];
 
-var westTable;
-var eastTable;
 var overallTable;
 var miles;
-var westChart;
-var eastChart;
 var overallChart;
 
-function showGroup(direction, group) {
-    var table;
-    var chart;
-    if (direction == "West") {
-        table = westTable;
-        chart = westChart;
-    } else if (direction == "East") {
-        table = eastTable;
-        chart = eastChart;
-    } else {
-        table = overallTable;
-        chart = overallChart;
-    }
-
-    table.columns('.group').visible(false);
-    table.columns('.' + group).visible(true);
-    table.draw();
-    chartTable(table, chart)
+function showGroup(group) {
+    overallTable.columns('.group').visible(false);
+    overallTable.columns('.group-' + group).visible(true);
+    overallTable.draw();
+    chartTable();
 }
 
 function clientFilterTable(oSettings, aData, iDataIndex) {
@@ -54,11 +37,7 @@ function clientFilterTable(oSettings, aData, iDataIndex) {
 
 function filterTablesAndCharts() {
     overallTable.draw();
-    chartTable(overallTable, overallChart);
-    eastTable.draw();
-    chartTable(eastTable, eastChart);
-    westTable.draw();
-    chartTable(westTable, westChart);
+    chartTable();
 }
 
 function computeTickedZones() {
@@ -68,12 +47,12 @@ function computeTickedZones() {
     });
 }
 
-function chartTable(table, chart) {
-    chart.children().remove();
+function chartTable() {
+    overallChart.children().remove();
     var dataByHeader = initializeDataByHeader();
     var matrixCount = -1;
-    var headers = table.columns().header().to$();
-    var rows = table.$('tr', {'filter': 'applied'});
+    var headers = overallTable.columns().header().to$();
+    var rows = overallTable.$('tr', {'filter': 'applied'});
     var stations = [];
     rows.each(function (rowCounter) {
         var row = rows[rowCounter].cells;
@@ -95,7 +74,7 @@ function chartTable(table, chart) {
             }
         }
     });
-    drawChart(chart, stations, dataByHeader);
+    drawChart(overallChart, stations, dataByHeader);
 }
 
 function computeTickedLines() {
@@ -163,16 +142,10 @@ function showAnalysis() {
             computeTickedLines();
             computeTickedZones();
             miles = $("#miles").slider().on('slideStop', filterTablesAndCharts).data('slider');
-            westChart = $("#WestChart");
-            eastChart = $("#EastChart");
-            overallChart = $("#OverallChart");
-            overallTable = $("#Overall").DataTable(dataTableOptions);
-            westTable = $("#West").DataTable(dataTableOptions);
-            eastTable = $("#East").DataTable(dataTableOptions);
+            overallChart = $("#chartArea");
+            overallTable = $("#tableData").DataTable(dataTableOptions);
             $.fn.dataTableExt.afnFiltering.push(clientFilterTable);
-            showGroup('Overall', 'group-0');
-            showGroup('West', 'group-0');
-            showGroup('East', 'group-0');
+            showGroup('0');
             $("#showMe").button('reset');
             $("input[id='zones[]']").change(function () {
                 computeTickedZones();
@@ -182,18 +155,7 @@ function showAnalysis() {
                 computeTickedLines();
                 filterTablesAndCharts();
             });
-            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-                var tab = $('.nav-pills .active').text();
-                if (tab == "Overall") {
-                    chartTable(overallTable, overallChart);
-                } else if (tab == "AM Peak") {
-                    chartTable(westTable, westChart);
-                } else if (tab == "PM Peak") {
-                    chartTable(eastTable, eastChart);
-                }
-            })
         });
-
 }
 
 
