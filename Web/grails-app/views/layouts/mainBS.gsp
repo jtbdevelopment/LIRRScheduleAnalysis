@@ -14,18 +14,16 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-8 col-md-8">
+        <div class="col-sm-9 col-md-9">
             <h1>Compare My Ride <small>LIRR (Prototype)</small></h1>
         </div>
 
-        <div class="col-sm-4 col-md-4">
+        <div class="col-sm-3 col-md-3">
             <ul class="nav nav-pills" style="margin-top: 20px">
                 <li id="overview"><a href="${createLink(controller: 'Overview', action: 'index')}">Overview</a></li>
                 <li id="peakTrainAnalysis"><a
                         href="${createLink(controller: 'PeakTrainAnalysis', action: 'index')}">Penn Peak Analsys</a>
                 </li>
-                <li id="peakTrainScore"><a
-                        href="${createLink(controller: 'PeakTrainScore', action: 'index')}">Penn Peak Score</a></li>
             </ul>
         </div>
     </div>
