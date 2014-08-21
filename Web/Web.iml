@@ -92,8 +92,6 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-utils/1.4.5/plexus-utils-1.4.5.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-maven-archetype/2.3.7/grails-maven-archetype-2.3.7.jar!/" />
-          <root url="file://$MODULE_DIR$/target/classes" />
-          <root url="file://$MODULE_DIR$/target/test-classes" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>

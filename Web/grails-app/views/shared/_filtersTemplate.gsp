@@ -2,12 +2,9 @@
 <div id="report-filters">
     <!-- Filters  -->
     <div class="row">
-        <div class="col-md-1 col-sm-2">
-            <label class="small">Lines:</label>
-        </div>
-
-        <div class="col-md-11 col-sm-10">
-            <button onclick="javascript:allLines()" id=alllines" name="allines"
+    <div class="col-md-12 col-sm-12">
+        <label class="small" style="width: 40px">Lines:</label>
+        <button onclick="javascript:allLines()" id=alllines" name="allines"
                     class="btn btn-default btn-xs">All</button>
             <g:each in="${Line.values()}" status="i" var="line">
                 <g:if test="${!(line.name =~ 'City')}">
@@ -22,11 +19,8 @@
     </div>
 
     <div class="row">
-        <div class="col-md-1 col-sm-2">
-            <label class="small">Zones:</label>
-        </div>
-
-        <div class="col-md-3 col-sm-3">
+        <div class="col-md-4 col-sm-5">
+            <label class="small" style="width: 40px;">Zones:</label>
             <button onclick="javascript:allZones()" id=allzones" name="allzones"
                     class="btn btn-default btn-xs">All</button>
             <g:each in="${Zone.values()}" status="i" var="zone">
@@ -40,14 +34,13 @@
                     class="btn btn-default btn-xs">None</button>
         </div>
 
-        <div class="col-md-1 col-sm-2">
+        <div class="col-md-6 col-sm-6 small">
             <label class="small" for="miles">Distance:</label>
-        </div>
-
-        <div class="col-md-5 col-sm-4 small">
-            0<input id="miles" type="text" data-slider-min="0" data-slider-max="117" data-slider-step="1"
-                    class="span2"
-                    data-slider-value="[0,117]"/>117
+            0
+            <input id="miles" type="text" data-slider-min="0" data-slider-max="117" data-slider-step="1"
+                   class="span2"
+                   data-slider-value="[0,117]"/>
+            117
         </div>
 
         <div class="col-md-2 col-sm-1 small">

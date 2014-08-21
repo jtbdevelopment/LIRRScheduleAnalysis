@@ -106,6 +106,8 @@ log4j = {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
 
+    debug 'org.springframework.data'
+
     info 'org.codehaus.groovy.grails.web.servlet',        // controllers
             'org.codehaus.groovy.grails.web.pages',          // GSP
             'org.codehaus.groovy.grails.web.sitemesh',       // layouts
@@ -137,3 +139,15 @@ grails.gorm.default.mapping = {
 }
 
 grails.databinding.useSpringBinder = true
+
+grails.cache.config = {
+    cache {
+        name: 'analysis'
+    }
+    cache {
+        name: 'schedules'
+    }
+    cache {
+        name: 'analysisTypes'
+    }
+}

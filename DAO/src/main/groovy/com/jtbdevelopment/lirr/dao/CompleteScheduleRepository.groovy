@@ -2,6 +2,7 @@ package com.jtbdevelopment.lirr.dao
 
 import com.jtbdevelopment.lirr.dataobjects.schedule.CompleteSchedule
 import org.joda.time.LocalDate
+import org.springframework.cache.annotation.Cacheable
 import org.springframework.data.repository.PagingAndSortingRepository
 import org.springframework.stereotype.Repository
 
@@ -11,5 +12,6 @@ import org.springframework.stereotype.Repository
  */
 @Repository
 public interface CompleteScheduleRepository extends PagingAndSortingRepository<CompleteSchedule, String> {
+    @Cacheable("schedules")
     List<CompleteSchedule> findByStartAndEnd(final LocalDate start, final LocalDate end)
 }
