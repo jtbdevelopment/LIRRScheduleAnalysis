@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bad0dd3b-a411-4c76-a718-03553e311c60" name="Default" comment="caching for dao calls, fix formatting of filters">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainScoreController.groovy" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/filterAnalysis.gsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/index.gsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/show.gsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/grails-app/views/shared/_subReportTemplate.gsp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp" afterPath="$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/web-app/js/analysis.js" afterPath="$PROJECT_DIR$/Web/web-app/js/analysis.js" />
+    <list default="true" id="bad0dd3b-a411-4c76-a718-03553e311c60" name="Default" comment="delete score code&#10;add graphing column filter">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LIRR.iws" />
@@ -113,8 +104,8 @@
       <file leaf-file-name="analysis.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Web/web-app/js/analysis.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3084112" vertical-offset="3255" max-vertical-offset="5445">
-              <caret line="228" column="52" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.5607477" vertical-offset="4665" max-vertical-offset="5445">
+              <caret line="331" column="0" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,7 +114,7 @@
       <file leaf-file-name="_filtersTemplate.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.021276" vertical-offset="566" max-vertical-offset="1080">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="990" max-vertical-offset="1080">
               <caret line="66" column="29" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding />
             </state>
@@ -165,7 +156,7 @@
       <file leaf-file-name="PeakTrainAnalysisController.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.086957" vertical-offset="0" max-vertical-offset="450">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="255" max-vertical-offset="450">
               <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
               <folding />
             </state>
@@ -195,7 +186,7 @@
       <file leaf-file-name="AbstractFilteringAnalysisController.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.478261" vertical-offset="525" max-vertical-offset="1365">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="720" max-vertical-offset="1365">
               <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
               <folding />
             </state>
@@ -1642,7 +1633,7 @@
       <workItem from="1406069197872" duration="1355000" />
       <workItem from="1406314563704" duration="24000" />
       <workItem from="1407431643525" duration="277000" />
-      <workItem from="1408146543807" duration="30900000" />
+      <workItem from="1408146543807" duration="31177000" />
     </task>
     <task id="LOCAL-00001" summary="updating tests">
       <created>1392676346636</created>
@@ -1860,11 +1851,15 @@
       <created>1408665547669</created>
       <updated>1408665547669</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="delete score code&#10;add graphing column filter">
+      <created>1408667427013</created>
+      <updated>1408667427013</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="478315000" />
+    <option name="totallyTimeSpent" value="478592000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="22" width="1615" height="1028" extended-state="6" />
@@ -1950,7 +1945,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="reconfiguring layout and filters all work" />
     <MESSAGE value="mongo auth and misc tweaks" />
     <MESSAGE value="got working on ec2" />
     <MESSAGE value="building scorer" />
@@ -1975,7 +1969,8 @@
     <MESSAGE value="fixed zones label" />
     <MESSAGE value="score conversion on client" />
     <MESSAGE value="caching for dao calls, fix formatting of filters" />
-    <option name="LAST_COMMIT_MESSAGE" value="caching for dao calls, fix formatting of filters" />
+    <MESSAGE value="delete score code&#10;add graphing column filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete score code&#10;add graphing column filter" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -2354,7 +2349,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.086957" vertical-offset="0" max-vertical-offset="450">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="255" max-vertical-offset="450">
           <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
           <folding />
         </state>
@@ -2362,7 +2357,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.478261" vertical-offset="525" max-vertical-offset="1365">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="720" max-vertical-offset="1365">
           <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
           <folding />
         </state>
@@ -2370,7 +2365,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.021276" vertical-offset="566" max-vertical-offset="1080">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="990" max-vertical-offset="1080">
           <caret line="66" column="29" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding />
         </state>
@@ -2378,8 +2373,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Web/web-app/js/analysis.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3084112" vertical-offset="3255" max-vertical-offset="5445">
-          <caret line="228" column="52" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.5607477" vertical-offset="4665" max-vertical-offset="5445">
+          <caret line="331" column="0" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
           <folding />
         </state>
       </provider>
