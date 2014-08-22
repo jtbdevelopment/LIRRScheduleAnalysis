@@ -8,6 +8,15 @@ import com.jtbdevelopment.lirr.dataobjects.core.Zone
 import javax.servlet.http.Cookie
 
 abstract class AbstractFilteringAnalysisController {
+    public final static List<String> GRAPHED_HEADERS = [
+            "# of Peak Trains",
+            "Avg Ride Time",
+            "MPH",
+            "Avg Wait Between Peaks",
+            "Longest Wait Between Peaks",
+            "Std Dev Wait Between Peaks",
+            "Median Wait Between Peaks"
+    ];
 
 
     public static final String LINE_COOKIE = "com.jtbdevelopment.lirr.Web.lines"

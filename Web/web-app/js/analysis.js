@@ -3,17 +3,9 @@
  */
 var zones = [];
 var lines = [];
+var headers = [];
 var showScore = false;
 
-var usedHeaders = [
-    '# of Peak Trains',
-    'Avg Ride Time',
-    'MPH',
-    'Avg Wait Between Peaks',
-    'Longest Wait Between Peaks',
-    'Std Dev Wait Between Peaks',
-    'Median Wait Between Peaks'
-];
 var lessIsBadHeaders = [
     '# of Peak Trains',
     'MPH'
@@ -65,7 +57,7 @@ function computeTickedZones() {
 
 function initializeDataByHeader() {
     var dataByHeader = [];
-    for (var i = 0; i < usedHeaders.length; ++i) {
+    for (var i = 0; i < headers.length; ++i) {
         var axis;
         var type;
         if (showScore) {
@@ -77,7 +69,7 @@ function initializeDataByHeader() {
         }
         dataByHeader[i] = {
             data: [],
-            name: usedHeaders[i],
+            name: headers[i],
             yAxis: axis,
             type: type
         }
@@ -170,7 +162,7 @@ function drawChartRegular(chart, stations, dataByHeader) {
 }
 
 function scoreData(dataByHeader) {
-    for (var i = 0; i < usedHeaders.length; ++i) {
+    for (var i = 0; i < headers.length; ++i) {
         var data = dataByHeader[i].data;
         var sortedData = data.filter(function (element) {
             return element != null;
@@ -180,7 +172,7 @@ function scoreData(dataByHeader) {
         var half = sortedData[Math.round(sortedData.length / 2) - 1];
         var threequartile = sortedData[Math.round(sortedData.length / 4 * 3) - 1];
 
-        var lessIsBad = (jQuery.inArray(usedHeaders[i], lessIsBadHeaders) > -1);
+        var lessIsBad = (jQuery.inArray(headers[i], lessIsBadHeaders) > -1);
         for (var j = 0; j < data.length; ++j) {
             if (data[j] <= quartile) {
                 if (lessIsBad) {
@@ -215,7 +207,7 @@ function chartTable() {
     overallChart.children().remove();
     var dataByHeader = initializeDataByHeader();
     var matrixCount = -1;
-    var headers = overallTable.columns().header().to$();
+    var tableHeaders = overallTable.columns().header().to$();
     var rows = overallTable.$('tr', {'filter': 'applied'});
     var stations = [];
     rows.each(function (rowCounter) {
@@ -223,8 +215,8 @@ function chartTable() {
         ++matrixCount;
         stations[matrixCount] = row[0].innerHTML;
         for (var i = 0; i < row.length; ++i) {
-            var name = headers[i].innerHTML;
-            var headerPosition = jQuery.inArray(name, usedHeaders);
+            var name = tableHeaders[i].innerHTML;
+            var headerPosition = jQuery.inArray(name, headers);
             if (headerPosition > -1) {
                 var number = parseInt(row[i].innerHTML);
                 if (number == 9999) {
@@ -247,6 +239,13 @@ function computeTickedLines() {
     });
 }
 
+function computeTickedHeaders() {
+    headers = [];
+    $.each($("input[id='headers[]']:checked"), function () {
+        headers.push($(this).val());
+    });
+}
+
 function markSubTabActive(name) {
     $(".subtab").removeClass("active");
     $(".subtab-" + name).addClass("active");
@@ -265,6 +264,14 @@ function allOrNoZones(value) {
     filterTablesAndCharts();
 }
 
+function allOrNoHeaders(value) {
+    $.each($("input[id='headers[]']"), function () {
+        $(this).prop('checked', value);
+    });
+    computeTickedHeaders();
+    filterTablesAndCharts();
+}
+
 function allOrNoLines(value) {
     $.each($("input[id='lines[]']"), function () {
         $(this).prop('checked', value);
@@ -277,12 +284,20 @@ function allZones() {
     allOrNoZones(true);
 }
 
+function allHeaders() {
+    allOrNoHeaders(true);
+}
+
 function allLines() {
     allOrNoLines(true);
 }
 
 function noZones() {
     allOrNoZones(false);
+}
+
+function noHeaders() {
+    allOrNoHeaders(false);
 }
 
 function noLines() {
@@ -309,6 +324,7 @@ function showAnalysis() {
             };
             computeTickedLines();
             computeTickedZones();
+            computeTickedHeaders();
             miles = $("#miles").slider().on('slideStop', filterTablesAndCharts).data('slider');
             overallChart = $("#chartArea");
             overallTable = $("#tableData").DataTable(dataTableOptions);
@@ -325,6 +341,10 @@ function showAnalysis() {
             $("#showMe").button('reset');
             $("input[id='zones[]']").change(function () {
                 computeTickedZones();
+                filterTablesAndCharts();
+            });
+            $("input[id='headers[]']").change(function () {
+                computeTickedHeaders();
                 filterTablesAndCharts();
             });
             $("input[id='lines[]']").change(function () {

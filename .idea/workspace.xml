@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bad0dd3b-a411-4c76-a718-03553e311c60" name="Default" comment="caching for dao cal">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/AnalysisRepository.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/AnalysisRepository.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/conf/BuildConfig.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/conf/BuildConfig.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/CompleteScheduleRepository.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/CompleteScheduleRepository.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/conf/Config.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/conf/Config.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/DataServiceUtils.groovy" afterPath="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/DataServiceUtils.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/Web-grailsPlugins.iml" afterPath="$PROJECT_DIR$/Web/Web-grailsPlugins.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/Web.iml" afterPath="$PROJECT_DIR$/Web/Web.iml" />
+    <list default="true" id="bad0dd3b-a411-4c76-a718-03553e311c60" name="Default" comment="caching for dao calls, fix formatting of filters">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainScoreController.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/filterAnalysis.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/index.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/show.gsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/grails-app/views/shared/_subReportTemplate.gsp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy" afterPath="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp" afterPath="$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/pom.xml" afterPath="$PROJECT_DIR$/Web/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/web-app/js/analysis.js" afterPath="$PROJECT_DIR$/Web/web-app/js/analysis.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LIRR.iws" />
@@ -110,21 +110,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/pom.xml">
+      <file leaf-file-name="analysis.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Web/web-app/js/analysis.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="4545">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.3084112" vertical-offset="3255" max-vertical-offset="5445">
+              <caret line="228" column="52" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="analysis.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Web/web-app/js/analysis.js">
+      <file leaf-file-name="_filtersTemplate.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6104651" vertical-offset="0" max-vertical-offset="5145">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.021276" vertical-offset="566" max-vertical-offset="1080">
+              <caret line="66" column="29" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/show.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.9574468" vertical-offset="0" max-vertical-offset="165">
+              <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filterAnalysis.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/filterAnalysis.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
+              <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -142,34 +162,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filterAnalysis.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/filterAnalysis.gsp">
+      <file leaf-file-name="PeakTrainAnalysisController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.086957" vertical-offset="0" max-vertical-offset="450">
+              <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/grails-app/conf/Config.groovy">
+      <file leaf-file-name="_reportTemplate.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_reportTemplate.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="2385">
-              <caret line="121" column="48" selection-start-line="121" selection-start-column="1" selection-end-line="121" selection-end-column="1" />
+            <state vertical-scroll-proportion="-9.063829" vertical-offset="534" max-vertical-offset="1695">
+              <caret line="64" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/index.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="105" max-vertical-offset="315">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <marker date="1408591836000" expanded="true" signature="181:267" placeholder="{...}" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -184,137 +192,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/show.gsp">
+      <file leaf-file-name="AbstractFilteringAnalysisController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="165">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.478261" vertical-offset="525" max-vertical-offset="1365">
+              <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_reportTemplate.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_reportTemplate.gsp">
+      <file leaf-file-name="OverviewController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/OverviewController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.0212765" vertical-offset="0" max-vertical-offset="1695">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            <state vertical-scroll-proportion="-1.3043479" vertical-offset="0" max-vertical-offset="255">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_filtersTemplate.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp">
+      <file leaf-file-name="_analysisDropDown.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_analysisDropDown.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.255319" vertical-offset="220" max-vertical-offset="855">
-              <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DAO.iml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DAO/DAO.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CompleteScheduleRepository.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/CompleteScheduleRepository.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-              <caret line="14" column="25" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnalysisRepository.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/AnalysisRepository.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataServiceUtils.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/DataServiceUtils.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="765">
-              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MongoConfiguration.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/MongoConfiguration.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cacheable.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/3.2.4.RELEASE/spring-context-3.2.4.RELEASE-sources.jar!/org/springframework/cache/annotation/Cacheable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="840">
-              <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#2304#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CacheEvict.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/3.2.4.RELEASE/spring-context-3.2.4.RELEASE-sources.jar!/org/springframework/cache/annotation/CacheEvict.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="196" max-vertical-offset="885">
-              <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#2436#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PeakTrainAnalyzer.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/analysis/PeakTrainAnalyzer.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="4665">
-              <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="filterAnalysis.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/filterAnalysis.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainBS.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web/grails-app/views/layouts/mainBS.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="675">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.2765957" vertical-offset="0" max-vertical-offset="270">
+              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -338,7 +240,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/SampleController.groovy" />
         <option value="$PROJECT_DIR$/Web/test/unit/com/jtbdevelopment/lirr/web/SampleControllerSpec.groovy" />
         <option value="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/OverviewController.groovy" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/main/java/com/jtbdevelopment/lirr/dataobjects/analysis/TrainRide.groovy" />
@@ -373,22 +274,23 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/DAO/pom.xml" />
         <option value="$PROJECT_DIR$/Web/grails-app/views/overview/index.gsp" />
-        <option value="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy" />
         <option value="$PROJECT_DIR$/TimetableProcessor/pom.xml" />
         <option value="$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/core/Station.groovy" />
         <option value="$PROJECT_DIR$/Web/grails-app/views/shared/_subReportTemplate.gsp" />
         <option value="$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp" />
         <option value="$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/index.gsp" />
-        <option value="$PROJECT_DIR$/Web/web-app/js/analysis.js" />
         <option value="$PROJECT_DIR$/Web/grails-app/views/shared/_reportTemplate.gsp" />
         <option value="$PROJECT_DIR$/Web/grails-app/views/layouts/mainBS.gsp" />
-        <option value="$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp" />
         <option value="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/CompleteScheduleRepository.groovy" />
         <option value="$PROJECT_DIR$/Web/grails-app/conf/BuildConfig.groovy" />
         <option value="$PROJECT_DIR$/Web/grails-app/conf/Config.groovy" />
         <option value="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/AnalysisRepository.groovy" />
         <option value="$PROJECT_DIR$/DAO/src/main/groovy/com/jtbdevelopment/lirr/dao/DataServiceUtils.groovy" />
         <option value="$PROJECT_DIR$/Web/pom.xml" />
+        <option value="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy" />
+        <option value="$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy" />
+        <option value="$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp" />
+        <option value="$PROJECT_DIR$/Web/web-app/js/analysis.js" />
       </list>
     </option>
   </component>
@@ -1003,6 +905,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIRRScheduleAnalysis" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jtbdevelopment" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lirr" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1702,7 +1642,7 @@
       <workItem from="1406069197872" duration="1355000" />
       <workItem from="1406314563704" duration="24000" />
       <workItem from="1407431643525" duration="277000" />
-      <workItem from="1408146543807" duration="29338000" />
+      <workItem from="1408146543807" duration="30900000" />
     </task>
     <task id="LOCAL-00001" summary="updating tests">
       <created>1392676346636</created>
@@ -1916,11 +1856,15 @@
       <created>1408591842016</created>
       <updated>1408591842016</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="caching for dao calls, fix formatting of filters">
+      <created>1408665547669</created>
+      <updated>1408665547669</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="476753000" />
+    <option name="totallyTimeSpent" value="478315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="22" width="1615" height="1028" extended-state="6" />
@@ -1941,16 +1885,16 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26509854" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32637364" sideWeight="0.49968213" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26509854" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32637364" sideWeight="0.49968213" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951653" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32747254" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32747254" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43406594" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15638907" sideWeight="0.49912128" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15638907" sideWeight="0.49912128" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951653" sideWeight="0.50087875" order="0" side_tool="true" content_ui="tabs" />
@@ -2006,7 +1950,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="more graphing work" />
     <MESSAGE value="reconfiguring layout and filters all work" />
     <MESSAGE value="mongo auth and misc tweaks" />
     <MESSAGE value="got working on ec2" />
@@ -2031,7 +1974,8 @@
     <MESSAGE value="mark sub tabs as active" />
     <MESSAGE value="fixed zones label" />
     <MESSAGE value="score conversion on client" />
-    <option name="LAST_COMMIT_MESSAGE" value="score conversion on client" />
+    <MESSAGE value="caching for dao calls, fix formatting of filters" />
+    <option name="LAST_COMMIT_MESSAGE" value="caching for dao calls, fix formatting of filters" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -2040,7 +1984,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy</url>
-          <line>36</line>
+          <line>45</line>
           <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
@@ -2050,11 +1994,17 @@
           <properties />
           <option name="timeStamp" value="94" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp</url>
+          <line>58</line>
+          <properties />
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="95" />
+      <option name="time" value="96" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -2178,30 +2128,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainScoreController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.2173915" vertical-offset="0" max-vertical-offset="510">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.086957" vertical-offset="0" max-vertical-offset="435">
-          <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.043478" vertical-offset="228" max-vertical-offset="1230">
-          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/analysis/Analysis.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.77678573" vertical-offset="0" max-vertical-offset="560">
@@ -2234,22 +2160,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/show.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_analysisDropDown.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2765957" vertical-offset="0" max-vertical-offset="270">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataAnalysis/src/main/groovy/com/jtbdevelopment/lirr/dataobjects/core/Station.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1950" max-vertical-offset="2985">
@@ -2261,40 +2171,6 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1710">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_subReportTemplate.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9148936" vertical-offset="0" max-vertical-offset="1035">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/index.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="105" max-vertical-offset="315">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <marker date="1408591836000" expanded="true" signature="181:267" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/filterAnalysis.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="395">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainScore/show.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -2332,35 +2208,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_reportTemplate.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0212765" vertical-offset="0" max-vertical-offset="1695">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web/grails-app/views/layouts/mainBS.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="675">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.9574468" vertical-offset="0" max-vertical-offset="315">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding>
-            <marker date="1408580908000" expanded="true" signature="181:240" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/filterAnalysis.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -2370,22 +2220,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.255319" vertical-offset="220" max-vertical-offset="855">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/grails-app/conf/BuildConfig.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="631" max-vertical-offset="1335">
-          <caret line="73" column="29" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2460,10 +2294,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/conf/BuildConfig.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="631" max-vertical-offset="1335">
+          <caret line="73" column="29" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_analysisDropDown.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2765957" vertical-offset="0" max-vertical-offset="270">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/show.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9574468" vertical-offset="0" max-vertical-offset="165">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_reportTemplate.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.063829" vertical-offset="534" max-vertical-offset="1695">
+          <caret line="64" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/OverviewController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3043479" vertical-offset="0" max-vertical-offset="255">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/filterAnalysis.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/peakTrainAnalysis/index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9574468" vertical-offset="0" max-vertical-offset="315">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding>
+            <marker date="1408580908000" expanded="true" signature="181:240" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/PeakTrainAnalysisController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.086957" vertical-offset="0" max-vertical-offset="450">
+          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/controllers/com/jtbdevelopment/lirr/web/AbstractFilteringAnalysisController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.478261" vertical-offset="525" max-vertical-offset="1365">
+          <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/grails-app/views/shared/_filtersTemplate.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.021276" vertical-offset="566" max-vertical-offset="1080">
+          <caret line="66" column="29" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Web/web-app/js/analysis.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6104651" vertical-offset="0" max-vertical-offset="5145">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3084112" vertical-offset="3255" max-vertical-offset="5445">
+          <caret line="228" column="52" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
           <folding />
         </state>
       </provider>

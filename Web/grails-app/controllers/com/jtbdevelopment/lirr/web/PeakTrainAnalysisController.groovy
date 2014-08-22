@@ -17,6 +17,7 @@ class PeakTrainAnalysisController extends AbstractFilteringAnalysisController {
 
         respond filtered,
                 model: [
+                        graphedHeaders: GRAPHED_HEADERS,
                         groupsPerDirection: PeakTrainAnalyzer.GROUPS_PER_DIRECTION,
                         detailsPerGroup   : PeakTrainAnalyzer.DETAILS_PER_GROUP,
                 ]
