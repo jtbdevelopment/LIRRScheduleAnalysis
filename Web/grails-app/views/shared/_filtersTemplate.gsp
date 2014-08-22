@@ -54,10 +54,12 @@
             <label class="small" style="width: 40px;">Graph:</label>
             <button onclick="allHeaders()" id=allheaders" name="allheaders"
                     class="btn btn-default btn-xs">All</button>
-            <g:each in="${graphedHeaders}" status="j" var="graphedHeader">
-                <label class="checkbox-inline small">
-                    <input value="${graphedHeader}" id="headers[]" type="checkbox" checked>${graphedHeader}
-                </label>
+            <g:each in="${detailsPerGroup}" status="j" var="detail">
+                <g:if test="${detail.value}">
+                    <label class="checkbox-inline small">
+                        <input value="${detail.key}" id="headers[]" type="checkbox" checked>${detail.key}
+                    </label>
+                </g:if>
             </g:each>
             <button onclick="noHeaders()" id=noheaders" name="noheaders"
                     class="btn btn-default btn-xs">None</button>

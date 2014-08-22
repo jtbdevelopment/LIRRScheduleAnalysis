@@ -37,26 +37,19 @@ class PeakTrainAnalyzer implements Analyzer {
 
     public static final Map<String, List<String>> GROUPS_PER_DIRECTION;
 
-    public static final List<String> DETAILS_PER_GROUP = [
-            NUMBER_OF_PEAK_TRAINS,
-            FIRST_PEAK,
-            LAST_PEAK,
-            AVERAGE_RIDE_TIME,
-            MPH,
-            AVERAGE_WAIT_BETWEEN_PEAKS,
-            LONGEST_WAIT_BETWEEN_PEAKS,
-            STD_DEV_WAIT_BETWEEN_PEAKS,
-            MEDIAN_WAIT_BETWEEN_PEAKS,
-            LAST_PRE_PEAK,
-            WAIT_FOR_FIRST_PEAK,
+    public static final Map<String, Boolean> DETAILS_PER_GROUP = [
+            (NUMBER_OF_PEAK_TRAINS)     : true,
+            (FIRST_PEAK)                : false,
+            (LAST_PEAK)                 : false,
+            (AVERAGE_RIDE_TIME)         : true,
+            (MPH)                       : true,
+            (AVERAGE_WAIT_BETWEEN_PEAKS): true,
+            (LONGEST_WAIT_BETWEEN_PEAKS): true,
+            (STD_DEV_WAIT_BETWEEN_PEAKS): true,
+            (MEDIAN_WAIT_BETWEEN_PEAKS) : true,
+            (LAST_PRE_PEAK)             : false,
+            (WAIT_FOR_FIRST_PEAK)       : false,
     ]
-
-    /*
-    private static Closure<String> GROUP_FOR_HOUR = {
-        int hour ->
-            "(Departure Hour " + hour + ")"
-    }
-    */
 
     static {
         GROUPS_PER_DIRECTION = [
@@ -68,7 +61,6 @@ class PeakTrainAnalyzer implements Analyzer {
                 Direction direction = Enum.valueOf(Direction.class, directionString);
                 groups.addAll(direction.peakPlus.collect {
                     int hour ->
-                        //GROUP_FOR_HOUR(hour)
                         "Departing " + hour + " - " + (hour + 1)
                 })
         }

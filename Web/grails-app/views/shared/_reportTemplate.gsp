@@ -62,7 +62,7 @@
                 <g:each in="${groupsForDirection}" status="i" var="groupForDirection">
                     <g:set var="groupCounter" value="${groupCounter + 1}"/>
                     <g:each in="${detailsPerGroup}" status="j" var="groupDetail">
-                        <th class="group-${groupCounter} group dataLabel">${groupDetail}</th>
+                        <th class="group-${groupCounter} group dataLabel">${groupDetail.key}</th>
                     </g:each>
                 </g:each>
             </g:each>
@@ -86,11 +86,11 @@
                                            value="${stationAnalysis.value[groupForDirection]}"/>
                                     <g:each in="${detailsPerGroup}" status="m" var="detail">
                                         <td class="text-center">
-                                            <g:if test="${stationGroupDetails[detail] in LocalTime}">
-                                                ${stationGroupDetails[detail].toString("HH:mm")}
+                                            <g:if test="${stationGroupDetails[detail.key] in LocalTime}">
+                                                ${stationGroupDetails[detail.key].toString("HH:mm")}
                                             </g:if>
                                             <g:else>
-                                                ${stationGroupDetails[detail]}
+                                                ${stationGroupDetails[detail.key]}
                                             </g:else>
                                         </td>
                                     </g:each>

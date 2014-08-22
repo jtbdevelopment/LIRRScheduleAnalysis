@@ -6,8 +6,8 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
-@TestFor(AbstractFilteringAnalysisController)
-class AbstractFilteringAnalysisControllerSpec extends Specification {
+@TestFor(AbstractAnalysisController)
+class AbstractAnalysisControllerSpec extends Specification {
 
     def cleanup() {
     }
