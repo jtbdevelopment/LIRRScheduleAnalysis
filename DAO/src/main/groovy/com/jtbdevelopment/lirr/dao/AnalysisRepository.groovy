@@ -13,6 +13,9 @@ import org.springframework.stereotype.Repository
 @Repository
 interface AnalysisRepository extends CrudRepository<Analysis, String> {
     @Cacheable("analysis")
+    Analysis findOne(String id);
+
+    @Cacheable("analysisBySET")
     List<Analysis> findByStartAndEndAndAnalysisType(
             final LocalDate start, final LocalDate end, final String analysisType)
 

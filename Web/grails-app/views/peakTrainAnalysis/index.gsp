@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<g:render template="/shared/analysisDropDown"/>
+<cache:render template="/shared/analysisDropDown"/>
 
 </body>
 </html>

@@ -145,6 +145,9 @@ grails.cache.config = {
         name: 'analysis'
     }
     cache {
+        name: 'analysisSET'
+    }
+    cache {
         name: 'schedules'
     }
     cache {
