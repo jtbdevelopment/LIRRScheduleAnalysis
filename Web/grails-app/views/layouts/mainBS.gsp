@@ -15,7 +15,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-9 col-md-9">
-            <h1>Compare My Ride <small>LIRR (Prototype)</small></h1>
+            <h1>Compare My Ride <small>LIRR (Prototype) ${grailsApplication.metadata.'app.version'}</small></h1>
         </div>
 
         <div class="col-sm-3 col-md-3">

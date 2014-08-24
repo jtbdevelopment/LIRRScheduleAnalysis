@@ -308,7 +308,7 @@ function showAnalysis() {
     var id = $("#analysis").val();
     $("#report").children().remove();
     $("#showMe").button('loading');
-    $.post(
+    $.get(
         "show",
         {"id": id},
         function (data) {
