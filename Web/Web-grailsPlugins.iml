@@ -125,9 +125,20 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-utils/1.4.5/plexus-utils-1.4.5.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-maven-archetype/2.3.7/grails-maven-archetype-2.3.7.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/googlecode/htmlcompressor/htmlcompressor/1.4/htmlcompressor-1.4.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/rhino/js/1.6R7/js-1.6R7.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/yahoo/platform/yui/yuicompressor/2.4.6/yuicompressor-2.4.6.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.2/junit-4.8.2.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/json/json/20090211/json-20090211.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/google/protobuf/protobuf-java/2.3.0/protobuf-java-2.3.0.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/r08/guava-r08.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/args4j/args4j/2.0.12/args4j-2.0.12.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/google/javascript/closure-compiler/r1043/closure-compiler-r1043.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.ideaLibSources/htmlcompressor-1.4-sources.jar!/" />
+        </SOURCES>
         <jarDirectory url="file://$MODULE_DIR$/plugins/joda-time-1.4/lib" recursive="false" />
         <jarDirectory url="file://$MODULE_DIR$/plugins/yui-minify-resources-0.1.5/lib" recursive="false" />
         <jarDirectory url="file://$MODULE_DIR$/target/work/plugins/joda-time-1.4/lib" recursive="false" />
